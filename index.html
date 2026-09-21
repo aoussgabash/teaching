@@ -10,31 +10,16 @@ section{padding:48px 0}.title{text-align:center;margin-bottom:30px}.title h2{fon
 .course-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px}.course{position:relative;display:block;min-height:260px;padding:27px;background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:19px;transition:.2s}.course:hover{transform:translateY(-5px);border-color:rgba(56,189,248,.65);box-shadow:0 20px 48px rgba(0,0,0,.27)}.course:nth-child(even){border-color:rgba(251,191,36,.34);background:radial-gradient(circle at 90% 10%,rgba(251,191,36,.09),transparent 35%),linear-gradient(180deg,#172333,#0d1926)}.code{color:var(--blue);font-size:.82rem;font-weight:800;letter-spacing:.08em}.course:nth-child(even) .code{color:var(--gold)}.course h3{font-size:1.45rem;margin:9px 0 3px}.course .ar{direction:rtl;text-align:right;font-size:1.25rem;font-weight:700}.course p{color:var(--muted)}.meta{display:flex;gap:8px;flex-wrap:wrap;margin-top:18px}.pill{padding:5px 10px;border:1px solid var(--line);border-radius:999px;font-size:.78rem;color:#dff7ff}.open{position:absolute;right:25px;bottom:20px;color:#bae6fd;font-weight:800}.course:nth-child(even) .open{color:#fcd34d}.planned{opacity:.82}.planned .open{color:var(--muted)}.add-course{border-style:dashed;display:flex;align-items:center;justify-content:center;text-align:center;color:var(--muted)}.add-course strong{display:block;color:#fff;font-size:2rem}footer{border-top:1px solid var(--line);padding:48px 0;text-align:center;color:#c8d9ec}.footer-wrap{display:flex;flex-direction:column;align-items:center;gap:12px;font-size:1rem}.site-footer a{color:#55bdf7}.site-footer strong{font-weight:800}
 @media(max-width:900px){.navlinks{display:none}.hero{grid-template-columns:1fr;text-align:center}.hero-logo{order:-1}.hero-logo img{width:220px}}@media(max-width:680px){.course-grid{grid-template-columns:1fr}.brand span{font-size:.9rem}}
 
-/* Canonical AG footer — identical to aoussgabash.com */
-.site-footer{margin-top:0!important;padding:42px 0!important;border-top:1px solid rgba(255,255,255,.10)!important;background:#06101c!important;color:#aebfd0!important;text-align:left!important;font-family:Inter,"Segoe UI",Tahoma,Arial,sans-serif!important;line-height:1.75!important}
-.site-footer .footer-wrap{width:min(1120px,calc(100% - 32px))!important;max-width:none!important;margin:auto!important;display:block!important;text-align:left!important;font-size:1rem!important}
-.site-footer .footer-wrap>*{display:block!important}
-.site-footer .footer-wrap>span+span{margin-top:14px!important}
-.site-footer .footer-wrap::before{content:none!important;display:none!important}
-.site-footer .footer-wrap [lang="ar"]{color:#fff!important;font-weight:400!important;unicode-bidi:isolate}
-.site-footer .footer-name-ar{display:none!important}
-@media(max-width:680px){.site-footer{padding:34px 0!important}.site-footer .footer-wrap{font-size:.92rem!important}}
-
-/* Teaching footer: match the centered four-line reference, isolated from main site */
-body .site-footer{background:#141c26!important;color:#c6d7e9!important;border-top:0!important;padding:34px 16px 42px!important;margin:0!important;text-align:center!important;font-family:Arial,Tahoma,sans-serif!important;font-size:20px!important;line-height:1.55!important}
-body .site-footer .footer-wrap{width:100%!important;max-width:100%!important;margin:0 auto!important;padding:0!important;display:flex!important;flex-direction:column!important;align-items:center!important;gap:13px!important;text-align:center!important;font-size:inherit!important}
-body .site-footer .footer-wrap>span{display:block!important;margin:0!important;color:#c6d7e9!important;font-weight:400!important}
-body .site-footer .footer-wrap [lang="ar"]{color:#fff!important;font-weight:700!important;unicode-bidi:isolate}
-body .site-footer a{color:#7dd3fc!important;font-weight:700!important}
-@media(max-width:680px){body .site-footer{font-size:16px!important;padding:30px 12px 36px!important}body .site-footer .footer-wrap{gap:12px!important}}
-
-/* Final canonical four-line footer for the Teaching site */
-body .site-footer{background:#141c26!important;color:#c6d7e9!important;border:0!important;margin:0!important;padding:34px 16px 42px!important;text-align:center!important;font-family:Arial,Tahoma,sans-serif!important;font-size:20px!important;line-height:1.55!important}
-body .site-footer .footer-wrap{display:flex!important;flex-direction:column!important;align-items:center!important;gap:13px!important;width:100%!important;max-width:none!important;margin:0 auto!important;padding:0!important;text-align:center!important;font-size:inherit!important}
-body .site-footer .footer-wrap>span{display:block!important;margin:0!important;color:#c6d7e9!important;font-weight:400!important}
-body .site-footer .footer-wrap [lang="ar"]{color:#fff!important;font-weight:700!important;unicode-bidi:isolate}
-body .site-footer a{color:#7dd3fc!important;font-weight:700!important}
-@media(max-width:680px){body .site-footer{font-size:16px!important;padding:30px 12px 36px!important}body .site-footer .footer-wrap{gap:12px!important}}
+/* Central footer: exact layout and typography of homepage assets/shared/ag-theme.css */
+#ag-central-footer{padding:34px 0;border-top:1px solid rgba(255,255,255,.12);background:#06101c;color:#aebfd0;font-family:Arial,Helvetica,sans-serif}
+#ag-central-footer .ag-central-footer-inner{width:min(1120px,calc(100% - 32px));margin-inline:auto;text-align:center}
+#ag-central-footer .ag-central-footer-line{margin:0;line-height:1.8}
+#ag-central-footer .ag-central-footer-line + .ag-central-footer-line{margin-top:8px}
+#ag-central-footer .ag-central-footer-ar{color:#fff;direction:rtl;unicode-bidi:isolate;font-family:Tahoma,Arial,sans-serif}
+#ag-central-footer .ag-central-footer-sep{margin-inline:6px;color:#7dd3fc}
+#ag-central-footer .ag-central-footer-link{color:#7dd3fc;text-decoration:none;font-weight:700}
+#ag-central-footer .ag-central-footer-link:hover{color:#fff;text-decoration:underline}
+@media(max-width:680px){#ag-central-footer{padding:30px 0}#ag-central-footer .ag-central-footer-inner{width:min(1120px,calc(100% - 24px));font-size:.92rem}}
 </style></head><body>
 <header><div class="container"><nav><a class="home" href="https://aoussgabash.com">⌂</a><a class="brand" href="#top"><img src="assets/brand/AGTE.svg" alt="AGTE"><span><b>TE</b> University Teaching</span></a><div class="navlinks"><a href="#courses">Courses |<small>المقررات</small></a><a href="#author">Author |<small>المؤلف</small></a></div></nav></div></header>
 <main id="top"><div class="container"><section class="hero"><div><span class="badge">University Teaching | التدريس الجامعي</span><h1><span class="gradient">Engineering &amp; Technology</span><br>Education</h1><div class="hero-ar">التعليم الهندسي والتقني</div><p>Independent course spaces for lectures, laboratories, exercises and learning resources. Each course opens its own dedicated page and can grow independently.</p></div><div class="hero-logo"><img src="assets/brand/AGTE.svg" alt="AGTE University Teaching"></div></section>
@@ -47,9 +32,10 @@ body .site-footer a{color:#7dd3fc!important;font-weight:700!important}
 <div class="course planned"><div class="code">COURSE 06 · PLANNED</div><h3>Control Systems II</h3><div class="ar">أنظمة التحكم 2</div><p>Planned continuation course for lectures, exercises, laboratories and supporting resources.</p><div class="meta"><span class="pill">Planned | مخطط له</span></div><span class="open">Planned</span></div>
 
 </div></section><section id="author"><div class="title"><h2>Prepared by</h2><div class="ar">إعداد</div><p>Dr.-Ing. Aouss Gabash · IEEE Senior Member</p></div></section></div></main>
-<footer class="site-footer"><div class="footer-wrap ag-global-footer">
-<span>© 2026 Dr.-Ing. Aouss Gabash | <span lang="ar" dir="rtl">الدكتور المهندس أوس غباش</span></span>
-<span>AG Academic Ecosystem | <span lang="ar" dir="rtl">منظومة AG الأكاديمية</span></span>
-<span>Syria | <span lang="ar" dir="rtl">سوريا</span></span>
-<span><a href="https://aoussgabash.com/site-information.html">Site Information</a> | <span lang="ar" dir="rtl">بيانات الموقع</span></span>
+<footer id="ag-central-footer" class="site-footer ag-central-footer">
+<div class="ag-central-footer-inner">
+<p class="ag-central-footer-line">© 2026 Dr.-Ing. Aouss Gabash <span class="ag-central-footer-sep" aria-hidden="true">|</span> <span class="ag-central-footer-ar" lang="ar" dir="rtl">الدكتور المهندس أوس غباش</span></p>
+<p class="ag-central-footer-line">AG Academic Ecosystem <span class="ag-central-footer-sep" aria-hidden="true">|</span> <span class="ag-central-footer-ar" lang="ar" dir="rtl">منظومة AG الأكاديمية</span></p>
+<p class="ag-central-footer-line">Syria <span class="ag-central-footer-sep" aria-hidden="true">|</span> <span class="ag-central-footer-ar" lang="ar" dir="rtl">سوريا</span></p>
+<p class="ag-central-footer-line"><a class="ag-central-footer-link" href="https://aoussgabash.com/site-information.html">Site Information <span class="ag-central-footer-sep" aria-hidden="true">|</span> <span class="ag-central-footer-ar" lang="ar" dir="rtl">بيانات الموقع</span></a></p>
 </div></footer></body></html>
