@@ -5,22 +5,33 @@
 <title>AG University Teaching | Dr.-Ing. Aouss Gabash</title>
 <meta name="description" content="University teaching portal of Dr.-Ing. Aouss Gabash for engineering and technology education.">
 <style>
-:root{--bg:#071426;--card:#0d2038;--line:#24415f;--text:#f3f7fb;--muted:#b9c7d6;--accent:#4da3ff}
-*{box-sizing:border-box}body{margin:0;font-family:Arial,Tahoma,sans-serif;background:linear-gradient(135deg,#071426,#102a46);color:var(--text);min-height:100vh}
-.wrap{width:min(1050px,92%);margin:auto}header{border-bottom:1px solid var(--line);padding:18px 0}.nav{display:flex;justify-content:space-between;align-items:center;gap:16px}.brand{font-weight:700}.brand b{color:var(--accent)}a{color:inherit;text-decoration:none}.home{color:var(--muted)}
-.hero{text-align:center;padding:80px 0 45px}.eyebrow{color:var(--accent);font-weight:700;letter-spacing:.08em}.hero h1{font-size:clamp(2rem,5vw,3.7rem);margin:.35em 0 .2em}.ar{font-family:Tahoma,Arial,sans-serif}.hero p{max-width:780px;margin:18px auto;color:var(--muted);line-height:1.8}
-.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(250px,1fr));gap:18px;padding:20px 0 70px}.card{background:rgba(13,32,56,.88);border:1px solid var(--line);border-radius:18px;padding:24px;min-height:180px}.card h2{margin:0 0 10px}.card p{color:var(--muted);line-height:1.65}.tag{display:inline-block;margin-top:12px;padding:7px 10px;border:1px solid var(--line);border-radius:999px;color:var(--accent);font-size:.85rem}
-footer{border-top:1px solid var(--line);text-align:center;color:var(--muted);padding:25px 0}
+:root{--bg:#06101c;--bg2:#091827;--panel:#10263d;--panel2:#0b1a2b;--line:#26394d;--text:#f4f8fb;--muted:#b9c7d6;--blue:#38bdf8;--gold:#fbbf24}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Arial,Tahoma,sans-serif;background:radial-gradient(circle at 85% 5%,rgba(56,189,248,.14),transparent 28%),linear-gradient(180deg,var(--bg),var(--bg2));color:var(--text);line-height:1.75}.container{width:min(1180px,92%);margin:auto}a{color:inherit;text-decoration:none}
+header{position:sticky;top:0;z-index:50;background:rgba(6,16,28,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line)}nav{min-height:92px;display:flex;align-items:center;gap:22px}.home-btn{width:54px;height:54px;border:1px solid #3b4b5c;border-radius:15px;display:grid;place-items:center;font-size:25px}.brand{display:flex;align-items:center;gap:12px;font-weight:800;min-width:210px}.brand img{width:48px;height:48px;border-radius:50%}.brand span{font-size:1.12rem;line-height:1.35}.brand strong{color:var(--blue)}.navlinks{display:flex;align-items:center;justify-content:space-between;gap:24px;flex:1}.navlinks a{text-align:center;color:#fff;font-size:.98rem;line-height:1.6}.navlinks .ar{display:block;direction:rtl;font-size:.88rem}.hero{min-height:66vh;display:grid;grid-template-columns:1.2fr .8fr;align-items:center;gap:46px;padding:70px 0 48px}.badge{display:inline-flex;padding:7px 13px;border-radius:999px;border:1px solid rgba(56,189,248,.35);background:rgba(56,189,248,.08);color:#dff7ff}.hero h1{font-size:clamp(2.5rem,6vw,4.8rem);line-height:1.05;margin:18px 0}.gradient{background:linear-gradient(90deg,var(--blue),#60a5fa,var(--gold));-webkit-background-clip:text;color:transparent}.hero-ar{direction:rtl;font-size:1.55rem;color:#edf6ff}.subtitle{color:var(--muted);max-width:760px;font-size:1.08rem}.hero-logo{text-align:center}.hero-logo img{width:min(330px,80vw);border-radius:28%;filter:drop-shadow(0 26px 60px rgba(0,0,0,.42))}section{padding:52px 0}.section-title{text-align:center;margin-bottom:28px}.section-title h2{font-size:clamp(1.9rem,4vw,2.6rem);margin:0}.section-title .ar{direction:rtl;font-size:1.2rem}.section-title p{color:var(--muted)}.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.card{background:linear-gradient(180deg,var(--panel),var(--panel2));border:1px solid var(--line);border-radius:17px;padding:23px;min-height:190px}.card h3{color:var(--blue);margin-top:0}.card p{color:var(--muted)}.tag{display:inline-flex;padding:4px 9px;border-radius:999px;color:#fde68a;border:1px solid rgba(251,191,36,.3);background:rgba(251,191,36,.08);font-size:.78rem}footer{border-top:1px solid var(--line);padding:38px 0;text-align:center;color:var(--muted)}
+@media(max-width:980px){nav{min-height:72px}.navlinks{display:none}.brand{min-width:0}.hero{grid-template-columns:1fr;text-align:center}.hero-logo{order:-1}.hero-logo img{width:230px}.grid{grid-template-columns:1fr 1fr}}@media(max-width:620px){.grid{grid-template-columns:1fr}.home-btn{width:46px;height:46px}.brand img{width:43px;height:43px}}
 </style>
 </head>
 <body>
-<header><div class="wrap nav"><a class="brand" href="/"><b>AG</b> University Teaching</a><a class="home" href="https://aoussgabash.com">← Personal Website | الموقع الشخصي</a></div></header>
-<main class="wrap">
-<section class="hero"><div class="eyebrow">UNIVERSITY TEACHING · التدريس الجامعي</div><h1>Engineering &amp; Technology Education</h1><h2 class="ar" dir="rtl">التعليم الهندسي والتقني</h2><p>Course materials, lectures, exercises and laboratory resources for university teaching across engineering and technology disciplines.<br><span class="ar" dir="rtl">منصة للمقررات والمحاضرات والتمارين والمخابر في مجالات الهندسة والتكنولوجيا، مصممة لخدمة مقررات جامعية متعددة دون الارتباط بجامعة أو قسم أو اختصاص محدد.</span></p></section>
-<section class="grid">
-<article class="card"><h2>Courses | المقررات</h2><p>University courses are organized by subject, allowing each course to serve students across different departments, programs and institutions.</p><span class="tag">Multiple disciplines</span></article>
-<article class="card"><h2>Lectures | المحاضرات</h2><p>Bilingual lecture materials with clear engineering foundations, equations, examples and illustrative figures.</p><span class="tag">Arabic + English</span></article>
-<article class="card"><h2>Labs &amp; Exercises | المخابر والتمارين</h2><p>Practical exercises, computational examples and laboratory resources linked directly to each course.</p><span class="tag">Teaching resources</span></article>
-</section></main>
-<footer>© 2026 Dr.-Ing. Aouss Gabash · AG Academic Ecosystem</footer>
+<header><div class="container"><nav>
+<a class="home-btn" href="https://aoussgabash.com" aria-label="Personal website">⌂</a>
+<a class="brand" href="#top"><img src="assets/brand/AGTE.svg" alt="AGTE Teaching logo"><span><strong>AG</strong> University<br>Teaching</span></a>
+<div class="navlinks">
+<a href="#courses">Courses |<span class="ar">المقررات</span></a>
+<a href="#lectures">Lectures |<span class="ar">المحاضرات</span></a>
+<a href="#exercises">Exercises |<span class="ar">التمارين</span></a>
+<a href="#labs">Labs |<span class="ar">المخابر</span></a>
+<a href="#resources">Resources |<span class="ar">المصادر</span></a>
+<a href="#author">Author |<span class="ar">المؤلف</span></a>
+</div></nav></div></header>
+<main id="top"><div class="container">
+<section class="hero"><div><span class="badge">University Teaching | التدريس الجامعي</span><h1><span class="gradient">Engineering &amp; Technology</span><br>Education</h1><div class="hero-ar">التعليم الهندسي والتقني</div><p class="subtitle">A multidisciplinary university teaching platform for courses, lectures, exercises, laboratories and learning resources across engineering and technology programs.<br><span dir="rtl">منصة تدريس جامعي متعددة التخصصات للمقررات والمحاضرات والتمارين والمخابر والمصادر التعليمية في المجالات الهندسية والتقنية.</span></p></div><div class="hero-logo"><img src="assets/brand/AGTE.svg" alt="AGTE University Teaching logo"></div></section>
+<section id="courses"><div class="section-title"><h2>University Courses</h2><div class="ar">المقررات الجامعية</div><p>Courses are organized by subject and can serve students from different departments, programs and universities.</p></div><div class="grid">
+<article class="card" id="lectures"><h3>Lectures | المحاضرات</h3><p>Bilingual course lectures with engineering foundations, equations, examples and illustrative figures.</p><span class="tag">Arabic + English</span></article>
+<article class="card" id="exercises"><h3>Exercises | التمارين</h3><p>Worked examples, problem sets and engineering exercises associated with each course.</p><span class="tag">Practice</span></article>
+<article class="card" id="labs"><h3>Labs | المخابر</h3><p>Laboratory activities, computational examples and practical learning resources where applicable.</p><span class="tag">Hands-on</span></article>
+</div></section>
+<section id="resources"><div class="section-title"><h2>Learning Resources</h2><div class="ar">المصادر التعليمية</div><p>Supporting material will be connected directly to each course as the platform develops.</p></div></section>
+<section id="author"><div class="section-title"><h2>Prepared by</h2><div class="ar">إعداد</div><p>Dr.-Ing. Aouss Gabash · IEEE Senior Member</p></div></section>
+</div></main>
+<footer>© 2026 Dr.-Ing. Aouss Gabash | الدكتور المهندس أوس غباش<br>AG Academic Ecosystem | منظومة AG الأكاديمية</footer>
 </body></html>
