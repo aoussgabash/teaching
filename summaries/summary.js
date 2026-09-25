@@ -139,19 +139,9 @@
       const allSections = [...doc.querySelectorAll('main > section, main .box')].filter(section => section.querySelector('.en,.ar,.arbox') || section.matches('.box'));
       if (!allSections.length) throw new Error('No bilingual course sections were found');
 
-      const objectives = findSection(allSections, ['learning objectives','learning outcomes','objectives','أهداف التعلم','مخرجات التعلم']) || allSections[0];
+      const contentSections = allSections.filter(section => !section.matches('.references') && !section.classList.contains('references') && !section.classList.contains('quiz'));
       const review = findSection(allSections, ['review questions','questions','أسئلة المراجعة','تمارين']);
-      const summary = findSection(allSections.filter(section => !section.matches('.references') && !section.classList.contains('references')), ['summary','conclusion','key takeaways','الخلاصة','أهم النقاط']);
-      const example = findSection(allSections, ['worked example','example','case study','مثال','حالة دراسية']);
-      const challenges = findSection(allSections, ['challenge','limitation','safety','التحديات','القيود','السلامة']);
-      const applications = findSection(allSections, ['application','power system','workflow','results','تطبيقات','نظام الطاقة','سير العمل','النتائج']);
-
-      const contentSections = allSections.filter(section => ![objectives, review, summary].includes(section) && !section.matches('.references') && !section.classList.contains('references'));
-      const foundations = uniqueSections(contentSections.slice(0, 2));
-      const core = uniqueSections(contentSections.slice(2, 10));
-      const practice = uniqueSections([example, applications, challenges, ...contentSections.slice(10)]).slice(0, type === 'lab' ? 6 : 5);
-
-      document.title = `${kindEn} ${number} Summary - ${titleEn}`;
+      document.title = `${kindEn} ${number} Full PDF - ${titleEn}`;
 
       let page = 1;
       const pages = [];
@@ -159,91 +149,57 @@
         <section class="page cover">
           <div>
             <div class="brand"><span>Power</span> Programming</div>
-            <div class="kicker">${kindEn} Summary | ملخص ${kindAr}</div>
+            <div class="kicker">${kindEn} PDF | ملف ${kindAr}</div>
             <h1>${titleEn}</h1>
             <div class="ar-title" lang="ar" dir="rtl">${titleAr}</div>
-            <div class="subtitle">${subtitle || 'Programming in Electrical Power II<br>البرمجة في الطاقة 2'}</div>
+            <div class="subtitle">Programming in Electrical Power II<br>البرمجة في الطاقة 2</div>
             <div class="meta-grid">
-              <div class="meta"><small>Document | الوثيقة</small><strong>${kindEn} ${number} Summary</strong></div>
-              <div class="meta"><small>Source | المصدر</small><strong>Interactive course website</strong></div>
+              <div class="meta"><small>Document | الوثيقة</small><strong>Complete Offline ${kindEn} ${number}</strong></div>
+              <div class="meta"><small>Content | المحتوى</small><strong>Full lecture/lab content</strong></div>
               <div class="meta"><small>Language | اللغة</small><strong>English & Arabic</strong></div>
               <div class="meta"><small>Version | الإصدار</small><strong>1.0 · 2026</strong></div>
             </div>
           </div>
           <div class="cover-footer">
             <div><div>Prepared by | إعداد</div><div class="author">Dr.-Ing. Aouss Gabash</div></div>
-            <div style="text-align:right"><div>Full interactive content</div><a href="${sourceUrl}">${sourceUrl}</a></div>
+            <div style="text-align:right">Offline study edition | نسخة للدراسة دون اتصال</div>
           </div>${pageNo(page++)}
         </section>`);
 
-      const objectivesPair = pair(objectives);
-      pages.push(`
-        <section class="page">
-          ${sectionTitle('Learning Outcomes and Foundations','مخرجات التعلم والأسس')}
-          <div class="bilingual">
-            <div class="panel"><h3>Learning Outcomes</h3>${list(objectivesPair.en, 7)}</div>
-            <div class="panel ar" lang="ar" dir="rtl"><h3>مخرجات التعلم</h3>${list(objectivesPair.ar, 7)}</div>
-          </div>
-          ${foundations.map(section => `<div style="height:14px"></div><div class="bilingual">${panel(section,'en','Foundation',{paragraphs:3,items:7,media:3})}${panel(section,'ar','الأساس',{paragraphs:3,items:7,media:3})}</div>`).join('')}
-          ${pageNo(page++)}
-        </section>`);
+      contentSections.forEach((section, index) => {
+        const p = pair(section);
+        const enTitle = heading(section,'en') || `Section ${index+1}`;
+        const arTitle = heading(section,'ar') || 'القسم';
+        pages.push(`
+          <section class="page">
+            ${sectionTitle(enTitle,arTitle)}
+            <div class="bilingual">
+              ${panel(section,'en',enTitle,{paragraphs:99,items:99,media:99})}
+              ${panel(section,'ar',arTitle,{paragraphs:99,items:99,media:99})}
+            </div>
+            ${scientificMedia(p.en,99)}
+            ${pageNo(page++)}
+          </section>`);
+      });
 
-      if (core.length) {
-        for (let i = 0; i < core.length; i += 2) {
-          const group = core.slice(i, i + 2);
-          pages.push(`
-            <section class="page">
-              ${sectionTitle(i === 0 ? 'Key Concepts and Methods' : 'Core Engineering Content',i === 0 ? 'المفاهيم والطرائق الأساسية' : 'المحتوى الهندسي الأساسي')}
-              ${group.map(section => {
-                const p = pair(section);
-                const cardContent = `${cards(p.en,false,6)}${cards(p.ar,true,6)}`;
-                return `<div style="margin-bottom:18px"><div class="bilingual">${panel(section,'en','Key Concept',{paragraphs:3,items:7,media:4})}${panel(section,'ar','مفهوم أساسي',{paragraphs:3,items:7,media:4})}</div>${cardContent ? `<div class="concept-grid" style="margin-top:10px">${cardContent}</div>` : ''}</div>`;
-              }).join('')}
-              ${pageNo(page++)}
-            </section>`);
-        }
+      if (review) {
+        const rp=pair(review);
+        pages.push(`
+          <section class="page">
+            ${sectionTitle('Review Questions','أسئلة المراجعة')}
+            <div class="bilingual">
+              <div class="panel"><h3>Review Questions</h3>${list(rp.en,99,true) || paragraphs(rp.en,99)}</div>
+              <div class="panel ar" lang="ar" dir="rtl"><h3>أسئلة المراجعة</h3>${list(rp.ar,99,true) || paragraphs(rp.ar,99)}</div>
+            </div>${pageNo(page++)}
+          </section>`);
       }
-
-      if (practice.length) {
-        for (let i = 0; i < practice.length; i += 2) {
-          const group = practice.slice(i, i + 2);
-          pages.push(`
-            <section class="page">
-              ${sectionTitle(type === 'lab' ? 'Laboratory Workflow, Code and Results' : 'Applications, Code and Engineering Interpretation',type === 'lab' ? 'سير عمل المختبر والكود والنتائج' : 'التطبيقات والكود والتفسير الهندسي')}
-              ${group.map(section => `<div style="margin-bottom:18px" class="example"><div class="bilingual">${panel(section,'en',type === 'lab' ? 'Laboratory Step' : 'Application',{paragraphs:4,items:8,media:5})}${panel(section,'ar',type === 'lab' ? 'خطوة مخبرية' : 'تطبيق',{paragraphs:4,items:8,media:5})}</div></div>`).join('')}
-              ${pageNo(page++)}
-            </section>`);
-        }
-      }
-
-      const summaryPair = pair(summary || contentSections.at(-1));
-      const reviewPair = pair(review);
-      pages.push(`
-        <section class="page">
-          ${sectionTitle('Key Takeaways and Review','أهم النقاط والمراجعة')}
-          <div class="takeaways">
-            <div class="takeaway"><h3>Key Takeaways</h3>${list(summaryPair.en,7) || paragraphs(summaryPair.en,3)}</div>
-            <div class="takeaway ar" lang="ar" dir="rtl"><h3>أهم النقاط</h3>${list(summaryPair.ar,7) || paragraphs(summaryPair.ar,3)}</div>
-          </div>
-          <div style="height:16px"></div>
-          <div class="bilingual">
-            <div class="panel"><h3>Review Questions</h3>${list(reviewPair.en,8,true) || '<p>Review the objectives and explain the main concepts in your own words.</p>'}</div>
-            <div class="panel ar" lang="ar" dir="rtl"><h3>أسئلة المراجعة</h3>${list(reviewPair.ar,8,true) || '<p>راجع الأهداف واشرح المفاهيم الرئيسة بأسلوبك الخاص.</p>'}</div>
-          </div>${pageNo(page++)}
-        </section>`);
 
       pages.push(`
         <section class="page">
           ${sectionTitle('References','المراجع')}
           <ol class="references">${references.map(ref => `<li>${ref}</li>`).join('')}</ol>
           <div style="height:20px"></div>
-          <div class="online">
-            <h2>Continue Learning Online</h2><h2 class="ar" lang="ar" dir="rtl">تابع التعلم عبر الموقع</h2>
-            <p>The website is the complete, current, and interactive academic reference.</p>
-            <p class="ar" lang="ar" dir="rtl">الموقع هو المرجع الأكاديمي الكامل والمحدّث والتفاعلي.</p>
-            <p><a href="${sourceUrl}">${sourceUrl}</a></p>
-          </div>
-          <p class="source-note">This summary is generated directly from the corresponding course page. Update the source page first so the summary remains synchronized. | يُولّد هذا الملخص مباشرةً من صفحة المقرر المقابلة، لذلك يجب تحديث صفحة المصدر أولًا ليبقى الملخص متزامنًا.</p>
+          <div class="online"><h2>Online Interactive Version</h2><h2 class="ar">النسخة التفاعلية على الموقع</h2><p>The PDF above contains the complete instructional content for offline study. The website adds interactive functions and updates.</p><p class="ar">يحتوي هذا الملف على المحتوى التعليمي الكامل للدراسة دون اتصال، بينما يضيف الموقع الوظائف التفاعلية والتحديثات.</p><p><a href="${sourceUrl}">${sourceUrl}</a></p></div>
           ${pageNo(page++)}
         </section>`);
 
