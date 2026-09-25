@@ -30,7 +30,12 @@
 
   function pair(section) {
     if (!section) return {en:null,ar:null}; const explicitEn = section.querySelector('.en');
-    const ar = section.querySelector('.ar,.arbox') || null;
+    const arNodes = [...section.querySelectorAll('.arbox,.ar,[lang="ar"],[dir="rtl"]')].filter(node => !node.parentElement?.closest('.arbox,.ar,[lang="ar"],[dir="rtl"]'));
+    let ar = null;
+    if (arNodes.length) {
+      ar = document.createElement('div');
+      arNodes.forEach(node => ar.appendChild(node.cloneNode(true)));
+    }
     let en = explicitEn;
     if (!en && section) {
       en = section.cloneNode(true);
@@ -126,7 +131,7 @@
       callout(container),
       scientificMedia(container, options.media ?? 2)
     ].join('');
-    return `<div class="panel${isArabic ? ' ar' : ''}"${isArabic ? ' lang="ar" dir="rtl"' : ''}><h3>${title}</h3>${body || `<p>${isArabic ? 'راجع صفحة الموقع الكاملة لهذا القسم.' : 'See the complete website page for this section.'}</p>`}</div>`;
+    return `<div class="panel${isArabic ? ' ar' : ''}"${isArabic ? ' lang="ar" dir="rtl"' : ''}><h3>${title}</h3>${body || `<p>${isArabic ? 'لا يوجد نص عربي إضافي مستقل في هذا القسم.' : 'No additional standalone English text in this section.'}</p>`}</div>`;
   }
 
   function renderError(message) {
