@@ -29,7 +29,7 @@
   const sectionTitle = (en, ar) => `<div class="section-title"><h2>${en}</h2><div class="ar" lang="ar" dir="rtl">${ar}</div></div>`;
 
   function pair(section) {
-    return {en: section?.querySelector('.en') || null, ar: section?.querySelector('.ar') || null};
+    if (!section) return {en:null,ar:null}; const en = section.querySelector('.en') || section; const ar = section.querySelector('.ar,.arbox') || null; return {en, ar};
   }
 
   function heading(section, language = 'en') {
@@ -134,9 +134,9 @@
       const doc = new DOMParser().parseFromString(sourceText, 'text/html');
       const hero = doc.querySelector('.hero');
       const titleEn = text(hero?.querySelector('h1')) || `${kindEn} ${number}`;
-      const titleAr = text(hero?.querySelector('.hero-ar')) || `${kindAr} ${number}`;
-      const subtitle = html(hero?.querySelector('.subtitle'));
-      const allSections = [...doc.querySelectorAll('main > section')].filter(section => section.querySelector('.en,.ar'));
+      const titleAr = text(hero?.querySelector('.hero-ar,.ar')) || `${kindAr} ${number}`;
+      const subtitle = html(hero?.querySelector('.subtitle')) || 'Programming in Electrical Power II<br>البرمجة في الطاقة 2';
+      const allSections = [...doc.querySelectorAll('main > section, main .box')].filter(section => section.querySelector('.en,.ar,.arbox') || section.matches('.box'));
       if (!allSections.length) throw new Error('No bilingual course sections were found');
 
       const objectives = findSection(allSections, ['learning objectives','learning outcomes','objectives','أهداف التعلم','مخرجات التعلم']) || allSections[0];
