@@ -29,7 +29,14 @@
   const sectionTitle = (en, ar) => `<div class="section-title"><h2>${en}</h2><div class="ar" lang="ar" dir="rtl">${ar}</div></div>`;
 
   function pair(section) {
-    if (!section) return {en:null,ar:null}; const en = section.querySelector('.en') || section; const ar = section.querySelector('.ar,.arbox') || null; return {en, ar};
+    if (!section) return {en:null,ar:null}; const explicitEn = section.querySelector('.en');
+    const ar = section.querySelector('.ar,.arbox') || null;
+    let en = explicitEn;
+    if (!en && section) {
+      en = section.cloneNode(true);
+      en.querySelectorAll('.ar,.arbox,[lang="ar"],[dir="rtl"]').forEach(node => node.remove());
+    }
+    return {en, ar};
   }
 
   function heading(section, language = 'en') {
@@ -140,6 +147,7 @@
       if (!allSections.length) throw new Error('No bilingual course sections were found');
 
       const contentSections = allSections.filter(section => !section.matches('.references') && !section.classList.contains('references') && !section.classList.contains('quiz'));
+      const printableSections = contentSections.filter(section => !section.querySelector('.q') && !section.classList.contains('quiz'));
       const review = findSection(allSections, ['review questions','questions','أسئلة المراجعة','تمارين']);
       document.title = `${kindEn} ${number} Full PDF - ${titleEn}`;
 
@@ -166,10 +174,10 @@
           </div>${pageNo(page++)}
         </section>`);
 
-      contentSections.forEach((section, index) => {
+      printableSections.forEach((section, index) => {
         const p = pair(section);
         const enTitle = heading(section,'en') || `Section ${index+1}`;
-        const arTitle = heading(section,'ar') || 'القسم';
+        const arTitle = heading(section,'ar') || (type === 'lab' ? 'محتوى المهمة' : 'المحتوى');
         pages.push(`
           <section class="page">
             ${sectionTitle(enTitle,arTitle)}
