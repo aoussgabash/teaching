@@ -141,12 +141,12 @@
 
       const objectives = findSection(allSections, ['learning objectives','learning outcomes','objectives','أهداف التعلم','مخرجات التعلم']) || allSections[0];
       const review = findSection(allSections, ['review questions','questions','أسئلة المراجعة','تمارين']);
-      const summary = findSection(allSections, ['summary','conclusion','key takeaways','الخلاصة','أهم النقاط']);
+      const summary = findSection(allSections.filter(section => !section.matches('.references') && !section.classList.contains('references')), ['summary','conclusion','key takeaways','الخلاصة','أهم النقاط']);
       const example = findSection(allSections, ['worked example','example','case study','مثال','حالة دراسية']);
       const challenges = findSection(allSections, ['challenge','limitation','safety','التحديات','القيود','السلامة']);
       const applications = findSection(allSections, ['application','power system','workflow','results','تطبيقات','نظام الطاقة','سير العمل','النتائج']);
 
-      const contentSections = allSections.filter(section => ![objectives, review, summary].includes(section));
+      const contentSections = allSections.filter(section => ![objectives, review, summary].includes(section) && !section.matches('.references') && !section.classList.contains('references'));
       const foundations = uniqueSections(contentSections.slice(0, 2));
       const core = uniqueSections(contentSections.slice(2, 6));
       const practice = uniqueSections([example, applications, challenges, ...contentSections.slice(6)]).slice(0, 3);
