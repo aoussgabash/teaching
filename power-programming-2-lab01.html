@@ -36,7 +36,48 @@ plt.xlabel("X (ohm)")
 plt.ylabel("|I| (A)")
 plt.grid(True)
 plt.show()</pre><div class="arbox">قارن بين MATLAB وPython: ما الذي تغير في الصياغة؟ وما الذي لم يتغير في النموذج الهندسي؟</div></div>
-<div class="box"><h2>Debugging challenge</h2><pre>V = 20000
+<div class="box"><h2>Task D · Hand verification</h2><div class="arbox"><p>قبل قبول نتائج البرنامج، تحقق يدوياً من ثلاث قيم على الأقل. استخدم |Z|=√(R²+X²) ثم |I|=V/|Z| للحالات X=5, 15, 20 Ω. قارن الفرق النسبي بين الحساب اليدوي والبرنامج.</p></div><pre>error_percent = abs(I_program - I_hand)/I_hand * 100;</pre></div>
+<div class="box"><h2>Task E · Complex power</h2><pre>% MATLAB
+X = 15;
+Z = R + 1j*X;
+I = V/Z;
+S = V*conj(I);
+P = real(S);
+Q = imag(S);
+pf = P/abs(S);</pre><div class="arbox"><p>سجل P بالـMW وQ بالـMVAr وpf. ثم تحقق من P≈|I|²R وQ≈|I|²X. اشرح لماذا Q موجبة في هذه الحالة.</p></div></div>
+<div class="box"><h2>Task F · Function building</h2><pre>function [I,S,pf] = analyze_load(V,R,X)
+    Z = R + 1j*X;
+    I = V/Z;
+    S = V*conj(I);
+    pf = real(S)/abs(S);
+end</pre><div class="arbox"><p>شغّل الدالة للحالات X=5، 15، 20 Ω وأنشئ جدولاً صغيراً يحوي X و|I| وP وQ وpf. هذه الخطوة تربط الدوال التي درسها الطالب سابقاً بمهمة هندسية قابلة لإعادة الاستخدام.</p></div></div>
+<div class="box"><h2>Task G · Loop vs vectorization</h2><p>Implement the X sweep twice: first with a <code>for</code> loop, then vectorized. Confirm that both give the same values.</p><pre>% vectorized MATLAB
+X = 5:20;
+Z = R + 1j*X;
+I = V ./ Z;
+Iabs = abs(I);</pre><div class="arbox"><p>اكتب في سطرين: أي الصيغتين أقرب إلى المعادلة الرياضية؟ ومتى قد تبقى الحلقة ضرورية؟</p></div></div>
+<div class="box"><h2>Task H · Engineering table and plot</h2><pre>results = table(X.',abs(I).',angle(I).'*180/pi,...
+                real(V*conj(I)).'/1e6,...
+                imag(V*conj(I)).'/1e6,...
+ 'VariableNames',{'X_ohm','I_A','Angle_deg','P_MW','Q_MVAr'});</pre><div class="arbox"><p>ارسم |I| مقابل X ثم Q مقابل X. لا تكتفِ بالرسم: اكتب استنتاجين هندسيين عن تأثير المفاعلة.</p></div></div>
+<div class="box"><h2>Task I · Python comparison on Kaggle</h2><pre>import numpy as np
+import pandas as pd
+
+V = 20e3
+R = 30
+X = np.arange(5,21)
+Z = R + 1j*X
+I = V/Z
+S = V*np.conj(I)
+
+df = pd.DataFrame({
+    "X_ohm": X,
+    "I_A": np.abs(I),
+    "P_MW": np.real(S)/1e6,
+    "Q_MVAr": np.imag(S)/1e6
+})
+df</pre><div class="arbox"><p>الطالب لا يحتاج إلى حفظ Pandas الآن. المطلوب أن يرى أن النموذج نفسه يمكن نقله إلى Notebook وأن البيانات الناتجة يمكن تنظيمها في جدول وتحليلها من الهاتف.</p></div></div>
+<div class="box"><h2>Mini challenge · تحدي 10 دقائق</h2><div class="arbox"><p>غيّر R من 30 Ω إلى 20 Ω مع بقاء X=15 Ω. قبل التشغيل تنبأ بما سيحدث لكل من |I| وP وpf، ثم شغّل البرنامج وقارن التنبؤ بالنتيجة. تحصل العلامة على التفسير وليس على الرقم وحده.</p></div></div><div class="box"><h2>Debugging challenge</h2><pre>V = 20000
 R = 30
 for X in range(5,21):
     Z = R + X
