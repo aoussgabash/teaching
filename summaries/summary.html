@@ -1,1 +1,122 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Power Programming Summary | ملخص</title><link rel="stylesheet" href="summary-print.css?v=20260925-2"><script>window.MathJax={tex:{inlineMath:[['\\(','\\)'],['$','$']],displayMath:[['\\[','\\]'],['$$','$$']],processEscapes:true,tags:'ams'},chtml:{scale:.96,displayAlign:'center'},options:{skipHtmlTags:['script','noscript','style','textarea','pre','code']},startup:{typeset:false}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script></head><body><div class="toolbar no-print"><a id="back">← Back | رجوع</a><button id="print">Print / Save PDF | طباعة / حفظ PDF</button></div><main id="root" class="sheet"><section class="page loading"><h1>Preparing Summary…</h1><p class="ar">جارٍ إعداد الملخص…</p></section></main><script src="summary.js?v=20260925-2"></script><script>document.getElementById('print').addEventListener('click',async()=>{if(window.MathJax?.typesetPromise)await MathJax.typesetPromise([document.getElementById('root')]);window.print()});</script></body></html>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+<!-- Unified AG favicon identity -->
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+<link rel="icon" type="image/png" sizes="192x192" href="/favicon-192x192.png">
+<link rel="icon" type="image/png" sizes="512x512" href="/favicon-512x512.png">
+<link rel="apple-touch-icon" sizes="192x192" href="/favicon-192x192.png">
+<link rel="manifest" href="/site.webmanifest">
+<!-- /Unified AG favicon identity -->
+  <title>Course Summary | ملخص المقرر</title>
+<link rel="stylesheet" href="summary-print.css?v=ai-method-1">
+  <script>
+    window.MathJax = {
+      tex: {
+        inlineMath: [['\\(','\\)'], ['$', '$']],
+        displayMath: [['\\[','\\]'], ['$$','$$']],
+        processEscapes: true,
+        tags: 'ams'
+      },
+      chtml: {
+        scale: 0.96,
+        displayAlign: 'center',
+        displayIndent: '0'
+      },
+      options: {
+        skipHtmlTags: ['script','noscript','style','textarea','pre','code']
+      },
+      startup: {typeset: false}
+    };
+  </script>
+  <script defer src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml.js"></script>
+</head>
+<body>
+  <div class="no-print" style="width:min(100%,210mm);margin:14px auto;display:flex;gap:10px;justify-content:space-between;align-items:center;padding:0 6px">
+    <a id="back-link" href="../index.html" style="text-decoration:none;font-weight:700;color:#0f5f8f">← Back | رجوع</a>
+    <button id="print-summary" type="button" style="border:0;border-radius:10px;padding:10px 15px;background:#0f5f8f;color:#fff;font-weight:800;cursor:pointer">Print / Save PDF | طباعة / حفظ PDF</button>
+  </div>
+
+  <main id="summary-root" class="sheet" aria-live="polite">
+    <section class="page" style="display:grid;place-items:center;text-align:center">
+      <div>
+        <h1>Preparing Summary…</h1>
+        <p class="rtl">جارٍ إعداد الملخص…</p>
+      </div>
+    </section>
+  </main>
+
+  <script src="summary.js?v=ai-method-1" defer></script>
+  
+  <script>
+    const summaryRoot = document.getElementById('summary-root');
+    let renderTimer;
+
+    function normalizePublicLinks() {
+      const publicBase = 'https://teaching.aoussgabash.com/';
+      summaryRoot.querySelectorAll('a[href]').forEach(link => {
+        const href = link.getAttribute('href') || '';
+        if (/^https?:\/\/(?:127\.0\.0\.1|localhost):\d+\//i.test(href)) {
+          const path = href.replace(/^https?:\/\/(?:127\.0\.0\.1|localhost):\d+\//i, '');
+          const publicUrl = new URL(path, publicBase).href;
+          if (link.textContent.trim() === href) link.textContent = publicUrl;
+          link.href = publicUrl;
+        }
+      });
+
+      const walker = document.createTreeWalker(summaryRoot, NodeFilter.SHOW_TEXT);
+      const nodes = [];
+      while (walker.nextNode()) nodes.push(walker.currentNode);
+      nodes.forEach(node => {
+        node.nodeValue = node.nodeValue.replace(/https?:\/\/(?:127\.0\.0\.1|localhost):\d+\//gi, publicBase);
+      });
+    }
+
+    function normalizeEquationColors() {
+      const mathSelectors = [
+        '.math','.equation','.formula','.formula-box','.math-block',
+        'mjx-container','math','[class*="math"]','[class*="equation"]','[class*="formula"]'
+      ].join(',');
+
+      summaryRoot.querySelectorAll(mathSelectors).forEach(element => {
+        element.style.setProperty('color', '#0b3654', 'important');
+        element.querySelectorAll('[style*="color"],font[color]').forEach(child => {
+          child.style.setProperty('color', '#0b3654', 'important');
+          child.removeAttribute('color');
+        });
+      });
+    }
+
+    async function renderSummaryMath() {
+      normalizePublicLinks();
+      normalizeEquationColors();
+      if (!window.MathJax?.typesetPromise) return;
+      try {
+        if (MathJax.typesetClear) MathJax.typesetClear([summaryRoot]);
+        await MathJax.typesetPromise([summaryRoot]);
+        normalizePublicLinks();
+        normalizeEquationColors();
+      } catch (error) {
+        console.warn('MathJax summary rendering:', error);
+      }
+    }
+
+    const observer = new MutationObserver(() => {
+      clearTimeout(renderTimer);
+      renderTimer = setTimeout(renderSummaryMath, 120);
+    });
+    observer.observe(summaryRoot, {childList:true, subtree:true});
+
+    window.addEventListener('load', () => setTimeout(renderSummaryMath, 250));
+
+    document.getElementById('print-summary').addEventListener('click', async () => {
+      await renderSummaryMath();
+      window.print();
+    });
+  </script>
+</body>
+</html>
