@@ -29,19 +29,13 @@
   const sectionTitle = (en, ar) => `<div class="section-title"><h2>${en}</h2><div class="ar" lang="ar" dir="rtl">${ar}</div></div>`;
 
   function pair(section) {
-    if (!section) return {en:null,ar:null}; const explicitEn = section.querySelector('.en');
-    const arNodes = [...section.querySelectorAll('.arbox,.ar,[lang="ar"],[dir="rtl"]')].filter(node => !node.parentElement?.closest('.arbox,.ar,[lang="ar"],[dir="rtl"]'));
-    let ar = null;
-    if (arNodes.length) {
-      ar = document.createElement('div');
-      arNodes.forEach(node => ar.appendChild(node.cloneNode(true)));
-    }
-    let en = explicitEn;
-    if (!en && section) {
-      en = section.cloneNode(true);
-      en.querySelectorAll('.ar,.arbox,[lang="ar"],[dir="rtl"]').forEach(node => node.remove());
-    }
-    return {en, ar};
+    if (!section) return {en:null,ar:null};
+    const arNodes=[...section.querySelectorAll('.arbox,.ar,[lang="ar"],[dir="rtl"]')].filter(node=>!node.parentElement?.closest('.arbox,.ar,[lang="ar"],[dir="rtl"]'));
+    const ar=document.createElement('div');
+    arNodes.forEach(node=>ar.appendChild(node.cloneNode(true)));
+    const en=section.cloneNode(true);
+    en.querySelectorAll('.arbox,.ar,[lang="ar"],[dir="rtl"]').forEach(node=>node.remove());
+    return {en,ar};
   }
 
   function heading(section, language = 'en') {
@@ -126,12 +120,13 @@
     const isArabic = language === 'ar';
     const title = heading(section, language) || fallbackTitle;
     const body = [
-      paragraphs(container, options.paragraphs ?? 2),
-      list(container, options.items ?? 5, options.ordered),
+      paragraphs(container, options.paragraphs ?? 99),
+      list(container, options.items ?? 99, options.ordered),
       callout(container),
-      scientificMedia(container, options.media ?? 2)
+      scientificMedia(container, options.media ?? 99)
     ].join('');
-    return `<div class="panel${isArabic ? ' ar' : ''}"${isArabic ? ' lang="ar" dir="rtl"' : ''}><h3>${title}</h3>${body || `<p>${isArabic ? 'لا يوجد نص عربي إضافي مستقل في هذا القسم.' : 'No additional standalone English text in this section.'}</p>`}</div>`;
+    if (!body.trim()) return '';
+    return `<div class="panel${isArabic ? ' ar' : ''}"${isArabic ? ' lang="ar" dir="rtl"' : ''}><h3>${title}</h3>${body}</div>`;
   }
 
   function renderError(message) {
@@ -182,7 +177,7 @@
       printableSections.forEach((section, index) => {
         const p = pair(section);
         const enTitle = heading(section,'en') || `Section ${index+1}`;
-        const arTitle = heading(section,'ar') || (type === 'lab' ? 'محتوى المهمة' : 'المحتوى');
+        const arTitle = heading(section,'ar') || '';
         pages.push(`
           <section class="page">
             ${sectionTitle(enTitle,arTitle)}
