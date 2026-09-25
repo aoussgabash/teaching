@@ -148,8 +148,8 @@
 
       const contentSections = allSections.filter(section => ![objectives, review, summary].includes(section) && !section.matches('.references') && !section.classList.contains('references'));
       const foundations = uniqueSections(contentSections.slice(0, 2));
-      const core = uniqueSections(contentSections.slice(2, 6));
-      const practice = uniqueSections([example, applications, challenges, ...contentSections.slice(6)]).slice(0, 3);
+      const core = uniqueSections(contentSections.slice(2, 10));
+      const practice = uniqueSections([example, applications, challenges, ...contentSections.slice(10)]).slice(0, type === 'lab' ? 6 : 5);
 
       document.title = `${kindEn} ${number} Summary - ${titleEn}`;
 
@@ -184,30 +184,36 @@
             <div class="panel"><h3>Learning Outcomes</h3>${list(objectivesPair.en, 7)}</div>
             <div class="panel ar" lang="ar" dir="rtl"><h3>مخرجات التعلم</h3>${list(objectivesPair.ar, 7)}</div>
           </div>
-          ${foundations.map(section => `<div style="height:14px"></div><div class="bilingual">${panel(section,'en','Foundation')}${panel(section,'ar','الأساس')}</div>`).join('')}
+          ${foundations.map(section => `<div style="height:14px"></div><div class="bilingual">${panel(section,'en','Foundation',{paragraphs:3,items:7,media:3})}${panel(section,'ar','الأساس',{paragraphs:3,items:7,media:3})}</div>`).join('')}
           ${pageNo(page++)}
         </section>`);
 
       if (core.length) {
-        pages.push(`
-          <section class="page">
-            ${sectionTitle('Key Concepts and Methods','المفاهيم والطرائق الأساسية')}
-            ${core.map(section => {
-              const p = pair(section);
-              const cardContent = `${cards(p.en,false,4)}${cards(p.ar,true,4)}`;
-              return `<div style="margin-bottom:16px"><div class="bilingual">${panel(section,'en','Key Concept',{paragraphs:1,items:4,media:2})}${panel(section,'ar','مفهوم أساسي',{paragraphs:1,items:4,media:2})}</div>${cardContent ? `<div class="concept-grid" style="margin-top:10px">${cardContent}</div>` : ''}</div>`;
-            }).join('')}
-            ${pageNo(page++)}
-          </section>`);
+        for (let i = 0; i < core.length; i += 2) {
+          const group = core.slice(i, i + 2);
+          pages.push(`
+            <section class="page">
+              ${sectionTitle(i === 0 ? 'Key Concepts and Methods' : 'Core Engineering Content',i === 0 ? 'المفاهيم والطرائق الأساسية' : 'المحتوى الهندسي الأساسي')}
+              ${group.map(section => {
+                const p = pair(section);
+                const cardContent = `${cards(p.en,false,6)}${cards(p.ar,true,6)}`;
+                return `<div style="margin-bottom:18px"><div class="bilingual">${panel(section,'en','Key Concept',{paragraphs:3,items:7,media:4})}${panel(section,'ar','مفهوم أساسي',{paragraphs:3,items:7,media:4})}</div>${cardContent ? `<div class="concept-grid" style="margin-top:10px">${cardContent}</div>` : ''}</div>`;
+              }).join('')}
+              ${pageNo(page++)}
+            </section>`);
+        }
       }
 
       if (practice.length) {
-        pages.push(`
-          <section class="page">
-            ${sectionTitle(type === 'lab' ? 'Laboratory Workflow and Results' : 'Applications and Worked Example',type === 'lab' ? 'سير عمل المختبر والنتائج' : 'التطبيقات والمثال المحلول')}
-            ${practice.map(section => `<div style="margin-bottom:16px" class="example"><div class="bilingual">${panel(section,'en',type === 'lab' ? 'Laboratory Step' : 'Application',{paragraphs:3,items:6,media:3})}${panel(section,'ar',type === 'lab' ? 'خطوة مخبرية' : 'تطبيق',{paragraphs:3,items:6,media:3})}</div></div>`).join('')}
-            ${pageNo(page++)}
-          </section>`);
+        for (let i = 0; i < practice.length; i += 2) {
+          const group = practice.slice(i, i + 2);
+          pages.push(`
+            <section class="page">
+              ${sectionTitle(type === 'lab' ? 'Laboratory Workflow, Code and Results' : 'Applications, Code and Engineering Interpretation',type === 'lab' ? 'سير عمل المختبر والكود والنتائج' : 'التطبيقات والكود والتفسير الهندسي')}
+              ${group.map(section => `<div style="margin-bottom:18px" class="example"><div class="bilingual">${panel(section,'en',type === 'lab' ? 'Laboratory Step' : 'Application',{paragraphs:4,items:8,media:5})}${panel(section,'ar',type === 'lab' ? 'خطوة مخبرية' : 'تطبيق',{paragraphs:4,items:8,media:5})}</div></div>`).join('')}
+              ${pageNo(page++)}
+            </section>`);
+        }
       }
 
       const summaryPair = pair(summary || contentSections.at(-1));
