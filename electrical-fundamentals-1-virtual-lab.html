@@ -81,21 +81,10 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
    drawViz(true,display);fb.className="mini-feedback ok";fb.innerHTML="✓ Measurement completed.<span class='ar'>تم القياس بنجاح.</span>";
  },true);
 });
-</script><script id="stable-session-switch">
-document.addEventListener("click",function(e){
- const card=e.target.closest("#cards .card"); if(!card)return;
- const cards=[...document.querySelectorAll("#cards .card")],i=cards.indexOf(card); if(i!==0&&i!==1)return;
- e.preventDefault();e.stopImmediatePropagation();
- cards.forEach(x=>x.classList.remove("active"));card.classList.add("active");
- const s1=document.getElementById("session1real"),s2=document.getElementById("kirchlab");
- if(s1){s1.classList.toggle("hidden",i!==0);s1.style.display=i===0?"":"none";}
- if(s2){s2.classList.toggle("hidden",i!==1);s2.style.display=i===1?"":"none";}
- (i===0?s1:s2)?.scrollIntoView({behavior:"smooth",block:"start"});
-},true);
 </script></head><body>
 <header><div class="container"><nav><b>⚡ Virtual Laboratory | المخبر الافتراضي</b><a href="electrical-fundamentals-1.html">← Course | المقرر</a><small style="color:var(--mut)">Updated 01.10.2026</small></nav></div></header>
 <main class="container"><section class="hero"><small style="color:var(--blue);font-weight:bold">ELECTRICAL ENGINEERING FUNDAMENTALS 1</small><h1>Interactive Virtual Laboratory</h1><h2 class="ar">المخبر الافتراضي التفاعلي</h2><p class="lead">Perform the practical session, connect the instruments, take measurements, record results, then verify your calculations.</p><p class="ar">نفّذ الجلسة العملية، صِل أجهزة القياس، خذ القراءات، سجّل النتائج، ثم تحقق من حساباتك.</p><div><b id="pt">Progress | التقدم: 0/6</b><div class="progress"><b id="pb"></b></div></div></section>
-<div class="remote-banner"><b>Remote Practical Laboratory · Session 1</b><span class="ar"><b>المخبر العملي الافتراضي · الجلسة 1</b></span><div>Designed from the semester laboratory note: components, resistor identification, Ohm's law, series/parallel connections and use of ammeter, voltmeter and ohmmeter.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</span></div><div class="cards" id="cards"></div>
+<div class="remote-banner"><b>Remote Practical Laboratory · Session 1</b><span class="ar"><b>المخبر العملي الافتراضي · الجلسة 1</b></span><div>Designed from the semester laboratory note: components, resistor identification, Ohm's law, series/parallel connections and use of ammeter, voltmeter and ohmmeter.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</span></div><div class="remote-banner" style="margin-top:16px"><b>Remote Practical Laboratory · Session 2</b><span class="ar"><b>المخبر العملي الافتراضي · الجلسة 2</b></span><div>Designed from the semester laboratory note: Kirchhoff’s voltage law (KVL) in a series circuit and Kirchhoff’s current law (KCL) in a parallel circuit, using R₁ = 680 Ω, R₂ = 470 Ω, R₃ = 330 Ω, R₄ = 220 Ω and a 12 V DC source.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: التحقق من قانون كيرشوف للجهد (KVL) في دارة تسلسلية وقانون كيرشوف للتيار (KCL) في دارة تفرعية، باستخدام R₁ = 680 Ω وR₂ = 470 Ω وR₃ = 330 Ω وR₄ = 220 Ω ومنبع مستمر 12 V.</span></div><div class="cards" id="cards"></div>
 <section class="lab">
 <div id="session1real"><h2>Remote Practical Session 1 · Basic Measurements</h2><h3 class="ar">الجلسة العملية الافتراضية 1 · القياسات الأساسية</h3><div class="session-plan"><h3>Session procedure | خطوات الجلسة</h3><span class="ar">اقرأ خطوات التجربة قبل البدء بالعمل.</span><div class="step" id="s1step1">1. Measure a resistor with the supply OFF.<span class="ar">1. قِس مقاومة مع فصل المنبع.</span></div><div class="step" id="s1step2">2. Set the source and measure voltage with the voltmeter in parallel.<span class="ar">2. اضبط المنبع وقِس الجهد بوصل الفولتميتر على التوازي.</span></div><div class="step" id="s1step3">3. Measure current with the ammeter in series.<span class="ar">3. قِس التيار بوصل الأميتر على التسلسل.</span></div></div>
 <p>This session reproduces the introductory work in the laboratory note before the later network theorems.</p><span class="ar">تحاكي هذه الجلسة العمل التمهيدي في النوطة قبل الانتقال إلى نظريات الدارات اللاحقة.</span>
@@ -212,7 +201,21 @@ document.addEventListener("click",function(e){
 <footer>© 2026 Dr.-Ing. Aouss Gabash | الدكتور المهندس أوس غباش<br>AG Academic Ecosystem | منظومة AG الأكاديمية · Syria | سوريا</footer>
 <script>
 ["fieldlab","caplab","thevlab","rclab","placeholder","coulomb"].forEach(id=>document.getElementById(id)?.classList.add("hidden"));document.getElementById("kirchlab")?.classList.add("hidden");document.getElementById("session1real")?.classList.remove("hidden");
-const ex=[["Basic Measurements · Remote Lab","القياسات الأساسية · المخبر عن بُعد"],["Kirchhoff’s Laws · KVL & KCL","قانونا كيرشوف · الجهد والتيار"],["Capacitors","السعات الكهربائية"],["Ohm & Kirchhoff Laws","قانون أوم وقانونا كيرشوف"],["Thévenin & Norton","ثيفينن ونورتن"],["RC Transient","الحالة العابرة RC"]];let done=JSON.parse(localStorage.getItem("ef1lab")||"[]");const cards=document.querySelector("#cards");ex.forEach((x,i)=>{let d=document.createElement("div");d.className="card "+(i===0?"active ":"")+(done.includes(i)?"done":"");d.innerHTML="<small>"+(i===0?"PRACTICAL SESSION 1 | الجلسة العملية 1":i===1?"PRACTICAL SESSION 2 | الجلسة العملية 2":"EXPERIMENT "+(i+1)+" | التجربة "+(i+1))+"</small><h3>"+x[0]+"</h3><div class=ar>"+x[1]+"</div>";d.onclick=()=>select(i,d);cards.appendChild(d)});function select(i,d){
+const ex=[["Basic Measurements · Remote Lab","القياسات الأساسية · المخبر عن بُعد"],["Kirchhoff’s Laws · KVL & KCL","قانونا كيرشوف · الجهد والتيار"],["Capacitors","السعات الكهربائية"],["Ohm & Kirchhoff Laws","قانون أوم وقانونا كيرشوف"],["Thévenin & Norton","ثيفينن ونورتن"],["RC Transient","الحالة العابرة RC"]];let done=JSON.parse(localStorage.getItem("ef1lab")||"[]");const cards=document.querySelector("#cards");ex.forEach((x,i)=>{let d=document.createElement("div");d.className="card "+(i===0?"active ":"")+(done.includes(i)?"done":"");d.innerHTML="<small>"+(i===0?"PRACTICAL SESSION 1 | الجلسة العملية 1":i===1?"PRACTICAL SESSION 2 | الجلسة العملية 2":"EXPERIMENT "+(i+1)+" | التجربة "+(i+1))+"</small><h3>"+x[0]+"</h3><div class=ar>"+x[1]+"</div>";d.onclick=()=>select(i,d);cards.appendChild(d)});
+const sessionCards=document.querySelectorAll("#cards .card");
+if(sessionCards[1]) sessionCards[1].onclick=function(){
+ document.querySelectorAll("#cards .card").forEach(x=>x.classList.remove("active"));this.classList.add("active");
+ const s1=document.getElementById("session1real"),s2=document.getElementById("kirchlab");
+ if(s1){s1.classList.add("hidden");s1.style.display="none"}
+ if(s2){s2.classList.remove("hidden");s2.style.setProperty("display","block","important");s2.scrollIntoView({behavior:"smooth",block:"start"})}
+};
+if(sessionCards[0]) sessionCards[0].onclick=function(){
+ document.querySelectorAll("#cards .card").forEach(x=>x.classList.remove("active"));this.classList.add("active");
+ const s1=document.getElementById("session1real"),s2=document.getElementById("kirchlab");
+ if(s2){s2.classList.add("hidden");s2.style.display="none"}
+ if(s1){s1.classList.remove("hidden");s1.style.setProperty("display","block","important");s1.scrollIntoView({behavior:"smooth",block:"start"})}
+};
+function select(i,d){
 document.querySelectorAll(".card").forEach(x=>x.classList.remove("active"));d.classList.add("active");
 document.getElementById("coulomb").style.display=i===0?"none":"none";
 document.getElementById("session1real").classList.toggle("hidden",i!==0);
