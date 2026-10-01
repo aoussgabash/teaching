@@ -169,18 +169,15 @@ const oldCompClicks=[...document.querySelectorAll(".component")];oldCompClicks.f
 const baseMeasure=s1measure.onclick;s1measure.onclick=()=>{if(s1mode.value==="ohm"&&identifiedR!==s1R){s1msg.className="feedback bad";s1msg.textContent="First identify the resistor from its color bands. | حدّد قيمة المقاومة من ألوانها أولاً.";return}baseMeasure();if(s1msg.classList.contains("ok")&&s1mode.value==="ohm")phaseB.classList.add("ok");if(s1msg.classList.contains("ok")&&(s1mode.value==="v"||s1mode.value==="a")&&s1uo.value&&s1io.value)phaseC.classList.add("ok")};
 loadColorTask(680);
 
-// Guided introductory workflow: browse in order, no manual probe puzzle.
-function showGuide(n){g1.hidden=n!==1;g2.hidden=n!==2;g3.hidden=n!==3;guideCount.textContent=(n===1?"Skill 1/3 · Resistance | المهارة 1/3 · المقاومة":n===2?"Skill 2/3 · Voltage | المهارة 2/3 · الجهد":"Skill 3/3 · Current | المهارة 3/3 · التيار");if(n===1)s1mode.value="ohm";if(n===2)s1mode.value="v";if(n===3)s1mode.value="a";wiring()}
-toG2.onclick=()=>{if(!s1R){s1selected.innerHTML="Choose one resistor first.<span class='ar'>اختر مقاومة واحدة أولاً.</span>";return}showGuide(2);if(!s1On)s1power.click()};
-toG3.onclick=()=>{showGuide(3)};
-guidedMeasure.onclick=()=>{let m=s1mode.value;if(m==="ohm"){redNode="rleft";blackNode="rright";s1Conn="parallel";if(s1On)s1power.click()}else if(m==="v"){redNode="rleft";blackNode="rright";s1Conn="parallel";if(!s1On)s1power.click()}else if(m==="a"){redNode="source+";blackNode="rleft";s1Conn="series";if(!s1On)s1power.click()}wiring();s1measure.click()};
-restartGuide.onclick=()=>{s1mode.value="off";redNode=blackNode="";s1Conn="";s1meter.textContent="OL";showGuide(1)};
-showGuide(1);
-
 // Visual real multimeter follows the selected measurement skill.
-function realMeter(mode){rmCom.classList.add("used");rmVO.classList.remove("used");rmMA.classList.remove("used");if(mode==="ohm"){rmMode.textContent="Ω";rmDial.style.setProperty("--dialrot","-55deg");rmVO.classList.add("used");rmCaption.innerHTML="Resistance measurement · source OFF<span class='ar'>قياس المقاومة · المنبع OFF</span>"}else if(mode==="v"){rmMode.textContent="DC V";rmDial.style.setProperty("--dialrot","0deg");rmVO.classList.add("used");rmCaption.innerHTML="Voltage measurement · probes across the resistor<span class='ar'>قياس الجهد · المجسان على طرفي المقاومة</span>"}else if(mode==="a"){rmMode.textContent="DC mA";rmDial.style.setProperty("--dialrot","55deg");rmMA.classList.add("used");rmCaption.innerHTML="Current measurement · meter in the circuit path<span class='ar'>قياس التيار · الجهاز ضمن مسار الدارة</span>"}rmScreen.textContent=s1meter.textContent}
-const oldShowGuide=showGuide;showGuide=n=>{oldShowGuide(n);realMeter(n===1?"ohm":n===2?"v":"a")};
-const oldGuidedMeasure=guidedMeasure.onclick;guidedMeasure.onclick=()=>{oldGuidedMeasure();setTimeout(()=>rmScreen.textContent=s1meter.textContent,0)};
+function realMeter(mode){
+ const com=document.getElementById("rmCom"),vo=document.getElementById("rmVO"),ma=document.getElementById("rmMA"),dial=document.getElementById("rmDial"),label=document.getElementById("rmMode"),cap=document.getElementById("rmCaption"),screen=document.getElementById("rmScreen");
+ if(!com||!vo||!ma)return;com.classList.add("used");vo.classList.remove("used");ma.classList.remove("used");
+ if(mode==="ohm"){label.textContent="Ω";dial.style.setProperty("--dialrot","-55deg");vo.classList.add("used");cap.innerHTML="Resistance measurement · source OFF<span class='ar'>قياس المقاومة · المنبع OFF</span>"}
+ else if(mode==="v"){label.textContent="DC V";dial.style.setProperty("--dialrot","0deg");vo.classList.add("used");cap.innerHTML="Voltage measurement · probes across the resistor<span class='ar'>قياس الجهد · المجسان على طرفي المقاومة</span>"}
+ else if(mode==="a"){label.textContent="DC mA";dial.style.setProperty("--dialrot","55deg");ma.classList.add("used");cap.innerHTML="Current measurement · meter in the circuit path<span class='ar'>قياس التيار · الجهاز ضمن مسار الدارة</span>"}
+ if(screen&&document.getElementById("s1meter"))screen.textContent=document.getElementById("s1meter").textContent;
+}
 realMeter("ohm");
 
 // Student-operable multimeter controls
@@ -227,5 +224,5 @@ if(startBtn) startBtn.addEventListener("click",function(){
    if(fb){fb.className="mini-feedback bad";fb.textContent="Please complete all selections before measurement. | أكمل جميع الاختيارات قبل بدء القياس."}
  }
 });
-if(typeof guidedMeasure!=="undefined"&&guidedMeasure) guidedMeasure.onclick=realisticMeasure;
+
 </script></body></html>
