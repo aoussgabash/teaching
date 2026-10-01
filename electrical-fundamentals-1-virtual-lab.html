@@ -93,7 +93,12 @@ window.addEventListener("DOMContentLoaded",function(){
   },true);
  });
 });
-</script></head><body>
+</script><style id="session2-native-nav">
+#kirchlab:target{display:block!important}
+#kirchlab:target~*{}
+body:has(#kirchlab:target) #session1real{display:none!important}
+#cards a.card{display:block;color:inherit;text-decoration:none}
+</style></head><body>
 <header><div class="container"><nav><b>⚡ Virtual Laboratory | المخبر الافتراضي</b><a href="electrical-fundamentals-1.html">← Course | المقرر</a><small style="color:var(--mut)">Updated 01.10.2026</small></nav></div></header>
 <main class="container"><section class="hero"><small style="color:var(--blue);font-weight:bold">ELECTRICAL ENGINEERING FUNDAMENTALS 1</small><h1>Interactive Virtual Laboratory</h1><h2 class="ar">المخبر الافتراضي التفاعلي</h2><p class="lead">Perform the practical session, connect the instruments, take measurements, record results, then verify your calculations.</p><p class="ar">نفّذ الجلسة العملية، صِل أجهزة القياس، خذ القراءات، سجّل النتائج، ثم تحقق من حساباتك.</p><div><b id="pt">Progress | التقدم: 0/6</b><div class="progress"><b id="pb"></b></div></div></section>
 <div class="remote-banner"><b>Remote Practical Laboratory · Session 1</b><span class="ar"><b>المخبر العملي الافتراضي · الجلسة 1</b></span><div>Designed from the semester laboratory note: components, resistor identification, Ohm's law, series/parallel connections and use of ammeter, voltmeter and ohmmeter.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</span></div><div class="cards" id="cards"></div>
@@ -369,5 +374,14 @@ window.addEventListener("DOMContentLoaded",function(){
   const err=Math.abs(v-12)/12*100; m.className="feedback "+(err<=2?"ok":"bad");
   m.innerHTML=(err<=2?"✓ KVL verified":"✗ Check your sum")+" — Error = "+err.toFixed(2)+"%<span class='ar'>"+(err<=2?"تم التحقق من قانون كيرشوف للجهد":"راجع مجموع الجهود")+" — نسبة الخطأ = "+err.toFixed(2)+"%</span>";
  },true);
+});
+</script><script id="session2-native-link">
+window.addEventListener("load",function(){
+ const cards=document.querySelectorAll("#cards .card");
+ if(cards[1] && cards[1].tagName!=="A"){
+   const a=document.createElement("a");a.className=cards[1].className;a.href="#kirchlab";a.innerHTML=cards[1].innerHTML;
+   cards[1].replaceWith(a);
+ }
+ if(location.hash==="#kirchlab"){document.getElementById("kirchlab")?.classList.remove("hidden");}
 });
 </script></body></html>
