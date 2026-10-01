@@ -195,6 +195,10 @@ const prevGM=guidedMeasure.onclick;guidedMeasure.onclick=()=>{let expected=stude
 const actualRMap={680:681.2,470:469.4,330:330.8,220:219.6};
 function actualR(){return actualRMap[s1R]||s1R}
 function realisticMeasure(){
+ studentMode=document.getElementById("studentModeSelect").value;
+ studentJack=document.getElementById("studentJackSelect").value;
+ redNode=document.getElementById("studentRedSelect").value;
+ blackNode=document.getElementById("studentBlackSelect").value;
  if(!s1R){studentSetup.className="mini-feedback bad";studentSetup.textContent="Choose a resistor and place it on the bench first. | اختر مقاومة وضعها على طاولة العمل أولاً.";return}
  if(!studentMode){studentSetup.className="mini-feedback bad";studentSetup.textContent="Choose the meter mode first. | اختر وضع جهاز القياس أولاً.";return}
  let expectedJack=studentMode==="a"?"ma":"vo";
@@ -216,5 +220,12 @@ function realisticMeasure(){
  }
  studentSetup.className="mini-feedback ok";studentSetup.textContent="✓ Measurement completed. Record the reading and continue. | تم القياس بنجاح. سجّل القراءة ثم تابع.";
 }
-guidedMeasure.onclick=realisticMeasure;startMeasurementBtn.onclick=realisticMeasure;
+const startBtn=document.getElementById("startMeasurementBtn");
+if(startBtn) startBtn.addEventListener("click",function(){
+ try{realisticMeasure()}catch(e){
+   const fb=document.getElementById("studentSetup");
+   if(fb){fb.className="mini-feedback bad";fb.textContent="Please complete all selections before measurement. | أكمل جميع الاختيارات قبل بدء القياس."}
+ }
+});
+if(typeof guidedMeasure!=="undefined"&&guidedMeasure) guidedMeasure.onclick=realisticMeasure;
 </script></body></html>
