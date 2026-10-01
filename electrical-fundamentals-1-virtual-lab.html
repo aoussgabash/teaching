@@ -74,7 +74,7 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
      const series=(pair.has("source+")&&pair.has("rleft"))||(pair.has("rright")&&pair.has("source-"));
      if(!series)return fail("Ammeter connection is not in series.<span class='ar'>توصيل الأميتر ليس على التسلسل.</span>");
      const setV=Number($("s1v")?.value||10),v=1000*Math.max(0,setV-.02)/(actual[chosenR]||chosenR);display=v.toFixed(2)+" mA";
-     if($("s1io"))$("s1io").value=v.toFixed(2);out.innerHTML="<b>"+display+"</b><span class='ar'>قراءة الأميتر</span>";
+     if($("s1io"))$("s1io").value=v.toFixed(2);out.innerHTML="<b>"+display+"</b><span class='ar'>قراءة الأميتر</span><div style="margin-top:12px;font-size:.92rem;line-height:1.7">I<sub>theoretical</sub> = U / R &nbsp;&nbsp; | &nbsp;&nbsp; Error (%) = |I<sub>measured</sub> − I<sub>theoretical</sub>| / I<sub>theoretical</sub> × 100<span class='ar'>I<sub>النظري</sub> = U / R &nbsp;&nbsp; | &nbsp;&nbsp; الخطأ (%) = |I<sub>المقاس</sub> − I<sub>النظري</sub>| / I<sub>النظري</sub> × 100</span></div>";
    }
    if($("rmScreen"))$("rmScreen").textContent=display;
    if($("s1meter"))$("s1meter").textContent=display;
