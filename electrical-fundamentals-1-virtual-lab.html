@@ -132,40 +132,27 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
 <div class="result"><b>Procedure from the laboratory note | خطوات العمل حسب النوتة</b><span class="ar">أولاً: صِل المقاومات على التسلسل وتحقق من قانون كيرشوف للجهد. ثانياً: صِل المقاومات على التوازي وتحقق من قانون كيرشوف للتيار. سجّل القيم المقاسة وقارنها بالقيم المحسوبة ثم احسب نسبة الخطأ.</span><div style="margin-top:8px">1. Series circuit → measure I and U₁, U₂, U₃, U₄ → verify U = ΣUᵢ.<br>2. Parallel circuit → measure I and I₁, I₂, I₃, I₄ → verify I = ΣIᵢ.<br>3. Compare measured and calculated values and determine percentage error.</div></div>
 <div class="formula"><b>Note values | قيم النوتة:</b> E = 12 V · R₁ = 680 Ω · R₂ = 470 Ω · R₃ = 330 Ω · R₄ = 220 Ω<br>KVL: U = U₁ + U₂ + U₃ + U₄ &nbsp; · &nbsp; KCL: I = I₁ + I₂ + I₃ + I₄</div>
 <div class="result" id="s2kvl" style="margin-top:14px">
-<b>Part A · KVL — Series circuit | الجزء A · قانون الجهد — دارة تسلسلية</b>
-<span class="ar">ابنِ الدارة التسلسلية حسب النوتة: E = 12 V، والمقاومات R₁ = 680 Ω، R₂ = 470 Ω، R₃ = 330 Ω، R₄ = 220 Ω. قِس التيار الكلي ثم هبوط الجهد على كل مقاومة.</span>
-<div style="margin-top:10px">Build the note circuit: E = 12 V; R₁ = 680 Ω, R₂ = 470 Ω, R₃ = 330 Ω, R₄ = 220 Ω. Measure total current and each resistor voltage drop.</div>
-<div class="formula" style="margin-top:12px">R<sub>eq</sub> = R₁ + R₂ + R₃ + R₄ &nbsp; · &nbsp; I = E/R<sub>eq</sub><br>E = U₁ + U₂ + U₃ + U₄</div>
-<label style="display:block;margin-top:12px">Circuit connection | توصيل الدارة
-<select id="s2seriesConn" style="width:100%;padding:10px;background:#06121f;color:white;border:1px solid var(--line);border-radius:9px">
-<option value="">Choose | اختر</option>
-<option value="series">E+ → R₁ → R₂ → R₃ → R₄ → E−</option>
-<option value="parallel">All resistors in parallel | المقاومات على التوازي</option>
-<option value="open">Open circuit | دارة مفتوحة</option>
-</select></label>
-<button class="btn" id="s2build">Build & measure | ابنِ الدارة وقِس</button>
-<div id="s2kvlviz" style="display:none;margin-top:14px">
-<svg viewBox="0 0 700 250" style="width:100%;background:#071522;border:1px solid #28506c;border-radius:12px">
-<text x="350" y="28" text-anchor="middle" fill="#e5eef7" font-size="18">KVL · Series Circuit | دارة تسلسلية</text>
-<line x1="85" y1="75" x2="145" y2="75" stroke="#ef3340" stroke-width="6"/>
-<rect x="145" y="55" width="95" height="40" rx="7" fill="#dcbf74"/><text x="192" y="81" text-anchor="middle">R₁ 680Ω</text>
-<line x1="240" y1="75" x2="270" y2="75" stroke="#d1d5db" stroke-width="5"/>
-<rect x="270" y="55" width="95" height="40" rx="7" fill="#dcbf74"/><text x="317" y="81" text-anchor="middle">R₂ 470Ω</text>
-<line x1="365" y1="75" x2="395" y2="75" stroke="#d1d5db" stroke-width="5"/>
-<rect x="395" y="55" width="95" height="40" rx="7" fill="#dcbf74"/><text x="442" y="81" text-anchor="middle">R₃ 330Ω</text>
-<line x1="490" y1="75" x2="520" y2="75" stroke="#d1d5db" stroke-width="5"/>
-<rect x="520" y="55" width="95" height="40" rx="7" fill="#dcbf74"/><text x="567" y="81" text-anchor="middle">R₄ 220Ω</text>
-<path d="M615 75 C655 75 655 205 610 205 L85 205 C45 205 45 75 85 75" fill="none" stroke="#d1d5db" stroke-width="5"/>
-<rect x="300" y="172" width="100" height="55" rx="8" fill="#d9dde1"/><text x="350" y="195" text-anchor="middle" fill="#111">DC SOURCE</text><text x="350" y="216" text-anchor="middle" fill="#111">12 V</text>
-<text x="68" y="68" fill="#ef3340" font-size="22">+</text><text x="68" y="215" fill="#e5eef7" font-size="22">−</text>
+<h3>Part A · KVL — Series circuit</h3><h3 class="ar">الجزء A · قانون كيرشوف للجهد — الدارة التسلسلية</h3>
+<p>Objective: build the four-resistor series circuit from the laboratory note, measure the same current through the circuit, measure each voltage drop, and verify Kirchhoff’s voltage law.</p>
+<p class="ar">الهدف: بناء دارة المقاومات الأربع على التسلسل كما في النوتة، وقياس التيار المار في الدارة، ثم قياس هبوط الجهد على كل مقاومة والتحقق من قانون كيرشوف للجهد.</p>
+<div class="formula">E = 12 V &nbsp; · &nbsp; R₁ = 680 Ω &nbsp; · &nbsp; R₂ = 470 Ω &nbsp; · &nbsp; R₃ = 330 Ω &nbsp; · &nbsp; R₄ = 220 Ω<br>R<sub>eq</sub> = ΣR &nbsp; · &nbsp; I = E/R<sub>eq</sub> &nbsp; · &nbsp; E = U₁+U₂+U₃+U₄</div>
+<div style="display:grid;gap:10px;margin-top:14px">
+<label>1. Circuit topology | شكل التوصيل<select id="s2top" style="width:100%;padding:10px"><option value="">Choose | اختر</option><option value="series">Series R₁→R₂→R₃→R₄ | تسلسل</option><option value="parallel">Parallel | تفرع</option><option value="open">Open | مفتوحة</option></select></label>
+<label>2. Meter mode | وضع الملتيميتر<select id="s2mode" style="width:100%;padding:10px"><option value="">Choose | اختر</option><option value="a">DC mA</option><option value="v">DC V</option></select></label>
+<label>3. Measurement point | نقطة القياس<select id="s2point" style="width:100%;padding:10px"><option value="">Choose | اختر</option><option value="current">Total current I | التيار الكلي</option><option value="u1">Across R₁ | على R₁</option><option value="u2">Across R₂ | على R₂</option><option value="u3">Across R₃ | على R₃</option><option value="u4">Across R₄ | على R₄</option></select></label>
+<button class="btn" id="s2measure">START MEASUREMENT | ابدأ القياس</button></div>
+<div id="s2bench" style="display:none;margin-top:14px">
+<svg viewBox="0 0 720 310" style="width:100%;background:#061522;border:1px solid #28506c;border-radius:14px">
+<text x="360" y="28" text-anchor="middle" fill="#e5eef7" font-size="18">Series KVL Bench | منصة تجربة KVL</text>
+<rect x="30" y="195" width="120" height="75" rx="10" fill="#d8dde2"/><text x="90" y="220" text-anchor="middle" fill="#111">DC SOURCE</text><text x="90" y="246" text-anchor="middle" fill="#111">12 V</text><circle cx="140" cy="255" r="6" fill="#ef3340"/><circle cx="40" cy="255" r="6" fill="#111"/>
+<rect x="540" y="175" width="145" height="105" rx="10" fill="#343a40" stroke="#8795a1" stroke-width="4"/><text x="612" y="200" text-anchor="middle" fill="white">MULTIMETER</text><rect x="565" y="212" width="95" height="34" rx="5" fill="#bdd6aa"/><text id="s2display" x="612" y="234" text-anchor="middle" fill="#111">—</text>
+<g font-size="13"><rect x="175" y="80" width="105" height="45" rx="7" fill="#dfc174"/><text x="227" y="108" text-anchor="middle">R₁ 680 Ω</text><rect x="305" y="80" width="105" height="45" rx="7" fill="#dfc174"/><text x="357" y="108" text-anchor="middle">R₂ 470 Ω</text><rect x="435" y="80" width="105" height="45" rx="7" fill="#dfc174"/><text x="487" y="108" text-anchor="middle">R₃ 330 Ω</text><rect x="565" y="80" width="105" height="45" rx="7" fill="#dfc174"/><text x="617" y="108" text-anchor="middle">R₄ 220 Ω</text></g>
+<g id="s2wires" fill="none" stroke-linecap="round"></g>
 </svg></div>
-<div id="s2kvlmsg" class="feedback"></div>
-<div id="s2kvldata" style="display:none">
-<table style="width:100%;margin-top:14px"><tr><th>I (mA)</th><th>U₁ (V)</th><th>U₂ (V)</th><th>U₃ (V)</th><th>U₄ (V)</th></tr>
-<tr><td id="s2I">—</td><td id="s2U1">—</td><td id="s2U2">—</td><td id="s2U3">—</td><td id="s2U4">—</td></tr></table>
-<div class="answer"><input id="s2sum" type="number" step="0.01" placeholder="U₁+U₂+U₃+U₄ (V)"><button class="btn" id="s2verify">Verify KVL | تحقق من KVL</button></div>
-<div id="s2verifymsg" class="feedback"></div>
-</div></div><div class="row"><div class="controls"><p>This session follows the laboratory note: first verify KVL with the four resistors in series, then verify KCL with the same resistors in parallel.<span class="ar">تتبع هذه الجلسة النوتة العملية: تحقق أولاً من قانون كيرشوف للجهد باستخدام المقاومات الأربع على التسلسل، ثم تحقق من قانون كيرشوف للتيار باستخدامها على التوازي.</span></p>
+<div id="s2msg" class="feedback"></div>
+<div id="s2table" style="display:none"><table style="width:100%;margin-top:14px"><tr><th>I (mA)</th><th>U₁ (V)</th><th>U₂ (V)</th><th>U₃ (V)</th><th>U₄ (V)</th><th>ΣU (V)</th></tr><tr><td id="s2I">—</td><td id="s2U1">—</td><td id="s2U2">—</td><td id="s2U3">—</td><td id="s2U4">—</td><td id="s2US">—</td></tr></table>
+<div class="answer"><input id="s2studentSum" type="number" step="0.01" placeholder="Your ΣU (V) | مجموع الجهود"><button class="btn" id="s2verify">Verify KVL | تحقق من KVL</button></div><div id="s2verifymsg" class="feedback"></div></div>
+</div><div class="row"><div class="controls"><p>This session follows the laboratory note: first verify KVL with the four resistors in series, then verify KCL with the same resistors in parallel.<span class="ar">تتبع هذه الجلسة النوتة العملية: تحقق أولاً من قانون كيرشوف للجهد باستخدام المقاومات الأربع على التسلسل، ثم تحقق من قانون كيرشوف للتيار باستخدامها على التوازي.</span></p>
 <label>Vₛ (V): <span class="value" id="k_vsv">12</span><input id="k_vs" type="range" min="3" max="30" value="12"></label>
 <label>R₁ (Ω): <span class="value" id="k_r1v">100</span><input id="k_r1" type="range" min="10" max="500" step="10" value="100"></label>
 <label>R₂ (Ω): <span class="value" id="k_r2v">200</span><input id="k_r2" type="range" min="10" max="500" step="10" value="200"></label>
@@ -342,22 +329,28 @@ if(startBtn) startBtn.addEventListener("click",function(){
  }
 });
 
-</script><script>
+</script><script id="s2-kvl-controller">
 window.addEventListener("DOMContentLoaded",function(){
- const q=id=>document.getElementById(id), b=q("s2build"); if(!b)return;
- b.addEventListener("click",function(){
-  const c=q("s2seriesConn").value, msg=q("s2kvlmsg"), viz=q("s2kvlviz"), data=q("s2kvldata");
-  viz.style.display="block";
-  if(c!=="series"){data.style.display="none";msg.className="feedback bad";msg.innerHTML="✗ Incorrect circuit. KVL test requires one closed series path.<span class='ar'>التوصيل غير صحيح. تجربة KVL تتطلب مساراً تسلسلياً مغلقاً واحداً.</span>";return}
-  const E=12, R=[680,470,330,220], Req=R.reduce((a,x)=>a+x,0), I=E/Req;
-  const u=R.map(x=>I*x);
-  q("s2I").textContent=(I*1000).toFixed(2); ["s2U1","s2U2","s2U3","s2U4"].forEach((id,i)=>q(id).textContent=u[i].toFixed(2));
-  data.style.display="block";msg.className="feedback ok";msg.innerHTML="✓ Correct series circuit. Measurements are ready.<span class='ar'>الدارة التسلسلية صحيحة. أصبحت القياسات جاهزة.</span>";
- },true);
- q("s2verify").addEventListener("click",function(){
-  const v=parseFloat(q("s2sum").value), m=q("s2verifymsg"); if(!Number.isFinite(v)){m.className="feedback bad";m.innerHTML="Enter the sum of the four measured voltages.<span class='ar'>أدخل مجموع الجهود الأربعة المقاسة.</span>";return}
-  const err=Math.abs(v-12)/12*100; m.className="feedback "+(err<=2?"ok":"bad");
-  m.innerHTML=(err<=2?"✓ KVL verified":"✗ Check your sum")+" — Error = "+err.toFixed(2)+"%<span class='ar'>"+(err<=2?"تم التحقق من قانون كيرشوف للجهد":"راجع مجموع الجهود")+" — نسبة الخطأ = "+err.toFixed(2)+"%</span>";
- },true);
+ const q=id=>document.getElementById(id),btn=q("s2measure");if(!btn)return;
+ const R=[680,470,330,220],E=12,Req=1700,I=E/Req,U=R.map(r=>I*r),vals={current:I*1000,u1:U[0],u2:U[1],u3:U[2],u4:U[3]};
+ const measured={};
+ function draw(point,ok){
+  q("s2bench").style.display="block";const g=q("s2wires");g.innerHTML="";
+  const p=(d,c,w=6)=>g.insertAdjacentHTML("beforeend",'<path d="'+d+'" stroke="'+c+'" stroke-width="'+w+'"/>');
+  p("M140 255 C150 150 160 103 175 103","#ef3340");p("M280 103 L305 103 M410 103 L435 103 M540 103 L565 103","#cbd5e1",5);p("M670 103 C700 110 700 290 40 255","#171717",6);
+  if(point==="current"){p("M140 255 C300 300 500 300 665 255","#ef3340");p("M555 255 C500 285 300 285 175 103","#171717")}
+  if(/^u[1-4]$/.test(point)){const n=+point[1]-1,x1=[175,305,435,565][n],x2=x1+105;p("M665 255 C650 155 "+x2+" 155 "+x2+" 125","#ef3340");p("M555 255 C500 150 "+x1+" 150 "+x1+" 125","#171717")}
+ }
+ btn.onclick=function(){
+  const top=q("s2top").value,mode=q("s2mode").value,point=q("s2point").value,m=q("s2msg");draw(point,false);
+  if(top!=="series"){m.className="feedback bad";m.innerHTML="✗ Build one closed series path first.<span class='ar'>ابنِ أولاً مساراً تسلسلياً مغلقاً واحداً.</span>";return}
+  const need=point==="current"?"a":"v";
+  if(!point||mode!==need){m.className="feedback bad";m.innerHTML="✗ Meter mode does not match the selected measurement.<span class='ar'>وضع الملتيميتر لا يناسب القياس المختار.</span>";return}
+  const v=vals[point],display=point==="current"?v.toFixed(2)+" mA":v.toFixed(2)+" V";q("s2display").textContent=display;measured[point]=v;
+  if(point==="current")q("s2I").textContent=v.toFixed(2);else q("s2"+point.toUpperCase()).textContent=v.toFixed(2);
+  m.className="feedback ok";m.innerHTML="✓ Correct measurement: "+display+"<span class='ar'>قياس صحيح: "+display+"</span>";
+  if(Object.keys(measured).length===5){q("s2table").style.display="block";q("s2US").textContent=U.reduce((a,b)=>a+b,0).toFixed(2)}
+ };
+ q("s2verify").onclick=function(){const v=parseFloat(q("s2studentSum").value),m=q("s2verifymsg");if(!Number.isFinite(v)){m.className="feedback bad";m.innerHTML="Enter ΣU first.<span class='ar'>أدخل مجموع الجهود أولاً.</span>";return}const er=Math.abs(v-E)/E*100;m.className="feedback "+(er<=2?"ok":"bad");m.innerHTML=(er<=2?"✓ KVL verified":"✗ Recheck the voltage sum")+" — Error = "+er.toFixed(2)+"%<span class='ar'>"+(er<=2?"تم التحقق من KVL":"راجع مجموع الجهود")+" — نسبة الخطأ = "+er.toFixed(2)+"%</span>"};
 });
 </script></body></html>
