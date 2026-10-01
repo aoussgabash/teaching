@@ -81,7 +81,11 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
    drawViz(true,display);fb.className="mini-feedback ok";fb.innerHTML="✓ Measurement completed.<span class='ar'>تم القياس بنجاح.</span>";
  },true);
 });
-</script></head><body>
+</script><style id="native-session2-fix">
+#kirchlab:target{display:block!important;visibility:visible!important;height:auto!important;opacity:1!important}
+body:has(#kirchlab:target) #session1real{display:none!important}
+.session-native-link{display:block;margin-top:12px;padding:12px 14px;border:1px solid #19bdf2;border-radius:10px;text-align:center;font-weight:700;color:#7ddcff!important;text-decoration:none}
+</style></head><body>
 <header><div class="container"><nav><b>⚡ Virtual Laboratory | المخبر الافتراضي</b><a href="electrical-fundamentals-1.html">← Course | المقرر</a><small style="color:var(--mut)">Updated 01.10.2026</small></nav></div></header>
 <main class="container"><section class="hero"><small style="color:var(--blue);font-weight:bold">ELECTRICAL ENGINEERING FUNDAMENTALS 1</small><h1>Interactive Virtual Laboratory</h1><h2 class="ar">المخبر الافتراضي التفاعلي</h2><p class="lead">Perform the practical session, connect the instruments, take measurements, record results, then verify your calculations.</p><p class="ar">نفّذ الجلسة العملية، صِل أجهزة القياس، خذ القراءات، سجّل النتائج، ثم تحقق من حساباتك.</p><div><b id="pt">Progress | التقدم: 0/6</b><div class="progress"><b id="pb"></b></div></div></section>
 <div class="remote-banner"><b>Remote Practical Laboratory · Session 1</b><span class="ar"><b>المخبر العملي الافتراضي · الجلسة 1</b></span><div>Designed from the semester laboratory note: components, resistor identification, Ohm's law, series/parallel connections and use of ammeter, voltmeter and ohmmeter.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</span></div><div class="cards" id="cards"></div>
@@ -189,7 +193,7 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
 <script>
 ["fieldlab","caplab","thevlab","rclab","placeholder","coulomb"].forEach(id=>document.getElementById(id)?.classList.add("hidden"));document.getElementById("kirchlab")?.classList.add("hidden");document.getElementById("session1real")?.classList.remove("hidden");
 const ex=[["Basic Measurements · Remote Lab","القياسات الأساسية · المخبر عن بُعد"],["Kirchhoff’s Laws · KVL & KCL","قانونا كيرشوف · الجهد والتيار"],["Capacitors","السعات الكهربائية"],["Ohm & Kirchhoff Laws","قانون أوم وقانونا كيرشوف"],["Thévenin & Norton","ثيفينن ونورتن"],["RC Transient","الحالة العابرة RC"]];let done=JSON.parse(localStorage.getItem("ef1lab")||"[]");const cards=document.querySelector("#cards");ex.forEach((x,i)=>{let d=document.createElement("div");d.className="card "+(i===0?"active ":"")+(done.includes(i)?"done":"");
-if(i===1){let info=document.createElement("div");info.className="remote-banner";info.style.marginTop="16px";info.innerHTML="<b>Remote Practical Laboratory · Session 2</b><span class='ar'><b>المخبر العملي الافتراضي · الجلسة 2</b></span><div>Kirchhoff’s laws laboratory: first KVL in a series circuit, then KCL in a parallel circuit. Values from the laboratory note: 12 V; R₁=680 Ω, R₂=470 Ω, R₃=330 Ω, R₄=220 Ω.</div><span class='ar'>مخبر قانوني كيرشوف: أولاً KVL في دارة تسلسلية، ثم KCL في دارة تفرعية. قيم النوتة: 12 V؛ R₁=680 Ω، R₂=470 Ω، R₃=330 Ω، R₄=220 Ω.</span>";cards.appendChild(info)}d.innerHTML="<small>"+(i===0?"PRACTICAL SESSION 1 | الجلسة العملية 1":i===1?"PRACTICAL SESSION 2 | الجلسة العملية 2":"EXPERIMENT "+(i+1)+" | التجربة "+(i+1))+"</small><h3>"+x[0]+"</h3><div class=ar>"+x[1]+"</div>";d.onclick=()=>select(i,d);cards.appendChild(d)});
+if(i===1){let info=document.createElement("div");info.className="remote-banner";info.style.marginTop="16px";info.innerHTML="<b>Remote Practical Laboratory · Session 2</b><span class='ar'><b>المخبر العملي الافتراضي · الجلسة 2</b></span><div>Kirchhoff’s laws laboratory: first KVL in a series circuit, then KCL in a parallel circuit. Values from the laboratory note: 12 V; R₁=680 Ω, R₂=470 Ω, R₃=330 Ω, R₄=220 Ω.</div><span class='ar'>مخبر قانوني كيرشوف: أولاً KVL في دارة تسلسلية، ثم KCL في دارة تفرعية. قيم النوتة: 12 V؛ R₁=680 Ω، R₂=470 Ω، R₃=330 Ω، R₄=220 Ω.</span>";cards.appendChild(info)}d.innerHTML="<small>"+(i===0?"PRACTICAL SESSION 1 | الجلسة العملية 1":i===1?"PRACTICAL SESSION 2 | الجلسة العملية 2":"EXPERIMENT "+(i+1)+" | التجربة "+(i+1))+"</small><h3>"+x[0]+"</h3><div class=ar>"+x[1]+"</div>";if(i===1)d.innerHTML+='<a class="session-native-link" href="#kirchlab">OPEN SESSION 2 | افتح الجلسة 2</a>';d.onclick=()=>select(i,d);cards.appendChild(d)});
 function select(i,d){
 document.querySelectorAll(".card").forEach(x=>x.classList.remove("active"));d.classList.add("active");
 document.getElementById("coulomb").style.display=i===0?"none":"none";
@@ -353,4 +357,7 @@ window.addEventListener("DOMContentLoaded",function(){
  };
  q("s2verify").onclick=function(){const v=parseFloat(q("s2studentSum").value),m=q("s2verifymsg");if(!Number.isFinite(v)){m.className="feedback bad";m.innerHTML="Enter ΣU first.<span class='ar'>أدخل مجموع الجهود أولاً.</span>";return}const er=Math.abs(v-E)/E*100;m.className="feedback "+(er<=2?"ok":"bad");m.innerHTML=(er<=2?"✓ KVL verified":"✗ Recheck the voltage sum")+" — Error = "+er.toFixed(2)+"%<span class='ar'>"+(er<=2?"تم التحقق من KVL":"راجع مجموع الجهود")+" — نسبة الخطأ = "+er.toFixed(2)+"%</span>"};
 });
+</script><script id="native-session2-link-guard">
+document.addEventListener("click",function(e){const a=e.target.closest(".session-native-link");if(a){e.stopPropagation();}},true);
+window.addEventListener("hashchange",function(){if(location.hash==="#kirchlab"){const k=document.getElementById("kirchlab");if(k){k.classList.remove("hidden");k.style.setProperty("display","block","important");}}});
 </script></body></html>
