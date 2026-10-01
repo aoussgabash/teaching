@@ -7,7 +7,7 @@
 <main class="container"><section class="hero"><small style="color:var(--blue);font-weight:bold">ELECTRICAL ENGINEERING FUNDAMENTALS 1</small><h1>Interactive Virtual Laboratory</h1><h2 class="ar">المخبر الافتراضي التفاعلي</h2><p class="lead">Change parameters, observe the simulation, calculate the theoretical value, then verify your answer. | غيّر القيم، راقب المحاكاة، احسب القيمة النظرية ثم تحقق من إجابتك.</p><div><b id="pt">Progress | التقدم: 0/6</b><div class="progress"><b id="pb"></b></div></div></section>
 <div class="remote-banner"><b>Remote Replacement Laboratory · Session 1 Prototype</b><span class="ar"><b>المخبر البديل عن بُعد · النموذج الأولي للجلسة 1</b></span><div>Designed from the semester laboratory note: components, resistor identification, Ohm's law, series/parallel connections and use of ammeter, voltmeter and ohmmeter.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</span></div><div class="cards" id="cards"></div>
 <section class="lab">
-<div id="session1real" class="hidden"><h2>Remote Practical Session 1 · Basic Measurements</h2><h3 class="ar">الجلسة العملية الافتراضية 1 · القياسات الأساسية</h3>
+<div id="session1real"><h2>Remote Practical Session 1 · Basic Measurements</h2><h3 class="ar">الجلسة العملية الافتراضية 1 · القياسات الأساسية</h3>
 <p>This session reproduces the introductory work in the laboratory note before the later network theorems.</p><span class="ar">تحاكي هذه الجلسة العمل التمهيدي في النوطة قبل الانتقال إلى نظريات الدارات اللاحقة.</span>
 <div class="bench"><div class="bench-grid"><div class="instrument"><b>DC Power Supply</b><span class="ar" style="color:#222">منبع توتر مستمر</span><div class="screen"><span id="s1ps">0.00 V</span></div><label>Voltage: <span id="s1vv">6</span> V<input id="s1v" type="range" min="0" max="12" step="1" value="6"></label><button class="btn" id="s1power">POWER OFF</button></div>
 <div class="instrument"><b>Digital Multimeter</b><span class="ar" style="color:#222">الملتيميتر الرقمي</span><div class="screen" id="s1meter">OL</div><label>Selector | مفتاح الاختيار<select id="s1mode" style="width:100%;padding:8px"><option value="off">OFF</option><option value="ohm">Ω</option><option value="v">DC V</option><option value="a">DC mA</option></select></label><div><small>Black lead: COM · Red lead: VΩ / mA according to mode</small><span class="ar" style="color:#222">السلك الأسود: COM · الأحمر: VΩ أو mA بحسب القياس</span></div></div></div>
@@ -85,16 +85,16 @@
 </section></main>
 <footer>© 2026 Dr.-Ing. Aouss Gabash | الدكتور المهندس أوس غباش<br>AG Academic Ecosystem | منظومة AG الأكاديمية · Syria | سوريا</footer>
 <script>
-document.getElementById("fieldlab")?.classList.add("hidden");document.getElementById("placeholder")?.classList.add("hidden");
+["fieldlab","caplab","kirchlab","thevlab","rclab","placeholder","coulomb"].forEach(id=>document.getElementById(id)?.classList.add("hidden"));document.getElementById("session1real")?.classList.remove("hidden");
 const ex=[["Basic Measurements · Remote Lab","القياسات الأساسية · المخبر عن بُعد"],["Electric Field & Superposition","الحقل الكهربائي والتراكب"],["Capacitors","السعات الكهربائية"],["Ohm & Kirchhoff Laws","قانون أوم وقانونا كيرشوف"],["Thévenin & Norton","ثيفينن ونورتن"],["RC Transient","الحالة العابرة RC"]];let done=JSON.parse(localStorage.getItem("ef1lab")||"[]");const cards=document.querySelector("#cards");ex.forEach((x,i)=>{let d=document.createElement("div");d.className="card "+(i===0?"active ":"")+(done.includes(i)?"done":"");d.innerHTML="<small>"+(i===0?"PRACTICAL SESSION 1 | الجلسة العملية 1":"EXPERIMENT "+(i+1)+" | التجربة "+(i+1))+"</small><h3>"+x[0]+"</h3><div class=ar>"+x[1]+"</div>";d.onclick=()=>select(i,d);cards.appendChild(d)});function select(i,d){
 document.querySelectorAll(".card").forEach(x=>x.classList.remove("active"));d.classList.add("active");
 document.getElementById("coulomb").style.display=i===0?"none":"none";
-document.getElementById("session1real").style.display=i===0?"block":"none";
-document.getElementById("fieldlab").style.display=i===1?"block":"none";
-document.getElementById("caplab").style.display=i===2?"block":"none";
-document.getElementById("kirchlab").style.display=i===3?"block":"none";
-document.getElementById("thevlab").style.display=i===4?"block":"none";
-document.getElementById("rclab").style.display=i===5?"block":"none";
+document.getElementById("session1real").classList.toggle("hidden",i!==0);
+document.getElementById("fieldlab").classList.toggle("hidden",i!==1);
+document.getElementById("caplab").classList.toggle("hidden",i!==2);
+document.getElementById("kirchlab").classList.toggle("hidden",i!==3);
+document.getElementById("thevlab").classList.toggle("hidden",i!==4);
+document.getElementById("rclab").classList.toggle("hidden",i!==5);
 document.getElementById("placeholder").style.display="none";
 if(i>5){phTitle.textContent="Experiment "+(i+1)+" · "+ex[i][0];phAr.textContent="التجربة "+(i+1)+" · "+ex[i][1]}
 document.querySelector(".lab").scrollIntoView({behavior:"smooth",block:"start"});
