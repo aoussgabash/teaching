@@ -81,24 +81,18 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
    drawViz(true,display);fb.className="mini-feedback ok";fb.innerHTML="✓ Measurement completed.<span class='ar'>تم القياس بنجاح.</span>";
  },true);
 });
-</script><script id="session-nav-failsafe">
-window.addEventListener("DOMContentLoaded",function(){
- const cards=document.querySelectorAll("#cards .card");
- cards.forEach(function(card,i){
-  card.addEventListener("click",function(){
-   cards.forEach(x=>x.classList.remove("active")); card.classList.add("active");
-   ["session1real","fieldlab","caplab","kirchlab","thevlab","rclab","placeholder"].forEach(id=>document.getElementById(id)?.classList.add("hidden"));
-   const map=["session1real","kirchlab","caplab",null,"thevlab","rclab"], id=map[i];
-   if(id){const el=document.getElementById(id); if(el){el.classList.remove("hidden");el.style.display="";setTimeout(()=>el.scrollIntoView({behavior:"smooth",block:"start"}),20);}}
-  },true);
- });
-});
-</script><style id="session2-native-nav">
-#kirchlab:target{display:block!important}
-#kirchlab:target~*{}
-body:has(#kirchlab:target) #session1real{display:none!important}
-#cards a.card{display:block;color:inherit;text-decoration:none}
-</style></head><body>
+</script><script id="stable-session-switch">
+document.addEventListener("click",function(e){
+ const card=e.target.closest("#cards .card"); if(!card)return;
+ const cards=[...document.querySelectorAll("#cards .card")],i=cards.indexOf(card); if(i!==0&&i!==1)return;
+ e.preventDefault();e.stopImmediatePropagation();
+ cards.forEach(x=>x.classList.remove("active"));card.classList.add("active");
+ const s1=document.getElementById("session1real"),s2=document.getElementById("kirchlab");
+ if(s1){s1.classList.toggle("hidden",i!==0);s1.style.display=i===0?"":"none";}
+ if(s2){s2.classList.toggle("hidden",i!==1);s2.style.display=i===1?"":"none";}
+ (i===0?s1:s2)?.scrollIntoView({behavior:"smooth",block:"start"});
+},true);
+</script></head><body>
 <header><div class="container"><nav><b>⚡ Virtual Laboratory | المخبر الافتراضي</b><a href="electrical-fundamentals-1.html">← Course | المقرر</a><small style="color:var(--mut)">Updated 01.10.2026</small></nav></div></header>
 <main class="container"><section class="hero"><small style="color:var(--blue);font-weight:bold">ELECTRICAL ENGINEERING FUNDAMENTALS 1</small><h1>Interactive Virtual Laboratory</h1><h2 class="ar">المخبر الافتراضي التفاعلي</h2><p class="lead">Perform the practical session, connect the instruments, take measurements, record results, then verify your calculations.</p><p class="ar">نفّذ الجلسة العملية، صِل أجهزة القياس، خذ القراءات، سجّل النتائج، ثم تحقق من حساباتك.</p><div><b id="pt">Progress | التقدم: 0/6</b><div class="progress"><b id="pb"></b></div></div></section>
 <div class="remote-banner"><b>Remote Practical Laboratory · Session 1</b><span class="ar"><b>المخبر العملي الافتراضي · الجلسة 1</b></span><div>Designed from the semester laboratory note: components, resistor identification, Ohm's law, series/parallel connections and use of ammeter, voltmeter and ohmmeter.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</span></div><div class="cards" id="cards"></div>
@@ -218,7 +212,7 @@ body:has(#kirchlab:target) #session1real{display:none!important}
 <footer>© 2026 Dr.-Ing. Aouss Gabash | الدكتور المهندس أوس غباش<br>AG Academic Ecosystem | منظومة AG الأكاديمية · Syria | سوريا</footer>
 <script>
 ["fieldlab","caplab","thevlab","rclab","placeholder","coulomb"].forEach(id=>document.getElementById(id)?.classList.add("hidden"));document.getElementById("kirchlab")?.classList.add("hidden");document.getElementById("session1real")?.classList.remove("hidden");
-const ex=[["Basic Measurements · Remote Lab","القياسات الأساسية · المخبر عن بُعد"],["Kirchhoff’s Laws · KVL & KCL","قانونا كيرشوف · الجهد والتيار"],["Capacitors","السعات الكهربائية"],["Ohm & Kirchhoff Laws","قانون أوم وقانونا كيرشوف"],["Thévenin & Norton","ثيفينن ونورتن"],["RC Transient","الحالة العابرة RC"]];let done=JSON.parse(localStorage.getItem("ef1lab")||"[]");const cards=document.querySelector("#cards");ex.forEach((x,i)=>{let d=document.createElement("div");d.className="card "+(i===0?"active ":"")+(done.includes(i)?"done":"");d.innerHTML="<small>"+(i===0?"PRACTICAL SESSION 1 | الجلسة العملية 1":i===1?"PRACTICAL SESSION 2 | الجلسة العملية 2":"EXPERIMENT "+(i+1)+" | التجربة "+(i+1))+"</small><h3>"+x[0]+"</h3><div class=ar>"+x[1]+"</div>";if(i===1){d.onclick=function(){document.getElementById("session1real").classList.add("hidden");var k=document.getElementById("kirchlab");k.classList.remove("hidden");k.style.display="block";document.querySelectorAll("#cards .card").forEach(x=>x.classList.remove("active"));d.classList.add("active");k.scrollIntoView({behavior:"smooth",block:"start"});};}else d.onclick=()=>select(i,d);cards.appendChild(d)});function select(i,d){
+const ex=[["Basic Measurements · Remote Lab","القياسات الأساسية · المخبر عن بُعد"],["Kirchhoff’s Laws · KVL & KCL","قانونا كيرشوف · الجهد والتيار"],["Capacitors","السعات الكهربائية"],["Ohm & Kirchhoff Laws","قانون أوم وقانونا كيرشوف"],["Thévenin & Norton","ثيفينن ونورتن"],["RC Transient","الحالة العابرة RC"]];let done=JSON.parse(localStorage.getItem("ef1lab")||"[]");const cards=document.querySelector("#cards");ex.forEach((x,i)=>{let d=document.createElement("div");d.className="card "+(i===0?"active ":"")+(done.includes(i)?"done":"");d.innerHTML="<small>"+(i===0?"PRACTICAL SESSION 1 | الجلسة العملية 1":i===1?"PRACTICAL SESSION 2 | الجلسة العملية 2":"EXPERIMENT "+(i+1)+" | التجربة "+(i+1))+"</small><h3>"+x[0]+"</h3><div class=ar>"+x[1]+"</div>";d.onclick=()=>select(i,d);cards.appendChild(d)});function select(i,d){
 document.querySelectorAll(".card").forEach(x=>x.classList.remove("active"));d.classList.add("active");
 document.getElementById("coulomb").style.display=i===0?"none":"none";
 document.getElementById("session1real").classList.toggle("hidden",i!==0);
@@ -374,14 +368,5 @@ window.addEventListener("DOMContentLoaded",function(){
   const err=Math.abs(v-12)/12*100; m.className="feedback "+(err<=2?"ok":"bad");
   m.innerHTML=(err<=2?"✓ KVL verified":"✗ Check your sum")+" — Error = "+err.toFixed(2)+"%<span class='ar'>"+(err<=2?"تم التحقق من قانون كيرشوف للجهد":"راجع مجموع الجهود")+" — نسبة الخطأ = "+err.toFixed(2)+"%</span>";
  },true);
-});
-</script><script id="session2-native-link">
-window.addEventListener("load",function(){
- const cards=document.querySelectorAll("#cards .card");
- if(cards[1] && cards[1].tagName!=="A"){
-   const a=document.createElement("a");a.className=cards[1].className;a.href="#kirchlab";a.innerHTML=cards[1].innerHTML;
-   cards[1].replaceWith(a);
- }
- if(location.hash==="#kirchlab"){document.getElementById("kirchlab")?.classList.remove("hidden");}
 });
 </script></body></html>
