@@ -30,11 +30,19 @@ window.addEventListener("DOMContentLoaded",function(){
  box.classList.add("show");$("vizR").textContent="R = "+chosenR+" Ω";$("vizPower").textContent=powerOn?"ON":"OFF";$("vizMeter").textContent=label||"—";g.innerHTML="";
  const pts={"rleft":[220,199],"rright":[400,199],"source+":[142,275],"source-":[65,275]};
  const path=(from,to,color,lane)=>{if(!pts[to])return;const p=pts[to],mid=lane||((from[1]+p[1])/2);g.insertAdjacentHTML("beforeend",'<path d="M '+from[0]+' '+from[1]+' C '+from[0]+' '+mid+', '+p[0]+' '+mid+', '+p[0]+' '+p[1]+'" fill="none" stroke="'+color+'" stroke-width="7" stroke-linecap="round"/>')};
- // Draw exactly the student's selected probe positions.
- path([560,143],red,"#ef3340",165);path([460,143],black,"#171717",150);
- // Source leads are routed below the resistor so they never cross its body.
- if(sourceConn==="correct"){path([142,275],"rleft","#ef3340",260);path([65,275],"rright","#171717",325)}
- else if(sourceConn==="reversed"){path([142,275],"rright","#ef3340",315);path([65,275],"rleft","#171717",255)}
+ // Mode-aware wiring. For current measurement, never draw a direct source-to-resistor bypass.
+ if(studentMode==="a" && valid){
+   // One clear series loop: Source + -> mA(red) -> meter -> COM(black) -> resistor -> Source -.
+   g.insertAdjacentHTML("beforeend",
+    '<path d="M 142 275 C 250 320, 500 300, 560 143" fill="none" stroke="#ef3340" stroke-width="7" stroke-linecap="round"/>'+
+    '<path d="M 460 143 C 420 155, 390 175, 400 199" fill="none" stroke="#171717" stroke-width="7" stroke-linecap="round"/>'+
+    '<path d="M 220 199 C 175 215, 120 315, 65 275" fill="none" stroke="#171717" stroke-width="7" stroke-linecap="round"/>');
+ }else{
+   // Voltage/resistance and failed attempts show the student's selected probe positions.
+   path([560,143],red,"#ef3340",165);path([460,143],black,"#171717",150);
+   if(sourceConn==="correct"){path([142,275],"rleft","#ef3340",260);path([65,275],"rright","#171717",325)}
+   else if(sourceConn==="reversed"){path([142,275],"rright","#ef3340",315);path([65,275],"rleft","#171717",255)}
+ }
  st.className="viz-status "+(valid?"ok":"bad");let desc=studentMode==="a"?" · Ammeter in series | الأميتر على التسلسل":studentMode==="v"?" · Voltmeter in parallel | الفولتميتر على التوازي":" · Ohmmeter across resistor | الأوميتر على طرفي المقاومة";st.innerHTML=(valid?"✓ Correct connection":"✗ Incorrect connection")+desc+"<span class='ar'>"+(valid?"توصيل صحيح":"توصيل غير صحيح")+"</span>";
 };
 const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML="No valid measurement.<span class='ar'>لا توجد قراءة صالحة.</span>";drawViz(false,"—")};
