@@ -186,7 +186,7 @@ studentModeSelect.onchange=()=>{studentMode=studentModeSelect.value;if(studentMo
 studentJackSelect.onchange=()=>{studentJack=studentJackSelect.value;rmVO.classList.toggle("used",studentJack==="vo");rmMA.classList.toggle("used",studentJack==="ma");studentSetup.textContent="Now choose the RED and BLACK probe positions. | اختر الآن موضع المجسين الأحمر والأسود."};
 studentRedSelect.onchange=()=>{redNode=studentRedSelect.value;wiring()};
 studentBlackSelect.onchange=()=>{blackNode=studentBlackSelect.value;wiring()};
-const prevGM=guidedMeasure.onclick;guidedMeasure.onclick=()=>{let expected=studentMode==="a"?"ma":"vo";if(studentJack!==expected){studentSetup.className="mini-feedback bad";studentSetup.textContent=studentMode==="a"?"Move the red lead to mA. | انقل السلك الأحمر إلى مدخل mA.":"Move the red lead to VΩ. | انقل السلك الأحمر إلى مدخل VΩ.";return}if(studentMode==="ohm"&&s1On){studentSetup.className="mini-feedback bad";studentSetup.textContent="Switch the source OFF before resistance measurement. | افصل المنبع قبل قياس المقاومة.";return}s1mode.value=studentMode;prevGM();studentSetup.className="mini-feedback ok";studentSetup.textContent="✓ Meter setup accepted. | إعداد الجهاز صحيح."};
+
 
 // Realistic, coherent measurement model: one stable actual resistor value per selected component.
 const actualRMap={680:681.2,470:469.4,330:330.8,220:219.6};
