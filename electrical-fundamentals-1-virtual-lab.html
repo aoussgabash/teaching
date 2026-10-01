@@ -81,6 +81,18 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
    drawViz(true,display);fb.className="mini-feedback ok";fb.innerHTML="✓ Measurement completed.<span class='ar'>تم القياس بنجاح.</span>";
  },true);
 });
+</script><script id="session-nav-failsafe">
+window.addEventListener("DOMContentLoaded",function(){
+ const cards=document.querySelectorAll("#cards .card");
+ cards.forEach(function(card,i){
+  card.addEventListener("click",function(){
+   cards.forEach(x=>x.classList.remove("active")); card.classList.add("active");
+   ["session1real","fieldlab","caplab","kirchlab","thevlab","rclab","placeholder"].forEach(id=>document.getElementById(id)?.classList.add("hidden"));
+   const map=["session1real","kirchlab","caplab",null,"thevlab","rclab"], id=map[i];
+   if(id){const el=document.getElementById(id); if(el){el.classList.remove("hidden");el.style.display="";setTimeout(()=>el.scrollIntoView({behavior:"smooth",block:"start"}),20);}}
+  },true);
+ });
+});
 </script></head><body>
 <header><div class="container"><nav><b>⚡ Virtual Laboratory | المخبر الافتراضي</b><a href="electrical-fundamentals-1.html">← Course | المقرر</a><small style="color:var(--mut)">Updated 01.10.2026</small></nav></div></header>
 <main class="container"><section class="hero"><small style="color:var(--blue);font-weight:bold">ELECTRICAL ENGINEERING FUNDAMENTALS 1</small><h1>Interactive Virtual Laboratory</h1><h2 class="ar">المخبر الافتراضي التفاعلي</h2><p class="lead">Perform the practical session, connect the instruments, take measurements, record results, then verify your calculations.</p><p class="ar">نفّذ الجلسة العملية، صِل أجهزة القياس، خذ القراءات، سجّل النتائج، ثم تحقق من حساباتك.</p><div><b id="pt">Progress | التقدم: 0/6</b><div class="progress"><b id="pb"></b></div></div></section>
