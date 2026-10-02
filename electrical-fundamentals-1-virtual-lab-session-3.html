@@ -127,6 +127,8 @@
 <div class="qbox"><label>I₂₂ [mA]</label><input id="mxM22" inputmode="decimal"></div>
 <div class="qbox"><label>I₃₃ [mA]</label><input id="mxM33" inputmode="decimal"></div>
 </div>
+<button class="btn" onclick="verifyMaxwellMesh()">VERIFY MESH CURRENTS | تحقق من تيارات الحلقات</button>
+<div id="mxMeshFb" class="status"></div>
 <h3>Branch currents | تيارات الفروع</h3>
 <div class="grid3">
 <div class="qbox"><label>I₁ [mA]</label><input id="mxI1" inputmode="decimal"></div>
@@ -136,8 +138,8 @@
 <div class="qbox"><label>I₅ [mA]</label><input id="mxI5" inputmode="decimal"></div>
 <div class="qbox"><label>I₆ [mA]</label><input id="mxI6" inputmode="decimal"></div>
 </div>
-<button class="btn" onclick="verifyMaxwell()">VERIFY MAXWELL CHALLENGE | تحقق من تحدي ماكسويل</button>
-<div id="mxFb" class="status"></div>
+<button class="btn" onclick="verifyMaxwellBranches()">VERIFY BRANCH CURRENTS | تحقق من تيارات الفروع</button>
+<div id="mxBranchFb" class="status"></div>
 </section>
 </div><script>
 const Rs={R1:680,R2:470,R3:330},vals=[3,6,9],fmt=x=>(Math.round(x*100)/100).toFixed(2);
@@ -153,15 +155,17 @@ function plot(svgId,pts,title){let s=document.getElementById(svgId),W=620,H=360,
 function drawPart(k){if(k==='S')plot('plotS',vals.map(v=>[v/1480*1000,v]));if(k==='P')plot('plotP',vals.map(v=>[v/rp*1000,v]));if(k==='M')plot('plotM',[2,4,6,8,10].map(v=>[v/rm*1000,v]))}
 function verifyPart(k){drawPart(k);let target=k==='S'?1480:k==='P'?rp:rm,id='ans'+k,fb='fb'+k,tol=k==='S'?15:k==='P'?5:10,val=+document.getElementById(id).value,ok=isFinite(val)&&Math.abs(val-target)<tol;show(fb,ok?'✓ Correct. The equivalent resistance agrees with the slope of U=f(I).<span class="ar">✓ صحيح. تتوافق المقاومة المكافئة مع ميل المنحني U=f(I).</span>':'Recheck Rₑq and compare it with the curve slope ΔU/ΔI.<span class="ar">راجع المقاومة المكافئة وقارنها مع ميل المنحني ΔU/ΔI.</span>',ok)}
 
-function verifyMaxwell(){
- const meshTarget=[79.8669,472.5458,2023.2945];
- const branchTarget=[79.8669,392.6789,472.5458,1943.4276,1550.7488,2023.2945];
- let meshOk=true,branchOk=true;
- ['mxM11','mxM22','mxM33'].forEach((id,i)=>{let e=document.getElementById(id),x=parseFloat((e.value||'').replace(',','.'));meshOk=meshOk&&Number.isFinite(x)&&Math.abs(x-meshTarget[i])<=Math.max(1.5,Math.abs(meshTarget[i])*.01)});
- branchTarget.forEach((v,i)=>{let e=document.getElementById('mxI'+(i+1)),x=parseFloat((e.value||'').replace(',','.'));branchOk=branchOk&&Number.isFinite(x)&&Math.abs(x-v)<=Math.max(1.5,Math.abs(v)*.01)});
- let ok=meshOk&&branchOk;
- let msg=ok?'✓ Correct. The three Maxwell mesh currents and the six branch currents are correct.<span class="ar">✓ صحيح. تيارات ماكسويل الثلاثة وتيارات الفروع الستة صحيحة.</span>':
- (!meshOk?'Recheck the three Maxwell mesh currents I₁₁, I₂₂ and I₃₃ first.<span class="ar">راجع أولاً تيارات ماكسويل الثلاثة I₁₁ وI₂₂ وI₃₃.</span>':'The mesh currents are correct. Now recheck the branch currents obtained from them.<span class="ar">تيارات الحلقات صحيحة. راجع الآن تيارات الفروع المستخرجة منها.</span>');
- show('mxFb',msg,ok);
+function readMx(id){let e=document.getElementById(id);return parseFloat(((e&&e.value)||'').replace(',','.'))}
+function verifyMaxwellMesh(){
+ const target=[79.8669,472.5458,2023.2945];
+ let ok=true;
+ ['mxM11','mxM22','mxM33'].forEach((id,i)=>{let x=readMx(id);ok=ok&&Number.isFinite(x)&&Math.abs(x-target[i])<=Math.max(1.5,Math.abs(target[i])*.01)});
+ show('mxMeshFb',ok?'✓ Correct. The three Maxwell mesh currents are correct.<span class="ar">✓ صحيح. تيارات ماكسويل الثلاثة للحلقات صحيحة.</span>':'Recheck I₁₁, I₂₂ and I₃₃ using the three Maxwell equations.<span class="ar">راجع I₁₁ وI₂₂ وI₃₃ باستخدام معادلات ماكسويل الثلاث.</span>',ok);
+}
+function verifyMaxwellBranches(){
+ const target=[79.8669,392.6789,472.5458,1943.4276,1550.7488,2023.2945];
+ let ok=true;
+ target.forEach((v,i)=>{let x=readMx('mxI'+(i+1));ok=ok&&Number.isFinite(x)&&Math.abs(x-v)<=Math.max(1.5,Math.abs(v)*.01)});
+ show('mxBranchFb',ok?'✓ Correct. The six branch currents are correct.<span class="ar">✓ صحيح. تيارات الفروع الستة صحيحة.</span>':'Recheck the branch currents from the mesh currents and the directions shown in the diagram.<span class="ar">راجع تيارات الفروع انطلاقاً من تيارات الحلقات والاتجاهات المبينة في الرسم.</span>',ok);
 }
 </script></body></html>
