@@ -119,8 +119,15 @@
 −10I₁₁ + 45I₂₂ − 20I₃₃ = −20<br>
 −20I₁₁ − 20I₂₂ + 45I₃₃ = 80
 </div>
-<p class="mini">Enter branch-current magnitudes in mA. The arrows in the diagram define the requested directions.</p>
-<p class="ar mini">أدخل قيم تيارات الفروع بوحدة mA. الأسهم في الرسم تحدد الاتجاهات المطلوبة.</p>
+<p class="mini">First enter the three Maxwell mesh currents, then enter the six branch-current magnitudes in mA. The arrows in the diagram define the requested directions.</p>
+<p class="ar mini">أدخل أولاً تيارات ماكسويل الثلاثة للحلقات، ثم أدخل قيم تيارات الفروع الستة بوحدة mA. الأسهم في الرسم تحدد الاتجاهات المطلوبة.</p>
+<h3>Maxwell mesh currents | تيارات ماكسويل للحلقات</h3>
+<div class="grid3">
+<div class="qbox"><label>I₁₁ [mA]</label><input id="mxM11" inputmode="decimal"></div>
+<div class="qbox"><label>I₂₂ [mA]</label><input id="mxM22" inputmode="decimal"></div>
+<div class="qbox"><label>I₃₃ [mA]</label><input id="mxM33" inputmode="decimal"></div>
+</div>
+<h3>Branch currents | تيارات الفروع</h3>
 <div class="grid3">
 <div class="qbox"><label>I₁ [mA]</label><input id="mxI1" inputmode="decimal"></div>
 <div class="qbox"><label>I₂ [mA]</label><input id="mxI2" inputmode="decimal"></div>
@@ -147,9 +154,14 @@ function drawPart(k){if(k==='S')plot('plotS',vals.map(v=>[v/1480*1000,v]));if(k=
 function verifyPart(k){drawPart(k);let target=k==='S'?1480:k==='P'?rp:rm,id='ans'+k,fb='fb'+k,tol=k==='S'?15:k==='P'?5:10,val=+document.getElementById(id).value,ok=isFinite(val)&&Math.abs(val-target)<tol;show(fb,ok?'✓ Correct. The equivalent resistance agrees with the slope of U=f(I).<span class="ar">✓ صحيح. تتوافق المقاومة المكافئة مع ميل المنحني U=f(I).</span>':'Recheck Rₑq and compare it with the curve slope ΔU/ΔI.<span class="ar">راجع المقاومة المكافئة وقارنها مع ميل المنحني ΔU/ΔI.</span>',ok)}
 
 function verifyMaxwell(){
- const target=[79.8669,392.6789,472.5458,1943.4276,1550.7488,2023.2945];
- let ok=true;
- target.forEach((v,i)=>{let x=parseFloat(document.getElementById('mxI'+(i+1)).value.replace(',','.'));ok=ok&&Number.isFinite(x)&&Math.abs(x-v)<=Math.max(1.5,v*.01)});
- show('mxFb',ok?'✓ Correct. The six branch currents satisfy the Maxwell mesh solution.<span class="ar">✓ صحيح. تيارات الفروع الستة متوافقة مع حل تيارات الحلقات بطريقة ماكسويل.</span>':'Not yet. Solve the three simultaneous Maxwell equations first, then obtain each branch current from the corresponding mesh-current difference.<span class="ar">الحل غير صحيح بعد. حل معادلات ماكسويل الثلاث المتزامنة أولاً، ثم استخرج تيار كل فرع من تيارات الحلقات أو فروقها.</span>',ok);
+ const meshTarget=[79.8669,472.5458,2023.2945];
+ const branchTarget=[79.8669,392.6789,472.5458,1943.4276,1550.7488,2023.2945];
+ let meshOk=true,branchOk=true;
+ ['mxM11','mxM22','mxM33'].forEach((id,i)=>{let e=document.getElementById(id),x=parseFloat((e.value||'').replace(',','.'));meshOk=meshOk&&Number.isFinite(x)&&Math.abs(x-meshTarget[i])<=Math.max(1.5,Math.abs(meshTarget[i])*.01)});
+ branchTarget.forEach((v,i)=>{let e=document.getElementById('mxI'+(i+1)),x=parseFloat((e.value||'').replace(',','.'));branchOk=branchOk&&Number.isFinite(x)&&Math.abs(x-v)<=Math.max(1.5,Math.abs(v)*.01)});
+ let ok=meshOk&&branchOk;
+ let msg=ok?'✓ Correct. The three Maxwell mesh currents and the six branch currents are correct.<span class="ar">✓ صحيح. تيارات ماكسويل الثلاثة وتيارات الفروع الستة صحيحة.</span>':
+ (!meshOk?'Recheck the three Maxwell mesh currents I₁₁, I₂₂ and I₃₃ first.<span class="ar">راجع أولاً تيارات ماكسويل الثلاثة I₁₁ وI₂₂ وI₃₃.</span>':'The mesh currents are correct. Now recheck the branch currents obtained from them.<span class="ar">تيارات الحلقات صحيحة. راجع الآن تيارات الفروع المستخرجة منها.</span>');
+ show('mxFb',msg,ok);
 }
 </script></body></html>
