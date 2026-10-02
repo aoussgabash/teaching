@@ -25,7 +25,6 @@ window.addEventListener("DOMContentLoaded",function(){
    const fb=$("studentSetup"),out=$("readingExplain");
    const mode=$("studentModeSelect")?.value||"",jack=$("studentJackSelect")?.value||"";
    const red=$("studentRedSelect")?.value||"",black=$("studentBlackSelect")?.value||"",sourceConn=$("studentSourceSelect")?.value||"";
-   studentMode=mode;studentJack=jack;redNode=red;blackNode=black;
    const drawViz=(valid,label)=>{
  const box=$("connectionViz"),g=$("vizWires"),st=$("vizStatus");if(!box||!g)return;
  box.classList.add("show");
