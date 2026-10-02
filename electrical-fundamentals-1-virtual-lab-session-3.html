@@ -112,15 +112,15 @@
 <!-- directions -->
 <text x="70" y="135" fill="#20bdf2" font-size="22">↑ I₁</text><text x="455" y="135" fill="#20bdf2" font-size="22">↑ I₂</text><text x="810" y="135" fill="#20bdf2" font-size="22">I₃ ↓</text>
 <text x="125" y="292" fill="#20bdf2" font-size="22">I₄ →</text><text x="575" y="292" fill="#20bdf2" font-size="22">I₅ →</text><text x="390" y="520" fill="#20bdf2" font-size="22">← I₆</text>
-<text x="245" y="185" fill="#9ddfff" font-size="22">I₁₁ ↻</text><text x="610" y="185" fill="#9ddfff" font-size="22">I₂₂ ↻</text><text x="430" y="405" fill="#9ddfff" font-size="22">I₃₃ ↺</text>
+<text x="245" y="185" fill="#9ddfff" font-size="22">I₁₁ ↻</text><text x="610" y="185" fill="#9ddfff" font-size="22">I₂₂ ↻</text><text x="430" y="405" fill="#9ddfff" font-size="22">I₃₃ ↻</text>
 </svg>
 <div class="formula">Maxwell equations | معادلات ماكسويل<br>
 65I₁₁ − 10I₂₂ − 20I₃₃ = −40<br>
 −10I₁₁ + 45I₂₂ − 20I₃₃ = −20<br>
 −20I₁₁ − 20I₂₂ + 45I₃₃ = 80
 </div>
-<p class="mini">First enter the three Maxwell mesh currents, then enter the six branch-current magnitudes in mA. The arrows in the diagram define the requested directions.</p>
-<p class="ar mini">أدخل أولاً تيارات ماكسويل الثلاثة للحلقات، ثم أدخل تيارات الفروع الستة بوحدة mA. اختر الإشارة (+/−) من القائمة ثم أدخل مقدار التيار فقط؛ الأسهم في الرسم تحدد الاتجاهات المرجعية.</p>
+<p class="mini">First enter the three Maxwell mesh currents, then derive the six branch currents in the arrow directions. Use the sign selector if a calculated current is opposite to its reference arrow.</p>
+<p class="ar mini">أدخل أولاً تيارات ماكسويل الثلاثة للحلقات، ثم استنتج تيارات الفروع الستة وفق اتجاه الأسهم. استخدم اختيار الإشارة (+/−) إذا خرج التيار المحسوب بعكس اتجاه السهم المرجعي.</p>
 <h3>Maxwell mesh currents | تيارات ماكسويل للحلقات</h3>
 <div class="grid3">
 <div class="qbox"><label>I₁₁ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxM11Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxM11" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
