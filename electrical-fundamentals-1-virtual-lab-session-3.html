@@ -79,6 +79,58 @@
 <div class="plotbox"><h4>Mixed U=f(I) | منحني الربط المختلط</h4><svg id="plotM" class="plot" viewBox="0 0 620 360"></svg></div>
 <div class="qbox"><label>Mixed R<sub>eq</sub> [Ω] | المقاومة المكافئة للربط المختلط</label><input id="ansM" inputmode="decimal" placeholder="Ω"></div>
 <button class="btn" onclick="verifyPart('M')">VERIFY Rₑq & CURVE | تحقق من المقاومة والمنحني</button><div id="fbM" class="status"></div></section>
+<section class="card" id="maxwellChallenge">
+<small style="color:var(--blue)">FINAL CHALLENGE | التحدي الختامي</small>
+<h2>Maxwell Mesh-Current Method</h2><h3 class="ar">طريقة ماكسويل لتيارات الحلقات</h3>
+<p>Solve the network theoretically using Maxwell's mesh-current method. Determine the three mesh currents, then calculate the six branch currents I₁–I₆ in the directions shown.</p>
+<p class="ar">حل الدارة نظرياً باستخدام طريقة ماكسويل لتيارات الحلقات. أوجد تيارات الحلقات الثلاثة أولاً، ثم احسب تيارات الفروع الستة I₁–I₆ وفق الاتجاهات المبينة في الشكل.</p>
+<div class="formula">E₁=10 V · E₂=20 V · E₃=30 V · E₄=40 V · E₅=50 V<br>R₁=R₆=R₉=5 Ω &nbsp; · &nbsp; R₂=R₄=R₇=10 Ω &nbsp; · &nbsp; R₃=R₅=R₈=20 Ω</div>
+<svg viewBox="0 0 900 620" class="diagram" aria-label="Maxwell three-mesh challenge circuit">
+<!-- conductors are split at every source and resistor -->
+<path class="w" d="M105 90H165 M245 90H310 M390 90H485 M565 90H650 M730 90H795V145 M795 225V310H720 M640 310H555 M475 310H390 M310 310H245 M165 310H105V225 M105 145V90"/>
+<!-- bottom mesh -->
+<path class="w" d="M105 310V485H180 M260 485H505 M585 485H795V310"/>
+<!-- central upper branch -->
+<path class="w" d="M440 90V145 M440 225V250 M440 290V310"/>
+<!-- components -->
+<rect class="rbox" x="105" y="145" width="70" height="80" rx="10"/><text x="140" y="192" text-anchor="middle">R₁ 5Ω</text>
+<rect class="rbox" x="165" y="65" width="80" height="50" rx="10"/><text x="205" y="96" text-anchor="middle">R₂ 10Ω</text>
+<rect class="rbox" x="310" y="65" width="80" height="50" rx="10"/><text x="350" y="96" text-anchor="middle">R₃ 20Ω</text>
+<rect class="rbox" x="405" y="145" width="70" height="80" rx="10"/><text x="440" y="192" text-anchor="middle">R₄ 10Ω</text>
+<rect class="rbox" x="165" y="285" width="80" height="50" rx="10"/><text x="205" y="316" text-anchor="middle">R₅ 20Ω</text>
+<rect class="rbox" x="485" y="65" width="80" height="50" rx="10"/><text x="525" y="96" text-anchor="middle">R₆ 5Ω</text>
+<rect class="rbox" x="760" y="145" width="70" height="80" rx="10"/><text x="795" y="192" text-anchor="middle">R₇ 10Ω</text>
+<rect class="rbox" x="640" y="285" width="80" height="50" rx="10"/><text x="680" y="316" text-anchor="middle">R₈ 20Ω</text>
+<rect class="rbox" x="180" y="460" width="80" height="50" rx="10"/><text x="220" y="491" text-anchor="middle">R₉ 5Ω</text>
+<!-- E1 left; E2 center; E3 middle-left; E4 right; E5 bottom -->
+<line class="src" x1="80" y1="255" x2="130" y2="255"/><line class="src" x1="90" y1="275" x2="120" y2="275"/><text x="55" y="270" fill="#f5d99a">E₁</text>
+<line class="src" x1="415" y1="250" x2="465" y2="250"/><line class="src" x1="425" y1="270" x2="455" y2="270"/><text x="470" y="267" fill="#f5d99a">E₂</text>
+<line class="src" x1="310" y1="285" x2="310" y2="335"/><line class="src" x1="330" y1="295" x2="330" y2="325"/><text x="337" y="305" fill="#f5d99a">E₃</text>
+<line class="src" x1="770" y1="245" x2="820" y2="245"/><line class="src" x1="780" y1="265" x2="810" y2="265"/><text x="835" y="260" fill="#f5d99a">E₄</text>
+<line class="src" x1="505" y1="460" x2="505" y2="510"/><line class="src" x1="525" y1="470" x2="525" y2="500"/><text x="535" y="492" fill="#f5d99a">E₅</text>
+<!-- directions -->
+<text x="70" y="135" fill="#20bdf2" font-size="22">↑ I₁</text><text x="455" y="135" fill="#20bdf2" font-size="22">↑ I₂</text><text x="810" y="135" fill="#20bdf2" font-size="22">I₃ ↓</text>
+<text x="125" y="292" fill="#20bdf2" font-size="22">I₄ →</text><text x="575" y="292" fill="#20bdf2" font-size="22">I₅ →</text><text x="390" y="520" fill="#20bdf2" font-size="22">← I₆</text>
+<text x="245" y="185" fill="#9ddfff" font-size="22">I₁₁ ↻</text><text x="610" y="185" fill="#9ddfff" font-size="22">I₂₂ ↻</text><text x="430" y="405" fill="#9ddfff" font-size="22">I₃₃ ↺</text>
+</svg>
+<div class="formula">Maxwell equations | معادلات ماكسويل<br>
+65I₁₁ − 10I₂₂ − 20I₃₃ = −40<br>
+−10I₁₁ + 45I₂₂ − 20I₃₃ = −20<br>
+−20I₁₁ − 20I₂₂ + 45I₃₃ = 80
+</div>
+<p class="mini">Enter branch-current magnitudes in mA. The arrows in the diagram define the requested directions.</p>
+<p class="ar mini">أدخل قيم تيارات الفروع بوحدة mA. الأسهم في الرسم تحدد الاتجاهات المطلوبة.</p>
+<div class="grid3">
+<div class="qbox"><label>I₁ [mA]</label><input id="mxI1" inputmode="decimal"></div>
+<div class="qbox"><label>I₂ [mA]</label><input id="mxI2" inputmode="decimal"></div>
+<div class="qbox"><label>I₃ [mA]</label><input id="mxI3" inputmode="decimal"></div>
+<div class="qbox"><label>I₄ [mA]</label><input id="mxI4" inputmode="decimal"></div>
+<div class="qbox"><label>I₅ [mA]</label><input id="mxI5" inputmode="decimal"></div>
+<div class="qbox"><label>I₆ [mA]</label><input id="mxI6" inputmode="decimal"></div>
+</div>
+<button class="btn" onclick="verifyMaxwell()">VERIFY MAXWELL CHALLENGE | تحقق من تحدي ماكسويل</button>
+<div id="mxFb" class="status"></div>
+</section>
 </div><script>
 const Rs={R1:680,R2:470,R3:330},vals=[3,6,9],fmt=x=>(Math.round(x*100)/100).toFixed(2);
 const rp=1/(1/680+1/470+1/330),rm=680+(470*330)/(470+330);
@@ -92,4 +144,11 @@ function fillMixed(){[2,4,6,8,10].forEach(v=>document.getElementById('m'+v).text
 function plot(svgId,pts,title){let s=document.getElementById(svgId),W=620,H=360,l=72,r=25,t=25,b=62,maxI=Math.max(...pts.map(p=>p[0]))*1.12,maxU=Math.max(...pts.map(p=>p[1]))*1.12,x=i=>l+i/maxI*(W-l-r),y=u=>H-b-u/maxU*(H-t-b);let h='<rect width="620" height="360" fill="white"/>';for(let k=0;k<=5;k++){let xx=l+k*(W-l-r)/5,yy=t+k*(H-t-b)/5;h+='<line x1="'+xx+'" y1="'+t+'" x2="'+xx+'" y2="'+(H-b)+'" stroke="#d8e0e6"/><line x1="'+l+'" y1="'+yy+'" x2="'+(W-r)+'" y2="'+yy+'" stroke="#d8e0e6"/>'}h+='<line x1="'+l+'" y1="'+(H-b)+'" x2="'+(W-r)+'" y2="'+(H-b)+'" stroke="#111" stroke-width="3"/><line x1="'+l+'" y1="'+t+'" x2="'+l+'" y2="'+(H-b)+'" stroke="#111" stroke-width="3"/><text x="'+(W-48)+'" y="'+(H-20)+'" fill="#111" font-size="20">I [mA]</text><text x="15" y="28" fill="#111" font-size="20">U [V]</text>';let d=pts.map((p,j)=>(j?'L':'M')+x(p[0])+' '+y(p[1])).join(' ');h+='<path d="'+d+'" fill="none" stroke="#087ea4" stroke-width="5"/>';pts.forEach(p=>h+='<circle cx="'+x(p[0])+'" cy="'+y(p[1])+'" r="6" fill="#111"/>');s.innerHTML=h}
 function drawPart(k){if(k==='S')plot('plotS',vals.map(v=>[v/1480*1000,v]));if(k==='P')plot('plotP',vals.map(v=>[v/rp*1000,v]));if(k==='M')plot('plotM',[2,4,6,8,10].map(v=>[v/rm*1000,v]))}
 function verifyPart(k){drawPart(k);let target=k==='S'?1480:k==='P'?rp:rm,id='ans'+k,fb='fb'+k,tol=k==='S'?15:k==='P'?5:10,val=+document.getElementById(id).value,ok=isFinite(val)&&Math.abs(val-target)<tol;show(fb,ok?'✓ Correct. The equivalent resistance agrees with the slope of U=f(I).<span class="ar">✓ صحيح. تتوافق المقاومة المكافئة مع ميل المنحني U=f(I).</span>':'Recheck Rₑq and compare it with the curve slope ΔU/ΔI.<span class="ar">راجع المقاومة المكافئة وقارنها مع ميل المنحني ΔU/ΔI.</span>',ok)}
+
+function verifyMaxwell(){
+ const target=[79.8669,392.6789,472.5458,1943.4276,1550.7488,2023.2945];
+ let ok=true;
+ target.forEach((v,i)=>{let x=parseFloat(document.getElementById('mxI'+(i+1)).value.replace(',','.'));ok=ok&&Number.isFinite(x)&&Math.abs(x-v)<=Math.max(1.5,v*.01)});
+ show('mxFb',ok?'✓ Correct. The six branch currents satisfy the Maxwell mesh solution.<span class="ar">✓ صحيح. تيارات الفروع الستة متوافقة مع حل تيارات الحلقات بطريقة ماكسويل.</span>':'Not yet. Solve the three simultaneous Maxwell equations first, then obtain each branch current from the corresponding mesh-current difference.<span class="ar">الحل غير صحيح بعد. حل معادلات ماكسويل الثلاث المتزامنة أولاً، ثم استخرج تيار كل فرع من تيارات الحلقات أو فروقها.</span>',ok);
+}
 </script></body></html>
