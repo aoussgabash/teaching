@@ -45,14 +45,33 @@
 <button class="btn" onclick="verifyPart('P')">VERIFY Rₑq & CURVE | تحقق من المقاومة والمنحني</button><div id="fbP" class="status"></div></section>
 
 <section class="card"><h2>Stage 3 · Mixed connection</h2><h3 class="ar">المرحلة الثالثة · الربط المختلط</h3>
-<svg viewBox="0 0 760 280" class="diagram">
-<path class="w" d="M110 70H245 M350 70H620V215H110V162 M110 115V70"/>
-<line class="src" x1="82" y1="115" x2="138" y2="115"/><line class="src" x1="94" y1="162" x2="126" y2="162"/>
-<text x="150" y="120" fill="#f5d99a" font-size="22">+</text><text x="150" y="168" fill="#f5d99a" font-size="22">−</text>
-<rect class="rbox" x="245" y="50" width="105" height="40" rx="9"/><text x="297" y="76" text-anchor="middle">R₁ 680Ω</text>
-<path class="w" d="M430 70V105 M430 175V215 M550 70V105 M550 175V215"/>
-<rect class="rbox" x="395" y="105" width="70" height="70" rx="9"/><rect class="rbox" x="515" y="105" width="70" height="70" rx="9"/>
-<text x="430" y="145" text-anchor="middle">R₂ 470Ω</text><text x="550" y="145" text-anchor="middle">R₃ 330Ω</text></svg>
+<svg viewBox="0 0 900 420" class="diagram" aria-label="Mixed resistor circuit">
+<!-- Mixed circuit: R1 in series with R2 || R3. Every wire stops at component terminals. -->
+<!-- left source branch: upper and lower conductors are physically separated by the source -->
+<path class="w" d="M120 95H260 M400 95H760V330H120V250 M120 165V95"/>
+<!-- source plates: no white conductor behind or between them -->
+<line class="src" x1="75" y1="165" x2="165" y2="165"/>
+<line class="src" x1="92" y1="250" x2="148" y2="250"/>
+<text x="180" y="175" fill="#f5d99a" font-size="28">+</text>
+<text x="180" y="260" fill="#f5d99a" font-size="28">−</text>
+<text x="48" y="214" fill="#f5d99a" font-size="24">E = U</text>
+<!-- R1: series element -->
+<rect class="rbox" x="260" y="65" width="140" height="60" rx="12"/>
+<text x="330" y="102" text-anchor="middle" font-size="23">R₁ = 680 Ω</text>
+<text x="185" y="78" fill="#20bdf2" font-size="24">I →</text>
+<!-- parallel network starts only after R1 -->
+<path class="w" d="M500 95V155 M500 245V330 M650 95V155 M650 245V330"/>
+<rect class="rbox" x="455" y="155" width="90" height="90" rx="12"/>
+<rect class="rbox" x="605" y="155" width="90" height="90" rx="12"/>
+<text x="500" y="193" text-anchor="middle" font-size="21">R₂</text>
+<text x="500" y="222" text-anchor="middle" font-size="19">470 Ω</text>
+<text x="650" y="193" text-anchor="middle" font-size="21">R₃</text>
+<text x="650" y="222" text-anchor="middle" font-size="19">330 Ω</text>
+<text x="462" y="145" fill="#20bdf2" font-size="21">I₂ ↓</text>
+<text x="612" y="145" fill="#20bdf2" font-size="21">I₃ ↓</text>
+<circle cx="500" cy="95" r="7" fill="#20bdf2"/><circle cx="650" cy="95" r="7" fill="#20bdf2"/>
+<circle cx="500" cy="330" r="7" fill="#20bdf2"/><circle cx="650" cy="330" r="7" fill="#20bdf2"/>
+</svg>
 <p>R₁ is in series with the parallel combination R₂ ∥ R₃. Set U to 2, 4, 6, 8 and 10 V and measure total current I.</p><p class="ar">تتصل R₁ على التسلسل مع التفرع R₂ ∥ R₃. اضبط U على 2 و4 و6 و8 و10 V وقِس التيار الكلي I.</p>
 <table><thead><tr><th>U [V]</th><th>2</th><th>4</th><th>6</th><th>8</th><th>10</th></tr></thead><tbody><tr><th>I [mA]</th><td id="m2">—</td><td id="m4">—</td><td id="m6">—</td><td id="m8">—</td><td id="m10">—</td></tr></tbody></table>
 <div class="formula">R₂₃ = (R₂R₃)/(R₂+R₃) &nbsp;&nbsp; · &nbsp;&nbsp; R<sub>eq</sub> = R₁ + R₂₃</div>
