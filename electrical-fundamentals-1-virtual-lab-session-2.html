@@ -19,14 +19,24 @@
 const kvlCalc={i:E/R.reduce((a,b)=>a+b,0)*1000}; R.forEach((r,n)=>kvlCalc["u"+(n+1)]=E*r/R.reduce((a,b)=>a+b,0));
 const kvlMeasured={i:7.00,u1:4.70,u2:3.20,u3:2.30,u4:1.50}, kvlDone={};
 const err=(c,m)=>(100*(c-m)/c);function path(d,cls){return `<path d="${d}" class="wire ${cls}"/>`}function kvlVisual(p,valid){const g=$("kvlWires");if(!g)return;let w=path("M145 205 C160 150 170 134 190 134","wire-red")+path("M285 134H305 M400 134H420 M515 134H535 M630 134 C680 134 680 270 55 270 L55 238","wire-black");if(p==="i")w=path("M145 205 C175 205 175 55 500 55","wire-red")+path("M500 78 C420 100 320 100 190 134","wire-black")+path("M285 134H305 M400 134H420 M515 134H535 M630 134 C680 134 680 270 55 270 L55 238","wire-black");else if(/^u[1-4]$/.test(p)){const n=+p[1]-1,x1=[190,305,420,535][n],x2=[285,400,515,630][n];w+=path(`M500 55 C470 85 ${x1} 80 ${x1} 115`,"wire-red")+path(`M650 78 C670 100 ${x2} 95 ${x2} 115`,"wire-black")}g.innerHTML=w;const read=p?(p==="i"?kvlMeasured[p].toFixed(2)+" mA":kvlMeasured[p].toFixed(2)+" V"):"—";$("kvlDisplay").textContent=valid?read:"—";$("kvlSvgRead").textContent=valid?read:"—";$("kvlLamp").classList.toggle("on",$("kvlPower").value==="on");$("kvlVizStatus").textContent=valid?"✓ Correct connection | توصيل صحيح":"Connection needs correction | التوصيل يحتاج إلى تصحيح"}function kclVisual(p,valid){const g=$("kclWires");if(!g)return;
-const base=path("M140 235 C155 90 165 89 180 89 M285 89H620","wire-red")+path("M392 89V120 M507 89V120 M622 89V120 M392 158V265 M507 158V265 M622 158V265 M622 265H55","wire-black");
-let w=base;
-// The ammeter is inserted by BREAKING the conductor at the selected current point.
-// Leads bridge that break; there is never a parallel/bypass wire around the meter.
-const lead=(a,b,cls)=>path("M"+a[0]+" "+a[1]+" C"+a[2]+" "+a[3]+" "+b[2]+" "+b[3]+" "+b[0]+" "+b[1],cls);
-if(p==="i1"){w=path("M140 235 C155 90 165 89 180 89 M285 89H300","wire-red")+path("M330 89H620","wire-red")+path("M392 89V120 M507 89V120 M622 89V120 M392 158V265 M507 158V265 M622 158V265 M622 265H55","wire-black");w+=lead([300,89,340,35],[500,52,430,35],"wire-red")+lead([650,72,680,90],[330,89,675,150],"wire-black")}
-else if(["i2","i3","i4"].includes(p)){const x={i2:392,i3:507,i4:622}[p];w=base.replace(path("M392 89V120 M507 89V120 M622 89V120 M392 158V265 M507 158V265 M622 158V265 M622 265H55","wire-black"),"");w+=path("M392 89V120 M507 89V120 M622 89V120","wire-black");["i2","i3","i4"].forEach(q=>{const qx={i2:392,i3:507,i4:622}[q];if(q!==p)w+=path("M"+qx+" 158V265","wire-black")});w+=path("M622 265H55","wire-black");w+=lead([x,158,x+25,190],[500,52,455,70],"wire-red")+lead([650,72,680,125],[x,265,680,230],"wire-black")}
-g.innerHTML=w;const read=p?kclMeasured[p].toFixed(2)+" mA":"—";$("kclDisplay").textContent=valid?read:"—";$("kclSvgRead").textContent=valid?read:"—";$("kclLamp").classList.toggle("on",$("kclPower").value==="on");$("kclVizStatus").textContent=valid?"✓ Circuit opened at "+(p||"measurement point")+"; ammeter inserted in series | تم فتح المسار وإدخال الأميتر على التسلسل":"Connection needs correction | التوصيل يحتاج إلى تصحيح"}
+const red="wire-red", black="wire-black";
+let w=path("M140 235 C155 90 165 89 180 89","wire-red")+path("M285 89H620","wire-red")
+ +path("M392 89V120 M507 89V120 M622 89V120","wire-black")
+ +path("M392 158V265 M507 158V265 M622 158V265 M622 265H55","wire-black");
+let mx=0,my=0;
+// Physically open the selected conductor and bridge ONLY that gap with the ammeter.
+if(p==="i1"){w=path("M140 235 C155 90 165 89 180 89","wire-red")+path("M285 89H330 M430 89H620","wire-red")
+ +path("M392 89V120 M507 89V120 M622 89V120 M392 158V265 M507 158V265 M622 158V265 M622 265H55","wire-black");mx=330;my=65;}
+if(["i2","i3","i4"].includes(p)){const x={i2:392,i3:507,i4:622}[p];
+ w=path("M140 235 C155 90 165 89 180 89 M285 89H620","wire-red")
+  +path("M392 89V120 M507 89V120 M622 89V120","wire-black")
+  +(["i2","i3","i4"].filter(q=>q!==p).map(q=>{const qx={i2:392,i3:507,i4:622}[q];return path("M"+qx+" 158V265","wire-black")}).join(""))
+  +path("M622 265H55","wire-black")
+  +path("M"+x+" 158V180 M"+x+" 245V265","wire-black");mx=x-50;my=180;}
+if(p){w+='<rect x="'+mx+'" y="'+my+'" width="100" height="65" rx="9" fill="#555f68" stroke="#cbd5e1" stroke-width="3"/><text x="'+(mx+50)+'" y="'+(my+25)+'" text-anchor="middle" fill="white" font-size="13">AMMETER</text><text x="'+(mx+50)+'" y="'+(my+49)+'" text-anchor="middle" fill="#cde8b8" font-size="13">'+(valid?kclMeasured[p].toFixed(2)+" mA":"—")+'</text>'}
+g.innerHTML=w;
+const fixed=$("kclViz").querySelector('rect[x="500"][y="20"]');if(fixed){fixed.style.display="none";fixed.nextElementSibling.style.display="none";fixed.nextElementSibling.nextElementSibling.style.display="none";}
+const read=p?kclMeasured[p].toFixed(2)+" mA":"—";$("kclDisplay").textContent=valid?read:"—";$("kclSvgRead").textContent=valid?read:"—";$("kclLamp").classList.toggle("on",$("kclPower").value==="on");$("kclVizStatus").textContent=valid?"✓ Ammeter physically inserted in series at "+p.toUpperCase()+" | تم قطع الفرع وإدخال الأميتر على التسلسل":"Connection needs correction | التوصيل يحتاج إلى تصحيح"}
 function renderKVL(){const names={i:"I",u1:"U₁",u2:"U₂",u3:"U₃",u4:"U₄"};$("kvlRows").innerHTML=["i","u1","u2","u3","u4"].map(k=>'<tr><td>'+names[k]+'</td><td>'+(kvlDone[k]?kvlMeasured[k].toFixed(2)+(k==="i"?" mA":" V"):"—")+'</td><td>'+(kvlDone[k]?kvlCalc[k].toFixed(2)+(k==="i"?" mA":" V"):"—")+'</td><td>'+(kvlDone[k]?err(kvlCalc[k],kvlMeasured[k]).toFixed(2)+"%":"—")+'</td></tr>').join("")}
 $("kvlMeasure").onclick=()=>{const p=$("kvlPoint").value,m=$("kvlMode").value,x=$("kvlMsg");if($("kvlCircuit").value!=="series"||$("kvlPower").value!=="on"||!p||m!==(p==="i"?"a":"v")){kvlVisual(p,false);x.className="feedback bad";x.innerHTML="Check circuit, source, meter mode and measurement point.<span class='ar'>راجع توصيل الدارة والمنبع ووضع جهاز القياس ونقطة القياس.</span>";return}kvlDone[p]=1;kvlVisual(p,true);renderKVL();x.className="feedback ok";x.innerHTML="✓ Measurement recorded.<span class='ar'>تم تسجيل القياس.</span>"};
 $("verifyKVL").onclick=()=>{const x=$("kvlVerify");if(!["u1","u2","u3","u4"].every(k=>kvlDone[k])){x.className="feedback bad";x.innerHTML="Measure U₁…U₄ first.<span class='ar'>قِس U₁…U₄ أولاً.</span>";return}const s=kvlMeasured.u1+kvlMeasured.u2+kvlMeasured.u3+kvlMeasured.u4;x.className="feedback ok";x.innerHTML="✓ ΣU = "+s.toFixed(2)+" V ≈ 12 V → KVL verified.<span class='ar'>✓ مجموع هبوطات الجهد = "+s.toFixed(2)+" V ≈ 12 V، وبالتالي تحقق قانون كيرشوف للجهد.</span>"};
