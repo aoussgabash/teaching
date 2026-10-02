@@ -14,37 +14,39 @@
 <h3>Results | <span class="ar" style="display:inline">النتائج</span></h3><table><tr><th>Current</th><th>Measured mA</th><th>Calculated mA</th><th>Error %</th></tr><tbody id="kclRows"></tbody></table><button class="btn" id="verifyKCL">VERIFY KCL | تحقق من قانون التيار</button><div id="kclVerify" class="feedback"></div><div class="formula">I₁ ≈ I₂+I₃+I₄<br>Error (%) = (Calculated − Measured) / Calculated × 100</div></section>
 
 <section class="card" id="finalChallenge"><div class="eyebrow">FINAL CHALLENGE | المسألة الختامية</div><h2>Combined KVL & KCL Problem</h2><h3 class="ar">مسألة شاملة في قانوني كيرشوف للجهد والتيار</h3><p>Solve the following circuit from the laboratory note. Assume all resistors are 5 Ω. Use KVL for the two loops and KCL at node A, then determine I₁, I₂ and I₃.</p><p class="ar">حل الدارة التالية الواردة في النوتة المخبرية. اعتبر جميع المقاومات 5 Ω. استخدم قانون كيرشوف للجهد للحلقتين وقانون كيرشوف للتيار عند العقدة A، ثم أوجد I₁ وI₂ وI₃.</p><div class="formula">E₁=10 V · E₂=20 V · E₃=30 V · E₄=40 V · E₅=50 V · E₆=60 V · E₇=70 V<br>R₁=R₂=R₃=R₄=R₅=R₆=R₇=5 Ω</div>
-<svg viewBox="0 0 760 470" style="width:100%;background:#071827;border:1px solid #31516a;border-radius:18px;margin:18px 0">
-<defs><style>.cw{stroke:#d8dde2;stroke-width:5;fill:none;stroke-linecap:round}.bat{stroke:#f5d995;stroke-width:5}.pol{fill:#fff;font:bold 18px Arial}.el{fill:#f5d995;font:16px Arial}.rl{fill:#111;font:17px Arial}.cur{fill:#20bdf2;font:19px Arial}</style></defs>
-<!-- conductors, deliberately broken at every source -->
-<g class="cw">
-<path d="M90 365V300 M90 245V110H180 M260 110H278 M322 110H380 M380 110H480 M560 110H578 M622 110H670V180 M670 245V365H560 M480 365H448 M402 365H380 M380 365V300 M380 240V225 M380 180V110 M380 365H90"/>
+<svg viewBox="0 0 760 500" style="width:100%;background:#071827;border:1px solid #31516a;border-radius:18px;margin:18px 0">
+<defs><style>.w{stroke:#d8dde2;stroke-width:5;fill:none;stroke-linecap:round}.r{fill:#dfc174;stroke:#8a6a25;stroke-width:2}.t{fill:#111;font:17px Arial}.e{fill:#f5d995;font:16px Arial}.p{fill:#fff;font:bold 18px Arial}.i{fill:#20bdf2;font:19px Arial}.bp{stroke:#f5d995;stroke-width:5}</style></defs>
+<!-- wiring follows the original notebook topology -->
+<g class="w">
+<path d="M105 390V315"/><path d="M105 230V110H185"/><path d="M265 110H285"/><path d="M325 110H380"/>
+<path d="M380 110H475"/><path d="M555 110H575"/><path d="M615 110H665V190"/>
+<path d="M665 265V390H570"/><path d="M490 390H455"/><path d="M415 390H380"/>
+<path d="M380 390H105"/>
+<path d="M380 110V150"/><path d="M380 190V215"/><path d="M380 270V290"/><path d="M380 345V390"/>
 </g>
-<!-- resistors -->
-<g fill="#dfc174" stroke="#8a6a25" stroke-width="2">
-<rect x="62" y="225" width="56" height="75" rx="6"/><rect x="180" y="90" width="80" height="40" rx="6"/>
-<rect x="350" y="180" width="60" height="45" rx="6"/><rect x="350" y="255" width="60" height="45" rx="6"/>
-<rect x="480" y="90" width="80" height="40" rx="6"/><rect x="642" y="180" width="56" height="65" rx="6"/>
-<rect x="480" y="345" width="80" height="40" rx="6"/></g>
-<g class="rl" text-anchor="middle"><text x="90" y="268">R₁</text><text x="220" y="116">R₂</text><text x="380" y="208">R₃</text><text x="380" y="283">R₄</text><text x="520" y="116">R₅</text><text x="670" y="218">R₆</text><text x="520" y="371">R₇</text></g>
-<!-- E1 vertical: long plate is + -->
-<g><line x1="68" y1="278" x2="112" y2="278" class="bat"/><line x1="76" y1="292" x2="104" y2="292" class="bat"/><text x="124" y="281" class="pol">+</text><text x="124" y="302" class="pol">−</text><text x="28" y="292" class="el">E₁ 10 V</text></g>
-<!-- E2 horizontal -->
-<g><line x1="286" y1="88" x2="286" y2="132" class="bat"/><line x1="307" y1="96" x2="307" y2="124" class="bat"/><text x="274" y="82" class="pol">+</text><text x="305" y="82" class="pol">−</text><text x="270" y="155" class="el">E₂ 20 V</text></g>
-<!-- E3 vertical -->
-<g><line x1="366" y1="235" x2="394" y2="235" class="bat"/><line x1="358" y1="247" x2="402" y2="247" class="bat"/><text x="414" y="239" class="pol">−</text><text x="414" y="258" class="pol">+</text><text x="432" y="249" class="el">E₃ 30 V</text></g>
-<!-- E4 vertical -->
-<g><line x1="358" y1="312" x2="402" y2="312" class="bat"/><line x1="366" y1="326" x2="394" y2="326" class="bat"/><text x="414" y="316" class="pol">+</text><text x="414" y="338" class="pol">−</text><text x="430" y="335" class="el">E₄ 40 V</text></g>
-<!-- E5 horizontal -->
-<g><line x1="586" y1="88" x2="586" y2="132" class="bat"/><line x1="607" y1="96" x2="607" y2="124" class="bat"/><text x="574" y="82" class="pol">+</text><text x="605" y="82" class="pol">−</text><text x="570" y="155" class="el">E₅ 50 V</text></g>
-<!-- E6 vertical -->
-<g><line x1="656" y1="262" x2="684" y2="262" class="bat"/><line x1="648" y1="276" x2="692" y2="276" class="bat"/><text x="704" y="266" class="pol">−</text><text x="704" y="288" class="pol">+</text><text x="615" y="315" class="el">E₆ 60 V</text></g>
-<!-- E7 horizontal -->
-<g><line x1="425" y1="343" x2="425" y2="387" class="bat"/><line x1="410" y1="351" x2="410" y2="379" class="bat"/><text x="422" y="414" class="pol">+</text><text x="394" y="414" class="pol">−</text><text x="365" y="440" class="el">E₇ 70 V</text></g>
-<!-- node and assumed currents -->
-<circle cx="380" cy="110" r="7" fill="#20bdf2"/><text x="360" y="82" fill="#20bdf2" font-size="22">A</text>
-<g class="cur"><text x="140" y="65">I₁ →</text><text x="397" y="160">↓ I₂</text><text x="505" y="65">I₃ →</text></g>
-<text x="380" y="458" text-anchor="middle" fill="#9ddfff" font-size="14">Long plate = + terminal · Short plate = − terminal | الخط الطويل موجب · الخط القصير سالب</text>
+<!-- resistors exactly in their branches -->
+<g class="r"><rect x="77" y="230" width="56" height="85" rx="6"/><rect x="185" y="90" width="80" height="40" rx="6"/>
+<rect x="350" y="215" width="60" height="55" rx="6"/><rect x="350" y="290" width="60" height="55" rx="6"/>
+<rect x="475" y="90" width="80" height="40" rx="6"/><rect x="637" y="190" width="56" height="75" rx="6"/>
+<rect x="490" y="370" width="80" height="40" rx="6"/></g>
+<g class="t" text-anchor="middle"><text x="105" y="280">R₁</text><text x="225" y="116">R₂</text><text x="380" y="248">R₃</text><text x="380" y="323">R₄</text><text x="515" y="116">R₅</text><text x="665" y="235">R₆</text><text x="530" y="396">R₇</text></g>
+<!-- E1 below R1: + at top, - bottom -->
+<g><line x1="83" y1="335" x2="127" y2="335" class="bp"/><line x1="91" y1="351" x2="119" y2="351" class="bp"/><text x="140" y="339" class="p">+</text><text x="140" y="357" class="p">−</text><text x="40" y="350" class="e">E₁ 10 V</text></g>
+<!-- E2 on upper-left: long plate left (+), short right (-) -->
+<g><line x1="285" y1="88" x2="285" y2="132" class="bp"/><line x1="305" y1="96" x2="305" y2="124" class="bp"/><text x="278" y="78" class="p">+</text><text x="303" y="78" class="p">−</text><text x="275" y="158" class="e">E₂ 20 V</text></g>
+<!-- E3 above R3: short plate top (-), long plate bottom (+) -->
+<g><line x1="366" y1="150" x2="394" y2="150" class="bp"/><line x1="358" y1="168" x2="402" y2="168" class="bp"/><text x="414" y="154" class="p">−</text><text x="414" y="174" class="p">+</text><text x="430" y="168" class="e">E₃ 30 V</text></g>
+<!-- E4 below R4: long plate top (+), short bottom (-) -->
+<g><line x1="358" y1="355" x2="402" y2="355" class="bp"/><line x1="366" y1="373" x2="394" y2="373" class="bp"/><text x="414" y="359" class="p">+</text><text x="414" y="379" class="p">−</text><text x="430" y="370" class="e">E₄ 40 V</text></g>
+<!-- E5 upper-right: long plate left (+), short right (-) -->
+<g><line x1="575" y1="88" x2="575" y2="132" class="bp"/><line x1="595" y1="96" x2="595" y2="124" class="bp"/><text x="568" y="78" class="p">+</text><text x="593" y="78" class="p">−</text><text x="565" y="158" class="e">E₅ 50 V</text></g>
+<!-- E6 above R6: short plate top (-), long bottom (+) -->
+<g><line x1="651" y1="280" x2="679" y2="280" class="bp"/><line x1="643" y1="298" x2="687" y2="298" class="bp"/><text x="699" y="284" class="p">−</text><text x="699" y="304" class="p">+</text><text x="620" y="325" class="e">E₆ 60 V</text></g>
+<!-- E7 bottom branch: long plate left (+), short right (-), before R7 -->
+<g><line x1="435" y1="368" x2="435" y2="412" class="bp"/><line x1="455" y1="376" x2="455" y2="404" class="bp"/><text x="427" y="435" class="p">+</text><text x="453" y="435" class="p">−</text><text x="420" y="462" class="e">E₇ 70 V</text></g>
+<circle cx="380" cy="110" r="7" fill="#20bdf2"/><text x="360" y="80" fill="#20bdf2" font-size="22">A</text>
+<g class="i"><text x="145" y="65">I₁ →</text><text x="397" y="205">↓ I₂</text><text x="500" y="65">I₃ →</text></g>
+<text x="380" y="487" text-anchor="middle" fill="#9ddfff" font-size="14">Long plate = + · Short plate = − | الخط الطويل موجب · الخط القصير سالب</text>
 </svg>
 <h3>Step 1 · Write the equations | <span class="ar" style="display:inline">اكتب المعادلات</span></h3><div class="formula">Loop 1 / الحلقة 1: KVL<br>Loop 2 / الحلقة 2: KVL<br>Node A / العقدة A: KCL</div>
 <p>Use the directions shown in the diagram. A negative result means the actual current direction is opposite to the assumed arrow.</p><p class="ar">استخدم اتجاهات التيارات المفترضة المبينة في الرسم. إذا ظهرت قيمة سالبة فهذا يعني أن الاتجاه الحقيقي للتيار معاكس للسهم المفترض.</p>
