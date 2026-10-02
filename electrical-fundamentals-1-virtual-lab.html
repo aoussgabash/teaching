@@ -81,10 +81,25 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
    drawViz(true,display);fb.className="mini-feedback ok";fb.innerHTML="✓ Measurement completed.<span class='ar'>تم القياس بنجاح.</span>";
  },true);
 });
-</script></head><body>
+</script><style id="unified-lab-hub">
+#cards .card:nth-child(n+2){display:none!important}
+#session2-home-card{margin-top:0!important}
+.lab-session-block{margin:18px 0 26px}
+.lab-session-desc{background:#0b2638;border:1px solid #28506c;border-radius:18px;padding:20px;margin-bottom:12px;line-height:1.65}
+.lab-session-desc h2{margin-top:0}.lab-session-card{display:block!important;text-decoration:none!important;color:inherit!important}
+#session1real{display:none!important}
+</style></head><body>
 <header><div class="container"><nav><b>⚡ Virtual Laboratory | المخبر الافتراضي</b><a href="electrical-fundamentals-1.html">← Course | المقرر</a><small style="color:var(--mut)">Updated 01.10.2026</small></nav></div></header>
 <main class="container"><section class="hero"><small style="color:var(--blue);font-weight:bold">ELECTRICAL ENGINEERING FUNDAMENTALS 1</small><h1>Interactive Virtual Laboratory</h1><h2 class="ar">المخبر الافتراضي التفاعلي</h2><p class="lead">Perform the practical session, connect the instruments, take measurements, record results, then verify your calculations.</p><p class="ar">نفّذ الجلسة العملية، صِل أجهزة القياس، خذ القراءات، سجّل النتائج، ثم تحقق من حساباتك.</p><div><b id="pt">Progress | التقدم: 0/6</b><div class="progress"><b id="pb"></b></div></div></section>
-<div class="remote-banner"><b>Remote Practical Laboratory · Session 1</b><span class="ar"><b>المخبر العملي الافتراضي · الجلسة 1</b></span><div>Designed from the semester laboratory note: components, resistor identification, Ohm's law, series/parallel connections and use of ammeter, voltmeter and ohmmeter.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</span></div><div class="cards" id="cards"></div><a id="session2-home-card" class="card" style="display:block;text-decoration:none;color:inherit;margin-top:18px" href="electrical-fundamentals-1-virtual-lab-session-2.html"><small>PRACTICAL SESSION 2 | الجلسة العملية 2</small><h3>Kirchhoff’s Laws · KVL & KCL</h3><div class="ar">قانونا كيرشوف · الجهد والتيار</div></a>
+<div class="remote-banner"><b>Remote Practical Laboratory · Session 1</b><span class="ar"><b>المخبر العملي الافتراضي · الجلسة 1</b></span><div>Designed from the semester laboratory note: components, resistor identification, Ohm's law, series/parallel connections and use of ammeter, voltmeter and ohmmeter.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</span></div><div class="cards" id="cards"></div><div id="unifiedSessions">
+<section class="lab-session-block">
+<div class="lab-session-desc"><h2>Remote Practical Laboratory · Session 1</h2><h3 class="ar">المخبر العملي الافتراضي · الجلسة 1</h3><div>Designed from the semester laboratory note: components, resistor identification, Ohm’s law, series/parallel connections, and use of ammeter, voltmeter and ohmmeter.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</span></div>
+<a class="card lab-session-card" href="electrical-fundamentals-1-virtual-lab-session-1.html"><small>PRACTICAL SESSION 1 | الجلسة العملية 1</small><h3>Basic Measurements · Remote Lab</h3><div class="ar">القياسات الأساسية · المخبر عن بُعد</div></a>
+</section>
+<section class="lab-session-block">
+<div class="lab-session-desc"><h2>Remote Practical Laboratory · Session 2</h2><h3 class="ar">المخبر العملي الافتراضي · الجلسة 2</h3><div>Designed from the semester laboratory note: Kirchhoff’s voltage law (KVL) in a series circuit and Kirchhoff’s current law (KCL) in a parallel circuit.</div><span class="ar">مصمم اعتماداً على نوطة المخبر الفصلية: التحقق من قانون كيرشوف للجهد (KVL) في دارة تسلسلية وقانون كيرشوف للتيار (KCL) في دارة تفرعية.</span></div>
+<a class="card lab-session-card" href="electrical-fundamentals-1-virtual-lab-session-2.html"><small>PRACTICAL SESSION 2 | الجلسة العملية 2</small><h3>Kirchhoff’s Laws · KVL & KCL</h3><div class="ar">قانونا كيرشوف · الجهد والتيار</div></a>
+</section></div>
 <section class="lab">
 <div id="session1real"><h2>Remote Practical Session 1 · Basic Measurements</h2><h3 class="ar">الجلسة العملية الافتراضية 1 · القياسات الأساسية</h3><div class="session-plan"><h3>Session procedure | خطوات الجلسة</h3><span class="ar">اقرأ خطوات التجربة قبل البدء بالعمل.</span><div class="step" id="s1step1">1. Measure a resistor with the supply OFF.<span class="ar">1. قِس مقاومة مع فصل المنبع.</span></div><div class="step" id="s1step2">2. Set the source and measure voltage with the voltmeter in parallel.<span class="ar">2. اضبط المنبع وقِس الجهد بوصل الفولتميتر على التوازي.</span></div><div class="step" id="s1step3">3. Measure current with the ammeter in series.<span class="ar">3. قِس التيار بوصل الأميتر على التسلسل.</span></div></div>
 <p>This session reproduces the introductory work in the laboratory note before the later network theorems.</p><span class="ar">تحاكي هذه الجلسة العمل التمهيدي في النوطة قبل الانتقال إلى نظريات الدارات اللاحقة.</span>
