@@ -30,12 +30,12 @@
 
 <section class="card"><h2>Stage 2 · Parallel connection</h2><h3 class="ar">المرحلة الثانية · الربط التفرعي</h3>
 <svg viewBox="0 0 760 280" class="diagram">
-<path class="w" d="M120 60H650 M650 60V220H120 M120 60V132 M120 158V220"/>
+<path class="w" d="M120 60H565 M565 220H120 M120 60V132 M120 158V220"/>
 <line class="src" x1="92" y1="132" x2="148" y2="132"/><line class="src" x1="104" y1="158" x2="136" y2="158"/>
 <text x="158" y="136" fill="#f5d99a" font-size="22">+</text><text x="158" y="164" fill="#f5d99a" font-size="22">−</text>
 <path class="w" d="M285 60V100 M285 180V220 M425 60V100 M425 180V220 M565 60V100 M565 180V220"/>
 <rect class="rbox" x="250" y="100" width="70" height="80" rx="9"/><rect class="rbox" x="390" y="100" width="70" height="80" rx="9"/><rect class="rbox" x="530" y="100" width="70" height="80" rx="9"/>
-<text x="285" y="145" text-anchor="middle">R₁</text><text x="425" y="145" text-anchor="middle">R₂</text><text x="565" y="145" text-anchor="middle">R₃</text>
+<text x="285" y="136" text-anchor="middle">R₁</text><text x="285" y="158" text-anchor="middle" font-size="16">680 Ω</text><text x="425" y="136" text-anchor="middle">R₂</text><text x="425" y="158" text-anchor="middle" font-size="16">470 Ω</text><text x="565" y="136" text-anchor="middle">R₃</text><text x="565" y="158" text-anchor="middle" font-size="16">330 Ω</text>
 <text x="250" y="88" fill="#20bdf2">I₁↓</text><text x="390" y="88" fill="#20bdf2">I₂↓</text><text x="530" y="88" fill="#20bdf2">I₃↓</text></svg>
 <div class="interactive"><div class="powerbox"><label>DC source U<select id="pV"><option>3</option><option>6</option><option>9</option></select></label><label>Ammeter position<select id="pM"><option value="">Choose | اختر</option><option value="I">Before branching · I</option><option value="I1">R₁ branch · I₁</option><option value="I2">R₂ branch · I₂</option><option value="I3">R₃ branch · I₃</option></select></label></div><div class="readout" id="pRead">—</div><button class="btn" onclick="measureParallel()">START MEASUREMENT | ابدأ القياس</button><div id="pStatus" class="status"></div></div>
 <table><thead><tr><th>U [V]</th><th>I [mA]</th><th>I₁ [mA]</th><th>I₂ [mA]</th><th>I₃ [mA]</th></tr></thead><tbody><tr><td>3</td><td><input class="record" id="p3I" inputmode="decimal"></td><td><input class="record" id="p3I1" inputmode="decimal"></td><td><input class="record" id="p3I2" inputmode="decimal"></td><td><input class="record" id="p3I3" inputmode="decimal"></td></tr><tr><td>6</td><td><input class="record" id="p6I" inputmode="decimal"></td><td><input class="record" id="p6I1" inputmode="decimal"></td><td><input class="record" id="p6I2" inputmode="decimal"></td><td><input class="record" id="p6I3" inputmode="decimal"></td></tr><tr><td>9</td><td><input class="record" id="p9I" inputmode="decimal"></td><td><input class="record" id="p9I1" inputmode="decimal"></td><td><input class="record" id="p9I2" inputmode="decimal"></td><td><input class="record" id="p9I3" inputmode="decimal"></td></tr></tbody></table>
@@ -48,7 +48,7 @@
 <svg viewBox="0 0 900 420" class="diagram" aria-label="Mixed resistor circuit">
 <!-- Mixed circuit: R1 in series with R2 || R3. Every wire stops at component terminals. -->
 <!-- left source branch: upper and lower conductors are physically separated by the source -->
-<path class="w" d="M120 95H260 M400 95H760V330H120V250 M120 165V95"/>
+<path class="w" d="M120 95H260 M400 95H650 M650 330H120V250 M120 165V95"/>
 <!-- source plates: no white conductor behind or between them -->
 <line class="src" x1="75" y1="165" x2="165" y2="165"/>
 <line class="src" x1="92" y1="250" x2="148" y2="250"/>
