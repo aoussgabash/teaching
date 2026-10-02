@@ -37,13 +37,13 @@ if($("s1v")) $("s1v").addEventListener("input",function(){
    const msg=$("s1verifymsg"),er=$("s1errorResult");
    if(!(R>0)||!(U>=0)||!(Im>=0)){
      if(msg){msg.className="feedback bad";msg.innerHTML="Complete R, U and I first.<span class='ar'>أكمل قيم R و U و I أولاً.</span>";}
-     if(er)er.textContent="Calculated error | الخطأ المحسوب: —";
+     if(er)er.textContent="<span dir="ltr">Calculated error: —</span><span class="ar" dir="rtl">الخطأ المحسوب: —</span>";
      return;
    }
    const Ith=(U/R)*1000;
    const error=((Ith-Im)/Ith)*100;
    if(msg){msg.className="feedback ok";msg.innerHTML="✓ Table verified · I theoretical = "+Ith.toFixed(2)+" mA<span class='ar'>✓ تم التحقق من الجدول · التيار النظري = "+Ith.toFixed(2)+" mA</span>";}
-   if(er)er.innerHTML="Calculated error | الخطأ المحسوب: <b>"+error.toFixed(2)+"%</b>";
+   if(er)er.innerHTML="<div dir='ltr'>Calculated error: <b style='color:#34d399;font-size:1.18em'>"+error.toFixed(2)+"%</b></div><div class='ar' dir='rtl'>الخطأ المحسوب: <b style='color:#34d399;font-size:1.18em'>"+error.toFixed(2)+"%</b></div>";
  },true);
  const btn=$("startMeasurementBtn");
  if(!btn)return;
