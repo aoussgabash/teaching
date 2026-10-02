@@ -120,23 +120,23 @@
 −20I₁₁ − 20I₂₂ + 45I₃₃ = 80
 </div>
 <p class="mini">First enter the three Maxwell mesh currents, then enter the six branch-current magnitudes in mA. The arrows in the diagram define the requested directions.</p>
-<p class="ar mini">أدخل أولاً تيارات ماكسويل الثلاثة للحلقات، ثم أدخل قيم تيارات الفروع الستة بوحدة mA. الأسهم في الرسم تحدد الاتجاهات المطلوبة.</p>
+<p class="ar mini">أدخل أولاً تيارات ماكسويل الثلاثة للحلقات، ثم أدخل تيارات الفروع الستة بوحدة mA. اختر الإشارة (+/−) من القائمة ثم أدخل مقدار التيار فقط؛ الأسهم في الرسم تحدد الاتجاهات المرجعية.</p>
 <h3>Maxwell mesh currents | تيارات ماكسويل للحلقات</h3>
 <div class="grid3">
-<div class="qbox"><label>I₁₁ [mA]</label><input id="mxM11" inputmode="decimal"></div>
-<div class="qbox"><label>I₂₂ [mA]</label><input id="mxM22" inputmode="decimal"></div>
-<div class="qbox"><label>I₃₃ [mA]</label><input id="mxM33" inputmode="decimal"></div>
+<div class="qbox"><label>I₁₁ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxM11Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxM11" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
+<div class="qbox"><label>I₂₂ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxM22Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxM22" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
+<div class="qbox"><label>I₃₃ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxM33Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxM33" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
 </div>
 <button class="btn" onclick="verifyMaxwellMesh()">VERIFY MESH CURRENTS | تحقق من تيارات الحلقات</button>
 <div id="mxMeshFb" class="status"></div>
 <h3>Branch currents | تيارات الفروع</h3>
 <div class="grid3">
-<div class="qbox"><label>I₁ [mA]</label><input id="mxI1" inputmode="decimal"></div>
-<div class="qbox"><label>I₂ [mA]</label><input id="mxI2" inputmode="decimal"></div>
-<div class="qbox"><label>I₃ [mA]</label><input id="mxI3" inputmode="decimal"></div>
-<div class="qbox"><label>I₄ [mA]</label><input id="mxI4" inputmode="decimal"></div>
-<div class="qbox"><label>I₅ [mA]</label><input id="mxI5" inputmode="decimal"></div>
-<div class="qbox"><label>I₆ [mA]</label><input id="mxI6" inputmode="decimal"></div>
+<div class="qbox"><label>I₁ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxI1Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxI1" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
+<div class="qbox"><label>I₂ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxI2Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxI2" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
+<div class="qbox"><label>I₃ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxI3Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxI3" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
+<div class="qbox"><label>I₄ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxI4Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxI4" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
+<div class="qbox"><label>I₅ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxI5Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxI5" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
+<div class="qbox"><label>I₆ [mA]</label><div style="display:grid;grid-template-columns:92px 1fr;gap:10px"><select id="mxI6Sign" aria-label="Sign | الإشارة"><option value="+">+ موجب</option><option value="-">− سالب</option></select><input id="mxI6" inputmode="decimal" min="0" placeholder="Magnitude | القيمة"></div></div>
 </div>
 <button class="btn" onclick="verifyMaxwellBranches()">VERIFY BRANCH CURRENTS | تحقق من تيارات الفروع</button>
 <div id="mxBranchFb" class="status"></div>
@@ -155,7 +155,7 @@ function plot(svgId,pts,title){let s=document.getElementById(svgId),W=620,H=360,
 function drawPart(k){if(k==='S')plot('plotS',vals.map(v=>[v/1480*1000,v]));if(k==='P')plot('plotP',vals.map(v=>[v/rp*1000,v]));if(k==='M')plot('plotM',[2,4,6,8,10].map(v=>[v/rm*1000,v]))}
 function verifyPart(k){drawPart(k);let target=k==='S'?1480:k==='P'?rp:rm,id='ans'+k,fb='fb'+k,tol=k==='S'?15:k==='P'?5:10,val=+document.getElementById(id).value,ok=isFinite(val)&&Math.abs(val-target)<tol;show(fb,ok?'✓ Correct. The equivalent resistance agrees with the slope of U=f(I).<span class="ar">✓ صحيح. تتوافق المقاومة المكافئة مع ميل المنحني U=f(I).</span>':'Recheck Rₑq and compare it with the curve slope ΔU/ΔI.<span class="ar">راجع المقاومة المكافئة وقارنها مع ميل المنحني ΔU/ΔI.</span>',ok)}
 
-function readMx(id){let e=document.getElementById(id);return parseFloat(((e&&e.value)||'').replace(',','.'))}
+function readMx(id){let e=document.getElementById(id),s=document.getElementById(id+'Sign');let v=parseFloat(((e&&e.value)||'').replace(',','.'));return (s&&s.value==='-'?-1:1)*Math.abs(v)}
 function verifyMaxwellMesh(){
  const target=[79.8669,472.5458,2023.2945];
  let ok=true;
