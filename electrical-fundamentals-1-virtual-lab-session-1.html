@@ -28,23 +28,34 @@ window.addEventListener("DOMContentLoaded",function(){
    studentMode=mode;studentJack=jack;redNode=red;blackNode=black;
    const drawViz=(valid,label)=>{
  const box=$("connectionViz"),g=$("vizWires"),st=$("vizStatus");if(!box||!g)return;
- box.classList.add("show");$("vizR").textContent="R = "+chosenR+" Ω";$("vizPower").textContent=powerOn?"ON":"OFF";$("vizMeter").textContent=label||"—";g.innerHTML="";
+ box.classList.add("show");
+ $("vizR").textContent="R = "+chosenR+" Ω";$("vizPower").textContent=powerOn?"ON":"OFF";$("vizMeter").textContent=label||"—";g.innerHTML="";
  const pts={"rleft":[220,199],"rright":[400,199],"source+":[142,275],"source-":[65,275]};
- const path=(from,to,color,lane)=>{if(!pts[to])return;const p=pts[to],mid=lane||((from[1]+p[1])/2);g.insertAdjacentHTML("beforeend",'<path d="M '+from[0]+' '+from[1]+' C '+from[0]+' '+mid+', '+p[0]+' '+mid+', '+p[0]+' '+p[1]+'" fill="none" stroke="'+color+'" stroke-width="7" stroke-linecap="round"/>')};
- // Mode-aware wiring. For current measurement, never draw a direct source-to-resistor bypass.
+ const cable=(x1,y1,x2,y2,color,lane)=>{
+   const mid=lane??((y1+y2)/2),d="M "+x1+" "+y1+" C "+x1+" "+mid+", "+x2+" "+mid+", "+x2+" "+y2;
+   g.insertAdjacentHTML("beforeend",'<path d="'+d+'" fill="none" stroke="#94a3b8" stroke-width="10" stroke-linecap="round"/><path d="'+d+'" fill="none" stroke="'+color+'" stroke-width="6" stroke-linecap="round"/>');
+ };
+ const probe=(mx,my,node,color,lane)=>{const p=pts[node];if(p)cable(mx,my,p[0],p[1],color,lane)};
  if(mode==="a" && valid){
-   // One clear series loop: Source + -> mA(red) -> meter -> COM(black) -> resistor -> Source -.
-   g.insertAdjacentHTML("beforeend",
-    '<path d="M 142 275 C 250 320, 500 300, 560 143" fill="none" stroke="#ef3340" stroke-width="7" stroke-linecap="round"/>'+
-    '<path d="M 460 143 C 420 155, 390 175, 400 199" fill="none" stroke="#171717" stroke-width="7" stroke-linecap="round"/>'+
-    '<path d="M 220 199 C 175 215, 120 315, 65 275" fill="none" stroke="#171717" stroke-width="7" stroke-linecap="round"/>');
+   // Source+ -> red/mA -> meter -> COM/black -> R left -> R -> R right -> Source-
+   cable(142,275,560,143,"#ef3340",320);
+   cable(460,143,220,199,"#111827",150);
+   cable(400,199,65,275,"#111827",320);
  }else{
-   // Voltage/resistance and failed attempts show the student's selected probe positions.
-   path([560,143],red,"#ef3340",165);path([460,143],black,"#171717",150);
-   if(sourceConn==="correct"){path([142,275],"rleft","#ef3340",260);path([65,275],"rright","#171717",325)}
-   else if(sourceConn==="reversed"){path([142,275],"rright","#ef3340",315);path([65,275],"rleft","#171717",255)}
+   // Draw exactly the selected meter probes for Ω/V and for invalid attempts.
+   probe(560,143,red,"#ef3340",165);
+   probe(460,143,black,"#111827",150);
+   if(sourceConn==="correct"){
+     cable(142,275,220,199,"#ef3340",255);
+     cable(65,275,400,199,"#111827",325);
+   }else if(sourceConn==="reversed"){
+     cable(142,275,400,199,"#ef3340",315);
+     cable(65,275,220,199,"#111827",255);
+   }
  }
- st.className="viz-status "+(valid?"ok":"bad");let desc=mode==="a"?" · Ammeter in series | الأميتر على التسلسل":mode==="v"?" · Voltmeter in parallel | الفولتميتر على التوازي":" · Ohmmeter across resistor | الأوميتر على طرفي المقاومة";st.innerHTML=(valid?"✓ Correct connection":"✗ Incorrect connection")+desc+"<span class='ar'>"+(valid?"توصيل صحيح":"توصيل غير صحيح")+"</span>";
+ st.className="viz-status "+(valid?"ok":"bad");
+ const desc=mode==="a"?" · Ammeter in series | الأميتر على التسلسل":mode==="v"?" · Voltmeter in parallel | الفولتميتر على التوازي":" · Ohmmeter across resistor | الأوميتر على طرفي المقاومة";
+ st.innerHTML=(valid?"✓ Correct connection":"✗ Incorrect connection")+desc+"<span class='ar'>"+(valid?"توصيل صحيح":"توصيل غير صحيح")+"</span>";
 };
 const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML="No valid measurement.<span class='ar'>لا توجد قراءة صالحة.</span>";drawViz(false,"—")};
    if(!chosenR){
