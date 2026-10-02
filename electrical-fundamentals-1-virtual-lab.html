@@ -94,7 +94,7 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
 <div class="cards" id="cards"></div><div id="unifiedSessions">
 <a class="card lab-session-card" href="electrical-fundamentals-1-virtual-lab-session-1.html">
 <small>PRACTICAL SESSION 1 | الجلسة العملية 1</small>
-<h3>Basic Measurements · Remote Lab</h3><div class="ar">القياسات الأساسية · المخبر عن بُعد</div>
+<h3>Basic Measurements</h3><div class="ar">القياسات الأساسية</div>
 <p>Components, resistor identification, Ohm’s law, series/parallel connections, and use of ammeter, voltmeter and ohmmeter.</p>
 <p class="ar">العناصر، قراءة المقاومات، قانون أوم، التوصيل تسلسلاً وتفرعاً، واستخدام الأميتر والفولتميتر والأوميتر.</p>
 <div class="btn" style="margin-top:12px">OPEN SESSION 1 | افتح الجلسة 1</div>
@@ -189,7 +189,7 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
 <footer>© 2026 Dr.-Ing. Aouss Gabash | الدكتور المهندس أوس غباش<br>AG Academic Ecosystem | منظومة AG الأكاديمية · Syria | سوريا</footer>
 <script>
 ["fieldlab","caplab","kirchlab","thevlab","rclab","placeholder","coulomb"].forEach(id=>document.getElementById(id)?.classList.add("hidden"));document.getElementById("session1real")?.classList.remove("hidden");
-const ex=[["Basic Measurements · Remote Lab","القياسات الأساسية · المخبر عن بُعد"],["Electric Field & Superposition","الحقل الكهربائي والتراكب"],["Capacitors","السعات الكهربائية"],["Ohm & Kirchhoff Laws","قانون أوم وقانونا كيرشوف"],["Thévenin & Norton","ثيفينن ونورتن"],["RC Transient","الحالة العابرة RC"]];let done=JSON.parse(localStorage.getItem("ef1lab")||"[]");const cards=document.querySelector("#cards");ex.forEach((x,i)=>{let d=document.createElement("div");d.className="card "+(i===0?"active ":"")+(done.includes(i)?"done":"");d.innerHTML="<small>"+(i===0?"PRACTICAL SESSION 1 | الجلسة العملية 1":"EXPERIMENT "+(i+1)+" | التجربة "+(i+1))+"</small><h3>"+x[0]+"</h3><div class=ar>"+x[1]+"</div>";d.onclick=()=>select(i,d);cards.appendChild(d)});function select(i,d){
+const ex=[["Basic Measurements","القياسات الأساسية"],["Electric Field & Superposition","الحقل الكهربائي والتراكب"],["Capacitors","السعات الكهربائية"],["Ohm & Kirchhoff Laws","قانون أوم وقانونا كيرشوف"],["Thévenin & Norton","ثيفينن ونورتن"],["RC Transient","الحالة العابرة RC"]];let done=JSON.parse(localStorage.getItem("ef1lab")||"[]");const cards=document.querySelector("#cards");ex.forEach((x,i)=>{let d=document.createElement("div");d.className="card "+(i===0?"active ":"")+(done.includes(i)?"done":"");d.innerHTML="<small>"+(i===0?"PRACTICAL SESSION 1 | الجلسة العملية 1":"EXPERIMENT "+(i+1)+" | التجربة "+(i+1))+"</small><h3>"+x[0]+"</h3><div class=ar>"+x[1]+"</div>";d.onclick=()=>select(i,d);cards.appendChild(d)});function select(i,d){
 document.querySelectorAll(".card").forEach(x=>x.classList.remove("active"));d.classList.add("active");
 document.getElementById("coulomb").style.display=i===0?"none":"none";
 document.getElementById("session1real").classList.toggle("hidden",i!==0);
