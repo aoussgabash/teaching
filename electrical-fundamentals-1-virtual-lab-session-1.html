@@ -40,10 +40,16 @@ if($("s1v")) $("s1v").addEventListener("input",function(){
      if(er)er.textContent="<span dir="ltr">Calculated error: —</span><span class="ar" dir="rtl">الخطأ المحسوب: —</span>";
      return;
    }
-   const Ith=(U/R)*1000;
+   const Rtheoretical=Number(chosenR);
+   const Utheoretical=Number($("s1v")?.value||0);
+   if(!(Rtheoretical>0)||!(Utheoretical>0)){
+     if(msg){msg.className="feedback bad";msg.innerHTML="Choose a nominal resistor and set the source voltage first.<span class='ar'>اختر المقاومة الاسمية واضبط جهد المنبع أولاً.</span>";}
+     return;
+   }
+   const Ith=(Utheoretical/Rtheoretical)*1000;
    const error=((Ith-Im)/Ith)*100;
-   if(msg){msg.className="feedback ok";msg.innerHTML="✓ Table verified · I theoretical = "+Ith.toFixed(2)+" mA<span class='ar'>✓ تم التحقق من الجدول · التيار النظري = "+Ith.toFixed(2)+" mA</span>";}
-   if(er)er.innerHTML="<div dir='ltr'>Calculated error: <b style='color:#34d399;font-size:1.18em'>"+error.toFixed(2)+"%</b></div><div class='ar' dir='rtl'>الخطأ المحسوب: <b style='color:#34d399;font-size:1.18em'>"+error.toFixed(2)+"%</b></div>";
+   if(msg){msg.className="feedback ok";msg.innerHTML="✓ Table verified · Theoretical values: U = "+Utheoretical.toFixed(2)+" V, R = "+Rtheoretical.toFixed(0)+" Ω, I = "+Ith.toFixed(2)+" mA<span class='ar'>✓ تم التحقق من الجدول · القيم النظرية: U = "+Utheoretical.toFixed(2)+" V، R = "+Rtheoretical.toFixed(0)+" Ω، I = "+Ith.toFixed(2)+" mA</span>";}
+   if(er)er.innerHTML="<div dir='ltr'>I<sub>theoretical</sub> = "+Utheoretical.toFixed(2)+" / "+Rtheoretical.toFixed(0)+" = <b>"+Ith.toFixed(3)+" mA</b><br>Calculated error: <b style='color:#34d399;font-size:1.18em'>"+error.toFixed(2)+"%</b></div><div class='ar' dir='rtl'>التيار النظري = "+Ith.toFixed(3)+" mA<br>الخطأ المحسوب: <b style='color:#34d399;font-size:1.18em'>"+error.toFixed(2)+"%</b></div>";
  },true);
  const btn=$("startMeasurementBtn");
  if(!btn)return;
