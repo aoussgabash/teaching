@@ -25,13 +25,14 @@ window.addEventListener("DOMContentLoaded",function(){
    const fb=$("studentSetup"),out=$("readingExplain");
    const mode=$("studentModeSelect")?.value||"",jack=$("studentJackSelect")?.value||"";
    const red=$("studentRedSelect")?.value||"",black=$("studentBlackSelect")?.value||"",sourceConn=$("studentSourceSelect")?.value||"";
+   studentMode=mode;studentJack=jack;redNode=red;blackNode=black;
    const drawViz=(valid,label)=>{
  const box=$("connectionViz"),g=$("vizWires"),st=$("vizStatus");if(!box||!g)return;
  box.classList.add("show");$("vizR").textContent="R = "+chosenR+" Ω";$("vizPower").textContent=powerOn?"ON":"OFF";$("vizMeter").textContent=label||"—";g.innerHTML="";
  const pts={"rleft":[220,199],"rright":[400,199],"source+":[142,275],"source-":[65,275]};
  const path=(from,to,color,lane)=>{if(!pts[to])return;const p=pts[to],mid=lane||((from[1]+p[1])/2);g.insertAdjacentHTML("beforeend",'<path d="M '+from[0]+' '+from[1]+' C '+from[0]+' '+mid+', '+p[0]+' '+mid+', '+p[0]+' '+p[1]+'" fill="none" stroke="'+color+'" stroke-width="7" stroke-linecap="round"/>')};
  // Mode-aware wiring. For current measurement, never draw a direct source-to-resistor bypass.
- if(studentMode==="a" && valid){
+ if(mode==="a" && valid){
    // One clear series loop: Source + -> mA(red) -> meter -> COM(black) -> resistor -> Source -.
    g.insertAdjacentHTML("beforeend",
     '<path d="M 142 275 C 250 320, 500 300, 560 143" fill="none" stroke="#ef3340" stroke-width="7" stroke-linecap="round"/>'+
@@ -43,7 +44,7 @@ window.addEventListener("DOMContentLoaded",function(){
    if(sourceConn==="correct"){path([142,275],"rleft","#ef3340",260);path([65,275],"rright","#171717",325)}
    else if(sourceConn==="reversed"){path([142,275],"rright","#ef3340",315);path([65,275],"rleft","#171717",255)}
  }
- st.className="viz-status "+(valid?"ok":"bad");let desc=studentMode==="a"?" · Ammeter in series | الأميتر على التسلسل":studentMode==="v"?" · Voltmeter in parallel | الفولتميتر على التوازي":" · Ohmmeter across resistor | الأوميتر على طرفي المقاومة";st.innerHTML=(valid?"✓ Correct connection":"✗ Incorrect connection")+desc+"<span class='ar'>"+(valid?"توصيل صحيح":"توصيل غير صحيح")+"</span>";
+ st.className="viz-status "+(valid?"ok":"bad");let desc=mode==="a"?" · Ammeter in series | الأميتر على التسلسل":mode==="v"?" · Voltmeter in parallel | الفولتميتر على التوازي":" · Ohmmeter across resistor | الأوميتر على طرفي المقاومة";st.innerHTML=(valid?"✓ Correct connection":"✗ Incorrect connection")+desc+"<span class='ar'>"+(valid?"توصيل صحيح":"توصيل غير صحيح")+"</span>";
 };
 const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML="No valid measurement.<span class='ar'>لا توجد قراءة صالحة.</span>";drawViz(false,"—")};
    if(!chosenR){
@@ -89,7 +90,7 @@ const fail=msg=>{fb.className="mini-feedback bad";fb.innerHTML=msg;out.innerHTML
 .session-intro h1{font-size:clamp(2rem,7vw,3.5rem);line-height:1.15;margin:0 0 26px}
 .session-intro p{font-size:1.08rem;line-height:1.6}
 </style></head><body>
-<header><div class="container"><nav><b>⚡ Virtual Laboratory | المخبر الافتراضي</b><a href="electrical-fundamentals-1.html">← Course | المقرر</a><small style="color:var(--mut)">Updated 01.10.2026</small></nav></div></header>
+<header><div class="container"><nav><b>⚡ Virtual Laboratory | المخبر الافتراضي</b><a href="electrical-fundamentals-1.html">← Course | المقرر</a><small style="color:var(--mut)">Updated 02.10.2026</small></nav></div></header>
 <main class="container">
 <div class="session-page-top"><a href="electrical-fundamentals-1-virtual-lab.html">← Sessions | الجلسات</a></div>
 <section class="session-intro">
