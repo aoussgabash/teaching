@@ -14,7 +14,7 @@
 <h3>Results | <span class="ar" style="display:inline">النتائج</span></h3><table><tr><th>Current</th><th>Measured mA</th><th>Calculated mA</th><th>Error %</th></tr><tbody id="kclRows"></tbody></table><button class="btn" id="verifyKCL">VERIFY KCL | تحقق من قانون التيار</button><div id="kclVerify" class="feedback"></div><div class="formula">I₁ ≈ I₂+I₃+I₄<br>Error (%) = (Calculated − Measured) / Calculated × 100</div></section>
 
 <section class="card" id="finalChallenge"><div class="eyebrow">FINAL CHALLENGE | المسألة الختامية</div><h2>Combined KVL & KCL Problem</h2><h3 class="ar">مسألة شاملة في قانوني كيرشوف للجهد والتيار</h3><p>Solve the following circuit from the laboratory note. Assume all resistors are 5 Ω. Use KVL for the two loops and KCL at node A, then determine I₁, I₂ and I₃.</p><p class="ar">حل الدارة التالية الواردة في النوتة المخبرية. اعتبر جميع المقاومات 5 Ω. استخدم قانون كيرشوف للجهد للحلقتين وقانون كيرشوف للتيار عند العقدة A، ثم أوجد I₁ وI₂ وI₃.</p><div class="formula">E₁=10 V · E₂=20 V · E₃=30 V · E₄=40 V · E₅=50 V · E₆=60 V · E₇=70 V<br>R₁=R₂=R₃=R₄=R₅=R₆=R₇=5 Ω</div>
-<svg viewBox="0 0 760 500" style="width:100%;background:#071827;border:1px solid #31516a;border-radius:18px;margin:18px 0">
+<svg viewBox="20 35 720 445" style="width:100%;min-height:430px;background:#071827;border:1px solid #31516a;border-radius:18px;margin:18px 0">
 <defs><style>.w{stroke:#d8dde2;stroke-width:5;fill:none;stroke-linecap:round}.r{fill:#dfc174;stroke:#8a6a25;stroke-width:2}.t{fill:#111;font:17px Arial}.e{fill:#f5d995;font:16px Arial}.p{fill:#fff;font:bold 18px Arial}.i{fill:#20bdf2;font:19px Arial}.bp{stroke:#f5d995;stroke-width:5}</style></defs>
 <!-- wiring follows the original notebook topology -->
 <g class="w">
@@ -37,13 +37,13 @@
 <!-- E3 above R3: short plate top (-), long plate bottom (+) -->
 <g><line x1="366" y1="150" x2="394" y2="150" class="bp"/><line x1="358" y1="168" x2="402" y2="168" class="bp"/><text x="414" y="154" class="p">−</text><text x="414" y="174" class="p">+</text><text x="430" y="168" class="e">E₃ 30 V</text></g>
 <!-- E4 below R4: long plate top (+), short bottom (-) -->
-<g><line x1="358" y1="355" x2="402" y2="355" class="bp"/><line x1="366" y1="373" x2="394" y2="373" class="bp"/><text x="414" y="359" class="p">+</text><text x="414" y="379" class="p">−</text><text x="430" y="370" class="e">E₄ 40 V</text></g>
+<g><line x1="358" y1="355" x2="402" y2="355" class="bp"/><line x1="366" y1="373" x2="394" y2="373" class="bp"/><text x="414" y="359" class="p">+</text><text x="414" y="379" class="p">−</text><text x="430" y="350" class="e">E₄ 40 V</text></g>
 <!-- E5 upper-right: long plate left (+), short right (-) -->
-<g><line x1="575" y1="88" x2="575" y2="132" class="bp"/><line x1="595" y1="96" x2="595" y2="124" class="bp"/><text x="568" y="78" class="p">+</text><text x="593" y="78" class="p">−</text><text x="565" y="158" class="e">E₅ 50 V</text></g>
+<g><line x1="575" y1="96" x2="575" y2="124" class="bp"/><line x1="595" y1="88" x2="595" y2="132" class="bp"/><text x="568" y="78" class="p">−</text><text x="593" y="78" class="p">+</text><text x="565" y="158" class="e">E₅ 50 V</text></g>
 <!-- E6 above R6: short plate top (-), long bottom (+) -->
-<g><line x1="651" y1="280" x2="679" y2="280" class="bp"/><line x1="643" y1="298" x2="687" y2="298" class="bp"/><text x="699" y="284" class="p">−</text><text x="699" y="304" class="p">+</text><text x="620" y="325" class="e">E₆ 60 V</text></g>
+<g><line x1="643" y1="280" x2="687" y2="280" class="bp"/><line x1="651" y1="298" x2="679" y2="298" class="bp"/><text x="699" y="284" class="p">+</text><text x="699" y="304" class="p">−</text><text x="610" y="330" class="e">E₆ 60 V</text></g>
 <!-- E7 bottom branch: long plate left (+), short right (-), before R7 -->
-<g><line x1="435" y1="368" x2="435" y2="412" class="bp"/><line x1="455" y1="376" x2="455" y2="404" class="bp"/><text x="427" y="435" class="p">+</text><text x="453" y="435" class="p">−</text><text x="420" y="462" class="e">E₇ 70 V</text></g>
+<g><line x1="435" y1="376" x2="435" y2="404" class="bp"/><line x1="455" y1="368" x2="455" y2="412" class="bp"/><text x="427" y="435" class="p">−</text><text x="453" y="435" class="p">+</text><text x="500" y="455" class="e">E₇ 70 V</text></g>
 <circle cx="380" cy="110" r="7" fill="#20bdf2"/><text x="360" y="80" fill="#20bdf2" font-size="22">A</text>
 <g class="i"><text x="145" y="65">I₁ →</text><text x="397" y="205">↓ I₂</text><text x="500" y="65">I₃ →</text></g>
 <text x="380" y="487" text-anchor="middle" fill="#9ddfff" font-size="14">Long plate = + · Short plate = − | الخط الطويل موجب · الخط القصير سالب</text>
