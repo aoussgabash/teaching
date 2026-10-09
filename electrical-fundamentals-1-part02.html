@@ -22,6 +22,28 @@ h1{margin:8px 0}h2{margin:0;color:#8ddcff;font-size:1.45rem}h3{color:#ffe0a0}.fo
   .station svg text,.station svg tspan{fill:#203650!important}
   .station svg path,.station svg line,.station svg rect,.station svg circle{print-color-adjust:exact!important;-webkit-print-color-adjust:exact!important}
 }
+</style><style id="pdf-pagination-fix">
+@media print {
+  .formula, .station>.formula, .steps .formula, .steps li>.formula, mjx-container[display="true"], .ohm-circuit, .series-parallel-circuit, svg, figure, table, tr {
+    break-inside:avoid!important;page-break-inside:avoid!important;
+  }
+  .formula, .station>.formula, .steps .formula {
+    overflow:visible!important;max-height:none!important;height:auto!important;
+    padding-top:9px!important;padding-bottom:9px!important;
+  }
+  .formula mjx-container, .formula mjx-container[display="true"] {
+    display:block!important;overflow:visible!important;
+    max-width:100%!important;margin:0.45em auto!important;
+  }
+  .steps li {break-inside:auto!important;page-break-inside:auto!important;}
+  .steps li>.pair, .steps li>.formula, .steps li>p, .steps li>svg {
+    break-inside:avoid!important;page-break-inside:avoid!important;
+  }
+  .pair {break-inside:avoid!important;page-break-inside:avoid!important;}
+  .station h2,.station h3,.steps li::marker {break-after:avoid!important;}
+  .station {break-inside:auto!important;}
+  .station>.pair:first-of-type {break-after:avoid!important;}
+}
 </style></head><body><header><nav class="container"><a class="brand" href="index.html"><b>TE</b> University Teaching</a><a href="electrical-fundamentals-1.html">← Course | المقرر</a></nav></header><main><div class="hero"><div class="eyebrow">PART 2 | الجزء الثاني</div><h1>DC Circuit Analysis: Historical Evolution of Solution Methods</h1><div class="ar" lang="ar" dir="rtl">تحليل دارات التيار المستمر: التطور التاريخي لطرق الحل</div><p class="muted">Electrical Engineering Fundamentals 1 | أسس الهندسة الكهربائية 1</p><div class="print-meta" style="display:none;border-top:1px solid #bbb;border-bottom:1px solid #bbb;margin:14px 0 18px;padding:9px 0;font-size:10pt;line-height:1.6"><div><b>Lecturer:</b> Dr.-Ing. Aouss Gabash | <span dir="rtl"><b>المحاضر:</b> د. م. أوس غباش</span></div><div><b>PDF generated:</b> <span id="pdf-generated-date"></span> | <span dir="rtl"><b>تاريخ تنزيل/توليد النسخة:</b> <span id="pdf-generated-date-ar"></span></span></div><div><b>Version note:</b> This date identifies the downloaded part version for tracking future updates. | <span dir="rtl"><b>ملاحظة الإصدار:</b> يحدد هذا التاريخ نسخة الجزء المنزلة لتسهيل متابعة التحديثات اللاحقة.</span></div></div><div class="actions"><a class="btn secondary" href="#part-quiz">10-Question Quiz | الاختبار</a><button class="secondary" onclick="window.print()">Print / Save PDF | طباعة / حفظ PDF</button></div></div><div class="note"><div class="pair"><div lang="en">Historical dates indicate publication milestones or explicitly labelled periods. Modern notation and original teaching examples are used throughout; examples are not historical reconstructions. Gradual methods have no invented single birth year.</div><div lang="ar" dir="rtl">تشير التواريخ إلى محطات نشر أو حقب معلنة بوضوح. تُستخدم رموز حديثة وأمثلة تعليمية أصلية، وليست إعادة بناء لتجارب تاريخية. لا نضع سنة ولادة مخترعة للطرق التي تطورت تدريجيًا.</div></div><div class="pair"><div lang="en">Scope: 12 historical teaching cards covering DC circuit analysis methods, including matrix formulation and modified nodal analysis (MNA). Some cards group related techniques: series/parallel reduction includes voltage/current division, and Kirchhoff’s laws include branch-current analysis. Thus the number of individual techniques is not necessarily 12. The focus is linear resistive steady-state circuits; nonlinear and transient DC circuits require additional tools.</div><div lang="ar" dir="rtl">النطاق: يضم هذا الجزء 12 بطاقة تعليمية مرتبة تاريخيًا لطرق تحليل دارات التيار المستمر، بما فيها الصياغة المصفوفية والتحليل العقدي المعدل (MNA). تجمع بعض البطاقات أساليب مترابطة؛ فتشمل بطاقة الاختزال تقسيم الجهد والتيار، وتشمل بطاقة قانوني كيرشوف تحليل تيارات الفروع. لذلك لا يلزم أن يساوي عدد الأساليب الفرعية عدد البطاقات. يركز الجزء على الدارات الخطية المقاومة في الحالة المستقرة، أما الدارات غير الخطية والعابرة فتحتاج أدوات إضافية.</div></div></div><div class="toc chronological-toc">
 <a href="#method-1"><span class="toc-date">1826–1827</span><strong>01 · Ohm’s law</strong><br><span lang="ar" dir="rtl">قانون أوم · 1826–1827</span></a>
 <a href="#method-2"><span class="toc-date">19th century · after 1827</span><strong>02 · Series/parallel reduction; voltage/current division</strong><br><span lang="ar" dir="rtl">اختزال التوالي والتوازي؛ تقسيم الجهد والتيار · القرن التاسع عشر بعد 1827</span></a>
