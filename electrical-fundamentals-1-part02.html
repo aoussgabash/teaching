@@ -15,6 +15,12 @@ h1{margin:8px 0}h2{margin:0;color:#8ddcff;font-size:1.45rem}h3{color:#ffe0a0}.fo
   .station *:not(svg):not(path):not(line):not(rect):not(circle):not(text):not(tspan),.station h2,.station h3,.station .date{color:#111!important;text-shadow:none!important}
   .station{display:block!important;position:relative!important;break-inside:auto!important;page-break-inside:auto!important;padding:12px 8px!important;border:1px solid #bbb!important;margin:12px 0!important}
   .station:after{display:none!important}
+  /* Timeline rail was absolutely positioned and printed over every card. */
+  .timeline:before,.timeline::before{content:none!important;display:none!important}
+  .timeline{overflow:visible!important;border:0!important;padding:0!important}
+  .station:before,.station::before{content:none!important;display:none!important}
+  .station{border-left:0!important;border-right:0!important}
+
   .station>.date{display:block!important;position:static!important;width:auto!important;margin:0 0 8px!important}
   .pair{display:block!important;overflow:visible!important;break-inside:auto!important}
   .pair>[lang=en],.pair>[lang=ar]{display:block!important;width:100%!important;min-width:0!important;padding:4px 0!important;margin:0!important;border:0!important;line-height:1.5!important}
