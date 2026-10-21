@@ -411,4 +411,4 @@ tabs.forEach((b,i)=>b.addEventListener("click",()=>{active=i;render();}));
 document.querySelector("#grade").onclick=()=>{const bank=quizSets[active].bank;let s=0,a=0;qs.querySelectorAll(".question").forEach((f,i)=>{const x=f.querySelector("input:checked"),e=f.querySelector(".explanation");f.classList.remove("correct","incorrect");if(x){a++;if(+x.value===bank[i][3]){s++;f.classList.add("correct")}else f.classList.add("incorrect")}e.hidden=false;e.textContent="Correct | الصحيح: "+bank[i][2][bank[i][3]]+". "+bank[i][4]});if(a<10){res.textContent="Please answer all 10 questions | أجب عن الأسئلة العشرة ("+a+"/10).";return}res.textContent="Score | النتيجة: "+s+"/10 — "+(s>=8?"Passed | ناجح":"Try again | حاول مجددًا");saveScore(active,s);status();};
 document.querySelector("#reset").onclick=()=>{qs.querySelectorAll("input").forEach(x=>x.checked=false);qs.querySelectorAll(".question").forEach(f=>{f.classList.remove("correct","incorrect");f.querySelector(".explanation").hidden=true});res.textContent="";};
 render();
-</script><script src="assets/js/course-pdf.js?v=20261021" defer></script></body></html>
+</script></body></html>
