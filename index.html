@@ -54,8 +54,8 @@ section{padding:48px 0}.title{text-align:center;margin-bottom:30px}.title h2{fon
 <script>
 (()=>{'use strict';
 // Client-side access gate only: public GitHub Pages URLs remain directly accessible.
-// Update F26 to S27 for the next semester, or change individual values here.
-const semesterPasswords={EF1:'agEF1F26',EF2:'agEF2F26',PP1:'agPP1F26',PP2:'agPP2F26',CS1:'agCS1F26',CS2:'agCS2F26',EPP1:'agEPP1F26',EPP2:'agEPP2F26',HV1:'agHV1F26',HV2:'agHV2F26'};
+// Shared introductory password for all courses; update here when needed.
+const semesterPasswords={EF1:'aoussgabash',EF2:'aoussgabash',PP1:'aoussgabash',PP2:'aoussgabash',CS1:'aoussgabash',CS2:'aoussgabash',EPP1:'aoussgabash',EPP2:'aoussgabash',HV1:'aoussgabash',HV2:'aoussgabash'};
 const overlay=document.getElementById('ag-access-overlay'),form=document.getElementById('ag-access-form'),field=document.getElementById('ag-access-password'),error=document.getElementById('ag-access-error'),name=document.getElementById('ag-access-name');let active=null,lastFocus=null;
 function close(){overlay.hidden=true;active=null;field.value='';error.textContent='';if(lastFocus)lastFocus.focus()}
 function open(card){active=card;lastFocus=card;name.textContent=card.querySelector('.ar').textContent+' | '+card.querySelector('h3').textContent;error.textContent='';field.value='';overlay.hidden=false;field.focus()}
