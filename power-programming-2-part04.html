@@ -205,6 +205,17 @@ footer .bilingual-label{margin:5px auto;max-width:650px}footer .bilingual-label>
 .term-note{margin:16px 0;padding:14px 16px;border:1px solid #466b81;border-inline-start:3px solid #7dd3fc;border-radius:10px;background:#102c40}.term-note h3{margin-top:0}.term-note p{margin:8px 0;line-height:1.9}.term-note .pair+.pair{border-top:1px solid #36566a;padding-top:7px;margin-top:8px}.term-note strong{font-weight:700;color:#e9f7ff}.tocgrid a{overflow-wrap:break-word}.tocgrid a span{line-height:1.65}.term-note code{direction:ltr;unicode-bidi:isolate}
 @media(max-width:640px){.term-note{padding:11px}.term-note .pair{gap:4px}.term-note p{font-size:.96rem}.actions .btn{overflow-wrap:break-word}}
 @media print{.term-note,.term-note *{background:#fff!important;color:#111!important;border-color:#bbb!important}.term-note{break-inside:auto!important;border-radius:0!important;padding:7pt!important}.term-note .pair{break-inside:auto!important}.term-note h3{break-after:avoid!important}}
+
+.cost-curve{margin:22px 0;padding:18px;border:1px solid #52758b;border-radius:12px;background:#102b3e}.cost-curve>h3{margin-top:0}.cost-curve-frame{background:#fff;border:1px solid #b9c6d1;border-radius:9px;overflow:hidden}.cost-curve-svg{display:block;width:100%;height:auto;max-width:100%;background:#fff}.cost-curve p{line-height:1.9}.cost-curve .pair{margin-top:10px}.cost-curve [lang=ar]{direction:rtl;text-align:right;unicode-bidi:isolate}.cost-curve bdi{direction:ltr;unicode-bidi:isolate}.qp-controls{margin:16px 0;padding:12px;border:1px solid #45647a;border-radius:9px}.qp-controls input{width:100%;min-height:40px;accent-color:#d97706}.cost-readouts{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:8px;direction:ltr}.cost-readouts>div{padding:10px;border:1px solid #45647a;border-radius:8px;font-size:.86rem;min-width:0}.cost-readouts strong{display:block;color:#bbf7d0;font-size:1.15rem;font-variant-numeric:tabular-nums}.cost-sample-table{width:100%;border-collapse:collapse;margin:15px 0;direction:ltr}.cost-sample-table th,.cost-sample-table td{border:1px solid #58758a;padding:9px;text-align:center;font-variant-numeric:tabular-nums}.cost-sample-table .label-en,.cost-sample-table .label-ar{display:block}.curve-proof-steps{padding-inline-start:24px}
+@media(max-width:640px){.cost-curve{padding:10px;margin:18px 0}.cost-readouts{grid-template-columns:repeat(2,minmax(0,1fr))}.cost-readouts strong{font-size:1rem}.cost-curve .cost-sample-table{font-size:.82rem}.cost-sample-table th,.cost-sample-table td{padding:6px}.cost-curve .cost-sample-table td{min-width:0!important}.cost-curve .table-scroll{max-width:100%;overflow-x:auto}.cost-curve .cost-sample-table th{min-width:0!important}.cost-curve .equation{font-size:.85rem}}
+@media print{.cost-curve,.cost-curve p,.cost-curve .pair,.cost-readouts>div{background:white!important;color:#111!important;border-color:#aaa!important;box-shadow:none!important}.cost-curve{border-radius:0!important;padding:8pt!important;break-inside:auto!important}.cost-curve-frame{break-inside:avoid!important;border-color:#bbb!important}.cost-curve-svg{max-height:96mm;width:100%;height:auto}.cost-curve h3{break-after:avoid!important}.qp-controls{display:none!important}.cost-readouts strong{color:#111!important}.cost-sample-table td,.cost-sample-table th{border-color:#aaa!important;color:#111!important}.cost-curve .table-scroll{overflow:visible!important}.cost-readouts{display:grid!important;grid-template-columns:repeat(3,minmax(0,1fr))!important}.curve-proof-steps li{break-inside:auto!important}.cost-curve .pair{break-inside:auto!important}}
+
+.curve-value-summary{margin:12px 0;padding:10px;border:1px solid #496579;border-radius:7px;font-size:1rem;line-height:1.8;overflow-wrap:break-word;font-variant-numeric:tabular-nums;color:#bbf7d0}
+@media screen and (max-width:640px){.cost-curve-svg text{font-size:18px!important}.cost-curve-svg .curve-annotation,.cost-curve-svg .curve-legend{display:none}.curve-value-summary{font-size:.9rem}}
+@media print{.curve-value-summary{background:#fff!important;color:#111!important;border-color:#aaa!important;break-inside:avoid}.cost-curve-svg .curve-annotation,.cost-curve-svg .curve-legend{display:block!important}}
+
+@media screen and (max-width:640px){.cost-curve-svg text{font-size:16px!important}.cost-curve-svg .curve-y-label,.cost-curve-svg .curve-arrow{display:none}.cost-axes-note p{font-size:.86rem;line-height:1.7}}
+@media print{.cost-curve-svg .curve-y-label,.cost-curve-svg .curve-arrow{display:block!important}}
 </style><style id="ag-unified-a4-v1">
 /* Unified white A4 PDF layout — matches course Part 02 (2026-10-26). */
 @page{size:A4 portrait;margin:15mm 15mm 16mm 15mm}
@@ -274,7 +285,310 @@ footer .bilingual-label{margin:5px auto;max-width:650px}footer .bilingual-label>
 <div class="hero"><div class="eyebrow bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">PART 04</span><span lang="ar" dir="rtl" class="label-ar">الجزء الرابع</span></div><h1>Mathematical Programming: Models, Complexity and Energy Applications</h1><div class="ar" lang="ar" dir="rtl">البرمجة الرياضية: النماذج والتعقيد وتطبيقات الطاقة</div><p class="pdf-course-name">Programming in Power | <span lang="ar" dir="rtl">البرمجة في الطاقة</span></p><div class="print-meta" id="ag-print-header-meta"><div><b>Lecturer:</b> Dr.-Ing. Aouss Gabash | <span dir="rtl"><b>المحاضر:</b> د. م. أوس غباش</span></div><div><b>PDF generated:</b> <span id="print-date"></span> | <span dir="rtl"><b>تاريخ تنزيل/توليد النسخة:</b> <span id="print-date-ar"></span></span></div><div><b>Version note:</b> This date identifies the downloaded part version for tracking future updates. | <span dir="rtl"><b>ملاحظة الإصدار:</b> يحدد هذا التاريخ نسخة الجزء المنزلة لتسهيل متابعة التحديثات اللاحقة.</span></div></div>
 <div class="pair"><p lang="en">Sixteen focused units: mathematical model foundations, optimization families, calculator-first energy examples, computational complexity and Python solver comparisons. Python basics are referenced in Part 03.</p><p lang="ar" dir="rtl">ست عشرة وحدة مركزة: أسس النموذج الرياضي، وعائلات التحسين، وأمثلة طاقية تحل أولا بالحاسبة، والتعقيد الحسابي، ومقارنة محللات <bdi dir="ltr">Python</bdi>. وتبقى أساسيات البرمجة في الجزء الثالث.</p></div><div class="actions"><a class="btn bilingual-label" href="#overview" dir="ltr"><span lang="en" dir="ltr" class="label-en">Start</span><span lang="ar" dir="rtl" class="label-ar">ابدأ</span></a><a class="btn alt bilingual-label" href="#toc" dir="ltr"><span lang="en" dir="ltr" class="label-en">All units</span><span lang="ar" dir="rtl" class="label-ar">الوحدات</span></a><a class="btn alt bilingual-label" href="https://www.kaggle.com/code" target="_blank" rel="noopener" dir="ltr"><span lang="en" dir="ltr" class="label-en">Open Kaggle</span><span lang="ar" dir="rtl" class="label-ar">افتح <bdi dir="ltr">Kaggle</bdi> ↗</span></a><button class="btn alt bilingual-label" id="print" type="button" dir="ltr"><span lang="en" dir="ltr" class="label-en">Print / Save Portable Document Format (PDF)</span><span class="label-ar" lang="ar" dir="rtl">طباعة وحفظ ملف بتنسيق المستندات المحمولة (<bdi dir="ltr">PDF</bdi>)</span></button></div></div>
 <section class="overview" id="overview"><h2 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">From Python to mathematical optimization</span><span lang="ar" dir="rtl" class="label-ar">من <bdi dir="ltr">Python</bdi> إلى التحسين الرياضي</span></h2><div class="pair"><p lang="en">Part 03 covers Python syntax, functions and numerical libraries. This part uses those skills to formulate and classify optimization models, calculate small energy examples by hand, then verify numerical solutions.</p><p lang="ar" dir="rtl">يشرح الجزء الثالث قواعد <bdi dir="ltr">Python</bdi> والتوابع والمكتبات العددية. نستخدم تلك المهارات هنا لصياغة نماذج التحسين وتصنيفها، وحل أمثلة طاقية صغيرة يدويا، ثم التحقق من حلولها العددية.</p></div><div class="pair"><p lang="en">If you need a programming refresher, return to <a href="power-programming-2-part03.html">Part 03</a>. Follow the units below in order: foundations once, then a distinct optimization family and energy example in each unit.</p><p lang="ar" dir="rtl">للمراجعة البرمجية ارجع إلى <a href="power-programming-2-part03.html">الجزء الثالث</a>. اتبع الوحدات بالترتيب: المفاهيم الأساسية مرة واحدة، ثم عائلات التحسين وأمثلتها الطاقية.</p></div><div class="progress bilingual-label" id="progress-label" role="status" dir="ltr"><span lang="en" dir="ltr" class="label-en">Progress: 0 / 16</span><span lang="ar" dir="rtl" class="label-ar">الإنجاز: <bdi dir="ltr">0 / 16</bdi></span></div><div class="progressbar" aria-hidden="true"><span id="progress-fill"></span></div></section><section class="toc" id="toc"><h2 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Part 04 — Learning units</span><span lang="ar" dir="rtl" class="label-ar">الجزء الرابع — الوحدات</span></h2><div class="tocgrid"><a href="#unit-01"><b>01</b><span lang="en">The optimization model — a single reference</span><span class="ar" lang="ar" dir="rtl">النموذج الرياضي للتحسين — مرجع موحد</span></a><a href="#unit-02"><b>02</b><span lang="en">Independent equalities, rank and degrees of freedom</span><span class="ar" lang="ar" dir="rtl">المساواة المستقلة والرتبة ودرجات الحرية</span></a><a href="#unit-03"><b>03</b><span lang="en">Classifying a mathematical program</span><span class="ar" lang="ar" dir="rtl">تصنيف مسألة البرمجة الرياضية</span></a><a href="#unit-04"><b>04</b><span lang="en">Linear Programming (LP) — linear economic dispatch</span><span class="ar" lang="ar" dir="rtl">البرمجة الخطية — التوزيع الاقتصادي</span></a><a href="#unit-05"><b>05</b><span lang="en">Quadratic Programming (QP) — quadratic generator costs</span><span class="ar" lang="ar" dir="rtl">البرمجة التربيعية — كلف توليد تربيعية</span></a><a href="#unit-06"><b>06</b><span lang="en">Quadratically Constrained Quadratic Programming (QCQP) and Second-Order Cone Programming (SOCP) — inverter capability</span><span class="ar" lang="ar" dir="rtl">القيود التربيعية والمخروطية — حدود العاكس</span></a><a href="#unit-07"><b>07</b><span lang="en">Nonlinear Programming (NLP) — local and global optima</span><span class="ar" lang="ar" dir="rtl">البرمجة غير الخطية — الحل المحلي والعالمي</span></a><a href="#unit-08"><b>08</b><span lang="en">Integer Programming (IP) and Binary Integer Programming (BIP) — equipment selection</span><span class="ar" lang="ar" dir="rtl">البرمجة الصحيحة والثنائية — اختيار التجهيزات</span></a><a href="#unit-09"><b>09</b><span lang="en">Mixed-Integer Linear Programming (MILP) — generator on/off decisions</span><span class="ar" lang="ar" dir="rtl">البرمجة الخطية المختلطة — تشغيل المولد</span></a><a href="#unit-10"><b>10</b><span lang="en">Mixed-Integer Quadratic Programming (MIQP) — on/off plus quadratic costs</span><span class="ar" lang="ar" dir="rtl">البرمجة التربيعية المختلطة — التشغيل والكلفة</span></a><a href="#unit-11"><b>11</b><span lang="en">Mixed-Integer Nonlinear Programming (MINLP) — a nonlinear mixed decision</span><span class="ar" lang="ar" dir="rtl">البرمجة غير الخطية المختلطة — قرار مختلط</span></a><a href="#unit-12"><b>12</b><span lang="en">Semidefinite Programming (SDP) — a two-by-two matrix example</span><span class="ar" lang="ar" dir="rtl">البرمجة نصف المحددة — مثال بمصفوفة صغيرة</span></a><a href="#unit-13"><b>13</b><span lang="en">Dynamic Programming (DP) — battery scheduling</span><span class="ar" lang="ar" dir="rtl">البرمجة الديناميكية — جدولة البطارية</span></a><a href="#unit-14"><b>14</b><span lang="en">Stochastic and robust optimization — uncertain Photovoltaic (PV) generation</span><span class="ar" lang="ar" dir="rtl">التحسين العشوائي والمتين — عدم يقين التوليد الشمسي الكهروضوئي</span></a><a href="#unit-15"><b>15</b><span lang="en">Multiobjective optimization — cost and emissions</span><span class="ar" lang="ar" dir="rtl">التحسين متعدد الأهداف — الكلفة والانبعاثات</span></a><a href="#unit-16"><b>16</b><span lang="en">Complexity, solver selection and comparison</span><span class="ar" lang="ar" dir="rtl">التعقيد واختيار المحللات ومقارنة النتائج</span></a></div></section>
-<section class="unit optimization-unit" id="unit-01"><div class="unit-head"><div class="num">01</div><div><h2 lang="en" dir="ltr">The optimization model — a single reference</h2><h2 class="ar" lang="ar" dir="rtl">النموذج الرياضي للتحسين — مرجع موحد</h2></div></div><div class="pair"><p lang="en">A parameter is fixed during one solve; a decision variable is selected by optimization. The objective evaluates each candidate; equality and inequality relations restrict feasible choices.</p><p lang="ar" dir="rtl">البارامتر معطى ثابت أثناء الحل الواحد؛ ومتغير القرار قيمة نبحث عنها. تقيم دالة الهدف كل حل مرشح، وتحدد علاقات المساواة وعدم المساواة الاختيارات الممكنة.</p></div><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">General model</span><span lang="ar" dir="rtl" class="label-ar">النموذج العام</span></strong><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>min — Minimize; max — Maximize.</strong> Find the smallest or largest feasible objective value, respectively. These are instructions, not solver names.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">min</bdi> تعني التصغير، و<bdi dir="ltr">max</bdi> تعني التعظيم.</strong> نبحث عن أصغر قيمة ممكنة لدالة الهدف أو أكبر قيمة ممكنة لها، على الترتيب. هذان رمزان للعملية المطلوبة وليسا اسمي محللين.</p></div><div class="pair"><p lang="en"><strong>x, θ, f, h, g, ℓ, u:</strong> x is the list of decisions; θ is fixed data; f is the objective; h=0 expresses equality; g≤0 expresses an upper-type inequality; ℓ and u are lower and upper bounds.</p><p lang="ar" dir="rtl"><strong>رموز النموذج:</strong> <bdi dir="ltr">x</bdi> قائمة متغيرات القرار، و<bdi dir="ltr">θ</bdi> المعطيات الثابتة، و<bdi dir="ltr">f</bdi> دالة الهدف. تعبر <bdi dir="ltr">h=0</bdi> عن قيد مساواة، و<bdi dir="ltr">g≤0</bdi> عن قيد عدم مساواة. ويرمز <bdi dir="ltr">ℓ</bdi> و<bdi dir="ltr">u</bdi> إلى الحدين الأدنى والأعلى. هذه رموز للكميات وليست اختصارات لأسماء محللات.</p></div></aside><div class="equation" dir="ltr">min f(x;θ), subject to h(x;θ)=0, g(x;θ)≤0, ℓ≤x≤u.</div><div class="pair"><p lang="en">θ denotes parameters; x is the decision vector. For discrete choices, declare the required components integer or binary. To maximize B, minimize −B with the same feasible set.</p><p lang="ar" dir="rtl">يرمز <bdi dir="ltr">θ</bdi> إلى البارامترات و<bdi dir="ltr">x</bdi> إلى شعاع القرار. نحدد مجال المتغير الصحيح أو الثنائي عند الحاجة. لتعظيم <bdi dir="ltr">B</bdi> نصغر <bdi dir="ltr">−B</bdi> مع إبقاء المجموعة الممكنة نفسها.</p></div></div><div class="pair"><p lang="en">A mathematical function assigns exactly one output to each input in its domain; a relation may allow several outputs. Thus f(x) is a function, while h(x)=0 is a constraint relation. A Python function implements a calculation; its arguments are not automatically fixed model parameters.</p><p lang="ar" dir="rtl">يعطي التابع الرياضي خرجا وحيدا لكل مدخل في مجال تعريفه؛ وقد تسمح العلاقة بعدة مخارج. لذلك <bdi dir="ltr">f(x)</bdi> تابع، بينما <bdi dir="ltr">h(x)=0</bdi> علاقة قيد. وينفذ التابع البرمجي حسابا، ولا تكون وسائطه بالضرورة بارامترات ثابتة للنموذج.</p></div><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>MW — Megawatt; MWh — Megawatt-hour.</strong> MW measures power; MWh measures energy. A constant 1 MW for 1 hour supplies 1 MWh. The symbol h in a unit means hour; it is different from the equality function h(x).</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">MW — Megawatt</bdi>، ميغاواط؛ <bdi dir="ltr">MWh — Megawatt-hour</bdi>، ميغاواط ساعي.</strong> الأولى وحدة استطاعة والثانية وحدة طاقة. يعطي تشغيل استطاعة ثابتة <bdi dir="ltr">1 MW</bdi> لمدة ساعة طاقة <bdi dir="ltr">1 MWh</bdi>. ويعني <bdi dir="ltr">h</bdi> في وحدة القياس ساعة، بينما <bdi dir="ltr">h(x)</bdi> في النموذج تابع قيد المساواة.</p></div><div class="pair"><p lang="en"><strong>kW — Kilowatt; kWh — Kilowatt-hour.</strong> These are smaller power and energy units: 1 MW=1000 kW and 1 MWh=1000 kWh. The prefix k means one thousand; M means one million.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">kW — Kilowatt</bdi>، كيلوواط؛ <bdi dir="ltr">kWh — Kilowatt-hour</bdi>، كيلوواط ساعي.</strong> هما وحدتا استطاعة وطاقة أصغر: <bdi dir="ltr">1 MW=1000 kW</bdi> و<bdi dir="ltr">1 MWh=1000 kWh</bdi>. تعني البادئة <bdi dir="ltr">k</bdi> ألفا، والبادئة <bdi dir="ltr">M</bdi> مليونا.</p></div><div class="pair"><p lang="en"><strong>CU — Currency Unit.</strong> A generic currency unit, not a particular currency. CU/MWh is energy price; CU/h is hourly cost.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">CU — Currency Unit</bdi>، وحدة نقدية.</strong> رمز عام لا يحدد عملة بعينها. تمثل <bdi dir="ltr">CU/MWh</bdi> سعر وحدة الطاقة، وتمثل <bdi dir="ltr">CU/h</bdi> الكلفة لكل ساعة.</p></div></aside><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Read, solve and verify the model by hand</span><span lang="ar" dir="rtl" class="label-ar">قراءة النموذج وحله يدويا والتحقق منه</span></h3><ol><li><div class="pair"><p lang="en">Demand D=100 MW is a fixed parameter; P₁ and P₂ are decision variables. Marginal costs are 20 and 35 currency units (CU) per MWh. Each generator has an 80 MW capacity; study one hour and neglect losses.</p><p lang="ar" dir="rtl">الطلب <bdi dir="ltr">D=100 MW</bdi> بارامتر ثابت، والاستطاعتان <bdi dir="ltr">P₁</bdi> و<bdi dir="ltr">P₂</bdi> متغيرا قرار. الكلفتان الحديتان هما <bdi dir="ltr">20</bdi> و<bdi dir="ltr">35</bdi> وحدة نقدية لكل <bdi dir="ltr">MWh</bdi>، وسعة كل مولد <bdi dir="ltr">80 MW</bdi>. ندرس التشغيل لمدة ساعة مع إهمال الفواقد.</p></div></li><li><div class="pair"><p lang="en">Minimize C=20P₁+35P₂ [CU/h], subject to power balance P₁+P₂=100 MW and the limits 0≤P₁,P₂≤80 MW.</p><p lang="ar" dir="rtl">نريد تصغير الكلفة <bdi dir="ltr">C=20P₁+35P₂</bdi> بوحدة نقدية/ساعة، مع تحقيق التوازن <bdi dir="ltr">P₁+P₂=100 MW</bdi> واحترام الحدين <bdi dir="ltr">0≤P₁≤80 MW</bdi> و<bdi dir="ltr">0≤P₂≤80 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Eliminate one unknown using the balance: P₂=100−P₁.</p><p lang="ar" dir="rtl">نعزل المجهول الثاني باستخدام معادلة التوازن: <bdi dir="ltr">P₂=100−P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">Apply generator 2 limits: 0≤100−P₁≤80 implies 20≤P₁≤100. Intersect with generator 1 limits 0≤P₁≤80: the feasible interval is 20≤P₁≤80 MW.</p><p lang="ar" dir="rtl">نطبق حدود المولد الثاني: من <bdi dir="ltr">0≤100−P₁≤80</bdi> نحصل على <bdi dir="ltr">20≤P₁≤100</bdi>. بالتقاطع مع حدود المولد الأول <bdi dir="ltr">0≤P₁≤80</bdi> يصبح المجال الممكن <bdi dir="ltr">20≤P₁≤80 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Substitute into the objective and collect terms: C=20P₁+35(100−P₁)=20P₁+3500−35P₁=3500−15P₁.</p><p lang="ar" dir="rtl">نعوض في دالة الهدف ونجمع الحدود المتشابهة: <bdi dir="ltr">C=20P₁+35(100−P₁)=20P₁+3500−35P₁=3500−15P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">Each extra MW from generator 1 reduces total hourly cost by 15 CU/h. Therefore choose the largest feasible P₁: P₁*=80 MW.</p><p lang="ar" dir="rtl">كل زيادة بمقدار <bdi dir="ltr">1 MW</bdi> في استطاعة المولد الأول تخفض الكلفة بمقدار <bdi dir="ltr">15</bdi> وحدة نقدية/ساعة. لذلك نختار أكبر قيمة ممكنة: <bdi dir="ltr">P₁*=80 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Calculate the remaining power: P₂*=100−80=20 MW.</p><p lang="ar" dir="rtl">نحسب الاستطاعة المتبقية: <bdi dir="ltr">P₂*=100−80=20 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Calculate the minimum cost with an ordinary calculator: C*=20×80+35×20=1600+700=2300 CU/h. For one hour, the total cost is 2300 CU.</p><p lang="ar" dir="rtl">نحسب الكلفة الدنيا بالآلة الحاسبة العادية: <bdi dir="ltr">C*=20×80+35×20=1600+700=2300</bdi> وحدة نقدية/ساعة. ولمدة ساعة واحدة تكون الكلفة الكلية <bdi dir="ltr">2300</bdi> وحدة نقدية.</p></div></li><li><div class="pair"><p lang="en">Verify: 80+20=100 MW; 0≤80≤80 and 0≤20≤80. Balance and both capacities are satisfied. The decreasing linear cost proves this feasible endpoint is globally optimal.</p><p lang="ar" dir="rtl">نتحقق من التوازن <bdi dir="ltr">80+20=100 MW</bdi>، ومن الحدود <bdi dir="ltr">0≤80≤80</bdi> و<bdi dir="ltr">0≤20≤80</bdi>. جميع القيود محققة، وتناقص الكلفة الخطية يثبت أن هذا الطرف الممكن هو الحل الأمثل العالمي.</p></div></li></ol><div class="expected"><strong class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Verified optimum</span><span class="label-ar" lang="ar" dir="rtl">الحل الأمثل بعد التحقق</span></strong><div class="equation" dir="ltr">P₁*=80 MW; P₂*=20 MW; C*=2300 CU/h.</div></div><a class="btn alt bilingual-label" href="#unit-04"><span class="label-en" lang="en" dir="ltr">Continue with Python solvers — Unit 04</span><span class="label-ar" lang="ar" dir="rtl">تابع الحل بمحللات بايثون في الوحدة <bdi dir="ltr">04</bdi></span></a></div><label class="done"><input type="checkbox" data-done="0"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Understood, calculated and checked</span><span lang="ar" dir="rtl" class="label-ar">فهمت وحسبت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-02"><div class="unit-head"><div class="num">02</div><div><h2 lang="en" dir="ltr">Independent equalities, rank and degrees of freedom</h2><h2 class="ar" lang="ar" dir="rtl">المساواة المستقلة والرتبة ودرجات الحرية</h2></div></div><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>DOF — Degrees of Freedom.</strong> The number of locally free choices left after independent equalities are enforced. For example, one balance equation connecting two powers leaves one free choice.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">DOF — Degrees of Freedom</bdi>، درجات الحرية.</strong> عدد الاختيارات الحرة محليا بعد تطبيق معادلات المساواة المستقلة. مثلا، تترك معادلة توازن واحدة تربط استطاعتين اختيارا حرا واحدا. يشرح المثال التالي حساب هذا العدد.</p></div><div class="pair"><p lang="en"><strong>rank and Jₕ:</strong> rank means matrix rank, the count of independent rows; it is a word, not an acronym. Jₕ denotes the Jacobian matrix of equality functions, not a software package.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">rank</bdi> و<bdi dir="ltr">Jₕ</bdi>:</strong> تعني الكلمة <bdi dir="ltr">rank</bdi> رتبة المصفوفة، أي عدد صفوفها المستقلة؛ وهي كلمة وليست اختصارا. ويرمز <bdi dir="ltr">Jₕ</bdi> إلى مصفوفة يعقوبي لتوابع قيود المساواة، وليس إلى حزمة برمجية.</p></div></aside><div class="pair"><p lang="en">n is the number of decision variables. Rank counts independent equality equations, not the number of rows written. For consistent linear equalities Ax=b, equality-based DOF=n−rank(A).</p><p lang="ar" dir="rtl"><bdi dir="ltr">n</bdi> هو عدد متغيرات القرار. تقيس الرتبة عدد معادلات المساواة المستقلة، وليس عدد الصفوف المكتوبة. للمعادلات الخطية المتسقة <bdi dir="ltr">Ax=b</bdi> تكون درجة الحرية بالنسبة للمساواة <bdi dir="ltr">DOF=n−rank(A)</bdi>.</p></div><div class="model"><div class="equation" dir="ltr">Linear: DOF=n−rank(A). Regular nonlinear equalities: local DOF=n−rank(Jₕ).</div><div class="pair"><p lang="en">For nonlinear equalities h(x)=0, Jₕ is the Jacobian: entry (i,j) is ∂hᵢ/∂xⱼ. The nonlinear formula describes local dimension at regular points; singular points need extra analysis.</p><p lang="ar" dir="rtl">للمساواة غير الخطية <bdi dir="ltr">h(x)=0</bdi>، تمثل <bdi dir="ltr">Jₕ</bdi> مصفوفة يعقوبي؛ وعنصرها <bdi dir="ltr">(i,j)</bdi> هو <bdi dir="ltr">∂hᵢ/∂xⱼ</bdi>. تصف الصيغة غير الخطية البعد المحلي عند النقاط المنتظمة، وتحتاج النقاط الشاذة إلى تحليل إضافي.</p></div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — one example, three cases</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي — مثال واحد وثلاث حالات</span></h3><ol><li><div class="pair"><p lang="en">Take x=[P₁,P₂] and P₁+P₂=10 kW. There are two unknowns; the coefficient row is [1,1], so rank=1 and DOF=2−1=1. Choosing P₁ determines P₂=10−P₁.</p><p lang="ar" dir="rtl">نأخذ <bdi dir="ltr">x=[P₁,P₂]</bdi> والتوازن <bdi dir="ltr">P₁+P₂=10 kW</bdi>. لدينا مجهولان وصف المعاملات <bdi dir="ltr">[1,1]</bdi>؛ إذن الرتبة <bdi dir="ltr">1</bdi> ودرجة الحرية <bdi dir="ltr">2−1=1</bdi>. يحدد اختيار <bdi dir="ltr">P₁</bdi> القيمة <bdi dir="ltr">P₂=10−P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">Add 2P₁+2P₂=20. Divide this row by 2: it is the first equation again. Rank remains 1 and DOF remains 1; writing an extra row did not add a new restriction.</p><p lang="ar" dir="rtl">نضيف <bdi dir="ltr">2P₁+2P₂=20</bdi>. بقسمة الصف على <bdi dir="ltr">2</bdi> نحصل على المعادلة الأولى نفسها. تبقى الرتبة <bdi dir="ltr">1</bdi> ودرجة الحرية <bdi dir="ltr">1</bdi>؛ لم يضف الصف المكرر قيدا مستقلا.</p></div></li><li><div class="pair"><p lang="en">Instead add P₁=6 kW. Its row [1,0] is independent of [1,1]. The 2×2 determinant is 1×0−1×1=−1≠0, so rank=2 and DOF=2−2=0.</p><p lang="ar" dir="rtl">بدلا من ذلك نضيف <bdi dir="ltr">P₁=6 kW</bdi>. الصف <bdi dir="ltr">[1,0]</bdi> مستقل عن <bdi dir="ltr">[1,1]</bdi>. محدد المصفوفة <bdi dir="ltr">2×2</bdi> هو <bdi dir="ltr">1×0−1×1=−1≠0</bdi>؛ إذن الرتبة <bdi dir="ltr">2</bdi> ودرجة الحرية <bdi dir="ltr">2−2=0</bdi>.</p></div></li><li><div class="pair"><p lang="en">Substitute P₁=6 into the balance: P₂=10−6=4 kW. Check 6+4−10=0. The equalities determine the pair, but any additional capacity bounds must still be checked.</p><p lang="ar" dir="rtl">نعوض <bdi dir="ltr">P₁=6</bdi> في التوازن فنحسب <bdi dir="ltr">P₂=10−6=4 kW</bdi>. نتحقق <bdi dir="ltr">6+4−10=0</bdi>. تحدد المساواة زوج الاستطاعتين، لكن يجب فحص أي حدود إضافية للسعات.</p></div></li></ol></div><div class="pair"><p lang="en">Positive equality-based DOF does not guarantee feasibility, a bounded objective or a unique optimum. Inequalities and active bounds can restrict feasible directions. Even zero DOF requires checking consistency and all physical limits.</p><p lang="ar" dir="rtl">لا تضمن درجة الحرية الموجبة وجود حل ممكن أو هدف محدود أو حل أمثل وحيد. قد تقيد المتراجحات والحدود الفعالة اتجاهات الحركة الممكنة. وحتى عند انعدام درجة الحرية يجب فحص الاتساق والحدود الفيزيائية.</p></div><label class="done"><input type="checkbox" data-done="1"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Calculated, run and verified</span><span lang="ar" dir="rtl" class="label-ar">حسبت وشغلت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-03"><div class="unit-head"><div class="num">03</div><div><h2 lang="en" dir="ltr">Classifying a mathematical program</h2><h2 class="ar" lang="ar" dir="rtl">تصنيف مسألة البرمجة الرياضية</h2></div></div><div class="pair"><p lang="en">Classify the objective, constraints, and variable domains separately. Convexity is another axis: LP is convex; QP and QCQP may be convex or nonconvex. Stochastic, robust, multiobjective and multiperiod describe further features, not mutually exclusive algebraic classes.</p><p lang="ar" dir="rtl">نصنف دالة الهدف والقيود ومجالات المتغيرات كل على حدة. التحدب محور إضافي: <bdi dir="ltr">LP</bdi> محدبة، وقد تكون <bdi dir="ltr">QP</bdi> و<bdi dir="ltr">QCQP</bdi> محدبتين أو غير محدبتين. العشوائية والمتانة وتعدد الأهداف والفترات صفات إضافية يمكن أن تجتمع في نموذج واحد.</p></div><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>AC — Alternating Current; OPF — Optimal Power Flow.</strong> AC-OPF means alternating-current optimal power flow: selecting network operating decisions while satisfying the alternating-current power-flow equations and equipment limits.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">AC — Alternating Current</bdi>، التيار المتناوب؛ <bdi dir="ltr">OPF — Optimal Power Flow</bdi>، التدفق الأمثل للاستطاعة.</strong> تجمع <bdi dir="ltr">AC-OPF</bdi> المعنيين: اختيار قرارات تشغيل الشبكة مع تحقيق معادلات تدفق الاستطاعة المتناوبة وحدود التجهيزات. ليست مجرد موازنة بين مجموع التوليد والحمل.</p></div></aside><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Model and units</span><span lang="ar" dir="rtl" class="label-ar">النموذج والوحدات</span></strong><div class="table-scroll"><table><thead><tr><th dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Type</span><span lang="ar" dir="rtl" class="label-ar">النوع</span></th><th dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Structure</span><span lang="ar" dir="rtl" class="label-ar">البنية</span></th><th dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Energy application</span><span lang="ar" dir="rtl" class="label-ar">تطبيق طاقي</span></th></tr></thead><tbody><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Linear Programming (LP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة الخطية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Linear objective + linear constraints; continuous x</span><span lang="ar" dir="rtl" class="label-ar">هدف وقيود خطية ومتغيرات مستمرة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Linear dispatch</span><span lang="ar" dir="rtl" class="label-ar">توزيع خطي</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Quadratic Programming (QP) / Quadratically Constrained Quadratic Programming (QCQP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة التربيعية / البرمجة التربيعية ذات القيود التربيعية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Quadratic objective / quadratic constraints</span><span lang="ar" dir="rtl" class="label-ar">هدف تربيعي / قيود تربيعية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Economic dispatch / inverter limits</span><span lang="ar" dir="rtl" class="label-ar">التوزيع الاقتصادي / حدود العاكس</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Nonlinear Programming (NLP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة غير الخطية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">General nonlinear expressions</span><span lang="ar" dir="rtl" class="label-ar">تعابير غير خطية عامة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">AC-OPF</span><span lang="ar" dir="rtl" class="label-ar">التدفق الأمثل المتناوب</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Integer Programming (IP) / Binary Integer Programming (BIP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة الصحيحة / البرمجة الصحيحة الثنائية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Integer / binary decisions</span><span lang="ar" dir="rtl" class="label-ar">قرارات صحيحة / ثنائية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Equipment counts / selection</span><span lang="ar" dir="rtl" class="label-ar">عدد التجهيزات / اختيارها</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Mixed-Integer Linear Programming (MILP) / Mixed-Integer Quadratic Programming (MIQP) / Mixed-Integer Nonlinear Programming (MINLP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة المختلطة بمتغيرات صحيحة: خطية / تربيعية / غير خطية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Mixed discrete + continuous variables</span><span lang="ar" dir="rtl" class="label-ar">متغيرات متقطعة ومستمرة مختلطة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Unit commitment</span><span lang="ar" dir="rtl" class="label-ar">جدولة تشغيل المولدات</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Second-Order Cone Programming (SOCP) / Semidefinite Programming (SDP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة المخروطية من الرتبة الثانية / البرمجة نصف المحددة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Second-order cones / positive-semidefinite matrices</span><span lang="ar" dir="rtl" class="label-ar">مخاريط من الرتبة الثانية / مصفوفات موجبة شبه محددة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Some OPF relaxations</span><span lang="ar" dir="rtl" class="label-ar">بعض استرخاءات <bdi dir="ltr">OPF</bdi></span></td></tr></tbody></table></div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — ordinary calculator</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي بالآلة الحاسبة العادية</span></h3><ol><li><div class="pair"><p lang="en">In C=20P₁+35P₂, each decision variable has power one and is not multiplied by another decision: linear.</p><p lang="ar" dir="rtl">في <bdi dir="ltr">C=20P₁+35P₂</bdi> أس كل متغير قرار <bdi dir="ltr">1</bdi> ولا يوجد جداء بين متغيري قرار؛ إذن الهدف خطي.</p></div></li><li><div class="pair"><p lang="en">Adding 0.2P₁² makes the objective quadratic. P₁P₂ is also quadratic, not linear.</p><p lang="ar" dir="rtl">إضافة <bdi dir="ltr">0.2P₁²</bdi> تجعل الهدف تربيعيا. الجداء <bdi dir="ltr">P₁P₂</bdi> تربيعي أيضا، وليس خطيا.</p></div></li><li><div class="pair"><p lang="en">The product ηP remains linear when η is a fixed efficiency parameter; it is bilinear when both η and P are decisions.</p><p lang="ar" dir="rtl">يبقى الجداء <bdi dir="ltr">ηP</bdi> خطيا إذا كانت <bdi dir="ltr">η</bdi> كفاءة ثابتة؛ ويصبح ثنائي الخطية إذا كانت <bdi dir="ltr">η</bdi> و<bdi dir="ltr">P</bdi> متغيري قرار.</p></div></li><li><div class="pair"><p lang="en">Add u∈{0,1}: linear expressions give MILP, a quadratic objective with linear constraints gives MIQP.</p><p lang="ar" dir="rtl">نضيف <bdi dir="ltr">u∈{0,1}</bdi>: التعابير الخطية تعطي <bdi dir="ltr">MILP</bdi>، والهدف التربيعي مع القيود الخطية يعطي <bdi dir="ltr">MIQP</bdi>.</p></div></li></ol></div><div class="pair"><p lang="en">An algorithm (simplex, interior point, branch-and-bound, genetic algorithm) is a solution method, not a model class. A modeling library is also distinct from a solver.</p><p lang="ar" dir="rtl">الخوارزمية مثل السمبلكس والنقطة الداخلية والتفرع والتحديد والخوارزمية الجينية طريقة حل وليست نوع النموذج. كما أن مكتبة النمذجة تختلف عن المحلل.</p></div><label class="done"><input type="checkbox" data-done="2"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Calculated, run and verified</span><span lang="ar" dir="rtl" class="label-ar">حسبت وشغلت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-04"><div class="unit-head"><div class="num">04</div><div><h2 lang="en" dir="ltr">Linear Programming (LP) — linear economic dispatch</h2><h2 class="ar" lang="ar" dir="rtl">البرمجة الخطية — التوزيع الاقتصادي</h2></div></div><div class="pair"><p lang="en">Two generators supply 100 MW for one hour. Costs are 20 and 35 CU/MWh; each capacity is 80 MW. Assume no losses, startup costs or minimum output.</p><p lang="ar" dir="rtl">يغذي مولدان حملا <bdi dir="ltr">100 MW</bdi> لمدة ساعة. الكلفتان <bdi dir="ltr">20</bdi> و<bdi dir="ltr">35</bdi> وحدة نقدية/<bdi dir="ltr">MWh</bdi>، وسعة كل مولد <bdi dir="ltr">80 MW</bdi>. نهمل الفواقد وكلفة الإقلاع والحد الأدنى للتوليد.</p></div><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Model and units</span><span lang="ar" dir="rtl" class="label-ar">النموذج والوحدات</span></strong><div class="equation" dir="ltr">min C = 20P₁ + 35P₂ [CU/h]; P₁+P₂=100 MW; 0≤P₁,P₂≤80 MW</div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — ordinary calculator</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي بالآلة الحاسبة العادية</span></h3><ol><li><div class="pair"><p lang="en">Use balance to eliminate P₂: P₂=100−P₁.</p><p lang="ar" dir="rtl">نحذف <bdi dir="ltr">P₂</bdi> باستخدام التوازن: <bdi dir="ltr">P₂=100−P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">From 0≤P₂≤80: 0≤100−P₁≤80, hence 20≤P₁≤100. Intersect with 0≤P₁≤80: 20≤P₁≤80.</p><p lang="ar" dir="rtl">من <bdi dir="ltr">0≤P₂≤80</bdi> نحصل على <bdi dir="ltr">20≤P₁≤100</bdi>. بالتقاطع مع <bdi dir="ltr">0≤P₁≤80</bdi> يصبح المجال <bdi dir="ltr">20≤P₁≤80</bdi>.</p></div></li><li><div class="pair"><p lang="en">Substitute into cost: C=20P₁+35(100−P₁)=3500−15P₁.</p><p lang="ar" dir="rtl">نعوض في الكلفة: <bdi dir="ltr">C=20P₁+35(100−P₁)=3500−15P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">The coefficient −15 is negative: cost falls as P₁ rises. Choose P₁=80 MW, so P₂=100−80=20 MW.</p><p lang="ar" dir="rtl">المعامل <bdi dir="ltr">−15</bdi> سالب؛ تنخفض الكلفة بزيادة <bdi dir="ltr">P₁</bdi>. نختار <bdi dir="ltr">P₁=80 MW</bdi>، ومنه <bdi dir="ltr">P₂=20 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Calculate C=20×80+35×20=1600+700=2300 CU/h; for 1 h, energy cost=2300 CU.</p><p lang="ar" dir="rtl">نحسب <bdi dir="ltr">C=20×80+35×20=1600+700=2300</bdi> وحدة نقدية/ساعة، ولمدة ساعة الكلفة <bdi dir="ltr">2300</bdi> وحدة نقدية.</p></div></li><li><div class="pair"><p lang="en">Check both interval endpoints: C(20)=3200; C(80)=2300. A linear function on this interval has its minimum at the cheaper endpoint. Balance 80+20−100=0.</p><p lang="ar" dir="rtl">نفحص الطرفين: <bdi dir="ltr">C(20)=3200</bdi> و<bdi dir="ltr">C(80)=2300</bdi>. التابع الخطي على هذا المجال يحقق أدناه عند الطرف الأقل كلفة. باقي التوازن <bdi dir="ltr">80+20−100=0</bdi>.</p></div></li></ol></div><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>NumPy — Numerical Python.</strong> A Python library for arrays and numerical calculations. In <code>import numpy as np</code>, np is a short code alias chosen for the library, not a separate solver.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">NumPy — Numerical Python</bdi>، مكتبة بايثون للحسابات العددية.</strong> توفر المصفوفات والحساب عليها. في التعليمة <bdi dir="ltr">import numpy as np</bdi> يكون <bdi dir="ltr">np</bdi> اسما مختصرا للمكتبة داخل الكود، وليس محللا آخر.</p></div><div class="pair"><p lang="en"><strong>SciPy:</strong> a scientific-computing library for Python. Its <code>optimize</code> module contains optimization interfaces. <code>linprog</code> is short for linear programming and is the function called to solve a linear program.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">SciPy</bdi>: مكتبة للحوسبة العلمية بلغة بايثون.</strong> تضم الوحدة <bdi dir="ltr">optimize</bdi> واجهات للتحسين. والاسم <bdi dir="ltr">linprog</bdi> اختصار برمجي لعبارة <bdi dir="ltr">linear programming</bdi>، أي البرمجة الخطية، وهو التابع الذي نستدعيه لحل النموذج.</p></div><div class="pair"><p lang="en"><strong>HiGHS:</strong> the name of the solver package used here, not a model type. In its method labels, ds means dual simplex and ipm means interior-point method. <code>highs-ds</code> and <code>highs-ipm</code> are two algorithms in the same solver.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">HiGHS</bdi>: اسم حزمة المحلل المستخدمة هنا، وليس نوع مسألة.</strong> في تسميات الطرق تعني <bdi dir="ltr">ds — Dual Simplex</bdi> خوارزمية السمبلكس الثنائي، وتعني <bdi dir="ltr">ipm — Interior-Point Method</bdi> طريقة النقطة الداخلية. لذلك يمثل <bdi dir="ltr">highs-ds</bdi> و<bdi dir="ltr">highs-ipm</bdi> خوارزميتين داخل المحلل نفسه.</p></div><div class="pair"><p lang="en"><strong>Solver and algorithm:</strong> the solver is the software that computes a solution; an algorithm is the method it follows. A modeling library provides a way to express a model before sending it to a solver.</p><p lang="ar" dir="rtl"><strong>المحلل والخوارزمية:</strong> المحلل برنامج يحسب الحل، والخوارزمية طريقة العمل التي يتبعها. أما مكتبة النمذجة فتوفر وسيلة لكتابة النموذج قبل إرساله إلى المحلل.</p></div><div class="pair"><p lang="en"><strong>A_eq, b_eq, A_ub and b_ub:</strong> eq means equality; ub means upper bound. A holds coefficients and b the right-hand-side limits. Thus A_eq x=b_eq encodes equalities, while A_ub x≤b_ub encodes upper-bound inequalities.</p><p lang="ar" dir="rtl"><strong>اختصارات معاملات النموذج:</strong> تعني <bdi dir="ltr">eq — Equality</bdi> المساواة، وتعني <bdi dir="ltr">ub — Upper Bound</bdi> الحد الأعلى. تحتوي <bdi dir="ltr">A</bdi> معاملات القيود، وتحتوي <bdi dir="ltr">b</bdi> أطرافها اليمنى. لذا تعبر <bdi dir="ltr">A_eq x=b_eq</bdi> عن المساواة، وتعبر <bdi dir="ltr">A_ub x≤b_ub</bdi> عن قيود الحد الأعلى.</p></div><div class="pair"><p lang="en"><strong>r, r.x, r.fun and r.success:</strong> r is a local variable storing the result object; x contains decision values; fun is the objective-function value; success reports successful termination. These are code names, not new optimization types.</p><p lang="ar" dir="rtl"><strong>قراءة نتيجة الحل:</strong> <bdi dir="ltr">r</bdi> اسم متغير محلي لحفظ النتيجة؛ وتحتوي <bdi dir="ltr">r.x</bdi> قيم القرار، وتحتوي <bdi dir="ltr">r.fun</bdi> قيمة دالة الهدف. ويبلغ الحقل <bdi dir="ltr">r.success</bdi> عن نجاح إنهاء الحساب. هذه أسماء برمجية، وليست أنواعا جديدة من مسائل التحسين.</p></div><div class="pair"><p lang="en"><strong>Scientific notation in code:</strong> 1e-6 means 1×10⁻⁶=0.000001, and 1e-10 means 0.0000000001. Here e marks a power of ten; it is not a decision variable or the mathematical constant e.</p><p lang="ar" dir="rtl"><strong>الكتابة العلمية للأعداد في الكود:</strong> تعني <bdi dir="ltr">1e-6</bdi> العدد <bdi dir="ltr">1×10⁻⁶=0.000001</bdi>، وتعني <bdi dir="ltr">1e-10</bdi> العدد <bdi dir="ltr">0.0000000001</bdi>. يشير الحرف <bdi dir="ltr">e</bdi> هنا إلى قوة للعدد عشرة، وليس إلى متغير قرار أو الثابت الرياضي المسمى بالحرف نفسه.</p></div></aside><div class="codebox"><div class="codebar"><span>Python · Kaggle · 01</span><button class="copy bilingual-label" type="button" data-code="0" dir="ltr"><span lang="en" dir="ltr" class="label-en">Copy code</span><span lang="ar" dir="rtl" class="label-ar">نسخ الكود</span></button></div><pre id="code-0" dir="ltr"><code>import numpy as np
+<section class="unit optimization-unit" id="unit-01"><div class="unit-head"><div class="num">01</div><div><h2 lang="en" dir="ltr">The optimization model — a single reference</h2><h2 class="ar" lang="ar" dir="rtl">النموذج الرياضي للتحسين — مرجع موحد</h2></div></div><div class="pair"><p lang="en">A parameter is fixed during one solve; a decision variable is selected by optimization. The objective evaluates each candidate; equality and inequality relations restrict feasible choices.</p><p lang="ar" dir="rtl">البارامتر معطى ثابت أثناء الحل الواحد؛ ومتغير القرار قيمة نبحث عنها. تقيم دالة الهدف كل حل مرشح، وتحدد علاقات المساواة وعدم المساواة الاختيارات الممكنة.</p></div><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">General model</span><span lang="ar" dir="rtl" class="label-ar">النموذج العام</span></strong><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>min — Minimize; max — Maximize.</strong> Find the smallest or largest feasible objective value, respectively. These are instructions, not solver names.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">min</bdi> تعني التصغير، و<bdi dir="ltr">max</bdi> تعني التعظيم.</strong> نبحث عن أصغر قيمة ممكنة لدالة الهدف أو أكبر قيمة ممكنة لها، على الترتيب. هذان رمزان للعملية المطلوبة وليسا اسمي محللين.</p></div><div class="pair"><p lang="en"><strong>x, θ, f, h, g, ℓ, u:</strong> x is the list of decisions; θ is fixed data; f is the objective; h=0 expresses equality; g≤0 expresses an upper-type inequality; ℓ and u are lower and upper bounds.</p><p lang="ar" dir="rtl"><strong>رموز النموذج:</strong> <bdi dir="ltr">x</bdi> قائمة متغيرات القرار، و<bdi dir="ltr">θ</bdi> المعطيات الثابتة، و<bdi dir="ltr">f</bdi> دالة الهدف. تعبر <bdi dir="ltr">h=0</bdi> عن قيد مساواة، و<bdi dir="ltr">g≤0</bdi> عن قيد عدم مساواة. ويرمز <bdi dir="ltr">ℓ</bdi> و<bdi dir="ltr">u</bdi> إلى الحدين الأدنى والأعلى. هذه رموز للكميات وليست اختصارات لأسماء محللات.</p></div></aside><div class="equation" dir="ltr">min f(x;θ), subject to h(x;θ)=0, g(x;θ)≤0, ℓ≤x≤u.</div><div class="pair"><p lang="en">θ denotes parameters; x is the decision vector. For discrete choices, declare the required components integer or binary. To maximize B, minimize −B with the same feasible set.</p><p lang="ar" dir="rtl">يرمز <bdi dir="ltr">θ</bdi> إلى البارامترات و<bdi dir="ltr">x</bdi> إلى شعاع القرار. نحدد مجال المتغير الصحيح أو الثنائي عند الحاجة. لتعظيم <bdi dir="ltr">B</bdi> نصغر <bdi dir="ltr">−B</bdi> مع إبقاء المجموعة الممكنة نفسها.</p></div></div><div class="pair"><p lang="en">A mathematical function assigns exactly one output to each input in its domain; a relation may allow several outputs. Thus f(x) is a function, while h(x)=0 is a constraint relation. A Python function implements a calculation; its arguments are not automatically fixed model parameters.</p><p lang="ar" dir="rtl">يعطي التابع الرياضي خرجا وحيدا لكل مدخل في مجال تعريفه؛ وقد تسمح العلاقة بعدة مخارج. لذلك <bdi dir="ltr">f(x)</bdi> تابع، بينما <bdi dir="ltr">h(x)=0</bdi> علاقة قيد. وينفذ التابع البرمجي حسابا، ولا تكون وسائطه بالضرورة بارامترات ثابتة للنموذج.</p></div><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>MW — Megawatt; MWh — Megawatt-hour.</strong> MW measures power; MWh measures energy. A constant 1 MW for 1 hour supplies 1 MWh. The symbol h in a unit means hour; it is different from the equality function h(x).</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">MW — Megawatt</bdi>، ميغاواط؛ <bdi dir="ltr">MWh — Megawatt-hour</bdi>، ميغاواط ساعي.</strong> الأولى وحدة استطاعة والثانية وحدة طاقة. يعطي تشغيل استطاعة ثابتة <bdi dir="ltr">1 MW</bdi> لمدة ساعة طاقة <bdi dir="ltr">1 MWh</bdi>. ويعني <bdi dir="ltr">h</bdi> في وحدة القياس ساعة، بينما <bdi dir="ltr">h(x)</bdi> في النموذج تابع قيد المساواة.</p></div><div class="pair"><p lang="en"><strong>kW — Kilowatt; kWh — Kilowatt-hour.</strong> These are smaller power and energy units: 1 MW=1000 kW and 1 MWh=1000 kWh. The prefix k means one thousand; M means one million.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">kW — Kilowatt</bdi>، كيلوواط؛ <bdi dir="ltr">kWh — Kilowatt-hour</bdi>، كيلوواط ساعي.</strong> هما وحدتا استطاعة وطاقة أصغر: <bdi dir="ltr">1 MW=1000 kW</bdi> و<bdi dir="ltr">1 MWh=1000 kWh</bdi>. تعني البادئة <bdi dir="ltr">k</bdi> ألفا، والبادئة <bdi dir="ltr">M</bdi> مليونا.</p></div><div class="pair"><p lang="en"><strong>CU — Currency Unit.</strong> A generic currency unit, not a particular currency. CU/MWh is energy price; CU/h is hourly cost.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">CU — Currency Unit</bdi>، وحدة نقدية.</strong> رمز عام لا يحدد عملة بعينها. تمثل <bdi dir="ltr">CU/MWh</bdi> سعر وحدة الطاقة، وتمثل <bdi dir="ltr">CU/h</bdi> الكلفة لكل ساعة.</p></div></aside><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Read, solve and verify the model by hand</span><span lang="ar" dir="rtl" class="label-ar">قراءة النموذج وحله يدويا والتحقق منه</span></h3><ol><li><div class="pair"><p lang="en">Demand D=100 MW is a fixed parameter; P₁ and P₂ are decision variables. Marginal costs are 20 and 35 currency units (CU) per MWh. Each generator has an 80 MW capacity; study one hour and neglect losses.</p><p lang="ar" dir="rtl">الطلب <bdi dir="ltr">D=100 MW</bdi> بارامتر ثابت، والاستطاعتان <bdi dir="ltr">P₁</bdi> و<bdi dir="ltr">P₂</bdi> متغيرا قرار. الكلفتان الحديتان هما <bdi dir="ltr">20</bdi> و<bdi dir="ltr">35</bdi> وحدة نقدية لكل <bdi dir="ltr">MWh</bdi>، وسعة كل مولد <bdi dir="ltr">80 MW</bdi>. ندرس التشغيل لمدة ساعة مع إهمال الفواقد.</p></div></li><li><div class="pair"><p lang="en">Minimize C=20P₁+35P₂ [CU/h], subject to power balance P₁+P₂=100 MW and the limits 0≤P₁,P₂≤80 MW.</p><p lang="ar" dir="rtl">نريد تصغير الكلفة <bdi dir="ltr">C=20P₁+35P₂</bdi> بوحدة نقدية/ساعة، مع تحقيق التوازن <bdi dir="ltr">P₁+P₂=100 MW</bdi> واحترام الحدين <bdi dir="ltr">0≤P₁≤80 MW</bdi> و<bdi dir="ltr">0≤P₂≤80 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Eliminate one unknown using the balance: P₂=100−P₁.</p><p lang="ar" dir="rtl">نعزل المجهول الثاني باستخدام معادلة التوازن: <bdi dir="ltr">P₂=100−P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">Apply generator 2 limits: 0≤100−P₁≤80 implies 20≤P₁≤100. Intersect with generator 1 limits 0≤P₁≤80: the feasible interval is 20≤P₁≤80 MW.</p><p lang="ar" dir="rtl">نطبق حدود المولد الثاني: من <bdi dir="ltr">0≤100−P₁≤80</bdi> نحصل على <bdi dir="ltr">20≤P₁≤100</bdi>. بالتقاطع مع حدود المولد الأول <bdi dir="ltr">0≤P₁≤80</bdi> يصبح المجال الممكن <bdi dir="ltr">20≤P₁≤80 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Substitute into the objective and collect terms: C=20P₁+35(100−P₁)=20P₁+3500−35P₁=3500−15P₁.</p><p lang="ar" dir="rtl">نعوض في دالة الهدف ونجمع الحدود المتشابهة: <bdi dir="ltr">C=20P₁+35(100−P₁)=20P₁+3500−35P₁=3500−15P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">Each extra MW from generator 1 reduces total hourly cost by 15 CU/h. Therefore choose the largest feasible P₁: P₁*=80 MW.</p><p lang="ar" dir="rtl">كل زيادة بمقدار <bdi dir="ltr">1 MW</bdi> في استطاعة المولد الأول تخفض الكلفة بمقدار <bdi dir="ltr">15</bdi> وحدة نقدية/ساعة. لذلك نختار أكبر قيمة ممكنة: <bdi dir="ltr">P₁*=80 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Calculate the remaining power: P₂*=100−80=20 MW.</p><p lang="ar" dir="rtl">نحسب الاستطاعة المتبقية: <bdi dir="ltr">P₂*=100−80=20 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Calculate the minimum cost with an ordinary calculator: C*=20×80+35×20=1600+700=2300 CU/h. For one hour, the total cost is 2300 CU.</p><p lang="ar" dir="rtl">نحسب الكلفة الدنيا بالآلة الحاسبة العادية: <bdi dir="ltr">C*=20×80+35×20=1600+700=2300</bdi> وحدة نقدية/ساعة. ولمدة ساعة واحدة تكون الكلفة الكلية <bdi dir="ltr">2300</bdi> وحدة نقدية.</p></div></li><li><div class="pair"><p lang="en">Verify: 80+20=100 MW; 0≤80≤80 and 0≤20≤80. Balance and both capacities are satisfied. The decreasing linear cost proves this feasible endpoint is globally optimal.</p><p lang="ar" dir="rtl">نتحقق من التوازن <bdi dir="ltr">80+20=100 MW</bdi>، ومن الحدود <bdi dir="ltr">0≤80≤80</bdi> و<bdi dir="ltr">0≤20≤80</bdi>. جميع القيود محققة، وتناقص الكلفة الخطية يثبت أن هذا الطرف الممكن هو الحل الأمثل العالمي.</p></div></li></ol><div class="expected"><strong class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Verified optimum</span><span class="label-ar" lang="ar" dir="rtl">الحل الأمثل بعد التحقق</span></strong><div class="equation" dir="ltr">P₁*=80 MW; P₂*=20 MW; C*=2300 CU/h.</div></div><a class="btn alt bilingual-label" href="#unit-04"><span class="label-en" lang="en" dir="ltr">Continue with Python solvers — Unit 04</span><span class="label-ar" lang="ar" dir="rtl">تابع الحل بمحللات بايثون في الوحدة <bdi dir="ltr">04</bdi></span></a></div><label class="done"><input type="checkbox" data-done="0"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Understood, calculated and checked</span><span lang="ar" dir="rtl" class="label-ar">فهمت وحسبت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-02"><div class="unit-head"><div class="num">02</div><div><h2 lang="en" dir="ltr">Independent equalities, rank and degrees of freedom</h2><h2 class="ar" lang="ar" dir="rtl">المساواة المستقلة والرتبة ودرجات الحرية</h2></div></div><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>DOF — Degrees of Freedom.</strong> The number of locally free choices left after independent equalities are enforced. For example, one balance equation connecting two powers leaves one free choice.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">DOF — Degrees of Freedom</bdi>، درجات الحرية.</strong> عدد الاختيارات الحرة محليا بعد تطبيق معادلات المساواة المستقلة. مثلا، تترك معادلة توازن واحدة تربط استطاعتين اختيارا حرا واحدا. يشرح المثال التالي حساب هذا العدد.</p></div><div class="pair"><p lang="en"><strong>rank and Jₕ:</strong> rank means matrix rank, the count of independent rows; it is a word, not an acronym. Jₕ denotes the Jacobian matrix of equality functions, not a software package.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">rank</bdi> و<bdi dir="ltr">Jₕ</bdi>:</strong> تعني الكلمة <bdi dir="ltr">rank</bdi> رتبة المصفوفة، أي عدد صفوفها المستقلة؛ وهي كلمة وليست اختصارا. ويرمز <bdi dir="ltr">Jₕ</bdi> إلى مصفوفة يعقوبي لتوابع قيود المساواة، وليس إلى حزمة برمجية.</p></div></aside><div class="pair"><p lang="en">n is the number of decision variables. Rank counts independent equality equations, not the number of rows written. For consistent linear equalities Ax=b, equality-based DOF=n−rank(A).</p><p lang="ar" dir="rtl"><bdi dir="ltr">n</bdi> هو عدد متغيرات القرار. تقيس الرتبة عدد معادلات المساواة المستقلة، وليس عدد الصفوف المكتوبة. للمعادلات الخطية المتسقة <bdi dir="ltr">Ax=b</bdi> تكون درجة الحرية بالنسبة للمساواة <bdi dir="ltr">DOF=n−rank(A)</bdi>.</p></div><div class="model"><div class="equation" dir="ltr">Linear: DOF=n−rank(A). Regular nonlinear equalities: local DOF=n−rank(Jₕ).</div><div class="pair"><p lang="en">For nonlinear equalities h(x)=0, Jₕ is the Jacobian: entry (i,j) is ∂hᵢ/∂xⱼ. The nonlinear formula describes local dimension at regular points; singular points need extra analysis.</p><p lang="ar" dir="rtl">للمساواة غير الخطية <bdi dir="ltr">h(x)=0</bdi>، تمثل <bdi dir="ltr">Jₕ</bdi> مصفوفة يعقوبي؛ وعنصرها <bdi dir="ltr">(i,j)</bdi> هو <bdi dir="ltr">∂hᵢ/∂xⱼ</bdi>. تصف الصيغة غير الخطية البعد المحلي عند النقاط المنتظمة، وتحتاج النقاط الشاذة إلى تحليل إضافي.</p></div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — one example, three cases</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي — مثال واحد وثلاث حالات</span></h3><ol><li><div class="pair"><p lang="en">Take x=[P₁,P₂] and P₁+P₂=10 kW. There are two unknowns; the coefficient row is [1,1], so rank=1 and DOF=2−1=1. Choosing P₁ determines P₂=10−P₁.</p><p lang="ar" dir="rtl">نأخذ <bdi dir="ltr">x=[P₁,P₂]</bdi> والتوازن <bdi dir="ltr">P₁+P₂=10 kW</bdi>. لدينا مجهولان وصف المعاملات <bdi dir="ltr">[1,1]</bdi>؛ إذن الرتبة <bdi dir="ltr">1</bdi> ودرجة الحرية <bdi dir="ltr">2−1=1</bdi>. يحدد اختيار <bdi dir="ltr">P₁</bdi> القيمة <bdi dir="ltr">P₂=10−P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">Add 2P₁+2P₂=20. Divide this row by 2: it is the first equation again. Rank remains 1 and DOF remains 1; writing an extra row did not add a new restriction.</p><p lang="ar" dir="rtl">نضيف <bdi dir="ltr">2P₁+2P₂=20</bdi>. بقسمة الصف على <bdi dir="ltr">2</bdi> نحصل على المعادلة الأولى نفسها. تبقى الرتبة <bdi dir="ltr">1</bdi> ودرجة الحرية <bdi dir="ltr">1</bdi>؛ لم يضف الصف المكرر قيدا مستقلا.</p></div></li><li><div class="pair"><p lang="en">Instead add P₁=6 kW. Its row [1,0] is independent of [1,1]. The 2×2 determinant is 1×0−1×1=−1≠0, so rank=2 and DOF=2−2=0.</p><p lang="ar" dir="rtl">بدلا من ذلك نضيف <bdi dir="ltr">P₁=6 kW</bdi>. الصف <bdi dir="ltr">[1,0]</bdi> مستقل عن <bdi dir="ltr">[1,1]</bdi>. محدد المصفوفة <bdi dir="ltr">2×2</bdi> هو <bdi dir="ltr">1×0−1×1=−1≠0</bdi>؛ إذن الرتبة <bdi dir="ltr">2</bdi> ودرجة الحرية <bdi dir="ltr">2−2=0</bdi>.</p></div></li><li><div class="pair"><p lang="en">Substitute P₁=6 into the balance: P₂=10−6=4 kW. Check 6+4−10=0. The equalities determine the pair, but any additional capacity bounds must still be checked.</p><p lang="ar" dir="rtl">نعوض <bdi dir="ltr">P₁=6</bdi> في التوازن فنحسب <bdi dir="ltr">P₂=10−6=4 kW</bdi>. نتحقق <bdi dir="ltr">6+4−10=0</bdi>. تحدد المساواة زوج الاستطاعتين، لكن يجب فحص أي حدود إضافية للسعات.</p></div></li></ol></div><div class="pair"><p lang="en">Positive equality-based DOF does not guarantee feasibility, a bounded objective or a unique optimum. Inequalities and active bounds can restrict feasible directions. Even zero DOF requires checking consistency and all physical limits.</p><p lang="ar" dir="rtl">لا تضمن درجة الحرية الموجبة وجود حل ممكن أو هدف محدود أو حل أمثل وحيد. قد تقيد المتراجحات والحدود الفعالة اتجاهات الحركة الممكنة. وحتى عند انعدام درجة الحرية يجب فحص الاتساق والحدود الفيزيائية.</p></div><label class="done"><input type="checkbox" data-done="1"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Calculated, run and verified</span><span lang="ar" dir="rtl" class="label-ar">حسبت وشغلت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-03"><div class="unit-head"><div class="num">03</div><div><h2 lang="en" dir="ltr">Classifying a mathematical program</h2><h2 class="ar" lang="ar" dir="rtl">تصنيف مسألة البرمجة الرياضية</h2></div></div><div class="pair"><p lang="en">Classify the objective, constraints, and variable domains separately. Convexity is another axis: LP is convex; QP and QCQP may be convex or nonconvex. Stochastic, robust, multiobjective and multiperiod describe further features, not mutually exclusive algebraic classes.</p><p lang="ar" dir="rtl">نصنف دالة الهدف والقيود ومجالات المتغيرات كل على حدة. التحدب محور إضافي: <bdi dir="ltr">LP</bdi> محدبة، وقد تكون <bdi dir="ltr">QP</bdi> و<bdi dir="ltr">QCQP</bdi> محدبتين أو غير محدبتين. العشوائية والمتانة وتعدد الأهداف والفترات صفات إضافية يمكن أن تجتمع في نموذج واحد.</p></div><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>AC — Alternating Current; OPF — Optimal Power Flow.</strong> AC-OPF means alternating-current optimal power flow: selecting network operating decisions while satisfying the alternating-current power-flow equations and equipment limits.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">AC — Alternating Current</bdi>، التيار المتناوب؛ <bdi dir="ltr">OPF — Optimal Power Flow</bdi>، التدفق الأمثل للاستطاعة.</strong> تجمع <bdi dir="ltr">AC-OPF</bdi> المعنيين: اختيار قرارات تشغيل الشبكة مع تحقيق معادلات تدفق الاستطاعة المتناوبة وحدود التجهيزات. ليست مجرد موازنة بين مجموع التوليد والحمل.</p></div></aside><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Model and units</span><span lang="ar" dir="rtl" class="label-ar">النموذج والوحدات</span></strong><div class="table-scroll"><table><thead><tr><th dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Type</span><span lang="ar" dir="rtl" class="label-ar">النوع</span></th><th dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Structure</span><span lang="ar" dir="rtl" class="label-ar">البنية</span></th><th dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Energy application</span><span lang="ar" dir="rtl" class="label-ar">تطبيق طاقي</span></th></tr></thead><tbody><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Linear Programming (LP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة الخطية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Linear objective + linear constraints; continuous x</span><span lang="ar" dir="rtl" class="label-ar">هدف وقيود خطية ومتغيرات مستمرة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Linear dispatch</span><span lang="ar" dir="rtl" class="label-ar">توزيع خطي</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Quadratic Programming (QP) / Quadratically Constrained Quadratic Programming (QCQP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة التربيعية / البرمجة التربيعية ذات القيود التربيعية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Quadratic objective / quadratic constraints</span><span lang="ar" dir="rtl" class="label-ar">هدف تربيعي / قيود تربيعية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Economic dispatch / inverter limits</span><span lang="ar" dir="rtl" class="label-ar">التوزيع الاقتصادي / حدود العاكس</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Nonlinear Programming (NLP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة غير الخطية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">General nonlinear expressions</span><span lang="ar" dir="rtl" class="label-ar">تعابير غير خطية عامة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">AC-OPF</span><span lang="ar" dir="rtl" class="label-ar">التدفق الأمثل المتناوب</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Integer Programming (IP) / Binary Integer Programming (BIP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة الصحيحة / البرمجة الصحيحة الثنائية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Integer / binary decisions</span><span lang="ar" dir="rtl" class="label-ar">قرارات صحيحة / ثنائية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Equipment counts / selection</span><span lang="ar" dir="rtl" class="label-ar">عدد التجهيزات / اختيارها</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Mixed-Integer Linear Programming (MILP) / Mixed-Integer Quadratic Programming (MIQP) / Mixed-Integer Nonlinear Programming (MINLP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة المختلطة بمتغيرات صحيحة: خطية / تربيعية / غير خطية</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Mixed discrete + continuous variables</span><span lang="ar" dir="rtl" class="label-ar">متغيرات متقطعة ومستمرة مختلطة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Unit commitment</span><span lang="ar" dir="rtl" class="label-ar">جدولة تشغيل المولدات</span></td></tr><tr><td class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Second-Order Cone Programming (SOCP) / Semidefinite Programming (SDP)</span><span lang="ar" dir="rtl" class="label-ar">البرمجة المخروطية من الرتبة الثانية / البرمجة نصف المحددة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Second-order cones / positive-semidefinite matrices</span><span lang="ar" dir="rtl" class="label-ar">مخاريط من الرتبة الثانية / مصفوفات موجبة شبه محددة</span></td><td dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Some OPF relaxations</span><span lang="ar" dir="rtl" class="label-ar">بعض استرخاءات <bdi dir="ltr">OPF</bdi></span></td></tr></tbody></table></div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — ordinary calculator</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي بالآلة الحاسبة العادية</span></h3><ol><li><div class="pair"><p lang="en">In C=20P₁+35P₂, each decision variable has power one and is not multiplied by another decision: linear.</p><p lang="ar" dir="rtl">في <bdi dir="ltr">C=20P₁+35P₂</bdi> أس كل متغير قرار <bdi dir="ltr">1</bdi> ولا يوجد جداء بين متغيري قرار؛ إذن الهدف خطي.</p></div></li><li><div class="pair"><p lang="en">Adding 0.2P₁² makes the objective quadratic. P₁P₂ is also quadratic, not linear.</p><p lang="ar" dir="rtl">إضافة <bdi dir="ltr">0.2P₁²</bdi> تجعل الهدف تربيعيا. الجداء <bdi dir="ltr">P₁P₂</bdi> تربيعي أيضا، وليس خطيا.</p></div></li><li><div class="pair"><p lang="en">The product ηP remains linear when η is a fixed efficiency parameter; it is bilinear when both η and P are decisions.</p><p lang="ar" dir="rtl">يبقى الجداء <bdi dir="ltr">ηP</bdi> خطيا إذا كانت <bdi dir="ltr">η</bdi> كفاءة ثابتة؛ ويصبح ثنائي الخطية إذا كانت <bdi dir="ltr">η</bdi> و<bdi dir="ltr">P</bdi> متغيري قرار.</p></div></li><li><div class="pair"><p lang="en">Add u∈{0,1}: linear expressions give MILP, a quadratic objective with linear constraints gives MIQP.</p><p lang="ar" dir="rtl">نضيف <bdi dir="ltr">u∈{0,1}</bdi>: التعابير الخطية تعطي <bdi dir="ltr">MILP</bdi>، والهدف التربيعي مع القيود الخطية يعطي <bdi dir="ltr">MIQP</bdi>.</p></div></li></ol></div><div class="pair"><p lang="en">An algorithm (simplex, interior point, branch-and-bound, genetic algorithm) is a solution method, not a model class. A modeling library is also distinct from a solver.</p><p lang="ar" dir="rtl">الخوارزمية مثل السمبلكس والنقطة الداخلية والتفرع والتحديد والخوارزمية الجينية طريقة حل وليست نوع النموذج. كما أن مكتبة النمذجة تختلف عن المحلل.</p></div><label class="done"><input type="checkbox" data-done="2"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Calculated, run and verified</span><span lang="ar" dir="rtl" class="label-ar">حسبت وشغلت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-04"><div class="unit-head"><div class="num">04</div><div><h2 lang="en" dir="ltr">Linear Programming (LP) — linear economic dispatch</h2><h2 class="ar" lang="ar" dir="rtl">البرمجة الخطية — التوزيع الاقتصادي</h2></div></div><div class="pair"><p lang="en">Two generators supply 100 MW for one hour. Costs are 20 and 35 CU/MWh; each capacity is 80 MW. Assume no losses, startup costs or minimum output.</p><p lang="ar" dir="rtl">يغذي مولدان حملا <bdi dir="ltr">100 MW</bdi> لمدة ساعة. الكلفتان <bdi dir="ltr">20</bdi> و<bdi dir="ltr">35</bdi> وحدة نقدية/<bdi dir="ltr">MWh</bdi>، وسعة كل مولد <bdi dir="ltr">80 MW</bdi>. نهمل الفواقد وكلفة الإقلاع والحد الأدنى للتوليد.</p></div><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Model and units</span><span lang="ar" dir="rtl" class="label-ar">النموذج والوحدات</span></strong><div class="equation" dir="ltr">min C = 20P₁ + 35P₂ [CU/h]; P₁+P₂=100 MW; 0≤P₁,P₂≤80 MW</div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — ordinary calculator</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي بالآلة الحاسبة العادية</span></h3><ol><li><div class="pair"><p lang="en">Use balance to eliminate P₂: P₂=100−P₁.</p><p lang="ar" dir="rtl">نحذف <bdi dir="ltr">P₂</bdi> باستخدام التوازن: <bdi dir="ltr">P₂=100−P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">From 0≤P₂≤80: 0≤100−P₁≤80, hence 20≤P₁≤100. Intersect with 0≤P₁≤80: 20≤P₁≤80.</p><p lang="ar" dir="rtl">من <bdi dir="ltr">0≤P₂≤80</bdi> نحصل على <bdi dir="ltr">20≤P₁≤100</bdi>. بالتقاطع مع <bdi dir="ltr">0≤P₁≤80</bdi> يصبح المجال <bdi dir="ltr">20≤P₁≤80</bdi>.</p></div></li><li><div class="pair"><p lang="en">Substitute into cost: C=20P₁+35(100−P₁)=3500−15P₁.</p><p lang="ar" dir="rtl">نعوض في الكلفة: <bdi dir="ltr">C=20P₁+35(100−P₁)=3500−15P₁</bdi>.</p></div></li><li><div class="pair"><p lang="en">The coefficient −15 is negative: cost falls as P₁ rises. Choose P₁=80 MW, so P₂=100−80=20 MW.</p><p lang="ar" dir="rtl">المعامل <bdi dir="ltr">−15</bdi> سالب؛ تنخفض الكلفة بزيادة <bdi dir="ltr">P₁</bdi>. نختار <bdi dir="ltr">P₁=80 MW</bdi>، ومنه <bdi dir="ltr">P₂=20 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Calculate C=20×80+35×20=1600+700=2300 CU/h; for 1 h, energy cost=2300 CU.</p><p lang="ar" dir="rtl">نحسب <bdi dir="ltr">C=20×80+35×20=1600+700=2300</bdi> وحدة نقدية/ساعة، ولمدة ساعة الكلفة <bdi dir="ltr">2300</bdi> وحدة نقدية.</p></div></li><li><div class="pair"><p lang="en">Check both interval endpoints: C(20)=3200; C(80)=2300. A linear function on this interval has its minimum at the cheaper endpoint. Balance 80+20−100=0.</p><p lang="ar" dir="rtl">نفحص الطرفين: <bdi dir="ltr">C(20)=3200</bdi> و<bdi dir="ltr">C(80)=2300</bdi>. التابع الخطي على هذا المجال يحقق أدناه عند الطرف الأقل كلفة. باقي التوازن <bdi dir="ltr">80+20−100=0</bdi>.</p></div></li></ol></div><figure class="cost-curve" id="lp-cost-curve"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">See the linear cost and its feasible minimum</span><span class="label-ar" lang="ar" dir="rtl">منحنى الكلفة الخطية وأدناها الممكن</span></h3><div class="cost-curve-frame"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="576pt" height="324pt" viewbox="0 0 576 324" version="1.1" class="cost-curve-svg" role="img" aria-labelledby="cost-lp-title cost-lp-desc">
+ <title id="cost-lp-title">Linear cost: the minimum is a feasible endpoint</title><desc id="cost-lp-desc">C=3500−15P1 decreases over the feasible interval 20≤P1≤80. Its constrained global minimum is C=2300 at P1=80. Grey regions violate generator limits.</desc><metadata>
+  <rdf:rdf xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+    <dc:date>2026-11-01T20:10:09.486860</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:agent>
+    </dc:creator>
+   </cc:work>
+  </rdf:rdf>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cost-lp-figure_1">
+  <g id="cost-lp-patch_1">
+   <path d="M 0 324  L 576 324  L 576 0  L 0 0  z " style="fill: #ffffff"></path>
+  </g>
+  <g id="cost-lp-axes_1">
+   <g id="cost-lp-patch_2">
+    <path d="M 74.88 262.44  L 547.2 262.44  L 547.2 35.64  L 74.88 35.64  z " style="fill: #ffffff"></path>
+   </g>
+   <g id="cost-lp-matplotlib.axis_1">
+    <g id="cost-lp-xtick_1">
+     <g id="cost-lp-line2d_1">
+      <path d="M 74.88 262.44  L 74.88 35.64  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_2">
+      <defs>
+       <path id="cost-lp-m0d861f0cd4" d="M 0 0  L 0 3.5  " style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="#cost-lp-m0d861f0cd4" x="74.88" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_1">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="74.88" y="276.278594" transform="rotate(-0 74.88 276.278594)">0</text>
+     </g>
+    </g>
+    <g id="cost-lp-xtick_2">
+     <g id="cost-lp-line2d_3">
+      <path d="M 169.344 262.44  L 169.344 35.64  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_4">
+      <g>
+       <use xlink:href="#cost-lp-m0d861f0cd4" x="169.344" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_2">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="169.344" y="276.278594" transform="rotate(-0 169.344 276.278594)">20</text>
+     </g>
+    </g>
+    <g id="cost-lp-xtick_3">
+     <g id="cost-lp-line2d_5">
+      <path d="M 263.808 262.44  L 263.808 35.64  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_6">
+      <g>
+       <use xlink:href="#cost-lp-m0d861f0cd4" x="263.808" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_3">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="263.808" y="276.278594" transform="rotate(-0 263.808 276.278594)">40</text>
+     </g>
+    </g>
+    <g id="cost-lp-xtick_4">
+     <g id="cost-lp-line2d_7">
+      <path d="M 358.272 262.44  L 358.272 35.64  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_8">
+      <g>
+       <use xlink:href="#cost-lp-m0d861f0cd4" x="358.272" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_4">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="358.272" y="276.278594" transform="rotate(-0 358.272 276.278594)">60</text>
+     </g>
+    </g>
+    <g id="cost-lp-xtick_5">
+     <g id="cost-lp-line2d_9">
+      <path d="M 452.736 262.44  L 452.736 35.64  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_10">
+      <g>
+       <use xlink:href="#cost-lp-m0d861f0cd4" x="452.736" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_5">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="452.736" y="276.278594" transform="rotate(-0 452.736 276.278594)">80</text>
+     </g>
+    </g>
+    <g id="cost-lp-xtick_6">
+     <g id="cost-lp-line2d_11">
+      <path d="M 547.2 262.44  L 547.2 35.64  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_12">
+      <g>
+       <use xlink:href="#cost-lp-m0d861f0cd4" x="547.2" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_6">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="547.2" y="276.278594" transform="rotate(-0 547.2 276.278594)">100</text>
+     </g>
+    </g>
+    <g id="cost-lp-text_7">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="311.04" y="289.74875" transform="rotate(-0 311.04 289.74875)">Generator 1 power P1 (MW)</text>
+    </g>
+   </g>
+   <g id="cost-lp-matplotlib.axis_2">
+    <g id="cost-lp-ytick_1">
+     <g id="cost-lp-line2d_13">
+      <path d="M 74.88 243.54  L 547.2 243.54  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_14">
+      <defs>
+       <path id="cost-lp-mae2eb731c2" d="M 0 0  L -3.5 0  " style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="#cost-lp-mae2eb731c2" x="74.88" y="243.54" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_8">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="246.959297" transform="rotate(-0 67.88 246.959297)">2000</text>
+     </g>
+    </g>
+    <g id="cost-lp-ytick_2">
+     <g id="cost-lp-line2d_15">
+      <path d="M 74.88 218.34  L 547.2 218.34  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_16">
+      <g>
+       <use xlink:href="#cost-lp-mae2eb731c2" x="74.88" y="218.34" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_9">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="221.759297" transform="rotate(-0 67.88 221.759297)">2200</text>
+     </g>
+    </g>
+    <g id="cost-lp-ytick_3">
+     <g id="cost-lp-line2d_17">
+      <path d="M 74.88 193.14  L 547.2 193.14  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_18">
+      <g>
+       <use xlink:href="#cost-lp-mae2eb731c2" x="74.88" y="193.14" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_10">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="196.559297" transform="rotate(-0 67.88 196.559297)">2400</text>
+     </g>
+    </g>
+    <g id="cost-lp-ytick_4">
+     <g id="cost-lp-line2d_19">
+      <path d="M 74.88 167.94  L 547.2 167.94  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_20">
+      <g>
+       <use xlink:href="#cost-lp-mae2eb731c2" x="74.88" y="167.94" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_11">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="171.359297" transform="rotate(-0 67.88 171.359297)">2600</text>
+     </g>
+    </g>
+    <g id="cost-lp-ytick_5">
+     <g id="cost-lp-line2d_21">
+      <path d="M 74.88 142.74  L 547.2 142.74  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_22">
+      <g>
+       <use xlink:href="#cost-lp-mae2eb731c2" x="74.88" y="142.74" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_12">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="146.159297" transform="rotate(-0 67.88 146.159297)">2800</text>
+     </g>
+    </g>
+    <g id="cost-lp-ytick_6">
+     <g id="cost-lp-line2d_23">
+      <path d="M 74.88 117.54  L 547.2 117.54  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_24">
+      <g>
+       <use xlink:href="#cost-lp-mae2eb731c2" x="74.88" y="117.54" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_13">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="120.959297" transform="rotate(-0 67.88 120.959297)">3000</text>
+     </g>
+    </g>
+    <g id="cost-lp-ytick_7">
+     <g id="cost-lp-line2d_25">
+      <path d="M 74.88 92.34  L 547.2 92.34  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_26">
+      <g>
+       <use xlink:href="#cost-lp-mae2eb731c2" x="74.88" y="92.34" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_14">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="95.759297" transform="rotate(-0 67.88 95.759297)">3200</text>
+     </g>
+    </g>
+    <g id="cost-lp-ytick_8">
+     <g id="cost-lp-line2d_27">
+      <path d="M 74.88 67.14  L 547.2 67.14  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_28">
+      <g>
+       <use xlink:href="#cost-lp-mae2eb731c2" x="74.88" y="67.14" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_15">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="70.559297" transform="rotate(-0 67.88 70.559297)">3400</text>
+     </g>
+    </g>
+    <g id="cost-lp-ytick_9">
+     <g id="cost-lp-line2d_29">
+      <path d="M 74.88 41.94  L 547.2 41.94  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-lp-line2d_30">
+      <g>
+       <use xlink:href="#cost-lp-mae2eb731c2" x="74.88" y="41.94" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-lp-text_16">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="45.359297" transform="rotate(-0 67.88 45.359297)">3600</text>
+     </g>
+    </g>
+    <g id="cost-lp-text_17" class="curve-y-label">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="38.895312" y="149.04" transform="rotate(-90 38.895312 149.04)">Total cost C (CU/h)</text>
+    </g>
+   </g>
+   <g id="cost-lp-patch_3">
+    <path d="M 74.88 262.44  L 169.344 262.44  L 169.344 35.64  L 74.88 35.64  z " clip-path="url(#cost-lp-p5b553caa56)" style="fill: #e5e7eb; stroke: #e5e7eb; stroke-linejoin: miter"></path>
+   </g>
+   <g id="cost-lp-patch_4">
+    <path d="M 452.736 262.44  L 547.2 262.44  L 547.2 35.64  L 452.736 35.64  z " clip-path="url(#cost-lp-p5b553caa56)" style="fill: #e5e7eb; stroke: #e5e7eb; stroke-linejoin: miter"></path>
+   </g>
+   <g id="cost-lp-patch_5">
+    <path d="M 169.344 262.44  L 452.736 262.44  L 452.736 35.64  L 169.344 35.64  z " clip-path="url(#cost-lp-p5b553caa56)" style="fill: #dcfce7; opacity: 0.65; stroke: #dcfce7; stroke-linejoin: miter"></path>
+   </g>
+   <g id="cost-lp-line2d_31">
+    <path d="M 74.88 54.54  L 547.2 243.54  L 547.2 243.54  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #9ca3af; stroke-width: 2"></path>
+   </g>
+   <g id="cost-lp-line2d_32">
+    <path d="M 169.344 92.34  L 452.736 205.74  L 452.736 205.74  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke: #0369a1; stroke-width: 2.7; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-lp-line2d_33">
+    <path d="M 74.88 205.74  L 547.2 205.74  " clip-path="url(#cost-lp-p5b553caa56)" style="fill: none; stroke-dasharray: 1.4,2.31; stroke-dashoffset: 0; stroke: #15803d; stroke-width: 1.4"></path>
+   </g>
+   <g id="cost-lp-patch_6">
+    <path d="M 74.88 262.44  L 74.88 35.64  " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-lp-patch_7">
+    <path d="M 74.88 262.44  L 547.2 262.44  " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-lp-patch_8" class="curve-arrow">
+    <path d="M 279.469663 179.130186  Q 365.115359 192.283439 449.655978 205.266978  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+    <path d="M 446.005927 202.682964  L 449.655978 205.266978  L 445.398736 206.63661  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-lp-text_18" class="curve-annotation">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(192.96 169.342187)">Global minimum</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(192.96 180.54)">P1=80, C=2300</text>
+   </g>
+   <g id="cost-lp-text_19" class="curve-annotation">
+    <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #475569" x="122.112" y="48.24" transform="rotate(-0 122.112 48.24)">Infeasible</text>
+   </g>
+   <g id="cost-lp-text_20">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="311.04" y="29.64" transform="rotate(-0 311.04 29.64)">Linear cost: the minimum is a feasible endpoint</text>
+   </g>
+   <g id="cost-lp-PathCollection_1">
+    <path d="M 169.344 95.29804  C 170.128481 95.29804 170.880938 94.986362 171.43565 94.43165  C 171.990362 93.876938 172.30204 93.124481 172.30204 92.34  C 172.30204 91.555519 171.990362 90.803062 171.43565 90.24835  C 170.880938 89.693638 170.128481 89.38196 169.344 89.38196  C 168.559519 89.38196 167.807062 89.693638 167.25235 90.24835  C 166.697638 90.803062 166.38596 91.555519 166.38596 92.34  C 166.38596 93.124481 166.697638 93.876938 167.25235 94.43165  C 167.807062 94.986362 168.559519 95.29804 169.344 95.29804  z " clip-path="url(#cost-lp-p5b553caa56)" style="fill: #334155; stroke: #334155"></path>
+    <path d="M 452.736 209.771129  C 453.805068 209.771129 454.830493 209.346384 455.586439 208.590439  C 456.342384 207.834493 456.767129 206.809068 456.767129 205.74  C 456.767129 204.670932 456.342384 203.645507 455.586439 202.889561  C 454.830493 202.133616 453.805068 201.708871 452.736 201.708871  C 451.666932 201.708871 450.641507 202.133616 449.885561 202.889561  C 449.129616 203.645507 448.704871 204.670932 448.704871 205.74  C 448.704871 206.809068 449.129616 207.834493 449.885561 208.590439  C 450.641507 209.346384 451.666932 209.771129 452.736 209.771129  z " clip-path="url(#cost-lp-p5b553caa56)" style="fill: #15803d; stroke: #15803d"></path>
+   </g>
+   <g id="cost-lp-legend_1" class="curve-legend">
+    <g id="cost-lp-patch_9">
+     <path d="M 418.265 65.525  L 541.6 65.525  Q 543.2 65.525 543.2 63.925  L 543.2 41.24  Q 543.2 39.64 541.6 39.64  L 418.265 39.64  Q 416.665 39.64 416.665 41.24  L 416.665 63.925  Q 416.665 65.525 418.265 65.525  z " style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"></path>
+    </g>
+    <g id="cost-lp-line2d_34">
+     <path d="M 419.865 46.11875  L 427.865 46.11875  L 435.865 46.11875  " style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #9ca3af; stroke-width: 2"></path>
+    </g>
+    <g id="cost-lp-text_21">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="442.265" y="48.91875" transform="rotate(-0 442.265 48.91875)">Outside feasible interval</text>
+    </g>
+    <g id="cost-lp-line2d_35">
+     <path d="M 419.865 57.86125  L 427.865 57.86125  L 435.865 57.86125  " style="fill: none; stroke: #0369a1; stroke-width: 2.7; stroke-linecap: square"></path>
+    </g>
+    <g id="cost-lp-text_22">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="442.265" y="60.66125" transform="rotate(-0 442.265 60.66125)">Feasible cost curve</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clippath id="cost-lp-p5b553caa56">
+   <rect x="74.88" y="35.64" width="472.32" height="226.8"></rect>
+  </clippath>
+ </defs>
+</svg></div><div class="curve-value-summary" dir="ltr">P₁*=80 MW; P₂*=20 MW; Cmin=2300 CU/h.</div><div class="pair cost-axes-note"><p lang="en">Axes: horizontal P₁ (MW); vertical total cost C (CU/h).</p><p lang="ar" dir="rtl">المحور الأفقي: استطاعة المولد الأول بالميغاواط. المحور الرأسي: الكلفة الكلية بوحدة نقدية/ساعة.</p></div><div class="pair"><p lang="en">The green-tinted interval is feasible: 20≤P₁≤80 MW. Grey regions are excluded by generator limits. Some excluded points have lower cost, but they are not admissible solutions.</p><p lang="ar" dir="rtl">المجال المظلل بالأخضر ممكن: <bdi dir="ltr">20≤P₁≤80 MW</bdi>. تستبعد حدود المولدين المجالين الرماديين. قد تظهر فيهما قيم كلفة أقل، لكنها لا تمثل حلولا مسموحة.</p></div><div class="pair"><p lang="en"><strong>Proof of globality:</strong> for every feasible P₁, C(P₁)−2300=15(80−P₁)≥0. Equality holds at P₁=80. Thus no feasible decision is cheaper.</p><p lang="ar" dir="rtl"><strong>برهان العالمية:</strong> لكل قيمة ممكنة من <bdi dir="ltr">P₁</bdi> يكون <bdi dir="ltr">C(P₁)−2300=15(80−P₁)≥0</bdi>. تتحقق المساواة عند <bdi dir="ltr">P₁=80</bdi>؛ لذلك لا توجد قيمة قرار ممكنة أقل كلفة.</p></div></figure><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>NumPy — Numerical Python.</strong> A Python library for arrays and numerical calculations. In <code>import numpy as np</code>, np is a short code alias chosen for the library, not a separate solver.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">NumPy — Numerical Python</bdi>، مكتبة بايثون للحسابات العددية.</strong> توفر المصفوفات والحساب عليها. في التعليمة <bdi dir="ltr">import numpy as np</bdi> يكون <bdi dir="ltr">np</bdi> اسما مختصرا للمكتبة داخل الكود، وليس محللا آخر.</p></div><div class="pair"><p lang="en"><strong>SciPy:</strong> a scientific-computing library for Python. Its <code>optimize</code> module contains optimization interfaces. <code>linprog</code> is short for linear programming and is the function called to solve a linear program.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">SciPy</bdi>: مكتبة للحوسبة العلمية بلغة بايثون.</strong> تضم الوحدة <bdi dir="ltr">optimize</bdi> واجهات للتحسين. والاسم <bdi dir="ltr">linprog</bdi> اختصار برمجي لعبارة <bdi dir="ltr">linear programming</bdi>، أي البرمجة الخطية، وهو التابع الذي نستدعيه لحل النموذج.</p></div><div class="pair"><p lang="en"><strong>HiGHS:</strong> the name of the solver package used here, not a model type. In its method labels, ds means dual simplex and ipm means interior-point method. <code>highs-ds</code> and <code>highs-ipm</code> are two algorithms in the same solver.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">HiGHS</bdi>: اسم حزمة المحلل المستخدمة هنا، وليس نوع مسألة.</strong> في تسميات الطرق تعني <bdi dir="ltr">ds — Dual Simplex</bdi> خوارزمية السمبلكس الثنائي، وتعني <bdi dir="ltr">ipm — Interior-Point Method</bdi> طريقة النقطة الداخلية. لذلك يمثل <bdi dir="ltr">highs-ds</bdi> و<bdi dir="ltr">highs-ipm</bdi> خوارزميتين داخل المحلل نفسه.</p></div><div class="pair"><p lang="en"><strong>Solver and algorithm:</strong> the solver is the software that computes a solution; an algorithm is the method it follows. A modeling library provides a way to express a model before sending it to a solver.</p><p lang="ar" dir="rtl"><strong>المحلل والخوارزمية:</strong> المحلل برنامج يحسب الحل، والخوارزمية طريقة العمل التي يتبعها. أما مكتبة النمذجة فتوفر وسيلة لكتابة النموذج قبل إرساله إلى المحلل.</p></div><div class="pair"><p lang="en"><strong>A_eq, b_eq, A_ub and b_ub:</strong> eq means equality; ub means upper bound. A holds coefficients and b the right-hand-side limits. Thus A_eq x=b_eq encodes equalities, while A_ub x≤b_ub encodes upper-bound inequalities.</p><p lang="ar" dir="rtl"><strong>اختصارات معاملات النموذج:</strong> تعني <bdi dir="ltr">eq — Equality</bdi> المساواة، وتعني <bdi dir="ltr">ub — Upper Bound</bdi> الحد الأعلى. تحتوي <bdi dir="ltr">A</bdi> معاملات القيود، وتحتوي <bdi dir="ltr">b</bdi> أطرافها اليمنى. لذا تعبر <bdi dir="ltr">A_eq x=b_eq</bdi> عن المساواة، وتعبر <bdi dir="ltr">A_ub x≤b_ub</bdi> عن قيود الحد الأعلى.</p></div><div class="pair"><p lang="en"><strong>r, r.x, r.fun and r.success:</strong> r is a local variable storing the result object; x contains decision values; fun is the objective-function value; success reports successful termination. These are code names, not new optimization types.</p><p lang="ar" dir="rtl"><strong>قراءة نتيجة الحل:</strong> <bdi dir="ltr">r</bdi> اسم متغير محلي لحفظ النتيجة؛ وتحتوي <bdi dir="ltr">r.x</bdi> قيم القرار، وتحتوي <bdi dir="ltr">r.fun</bdi> قيمة دالة الهدف. ويبلغ الحقل <bdi dir="ltr">r.success</bdi> عن نجاح إنهاء الحساب. هذه أسماء برمجية، وليست أنواعا جديدة من مسائل التحسين.</p></div><div class="pair"><p lang="en"><strong>Scientific notation in code:</strong> 1e-6 means 1×10⁻⁶=0.000001, and 1e-10 means 0.0000000001. Here e marks a power of ten; it is not a decision variable or the mathematical constant e.</p><p lang="ar" dir="rtl"><strong>الكتابة العلمية للأعداد في الكود:</strong> تعني <bdi dir="ltr">1e-6</bdi> العدد <bdi dir="ltr">1×10⁻⁶=0.000001</bdi>، وتعني <bdi dir="ltr">1e-10</bdi> العدد <bdi dir="ltr">0.0000000001</bdi>. يشير الحرف <bdi dir="ltr">e</bdi> هنا إلى قوة للعدد عشرة، وليس إلى متغير قرار أو الثابت الرياضي المسمى بالحرف نفسه.</p></div></aside><div class="codebox"><div class="codebar"><span>Python · Kaggle · 01</span><button class="copy bilingual-label" type="button" data-code="0" dir="ltr"><span lang="en" dir="ltr" class="label-en">Copy code</span><span lang="ar" dir="rtl" class="label-ar">نسخ الكود</span></button></div><pre id="code-0" dir="ltr"><code>import numpy as np
 from scipy.optimize import linprog
 for method in ['highs-ds', 'highs-ipm']:
     r = linprog([20, 35], A_eq=[[1, 1]], b_eq=[100],
@@ -284,7 +598,322 @@ for method in ['highs-ds', 'highs-ipm']:
     assert abs(sum(r.x)-100) &lt; 1e-6
     assert np.all(r.x &gt;= -1e-6) and np.all(r.x &lt;= 80+1e-6)
     assert abs(r.fun-2300) &lt; 1e-5
-    print(method, np.round(r.x, 4), round(r.fun, 4))</code></pre></div><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Read the code</span><span lang="ar" dir="rtl" class="label-ar">شرح الكود</span></h3><ol class="code-explain"><li><div class="pair"><p lang="en">The loop runs dual simplex and interior-point algorithms within the same HiGHS solver; these are two algorithms, not two independent solver packages.</p><p lang="ar" dir="rtl">تشغل الحلقة خوارزميتي السمبلكس الثنائي والنقطة الداخلية ضمن محلل <bdi dir="ltr">HiGHS</bdi> نفسه؛ هما خوارزميتان وليستا حزمتين مستقلتين.</p></div></li><li><div class="pair"><p lang="en">linprog receives cost coefficients, balance coefficients, demand and bounds in the same variable order [P₁,P₂].</p><p lang="ar" dir="rtl">تستقبل <bdi dir="ltr">linprog</bdi> معاملات الكلفة والتوازن والطلب والحدود بالترتيب نفسه <bdi dir="ltr">[P₁,P₂]</bdi>.</p></div></li><li><div class="pair"><p lang="en">success checks termination; assert verifies balance, bounds and the hand-calculated cost.</p><p lang="ar" dir="rtl">تفحص <bdi dir="ltr">success</bdi> انتهاء الحل، وتتحقق <bdi dir="ltr">assert</bdi> من التوازن والحدود والكلفة المحسوبة يدويا.</p></div></li></ol><div class="expected"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Expected result</span><span lang="ar" dir="rtl" class="label-ar">النتيجة المتوقعة</span></strong><div class="equation" dir="ltr">P₁=80 MW; P₂=20 MW; C=2300 CU/h (both algorithms)</div></div><label class="done"><input type="checkbox" data-done="3"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Calculated, run and verified</span><span lang="ar" dir="rtl" class="label-ar">حسبت وشغلت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-05"><div class="unit-head"><div class="num">05</div><div><h2 lang="en" dir="ltr">Quadratic Programming (QP) — quadratic generator costs</h2><h2 class="ar" lang="ar" dir="rtl">البرمجة التربيعية — كلف توليد تربيعية</h2></div></div><div class="pair"><p lang="en">Keep the same demand and capacities as Unit 04, but use strictly convex quadratic cost curves. Coefficients carry the units needed to produce CU/h.</p><p lang="ar" dir="rtl">نحتفظ بطلب الوحدة <bdi dir="ltr">04</bdi> وسعاتها ونستخدم منحنيات كلفة تربيعية محدبة تماما. تحمل المعاملات الوحدات اللازمة لإعطاء الكلفة بوحدة نقدية/ساعة.</p></div><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Model and units</span><span lang="ar" dir="rtl" class="label-ar">النموذج والوحدات</span></strong><div class="equation" dir="ltr">min C=0.2P₁²+20P₁+0.2P₂²+35P₂; P₁+P₂=100; 0≤P₁,P₂≤80 [MW]</div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — ordinary calculator</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي بالآلة الحاسبة العادية</span></h3><ol><li><div class="pair"><p lang="en">As before, P₂=100−P₁ and 20≤P₁≤80 MW.</p><p lang="ar" dir="rtl">كما سبق <bdi dir="ltr">P₂=100−P₁</bdi> والمجال <bdi dir="ltr">20≤P₁≤80 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Expand (100−P₁)²=10000−200P₁+P₁²; substitute to get C=0.4P₁²−55P₁+5500.</p><p lang="ar" dir="rtl">نفك المربع <bdi dir="ltr">(100−P₁)²=10000−200P₁+P₁²</bdi>؛ ثم نجمع الحدود فنحصل على <bdi dir="ltr">C=0.4P₁²−55P₁+5500</bdi>.</p></div></li><li><div class="pair"><p lang="en">Complete the square: C=0.4(P₁−68.75)²+3609.375. A nonnegative square is minimized at zero.</p><p lang="ar" dir="rtl">نكمل المربع: <bdi dir="ltr">C=0.4(P₁−68.75)²+3609.375</bdi>. المربع غير السالب يحقق أدناه عند الصفر.</p></div></li><li><div class="pair"><p lang="en">Thus P₁=68.75 and P₂=100−68.75=31.25 MW; both respect [0,80]. Alternatively C′=0.8P₁−55=0 gives 55÷0.8=68.75.</p><p lang="ar" dir="rtl">إذن <bdi dir="ltr">P₁=68.75</bdi> و<bdi dir="ltr">P₂=31.25 MW</bdi>، وكلتاهما ضمن الحدود. وبالمشتقة <bdi dir="ltr">C′=0.8P₁−55=0</bdi> نحصل على <bdi dir="ltr">55÷0.8=68.75</bdi>.</p></div></li><li><div class="pair"><p lang="en">Calculate P₁²=4726.5625 and P₂²=976.5625. C=945.3125+1375+195.3125+1093.75=3609.375 CU/h.</p><p lang="ar" dir="rtl">نحسب مربعي الاستطاعتين <bdi dir="ltr">4726.5625</bdi> و<bdi dir="ltr">976.5625</bdi>. الكلفة <bdi dir="ltr">945.3125+1375+195.3125+1093.75=3609.375</bdi> وحدة نقدية/ساعة.</p></div></li><li><div class="pair"><p lang="en">Compare endpoints: C(20)=4560 and C(80)=3660. Positive curvature C″=0.8 proves the feasible stationary point is the unique global minimum.</p><p lang="ar" dir="rtl">نفحص الطرفين: <bdi dir="ltr">C(20)=4560</bdi> و<bdi dir="ltr">C(80)=3660</bdi>. المشتقة الثانية <bdi dir="ltr">C″=0.8</bdi> موجبة، فتثبت أن النقطة الداخلية الممكنة هي الأدنى العالمي الوحيد.</p></div></li></ol></div><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>SLSQP — Sequential Least Squares Programming.</strong> A numerical method for constrained continuous optimization, available through SciPy. It usually seeks a local solution; the convexity proof establishes globality for this example.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">SLSQP — Sequential Least Squares Programming</bdi>، البرمجة المتتابعة بالمربعات الصغرى.</strong> طريقة عددية لمسائل التحسين المستمرة ذات القيود، متاحة عبر مكتبة الحوسبة العلمية. تبحث عادة عن حل محلي؛ ويثبت تحدب هذا المثال أن حله الأمثل عالمي.</p></div><div class="pair"><p lang="en"><strong>x0, eq, ineq and ftol:</strong> x0 is the initial guess; eq means equality; ineq means inequality. ftol is the objective-related numerical tolerance controlling stopping accuracy, not a physical limit.</p><p lang="ar" dir="rtl"><strong>اختصارات إعداد الحل:</strong> <bdi dir="ltr">x0</bdi> التخمين الابتدائي؛ و<bdi dir="ltr">eq — Equality</bdi> قيد مساواة؛ و<bdi dir="ltr">ineq — Inequality</bdi> قيد عدم مساواة. أما <bdi dir="ltr">ftol — Function Tolerance</bdi> فهي سماحية عددية مرتبطة بدقة دالة الهدف وشروط التوقف، وليست حدا فيزيائيا.</p></div><div class="pair"><p lang="en"><strong>atol — Absolute Tolerance.</strong> The allowed absolute numerical error when comparing two calculated values. In np.allclose, atol=0.001 supplies an absolute error allowance of 0.001 in addition to any relative tolerance.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">atol — Absolute Tolerance</bdi>، السماحية المطلقة.</strong> مقدار الخطأ العددي المطلق المسموح عند مقارنة قيمتين. في <bdi dir="ltr">np.allclose</bdi> تضيف القيمة <bdi dir="ltr">atol=0.001</bdi> سماحية مطلقة قدرها <bdi dir="ltr">0.001</bdi> إلى أي سماحية نسبية مستخدمة.</p></div></aside><div class="codebox"><div class="codebar"><span>Python · Kaggle · 02</span><button class="copy bilingual-label" type="button" data-code="1" dir="ltr"><span lang="en" dir="ltr" class="label-en">Copy code</span><span lang="ar" dir="rtl" class="label-ar">نسخ الكود</span></button></div><pre id="code-1" dir="ltr"><code>import numpy as np
+    print(method, np.round(r.x, 4), round(r.fun, 4))</code></pre></div><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Read the code</span><span lang="ar" dir="rtl" class="label-ar">شرح الكود</span></h3><ol class="code-explain"><li><div class="pair"><p lang="en">The loop runs dual simplex and interior-point algorithms within the same HiGHS solver; these are two algorithms, not two independent solver packages.</p><p lang="ar" dir="rtl">تشغل الحلقة خوارزميتي السمبلكس الثنائي والنقطة الداخلية ضمن محلل <bdi dir="ltr">HiGHS</bdi> نفسه؛ هما خوارزميتان وليستا حزمتين مستقلتين.</p></div></li><li><div class="pair"><p lang="en">linprog receives cost coefficients, balance coefficients, demand and bounds in the same variable order [P₁,P₂].</p><p lang="ar" dir="rtl">تستقبل <bdi dir="ltr">linprog</bdi> معاملات الكلفة والتوازن والطلب والحدود بالترتيب نفسه <bdi dir="ltr">[P₁,P₂]</bdi>.</p></div></li><li><div class="pair"><p lang="en">success checks termination; assert verifies balance, bounds and the hand-calculated cost.</p><p lang="ar" dir="rtl">تفحص <bdi dir="ltr">success</bdi> انتهاء الحل، وتتحقق <bdi dir="ltr">assert</bdi> من التوازن والحدود والكلفة المحسوبة يدويا.</p></div></li></ol><div class="expected"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Expected result</span><span lang="ar" dir="rtl" class="label-ar">النتيجة المتوقعة</span></strong><div class="equation" dir="ltr">P₁=80 MW; P₂=20 MW; C=2300 CU/h (both algorithms)</div></div><label class="done"><input type="checkbox" data-done="3"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Calculated, run and verified</span><span lang="ar" dir="rtl" class="label-ar">حسبت وشغلت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-05"><div class="unit-head"><div class="num">05</div><div><h2 lang="en" dir="ltr">Quadratic Programming (QP) — quadratic generator costs</h2><h2 class="ar" lang="ar" dir="rtl">البرمجة التربيعية — كلف توليد تربيعية</h2></div></div><div class="pair"><p lang="en">Keep the same demand and capacities as Unit 04, but use strictly convex quadratic cost curves. Coefficients carry the units needed to produce CU/h.</p><p lang="ar" dir="rtl">نحتفظ بطلب الوحدة <bdi dir="ltr">04</bdi> وسعاتها ونستخدم منحنيات كلفة تربيعية محدبة تماما. تحمل المعاملات الوحدات اللازمة لإعطاء الكلفة بوحدة نقدية/ساعة.</p></div><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Model and units</span><span lang="ar" dir="rtl" class="label-ar">النموذج والوحدات</span></strong><div class="equation" dir="ltr">min C=0.2P₁²+20P₁+0.2P₂²+35P₂; P₁+P₂=100; 0≤P₁,P₂≤80 [MW]</div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — ordinary calculator</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي بالآلة الحاسبة العادية</span></h3><ol><li><div class="pair"><p lang="en">As before, P₂=100−P₁ and 20≤P₁≤80 MW.</p><p lang="ar" dir="rtl">كما سبق <bdi dir="ltr">P₂=100−P₁</bdi> والمجال <bdi dir="ltr">20≤P₁≤80 MW</bdi>.</p></div></li><li><div class="pair"><p lang="en">Expand (100−P₁)²=10000−200P₁+P₁²; substitute to get C=0.4P₁²−55P₁+5500.</p><p lang="ar" dir="rtl">نفك المربع <bdi dir="ltr">(100−P₁)²=10000−200P₁+P₁²</bdi>؛ ثم نجمع الحدود فنحصل على <bdi dir="ltr">C=0.4P₁²−55P₁+5500</bdi>.</p></div></li><li><div class="pair"><p lang="en">Complete the square: C=0.4(P₁−68.75)²+3609.375. A nonnegative square is minimized at zero.</p><p lang="ar" dir="rtl">نكمل المربع: <bdi dir="ltr">C=0.4(P₁−68.75)²+3609.375</bdi>. المربع غير السالب يحقق أدناه عند الصفر.</p></div></li><li><div class="pair"><p lang="en">Thus P₁=68.75 and P₂=100−68.75=31.25 MW; both respect [0,80]. Alternatively C′=0.8P₁−55=0 gives 55÷0.8=68.75.</p><p lang="ar" dir="rtl">إذن <bdi dir="ltr">P₁=68.75</bdi> و<bdi dir="ltr">P₂=31.25 MW</bdi>، وكلتاهما ضمن الحدود. وبالمشتقة <bdi dir="ltr">C′=0.8P₁−55=0</bdi> نحصل على <bdi dir="ltr">55÷0.8=68.75</bdi>.</p></div></li><li><div class="pair"><p lang="en">Calculate P₁²=4726.5625 and P₂²=976.5625. C=945.3125+1375+195.3125+1093.75=3609.375 CU/h.</p><p lang="ar" dir="rtl">نحسب مربعي الاستطاعتين <bdi dir="ltr">4726.5625</bdi> و<bdi dir="ltr">976.5625</bdi>. الكلفة <bdi dir="ltr">945.3125+1375+195.3125+1093.75=3609.375</bdi> وحدة نقدية/ساعة.</p></div></li><li><div class="pair"><p lang="en">Compare endpoints: C(20)=4560 and C(80)=3660. Positive curvature C″=0.8 proves the feasible stationary point is the unique global minimum.</p><p lang="ar" dir="rtl">نفحص الطرفين: <bdi dir="ltr">C(20)=4560</bdi> و<bdi dir="ltr">C(80)=3660</bdi>. المشتقة الثانية <bdi dir="ltr">C″=0.8</bdi> موجبة، فتثبت أن النقطة الداخلية الممكنة هي الأدنى العالمي الوحيد.</p></div></li></ol></div><figure class="cost-curve" id="qp-cost-curve"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">See and test the global quadratic minimum</span><span class="label-ar" lang="ar" dir="rtl">مشاهدة الأدنى التربيعي العالمي واختباره</span></h3><div class="cost-curve-frame"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="576pt" height="324pt" viewbox="0 0 576 324" version="1.1" class="cost-curve-svg" role="img" aria-labelledby="cost-qp-title cost-qp-desc" data-x-scale="4.723200000000002" data-x-offset="74.87999999999997" data-y-scale="-0.10080000000000382" data-y-offset="610.2">
+ <title id="cost-qp-title">Quadratic cost: a unique global minimum</title><desc id="cost-qp-desc">C=0.4(P1−68.75)²+3609.375. The exact lower bound 3609.375 is attained only at P1=68.75, inside the feasible interval [20,80].</desc><metadata>
+  <rdf:rdf xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+    <dc:date>2026-11-01T20:07:31.722198</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:agent>
+    </dc:creator>
+   </cc:work>
+  </rdf:rdf>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cost-qp-figure_1">
+  <g id="cost-qp-patch_1">
+   <path d="M 0 324  L 576 324  L 576 0  L 0 0  z " style="fill: #ffffff"></path>
+  </g>
+  <g id="cost-qp-axes_1">
+   <g id="cost-qp-patch_2">
+    <path d="M 74.88 262.44  L 547.2 262.44  L 547.2 35.64  L 74.88 35.64  z " style="fill: #ffffff"></path>
+   </g>
+   <g id="cost-qp-matplotlib.axis_1">
+    <g id="cost-qp-xtick_1">
+     <g id="cost-qp-line2d_1">
+      <path d="M 74.88 262.44  L 74.88 35.64  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_2">
+      <defs>
+       <path id="cost-qp-m73860be547" d="M 0 0  L 0 3.5  " style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="#cost-qp-m73860be547" x="74.88" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_1">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="74.88" y="276.278594" transform="rotate(-0 74.88 276.278594)">0</text>
+     </g>
+    </g>
+    <g id="cost-qp-xtick_2">
+     <g id="cost-qp-line2d_3">
+      <path d="M 169.344 262.44  L 169.344 35.64  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_4">
+      <g>
+       <use xlink:href="#cost-qp-m73860be547" x="169.344" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_2">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="169.344" y="276.278594" transform="rotate(-0 169.344 276.278594)">20</text>
+     </g>
+    </g>
+    <g id="cost-qp-xtick_3">
+     <g id="cost-qp-line2d_5">
+      <path d="M 263.808 262.44  L 263.808 35.64  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_6">
+      <g>
+       <use xlink:href="#cost-qp-m73860be547" x="263.808" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_3">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="263.808" y="276.278594" transform="rotate(-0 263.808 276.278594)">40</text>
+     </g>
+    </g>
+    <g id="cost-qp-xtick_4">
+     <g id="cost-qp-line2d_7">
+      <path d="M 358.272 262.44  L 358.272 35.64  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_8">
+      <g>
+       <use xlink:href="#cost-qp-m73860be547" x="358.272" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_4">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="358.272" y="276.278594" transform="rotate(-0 358.272 276.278594)">60</text>
+     </g>
+    </g>
+    <g id="cost-qp-xtick_5">
+     <g id="cost-qp-line2d_9">
+      <path d="M 452.736 262.44  L 452.736 35.64  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_10">
+      <g>
+       <use xlink:href="#cost-qp-m73860be547" x="452.736" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_5">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="452.736" y="276.278594" transform="rotate(-0 452.736 276.278594)">80</text>
+     </g>
+    </g>
+    <g id="cost-qp-xtick_6">
+     <g id="cost-qp-line2d_11">
+      <path d="M 547.2 262.44  L 547.2 35.64  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_12">
+      <g>
+       <use xlink:href="#cost-qp-m73860be547" x="547.2" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_6">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="547.2" y="276.278594" transform="rotate(-0 547.2 276.278594)">100</text>
+     </g>
+    </g>
+    <g id="cost-qp-text_7">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="311.04" y="289.74875" transform="rotate(-0 311.04 289.74875)">Generator 1 power P1 (MW)</text>
+    </g>
+   </g>
+   <g id="cost-qp-matplotlib.axis_2">
+    <g id="cost-qp-ytick_1">
+     <g id="cost-qp-line2d_13">
+      <path d="M 74.88 257.4  L 547.2 257.4  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_14">
+      <defs>
+       <path id="cost-qp-m596c149ace" d="M 0 0  L -3.5 0  " style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="#cost-qp-m596c149ace" x="74.88" y="257.4" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_8">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="260.819297" transform="rotate(-0 67.88 260.819297)">3500</text>
+     </g>
+    </g>
+    <g id="cost-qp-ytick_2">
+     <g id="cost-qp-line2d_15">
+      <path d="M 74.88 232.2  L 547.2 232.2  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_16">
+      <g>
+       <use xlink:href="#cost-qp-m596c149ace" x="74.88" y="232.2" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_9">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="235.619297" transform="rotate(-0 67.88 235.619297)">3750</text>
+     </g>
+    </g>
+    <g id="cost-qp-ytick_3">
+     <g id="cost-qp-line2d_17">
+      <path d="M 74.88 207  L 547.2 207  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_18">
+      <g>
+       <use xlink:href="#cost-qp-m596c149ace" x="74.88" y="207" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_10">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="210.419297" transform="rotate(-0 67.88 210.419297)">4000</text>
+     </g>
+    </g>
+    <g id="cost-qp-ytick_4">
+     <g id="cost-qp-line2d_19">
+      <path d="M 74.88 181.8  L 547.2 181.8  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_20">
+      <g>
+       <use xlink:href="#cost-qp-m596c149ace" x="74.88" y="181.8" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_11">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="185.219297" transform="rotate(-0 67.88 185.219297)">4250</text>
+     </g>
+    </g>
+    <g id="cost-qp-ytick_5">
+     <g id="cost-qp-line2d_21">
+      <path d="M 74.88 156.6  L 547.2 156.6  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_22">
+      <g>
+       <use xlink:href="#cost-qp-m596c149ace" x="74.88" y="156.6" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_12">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="160.019297" transform="rotate(-0 67.88 160.019297)">4500</text>
+     </g>
+    </g>
+    <g id="cost-qp-ytick_6">
+     <g id="cost-qp-line2d_23">
+      <path d="M 74.88 131.4  L 547.2 131.4  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_24">
+      <g>
+       <use xlink:href="#cost-qp-m596c149ace" x="74.88" y="131.4" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_13">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="134.819297" transform="rotate(-0 67.88 134.819297)">4750</text>
+     </g>
+    </g>
+    <g id="cost-qp-ytick_7">
+     <g id="cost-qp-line2d_25">
+      <path d="M 74.88 106.2  L 547.2 106.2  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_26">
+      <g>
+       <use xlink:href="#cost-qp-m596c149ace" x="74.88" y="106.2" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_14">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="109.619297" transform="rotate(-0 67.88 109.619297)">5000</text>
+     </g>
+    </g>
+    <g id="cost-qp-ytick_8">
+     <g id="cost-qp-line2d_27">
+      <path d="M 74.88 81  L 547.2 81  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_28">
+      <g>
+       <use xlink:href="#cost-qp-m596c149ace" x="74.88" y="81" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_15">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="84.419297" transform="rotate(-0 67.88 84.419297)">5250</text>
+     </g>
+    </g>
+    <g id="cost-qp-ytick_9">
+     <g id="cost-qp-line2d_29">
+      <path d="M 74.88 55.8  L 547.2 55.8  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-qp-line2d_30">
+      <g>
+       <use xlink:href="#cost-qp-m596c149ace" x="74.88" y="55.8" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-qp-text_16">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="59.219297" transform="rotate(-0 67.88 59.219297)">5500</text>
+     </g>
+    </g>
+    <g id="cost-qp-text_17" class="curve-y-label">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="38.895312" y="149.04" transform="rotate(-90 38.895312 149.04)">Total cost C (CU/h)</text>
+    </g>
+   </g>
+   <g id="cost-qp-patch_3">
+    <path d="M 74.88 262.44  L 169.344 262.44  L 169.344 35.64  L 74.88 35.64  z " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: #e5e7eb; stroke: #e5e7eb; stroke-linejoin: miter"></path>
+   </g>
+   <g id="cost-qp-patch_4">
+    <path d="M 452.736 262.44  L 547.2 262.44  L 547.2 35.64  L 452.736 35.64  z " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: #e5e7eb; stroke: #e5e7eb; stroke-linejoin: miter"></path>
+   </g>
+   <g id="cost-qp-patch_5">
+    <path d="M 169.344 262.44  L 452.736 262.44  L 452.736 35.64  L 169.344 35.64  z " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: #dcfce7; opacity: 0.65; stroke: #dcfce7; stroke-linejoin: miter"></path>
+   </g>
+   <g id="cost-qp-line2d_31">
+    <path d="M 74.88 55.8  L 84.3264 66.72672  L 93.7728 77.33088  L 103.2192 87.61248  L 112.6656 97.57152  L 122.112 107.208  L 131.5584 116.52192  L 141.0048 125.51328  L 150.4512 134.18208  L 159.8976 142.52832  L 169.344 150.552  L 177.84576 157.497523  L 186.34752 164.181773  L 194.84928 170.604749  L 203.35104 176.766451  L 211.8528 182.66688  L 220.35456 188.306035  L 228.85632 193.683917  L 237.35808 198.800525  L 245.85984 203.655859  L 254.3616 208.24992  L 262.86336 212.582707  L 271.36512 216.654221  L 279.86688 220.464461  L 288.36864 224.013427  L 296.8704 227.30112  L 305.37216 230.327539  L 313.87392 233.092685  L 322.37568 235.596557  L 329.9328 237.60288  L 337.48992 239.402765  L 345.04704 240.996211  L 352.60416 242.383219  L 360.16128 243.563789  L 367.7184 244.53792  L 375.27552 245.305613  L 382.83264 245.866867  L 390.38976 246.221683  L 397.94688 246.370061  L 405.504 246.312  L 413.06112 246.047501  L 420.61824 245.576563  L 428.17536 244.899187  L 435.73248 244.015373  L 443.2896 242.92512  L 450.84672 241.628429  L 458.40384 240.125299  L 465.96096 238.415731  L 473.51808 236.499725  L 481.0752 234.37728  L 488.63232 232.048397  L 497.13408 229.181645  L 505.63584 226.053619  L 514.1376 222.66432  L 522.63936 219.013747  L 531.14112 215.101901  L 539.64288 210.928781  L 547.2 207  L 547.2 207  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke-dasharray: 7.4,3.2; stroke-dashoffset: 0; stroke: #9ca3af; stroke-width: 2"></path>
+   </g>
+   <g id="cost-qp-line2d_32">
+    <path d="M 169.344 150.552  L 178.7904 158.25312  L 188.2368 165.63168  L 196.5024 171.82332  L 204.768 177.768  L 213.0336 183.46572  L 221.2992 188.91648  L 229.5648 194.12028  L 237.8304 199.07712  L 246.096 203.787  L 254.3616 208.24992  L 262.6272 212.46588  L 270.8928 216.43488  L 279.1584 220.15692  L 287.424 223.632  L 295.6896 226.86012  L 303.9552 229.84128  L 312.2208 232.57548  L 320.4864 235.06272  L 328.752 237.303  L 337.0176 239.29632  L 345.2832 241.04268  L 353.5488 242.54208  L 361.8144 243.79452  L 370.08 244.8  L 378.3456 245.55852  L 386.6112 246.07008  L 394.8768 246.33468  L 403.1424 246.35232  L 411.408 246.123  L 419.6736 245.64672  L 427.9392 244.92348  L 436.2048 243.95328  L 444.4704 242.73612  L 452.736 241.272  L 452.736 241.272  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke: #0369a1; stroke-width: 2.7; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-qp-line2d_33">
+    <path d="M 74.88 246.375  L 547.2 246.375  " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #15803d; stroke-width: 1.5"></path>
+   </g>
+   <g id="cost-qp-patch_6">
+    <path d="M 74.88 262.44  L 74.88 35.64  " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-qp-patch_7">
+    <path d="M 74.88 262.44  L 547.2 262.44  " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-qp-patch_8" class="curve-arrow">
+    <path d="M 310.384572 186.990936  Q 354.16052 216.129323 397.00576 244.648208  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+    <path d="M 394.78416 240.766908  L 397.00576 244.648208  L 392.56776 244.096708  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-qp-text_18" class="curve-annotation">
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(235.4688 170.602188)">P1=68.75 MW</text>
+    <text style="font-size: 10px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(235.4688 181.8)">Cmin=3609.375 CU/h</text>
+   </g>
+   <g id="cost-qp-patch_9" class="curve-arrow">
+    <path d="M 208.121053 111.491929  Q 189.436638 130.312713 171.539914 148.340059  " style="fill: none; stroke: #475569; stroke-linecap: round"></path>
+    <path d="M 175.353637 147.053392  L 171.539914 148.340059  L 172.798814 144.51708  " style="fill: none; stroke: #475569; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-qp-text_19" class="curve-annotation">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start" x="188.2368" y="106.2" transform="rotate(-0 188.2368 106.2)">C(20)=4560</text>
+   </g>
+   <g id="cost-qp-patch_10" class="curve-arrow">
+    <path d="M 439.744404 149.347733  Q 446.100446 194.320996 452.300031 238.187227  " style="fill: none; stroke: #475569; stroke-linecap: round"></path>
+    <path d="M 453.57854 234.37076  L 452.300031 238.187227  L 450.013963 234.87454  " style="fill: none; stroke: #475569; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-qp-text_20" class="curve-annotation">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="438.5664" y="143.496" transform="rotate(-0 438.5664 143.496)">C(80)=3660</text>
+   </g>
+   <g id="cost-qp-text_21">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="311.04" y="29.64" transform="rotate(-0 311.04 29.64)">Quadratic cost: a unique global minimum</text>
+   </g>
+   <g id="cost-qp-PathCollection_1">
+    <path d="M 169.344 153.290613  C 170.070289 153.290613 170.766928 153.002055 171.280492 152.488492  C 171.794055 151.974928 172.082613 151.278289 172.082613 150.552  C 172.082613 149.825711 171.794055 149.129072 171.280492 148.615508  C 170.766928 148.101945 170.070289 147.813387 169.344 147.813387  C 168.617711 147.813387 167.921072 148.101945 167.407508 148.615508  C 166.893945 149.129072 166.605387 149.825711 166.605387 150.552  C 166.605387 151.278289 166.893945 151.974928 167.407508 152.488492  C 167.921072 153.002055 168.617711 153.290613 169.344 153.290613  z " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: #334155; stroke: #334155"></path>
+    <path d="M 399.6 250.406129  C 400.669068 250.406129 401.694493 249.981384 402.450439 249.225439  C 403.206384 248.469493 403.631129 247.444068 403.631129 246.375  C 403.631129 245.305932 403.206384 244.280507 402.450439 243.524561  C 401.694493 242.768616 400.669068 242.343871 399.6 242.343871  C 398.530932 242.343871 397.505507 242.768616 396.749561 243.524561  C 395.993616 244.280507 395.568871 245.305932 395.568871 246.375  C 395.568871 247.444068 395.993616 248.469493 396.749561 249.225439  C 397.505507 249.981384 398.530932 250.406129 399.6 250.406129  z " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: #15803d; stroke: #15803d"></path>
+    <path d="M 452.736 244.010613  C 453.462289 244.010613 454.158928 243.722055 454.672492 243.208492  C 455.186055 242.694928 455.474613 241.998289 455.474613 241.272  C 455.474613 240.545711 455.186055 239.849072 454.672492 239.335508  C 454.158928 238.821945 453.462289 238.533387 452.736 238.533387  C 452.009711 238.533387 451.313072 238.821945 450.799508 239.335508  C 450.285945 239.849072 449.997387 240.545711 449.997387 241.272  C 449.997387 241.998289 450.285945 242.694928 450.799508 243.208492  C 451.313072 243.722055 452.009711 244.010613 452.736 244.010613  z " clip-path="url(#cost-qp-pd55f4005ca)" style="fill: #334155; stroke: #334155"></path>
+   </g>
+   <g id="cost-qp-legend_1" class="curve-legend">
+    <g id="cost-qp-patch_11">
+     <path d="M 438.33125 65.525  L 541.6 65.525  Q 543.2 65.525 543.2 63.925  L 543.2 41.24  Q 543.2 39.64 541.6 39.64  L 438.33125 39.64  Q 436.73125 39.64 436.73125 41.24  L 436.73125 63.925  Q 436.73125 65.525 438.33125 65.525  z " style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"></path>
+    </g>
+    <g id="cost-qp-line2d_34">
+     <path d="M 439.93125 46.11875  L 447.93125 46.11875  L 455.93125 46.11875  " style="fill: none; stroke: #0369a1; stroke-width: 2.7; stroke-linecap: square"></path>
+    </g>
+    <g id="cost-qp-text_22">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="462.33125" y="48.91875" transform="rotate(-0 462.33125 48.91875)">Feasible total cost</text>
+    </g>
+    <g id="cost-qp-line2d_35">
+     <path d="M 439.93125 57.86125  L 447.93125 57.86125  L 455.93125 57.86125  " style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #15803d; stroke-width: 1.5"></path>
+    </g>
+    <g id="cost-qp-text_23">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="462.33125" y="60.66125" transform="rotate(-0 462.33125 60.66125)">Global lower bound</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clippath id="cost-qp-pd55f4005ca">
+   <rect x="74.88" y="35.64" width="472.32" height="226.8"></rect>
+  </clippath>
+ </defs>
+<circle id="qp-trial-marker" r="6" fill="none" stroke="#b45309" stroke-width="2" cx="399.59999999999997" cy="246.375"></circle></svg></div><div class="curve-value-summary" dir="ltr">P₁*=68.75 MW; P₂*=31.25 MW; Cmin=3609.375 CU/h.</div><div class="pair cost-axes-note"><p lang="en">Axes: horizontal P₁ (MW); vertical total cost C (CU/h).</p><p lang="ar" dir="rtl">المحور الأفقي: استطاعة المولد الأول بالميغاواط. المحور الرأسي: الكلفة الكلية بوحدة نقدية/ساعة.</p></div><div class="pair"><p lang="en">Enforce balance first: P₂=100−P₁. The plotted curve is the total system cost C₁(P₁)+C₂(100−P₁), not the isolated cost of one generator. Green marks the unique global optimum; grey shading is infeasible.</p><p lang="ar" dir="rtl">نطبق التوازن أولا: <bdi dir="ltr">P₂=100−P₁</bdi>. يمثل المنحنى الكلفة الكلية <bdi dir="ltr">C₁(P₁)+C₂(100−P₁)</bdi>، وليس كلفة مولد منفرد. تحدد النقطة الخضراء الحل الأمثل العالمي الوحيد، ويمثل التظليل الرمادي المجال غير الممكن.</p></div><div class="pair"><p lang="en"><strong>Exact proof:</strong> C(P₁)=3609.375+0.4(P₁−68.75)². A square cannot be negative, so every feasible point has C≥3609.375. Equality holds only at P₁=68.75 MW, which also satisfies all limits.</p><p lang="ar" dir="rtl"><strong>البرهان الدقيق:</strong> <bdi dir="ltr">C(P₁)=3609.375+0.4(P₁−68.75)²</bdi>. لا يكون المربع سالبا؛ لذلك تحقق كل نقطة ممكنة <bdi dir="ltr">C≥3609.375</bdi>. تتحقق المساواة فقط عند <bdi dir="ltr">P₁=68.75 MW</bdi>، وهي قيمة تحترم جميع الحدود.</p></div><div id="qp-cost-interactive"><div class="qp-controls"><label for="qp-cost-slider" class="bilingual-label" dir="ltr"><span lang="en" dir="ltr" class="label-en">Try another feasible P₁ (MW)</span><span lang="ar" dir="rtl" class="label-ar">جرب قيمة أخرى ممكنة لاستطاعة المولد الأول بالميغاواط</span></label><input id="qp-cost-slider" type="range" min="20" max="80" step="0.25" value="68.75"><button id="qp-cost-optimum" class="btn alt bilingual-label" type="button"><span lang="en" dir="ltr" class="label-en">Return to the optimum</span><span lang="ar" dir="rtl" class="label-ar">العودة إلى الحل الأمثل</span></button></div><div class="cost-readouts" aria-live="polite"><div>P₁ (MW)<strong id="qp-p1">68.75</strong></div><div>P₂ (MW)<strong id="qp-p2">31.25</strong></div><div>C₁ (CU/h)<strong id="qp-c1">2320.313</strong></div><div>C₂ (CU/h)<strong id="qp-c2">1289.063</strong></div><div>Total C (CU/h)<strong id="qp-total">3609.375</strong></div><div>ΔC (CU/h)<strong id="qp-gap">0.000</strong></div></div></div><div class="pair"><p lang="en">The orange ring shows your trial point. ΔC=C−Cmin is the extra hourly cost above the green optimum. Move the slider to either side: the extra cost stays nonnegative. Component costs are rounded for display; the total uses unrounded values.</p><p lang="ar" dir="rtl">تمثل الحلقة البرتقالية نقطة تجربتك. ويعني <bdi dir="ltr">ΔC=C−Cmin</bdi> فرق الكلفة عن الحل الأخضر. حرك المؤشر إلى الجهتين؛ يبقى الفرق غير سالب. تعرض الكلفتان الجزئيتان بعد التقريب، وتحسب الكلفة الكلية من القيم غير المقربة.</p></div><div class="table-scroll"><table class="cost-sample-table"><thead><tr><th>P₁ (MW)</th><th>P₂ (MW)</th><th>C (CU/h)</th><th>ΔC (CU/h)</th></tr></thead><tbody><tr><td>20</td><td>80</td><td>4560.000</td><td>950.625</td></tr><tr><td>40</td><td>60</td><td>3940.000</td><td>330.625</td></tr><tr><td>60</td><td>40</td><td>3640.000</td><td>30.625</td></tr><tr><td>68.75</td><td>31.25</td><td>3609.375</td><td>0.000</td></tr><tr><td>80</td><td>20</td><td>3660.000</td><td>50.625</td></tr></tbody></table></div><div class="pair"><p lang="en">Calculator exercise: recompute one row by hand, then use the slider to verify it. The graph illustrates globality; the nonnegative-square identity proves it for the entire feasible interval, including points between sampled rows.</p><p lang="ar" dir="rtl">تمرين بالحاسبة: أعد حساب أحد الصفوف يدويا، ثم تحقق منه بالمؤشر. يوضح الرسم العالمية، وتثبتها هوية المربع غير السالب لكل المجال الممكن، بما فيه القيم الواقعة بين صفوف الجدول.</p></div></figure><aside class="term-note"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Terms at first use</span><span class="label-ar" lang="ar" dir="rtl">شرح المصطلحات عند أول ورودها</span></h3><div class="pair"><p lang="en"><strong>SLSQP — Sequential Least Squares Programming.</strong> A numerical method for constrained continuous optimization, available through SciPy. It usually seeks a local solution; the convexity proof establishes globality for this example.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">SLSQP — Sequential Least Squares Programming</bdi>، البرمجة المتتابعة بالمربعات الصغرى.</strong> طريقة عددية لمسائل التحسين المستمرة ذات القيود، متاحة عبر مكتبة الحوسبة العلمية. تبحث عادة عن حل محلي؛ ويثبت تحدب هذا المثال أن حله الأمثل عالمي.</p></div><div class="pair"><p lang="en"><strong>x0, eq, ineq and ftol:</strong> x0 is the initial guess; eq means equality; ineq means inequality. ftol is the objective-related numerical tolerance controlling stopping accuracy, not a physical limit.</p><p lang="ar" dir="rtl"><strong>اختصارات إعداد الحل:</strong> <bdi dir="ltr">x0</bdi> التخمين الابتدائي؛ و<bdi dir="ltr">eq — Equality</bdi> قيد مساواة؛ و<bdi dir="ltr">ineq — Inequality</bdi> قيد عدم مساواة. أما <bdi dir="ltr">ftol — Function Tolerance</bdi> فهي سماحية عددية مرتبطة بدقة دالة الهدف وشروط التوقف، وليست حدا فيزيائيا.</p></div><div class="pair"><p lang="en"><strong>atol — Absolute Tolerance.</strong> The allowed absolute numerical error when comparing two calculated values. In np.allclose, atol=0.001 supplies an absolute error allowance of 0.001 in addition to any relative tolerance.</p><p lang="ar" dir="rtl"><strong><bdi dir="ltr">atol — Absolute Tolerance</bdi>، السماحية المطلقة.</strong> مقدار الخطأ العددي المطلق المسموح عند مقارنة قيمتين. في <bdi dir="ltr">np.allclose</bdi> تضيف القيمة <bdi dir="ltr">atol=0.001</bdi> سماحية مطلقة قدرها <bdi dir="ltr">0.001</bdi> إلى أي سماحية نسبية مستخدمة.</p></div></aside><div class="codebox"><div class="codebar"><span>Python · Kaggle · 02</span><button class="copy bilingual-label" type="button" data-code="1" dir="ltr"><span lang="en" dir="ltr" class="label-en">Copy code</span><span lang="ar" dir="rtl" class="label-ar">نسخ الكود</span></button></div><pre id="code-1" dir="ltr"><code>import numpy as np
 from scipy.optimize import minimize
 def cost(x):
     return .2*x[0]**2+20*x[0]+.2*x[1]**2+35*x[1]
@@ -307,7 +936,620 @@ if not r.success:
 p = float(r.x[0])
 assert p &gt;= -1e-6 and p*p+9 &lt;= 25+1e-5
 assert abs(p-4) &lt; 1e-4
-print('P=', round(p, 4), 'kW')</code></pre></div><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Read the code</span><span lang="ar" dir="rtl" class="label-ar">شرح الكود</span></h3><ol class="code-explain"><li><div class="pair"><p lang="en">Minimizing −P implements maximization. The callback 25−P²−9 must be nonnegative.</p><p lang="ar" dir="rtl">تصغير <bdi dir="ltr">−P</bdi> ينفذ التعظيم. يجب أن تكون قيمة تابع القيد <bdi dir="ltr">25−P²−9</bdi> غير سالبة.</p></div></li><li><div class="pair"><p lang="en">The final assertions check the physical inequality and compare P with the hand result.</p><p lang="ar" dir="rtl">تفحص التعليمات الأخيرة القيد الفيزيائي وتقارن <bdi dir="ltr">P</bdi> بالحل اليدوي.</p></div></li></ol><div class="expected"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Expected result</span><span lang="ar" dir="rtl" class="label-ar">النتيجة المتوقعة</span></strong><div class="equation" dir="ltr">P=4 kW; Q=3 kvar; S=5 kVA</div></div><div class="pair"><p lang="en">A lower capability constraint P²+Q²≥Smin² is generally nonconvex. The direction of the inequality matters. SOCP is a representation, not a claim that every quadratic problem is convex.</p><p lang="ar" dir="rtl">القيد الأدنى <bdi dir="ltr">P²+Q²≥Smin²</bdi> غير محدب عموما. اتجاه عدم المساواة مهم؛ ولا تعني الصيغة المخروطية أن كل مسألة تربيعية محدبة.</p></div><label class="done"><input type="checkbox" data-done="5"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Calculated, run and verified</span><span lang="ar" dir="rtl" class="label-ar">حسبت وشغلت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-07"><div class="unit-head"><div class="num">07</div><div><h2 lang="en" dir="ltr">Nonlinear Programming (NLP) — local and global optima</h2><h2 class="ar" lang="ar" dir="rtl">البرمجة غير الخطية — الحل المحلي والعالمي</h2></div></div><div class="pair"><p lang="en">Illustrative normalized operating penalty: an energy device has two preferred power levels, 2 and 6 kW. This fourth-degree toy objective is not a measured equipment cost curve.</p><p lang="ar" dir="rtl">مثال توضيحي لدالة جزاء تشغيلية دون وحدات: لجهاز طاقي مستويان مفضلان للاستطاعة، هما <bdi dir="ltr">2 kW</bdi> و<bdi dir="ltr">6 kW</bdi>. دالة الهدف من الدرجة الرابعة مصممة للتعليم، وليست منحنى كلفة مقاسا لجهاز حقيقي.</p></div><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Model and units</span><span lang="ar" dir="rtl" class="label-ar">النموذج والوحدات</span></strong><div class="equation" dir="ltr">min F(P)=(P−2)²(P−6)²; 0≤P≤8 kW</div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — ordinary calculator</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي بالآلة الحاسبة العادية</span></h3><ol><li><div class="pair"><p lang="en">Every squared factor is nonnegative; therefore F(P)≥0 for all P.</p><p lang="ar" dir="rtl">كل عامل مربع غير سالب؛ لذلك <bdi dir="ltr">F(P)≥0</bdi> لكل <bdi dir="ltr">P</bdi>.</p></div></li><li><div class="pair"><p lang="en">At P=2: F=0²×(−4)²=0; at P=6: F=4²×0²=0. Both are feasible, hence both are global minima.</p><p lang="ar" dir="rtl">عند <bdi dir="ltr">P=2</bdi> نحصل على <bdi dir="ltr">0²×(−4)²=0</bdi>، وعند <bdi dir="ltr">P=6</bdi> نحصل على <bdi dir="ltr">4²×0²=0</bdi>. النقطتان ممكنتان؛ لذلك كلتاهما أدنى عالمي.</p></div></li><li><div class="pair"><p lang="en">For a stationary-point check, F′=4(P−2)(P−4)(P−6)=0 gives P=2,4,6.</p><p lang="ar" dir="rtl">لفحص النقاط الساكنة نكتب <bdi dir="ltr">F′=4(P−2)(P−4)(P−6)=0</bdi>، فنحصل على <bdi dir="ltr">P=2</bdi> و<bdi dir="ltr">4</bdi> و<bdi dir="ltr">6</bdi>.</p></div></li><li><div class="pair"><p lang="en">Evaluate candidates and endpoints: F(0)=144; F(2)=0; F(4)=16; F(6)=0; F(8)=144. P=4 is stationary but not a minimum.</p><p lang="ar" dir="rtl">نحسب عند المرشحين والطرفين: <bdi dir="ltr">F(0)=144</bdi> و<bdi dir="ltr">F(2)=0</bdi> و<bdi dir="ltr">F(4)=16</bdi> و<bdi dir="ltr">F(6)=0</bdi> و<bdi dir="ltr">F(8)=144</bdi>. النقطة <bdi dir="ltr">P=4</bdi> ساكنة وليست دنيا.</p></div></li><li><div class="pair"><p lang="en">The midpoint of the two minima has F(4)=16&gt;0, demonstrating nonconvexity. Different returned P values can have the same optimal objective.</p><p lang="ar" dir="rtl">منتصف نقطتي الأدنى يعطي <bdi dir="ltr">F(4)=16&gt;0</bdi>، وهذا يبين عدم التحدب. قد يعيد محللان قيمتين مختلفتين لـ<bdi dir="ltr">P</bdi> مع قيمة هدف مثلى واحدة.</p></div></li></ol></div><div class="codebox"><div class="codebar"><span>Python · Kaggle · 04</span><button class="copy bilingual-label" type="button" data-code="3" dir="ltr"><span lang="en" dir="ltr" class="label-en">Copy code</span><span lang="ar" dir="rtl" class="label-ar">نسخ الكود</span></button></div><pre id="code-3" dir="ltr"><code>from scipy.optimize import minimize
+print('P=', round(p, 4), 'kW')</code></pre></div><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Read the code</span><span lang="ar" dir="rtl" class="label-ar">شرح الكود</span></h3><ol class="code-explain"><li><div class="pair"><p lang="en">Minimizing −P implements maximization. The callback 25−P²−9 must be nonnegative.</p><p lang="ar" dir="rtl">تصغير <bdi dir="ltr">−P</bdi> ينفذ التعظيم. يجب أن تكون قيمة تابع القيد <bdi dir="ltr">25−P²−9</bdi> غير سالبة.</p></div></li><li><div class="pair"><p lang="en">The final assertions check the physical inequality and compare P with the hand result.</p><p lang="ar" dir="rtl">تفحص التعليمات الأخيرة القيد الفيزيائي وتقارن <bdi dir="ltr">P</bdi> بالحل اليدوي.</p></div></li></ol><div class="expected"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Expected result</span><span lang="ar" dir="rtl" class="label-ar">النتيجة المتوقعة</span></strong><div class="equation" dir="ltr">P=4 kW; Q=3 kvar; S=5 kVA</div></div><div class="pair"><p lang="en">A lower capability constraint P²+Q²≥Smin² is generally nonconvex. The direction of the inequality matters. SOCP is a representation, not a claim that every quadratic problem is convex.</p><p lang="ar" dir="rtl">القيد الأدنى <bdi dir="ltr">P²+Q²≥Smin²</bdi> غير محدب عموما. اتجاه عدم المساواة مهم؛ ولا تعني الصيغة المخروطية أن كل مسألة تربيعية محدبة.</p></div><label class="done"><input type="checkbox" data-done="5"><span dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Calculated, run and verified</span><span lang="ar" dir="rtl" class="label-ar">حسبت وشغلت وتحققت</span></span></label></section><section class="unit optimization-unit" id="unit-07"><div class="unit-head"><div class="num">07</div><div><h2 lang="en" dir="ltr">Nonlinear Programming (NLP) — local and global optima</h2><h2 class="ar" lang="ar" dir="rtl">البرمجة غير الخطية — الحل المحلي والعالمي</h2></div></div><div class="pair"><p lang="en">Illustrative normalized operating penalty: an energy device has two preferred power levels, 2 and 6 kW. This fourth-degree toy objective is not a measured equipment cost curve.</p><p lang="ar" dir="rtl">مثال توضيحي لدالة جزاء تشغيلية دون وحدات: لجهاز طاقي مستويان مفضلان للاستطاعة، هما <bdi dir="ltr">2 kW</bdi> و<bdi dir="ltr">6 kW</bdi>. دالة الهدف من الدرجة الرابعة مصممة للتعليم، وليست منحنى كلفة مقاسا لجهاز حقيقي.</p></div><div class="model"><strong dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Model and units</span><span lang="ar" dir="rtl" class="label-ar">النموذج والوحدات</span></strong><div class="equation" dir="ltr">min F(P)=(P−2)²(P−6)²; 0≤P≤8 kW</div></div><div class="hand-solution"><h3 dir="ltr" class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Hand calculation — ordinary calculator</span><span lang="ar" dir="rtl" class="label-ar">الحل اليدوي بالآلة الحاسبة العادية</span></h3><ol><li><div class="pair"><p lang="en">Every squared factor is nonnegative; therefore F(P)≥0 for all P.</p><p lang="ar" dir="rtl">كل عامل مربع غير سالب؛ لذلك <bdi dir="ltr">F(P)≥0</bdi> لكل <bdi dir="ltr">P</bdi>.</p></div></li><li><div class="pair"><p lang="en">At P=2: F=0²×(−4)²=0; at P=6: F=4²×0²=0. Both are feasible, hence both are global minima.</p><p lang="ar" dir="rtl">عند <bdi dir="ltr">P=2</bdi> نحصل على <bdi dir="ltr">0²×(−4)²=0</bdi>، وعند <bdi dir="ltr">P=6</bdi> نحصل على <bdi dir="ltr">4²×0²=0</bdi>. النقطتان ممكنتان؛ لذلك كلتاهما أدنى عالمي.</p></div></li><li><div class="pair"><p lang="en">For a stationary-point check, F′=4(P−2)(P−4)(P−6)=0 gives P=2,4,6.</p><p lang="ar" dir="rtl">لفحص النقاط الساكنة نكتب <bdi dir="ltr">F′=4(P−2)(P−4)(P−6)=0</bdi>، فنحصل على <bdi dir="ltr">P=2</bdi> و<bdi dir="ltr">4</bdi> و<bdi dir="ltr">6</bdi>.</p></div></li><li><div class="pair"><p lang="en">Evaluate candidates and endpoints: F(0)=144; F(2)=0; F(4)=16; F(6)=0; F(8)=144. P=4 is stationary but not a minimum.</p><p lang="ar" dir="rtl">نحسب عند المرشحين والطرفين: <bdi dir="ltr">F(0)=144</bdi> و<bdi dir="ltr">F(2)=0</bdi> و<bdi dir="ltr">F(4)=16</bdi> و<bdi dir="ltr">F(6)=0</bdi> و<bdi dir="ltr">F(8)=144</bdi>. النقطة <bdi dir="ltr">P=4</bdi> ساكنة وليست دنيا.</p></div></li><li><div class="pair"><p lang="en">The midpoint of the two minima has F(4)=16&gt;0, demonstrating nonconvexity. Different returned P values can have the same optimal objective.</p><p lang="ar" dir="rtl">منتصف نقطتي الأدنى يعطي <bdi dir="ltr">F(4)=16&gt;0</bdi>، وهذا يبين عدم التحدب. قد يعيد محللان قيمتين مختلفتين لـ<bdi dir="ltr">P</bdi> مع قيمة هدف مثلى واحدة.</p></div></li></ol></div><figure class="cost-curve" id="nonlinear-cost-curve"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Two global optima in the nonlinear example</span><span class="label-ar" lang="ar" dir="rtl">حلان أمثلان عالميان في المثال غير الخطي</span></h3><div class="cost-curve-frame"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="576pt" height="324pt" viewbox="0 0 576 324" version="1.1" class="cost-curve-svg" role="img" aria-labelledby="cost-two-global-title cost-two-global-desc">
+ <title id="cost-two-global-title">Nonconvex does not mean a unique optimum</title><desc id="cost-two-global-desc">F=(P−2)²(P−6)² is nonnegative everywhere. Both P=2 and P=6 attain the global lower bound zero. P=4 is stationary but is not a minimum.</desc><metadata>
+  <rdf:rdf xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+    <dc:date>2026-11-01T20:07:31.826897</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:agent>
+    </dc:creator>
+   </cc:work>
+  </rdf:rdf>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cost-two-global-figure_1">
+  <g id="cost-two-global-patch_1">
+   <path d="M 0 324  L 576 324  L 576 0  L 0 0  z " style="fill: #ffffff"></path>
+  </g>
+  <g id="cost-two-global-axes_1">
+   <g id="cost-two-global-patch_2">
+    <path d="M 74.88 262.44  L 547.2 262.44  L 547.2 35.64  L 74.88 35.64  z " style="fill: #ffffff"></path>
+   </g>
+   <g id="cost-two-global-matplotlib.axis_1">
+    <g id="cost-two-global-xtick_1">
+     <g id="cost-two-global-line2d_1">
+      <path d="M 74.88 262.44  L 74.88 35.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_2">
+      <defs>
+       <path id="cost-two-global-mcac1a2bd08" d="M 0 0  L 0 3.5  " style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="#cost-two-global-mcac1a2bd08" x="74.88" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_1">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="74.88" y="276.278594" transform="rotate(-0 74.88 276.278594)">0</text>
+     </g>
+    </g>
+    <g id="cost-two-global-xtick_2">
+     <g id="cost-two-global-line2d_3">
+      <path d="M 133.92 262.44  L 133.92 35.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_4">
+      <g>
+       <use xlink:href="#cost-two-global-mcac1a2bd08" x="133.92" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_2">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="133.92" y="276.278594" transform="rotate(-0 133.92 276.278594)">1</text>
+     </g>
+    </g>
+    <g id="cost-two-global-xtick_3">
+     <g id="cost-two-global-line2d_5">
+      <path d="M 192.96 262.44  L 192.96 35.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_6">
+      <g>
+       <use xlink:href="#cost-two-global-mcac1a2bd08" x="192.96" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_3">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="192.96" y="276.278594" transform="rotate(-0 192.96 276.278594)">2</text>
+     </g>
+    </g>
+    <g id="cost-two-global-xtick_4">
+     <g id="cost-two-global-line2d_7">
+      <path d="M 252 262.44  L 252 35.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_8">
+      <g>
+       <use xlink:href="#cost-two-global-mcac1a2bd08" x="252" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_4">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="252" y="276.278594" transform="rotate(-0 252 276.278594)">3</text>
+     </g>
+    </g>
+    <g id="cost-two-global-xtick_5">
+     <g id="cost-two-global-line2d_9">
+      <path d="M 311.04 262.44  L 311.04 35.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_10">
+      <g>
+       <use xlink:href="#cost-two-global-mcac1a2bd08" x="311.04" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_5">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="311.04" y="276.278594" transform="rotate(-0 311.04 276.278594)">4</text>
+     </g>
+    </g>
+    <g id="cost-two-global-xtick_6">
+     <g id="cost-two-global-line2d_11">
+      <path d="M 370.08 262.44  L 370.08 35.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_12">
+      <g>
+       <use xlink:href="#cost-two-global-mcac1a2bd08" x="370.08" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_6">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="370.08" y="276.278594" transform="rotate(-0 370.08 276.278594)">5</text>
+     </g>
+    </g>
+    <g id="cost-two-global-xtick_7">
+     <g id="cost-two-global-line2d_13">
+      <path d="M 429.12 262.44  L 429.12 35.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_14">
+      <g>
+       <use xlink:href="#cost-two-global-mcac1a2bd08" x="429.12" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_7">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="429.12" y="276.278594" transform="rotate(-0 429.12 276.278594)">6</text>
+     </g>
+    </g>
+    <g id="cost-two-global-xtick_8">
+     <g id="cost-two-global-line2d_15">
+      <path d="M 488.16 262.44  L 488.16 35.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_16">
+      <g>
+       <use xlink:href="#cost-two-global-mcac1a2bd08" x="488.16" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_8">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="488.16" y="276.278594" transform="rotate(-0 488.16 276.278594)">7</text>
+     </g>
+    </g>
+    <g id="cost-two-global-xtick_9">
+     <g id="cost-two-global-line2d_17">
+      <path d="M 547.2 262.44  L 547.2 35.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_18">
+      <g>
+       <use xlink:href="#cost-two-global-mcac1a2bd08" x="547.2" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_9">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="547.2" y="276.278594" transform="rotate(-0 547.2 276.278594)">8</text>
+     </g>
+    </g>
+    <g id="cost-two-global-text_10">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="311.04" y="289.74875" transform="rotate(-0 311.04 289.74875)">Device power P (kW)</text>
+    </g>
+   </g>
+   <g id="cost-two-global-matplotlib.axis_2">
+    <g id="cost-two-global-ytick_1">
+     <g id="cost-two-global-line2d_19">
+      <path d="M 74.88 252.64  L 547.2 252.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_20">
+      <defs>
+       <path id="cost-two-global-m9aa83d367c" d="M 0 0  L -3.5 0  " style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="#cost-two-global-m9aa83d367c" x="74.88" y="252.64" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_11">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="256.059297" transform="rotate(-0 67.88 256.059297)">0</text>
+     </g>
+    </g>
+    <g id="cost-two-global-ytick_2">
+     <g id="cost-two-global-line2d_21">
+      <path d="M 74.88 224.64  L 547.2 224.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_22">
+      <g>
+       <use xlink:href="#cost-two-global-m9aa83d367c" x="74.88" y="224.64" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_12">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="228.059297" transform="rotate(-0 67.88 228.059297)">20</text>
+     </g>
+    </g>
+    <g id="cost-two-global-ytick_3">
+     <g id="cost-two-global-line2d_23">
+      <path d="M 74.88 196.64  L 547.2 196.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_24">
+      <g>
+       <use xlink:href="#cost-two-global-m9aa83d367c" x="74.88" y="196.64" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_13">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="200.059297" transform="rotate(-0 67.88 200.059297)">40</text>
+     </g>
+    </g>
+    <g id="cost-two-global-ytick_4">
+     <g id="cost-two-global-line2d_25">
+      <path d="M 74.88 168.64  L 547.2 168.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_26">
+      <g>
+       <use xlink:href="#cost-two-global-m9aa83d367c" x="74.88" y="168.64" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_14">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="172.059297" transform="rotate(-0 67.88 172.059297)">60</text>
+     </g>
+    </g>
+    <g id="cost-two-global-ytick_5">
+     <g id="cost-two-global-line2d_27">
+      <path d="M 74.88 140.64  L 547.2 140.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_28">
+      <g>
+       <use xlink:href="#cost-two-global-m9aa83d367c" x="74.88" y="140.64" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_15">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="144.059297" transform="rotate(-0 67.88 144.059297)">80</text>
+     </g>
+    </g>
+    <g id="cost-two-global-ytick_6">
+     <g id="cost-two-global-line2d_29">
+      <path d="M 74.88 112.64  L 547.2 112.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_30">
+      <g>
+       <use xlink:href="#cost-two-global-m9aa83d367c" x="74.88" y="112.64" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_16">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="116.059297" transform="rotate(-0 67.88 116.059297)">100</text>
+     </g>
+    </g>
+    <g id="cost-two-global-ytick_7">
+     <g id="cost-two-global-line2d_31">
+      <path d="M 74.88 84.64  L 547.2 84.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_32">
+      <g>
+       <use xlink:href="#cost-two-global-m9aa83d367c" x="74.88" y="84.64" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_17">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="88.059297" transform="rotate(-0 67.88 88.059297)">120</text>
+     </g>
+    </g>
+    <g id="cost-two-global-ytick_8">
+     <g id="cost-two-global-line2d_33">
+      <path d="M 74.88 56.64  L 547.2 56.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-two-global-line2d_34">
+      <g>
+       <use xlink:href="#cost-two-global-m9aa83d367c" x="74.88" y="56.64" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-two-global-text_18">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="60.059297" transform="rotate(-0 67.88 60.059297)">140</text>
+     </g>
+    </g>
+    <g id="cost-two-global-text_19" class="curve-y-label">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="44.621562" y="149.04" transform="rotate(-90 44.621562 149.04)">Normalized penalty F(P)</text>
+    </g>
+   </g>
+   <g id="cost-two-global-line2d_35">
+    <path d="M 74.88 51.04  L 78.65856 67.744421  L 82.43712 83.474492  L 86.21568 98.264597  L 89.99424 112.148561  L 93.7728 125.159643  L 97.55136 137.330538  L 101.32992 148.693377  L 105.10848 159.279729  L 108.88704 169.120598  L 112.6656 178.246425  L 116.44416 186.687086  L 120.22272 194.471894  L 124.00128 201.6296  L 127.77984 208.188388  L 131.5584 214.175881  L 134.39232 218.307887  L 137.22624 222.144978  L 140.06016 225.698184  L 142.89408 228.978353  L 145.728 231.99616  L 148.56192 234.762097  L 151.39584 237.286479  L 154.22976 239.579444  L 157.06368 241.65095  L 159.8976 243.510778  L 162.73152 245.168529  L 166.51008 247.080783  L 170.28864 248.672366  L 174.0672 249.964558  L 177.84576 250.978076  L 181.62432 251.733072  L 185.40288 252.249134  L 189.18144 252.54529  L 192.96 252.64  L 197.6832 252.502317  L 202.4064 252.111518  L 207.1296 251.499944  L 212.79744 250.518136  L 218.46528 249.313824  L 225.07776 247.691503  L 233.57952 245.370818  L 264.75264 236.595224  L 272.30976 234.800498  L 278.92224 233.431874  L 285.53472 232.281429  L 292.1472 231.3722  L 297.81504 230.798447  L 303.48288 230.423125  L 309.15072 230.251467  L 314.81856 230.285852  L 320.4864 230.525802  L 326.15424 230.96799  L 331.82208 231.606232  L 338.43456 232.586422  L 345.04704 233.801786  L 351.65952 235.227776  L 359.21664 237.076877  L 368.66304 239.63849  L 386.6112 244.831984  L 397.00224 247.691503  L 404.55936 249.52792  L 410.2272 250.698562  L 415.89504 251.638414  L 420.61824 252.208355  L 425.34144 252.551162  L 430.06464 252.63422  L 433.8432 252.490848  L 437.62176 252.141469  L 441.40032 251.567478  L 445.17888 250.74971  L 448.95744 249.668436  L 452.736 248.30336  L 456.51456 246.633626  L 459.34848 245.168529  L 462.1824 243.510778  L 465.01632 241.65095  L 467.85024 239.579444  L 470.68416 237.286479  L 473.51808 234.762097  L 476.352 231.99616  L 479.18592 228.978353  L 482.01984 225.698184  L 484.85376 222.144978  L 487.68768 218.307887  L 490.5216 214.175881  L 493.35552 209.737754  L 496.18944 204.982119  L 499.968 198.12736  L 503.74656 190.659661  L 507.52512 182.550555  L 511.30368 173.771011  L 515.08224 164.291433  L 518.8608 154.081663  L 522.63936 143.110978  L 526.41792 131.348092  L 530.19648 118.761156  L 533.97504 105.317755  L 537.7536 90.984913  L 541.53216 75.729088  L 545.31072 59.516176  L 547.2 51.04  L 547.2 51.04  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke: #0369a1; stroke-width: 2.7; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-two-global-line2d_36">
+    <path d="M 74.88 252.64  L 547.2 252.64  " clip-path="url(#cost-two-global-pb57bb0e190)" style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #15803d; stroke-width: 1.5"></path>
+   </g>
+   <g id="cost-two-global-patch_3">
+    <path d="M 74.88 262.44  L 74.88 35.64  " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-two-global-patch_4">
+    <path d="M 74.88 262.44  L 547.2 262.44  " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-two-global-patch_5" class="curve-arrow">
+    <path d="M 157.616225 188.269269  Q 174.805975 219.57653 191.457627 249.903766  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+    <path d="M 191.302794 245.881823  L 191.457627 249.903766  L 188.147173 247.614467  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-two-global-text_20" class="curve-annotation">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(113.256 172.561969)">Global minimum</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(113.256 182.64)">P=2, F=0</text>
+   </g>
+   <g id="cost-two-global-patch_6" class="curve-arrow">
+    <path d="M 430.538693 188.513725  Q 429.85147 219.576847 429.188976 249.522207  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+    <path d="M 431.068161 245.962901  L 429.188976 249.522207  L 427.469041 245.883276  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-two-global-text_21" class="curve-annotation">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(393.696 172.561969)">Global minimum</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(393.696 182.64)">P=6, F=0</text>
+   </g>
+   <g id="cost-two-global-patch_7" class="curve-arrow">
+    <path d="M 311.04 143.714353  Q 311.04 185.977727 311.04 227.123067  " style="fill: none; stroke: #b91c1c; stroke-linecap: round"></path>
+    <path d="M 312.84 223.523067  L 311.04 227.123067  L 309.24 223.523067  " style="fill: none; stroke: #b91c1c; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-two-global-text_22" class="curve-annotation">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle; fill: #b91c1c" x="311.04" y="137.84" transform="rotate(-0 311.04 137.84)">Stationary, not minimum</text>
+   </g>
+   <g id="cost-two-global-text_23">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="311.04" y="29.64" transform="rotate(-0 311.04 29.64)">Nonconvex does not mean a unique optimum</text>
+   </g>
+   <g id="cost-two-global-PathCollection_1">
+    <defs>
+     <path id="cost-two-global-m4d574f05b6" d="M 0 4.031129  C 1.069068 4.031129 2.094493 3.606384 2.850439 2.850439  C 3.606384 2.094493 4.031129 1.069068 4.031129 0  C 4.031129 -1.069068 3.606384 -2.094493 2.850439 -2.850439  C 2.094493 -3.606384 1.069068 -4.031129 0 -4.031129  C -1.069068 -4.031129 -2.094493 -3.606384 -2.850439 -2.850439  C -3.606384 -2.094493 -4.031129 -1.069068 -4.031129 0  C -4.031129 1.069068 -3.606384 2.094493 -2.850439 2.850439  C -2.094493 3.606384 -1.069068 4.031129 0 4.031129  z " style="stroke: #15803d"></path>
+    </defs>
+    <g clip-path="url(#cost-two-global-pb57bb0e190)">
+     <use xlink:href="#cost-two-global-m4d574f05b6" x="192.96" y="252.64" style="fill: #15803d; stroke: #15803d"></use>
+     <use xlink:href="#cost-two-global-m4d574f05b6" x="429.12" y="252.64" style="fill: #15803d; stroke: #15803d"></use>
+    </g>
+   </g>
+   <g id="cost-two-global-PathCollection_2">
+    <defs>
+     <path id="cost-two-global-m08c227021b" d="M -3.708099 3.708099  L 3.708099 -3.708099  M -3.708099 -3.708099  L 3.708099 3.708099  " style="stroke: #b91c1c; stroke-width: 1.5"></path>
+    </defs>
+    <g clip-path="url(#cost-two-global-pb57bb0e190)">
+     <use xlink:href="#cost-two-global-m08c227021b" x="311.04" y="230.24" style="fill: #b91c1c; stroke: #b91c1c; stroke-width: 1.5"></use>
+    </g>
+   </g>
+   <g id="cost-two-global-legend_1" class="curve-legend">
+    <g id="cost-two-global-patch_8">
+     <path d="M 251.583125 53.7825  L 370.496875 53.7825  Q 372.096875 53.7825 372.096875 52.1825  L 372.096875 41.24  Q 372.096875 39.64 370.496875 39.64  L 251.583125 39.64  Q 249.983125 39.64 249.983125 41.24  L 249.983125 52.1825  Q 249.983125 53.7825 251.583125 53.7825  z " style="fill: #ffffff; opacity: 0.8; stroke: #cccccc; stroke-linejoin: miter"></path>
+    </g>
+    <g id="cost-two-global-line2d_37">
+     <path d="M 253.183125 46.11875  L 261.183125 46.11875  L 269.183125 46.11875  " style="fill: none; stroke-dasharray: 1.5,2.475; stroke-dashoffset: 0; stroke: #15803d; stroke-width: 1.5"></path>
+    </g>
+    <g id="cost-two-global-text_24">
+     <text style="font-size: 8px; font-family: 'DejaVu Sans'; text-anchor: start" x="275.583125" y="48.91875" transform="rotate(-0 275.583125 48.91875)">Exact lower bound F=0</text>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clippath id="cost-two-global-pb57bb0e190">
+   <rect x="74.88" y="35.64" width="472.32" height="226.8"></rect>
+  </clippath>
+ </defs>
+</svg></div><div class="curve-value-summary" dir="ltr">P*=2 kW or P*=6 kW; Fmin=0.</div><div class="pair cost-axes-note"><p lang="en">Axes: horizontal device power P (kW); vertical normalized penalty F.</p><p lang="ar" dir="rtl">المحور الأفقي: استطاعة الجهاز بالكيلوواط. المحور الرأسي: قيمة دالة الجزاء دون وحدات.</p></div><div class="pair"><p lang="en">Both green points are global: the penalty is a product of squares, so it can never fall below zero. A nonconvex problem may have more than one global optimizer. A zero derivative alone does not establish a minimum, as the red point demonstrates.</p><p lang="ar" dir="rtl">النقطتان الخضراوان عالميتان؛ فالهدف جداء مربعين ولا يمكن أن يقل عن الصفر. قد تملك المسألة غير المحدبة أكثر من حل أمثل عالمي. ولا يكفي انعدام المشتقة لإثبات وجود أدنى، كما توضح النقطة الحمراء.</p></div></figure><figure class="cost-curve" id="local-global-comparison"><h3 class="bilingual-label" dir="ltr"><span class="label-en" lang="en" dir="ltr">Compare a local minimum with the global minimum</span><span class="label-ar" lang="ar" dir="rtl">مقارنة الأدنى المحلي بالأدنى العالمي</span></h3><div class="cost-curve-frame"><svg xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" width="576pt" height="324pt" viewbox="0 0 576 324" version="1.1" class="cost-curve-svg" role="img" aria-labelledby="cost-local-global-title cost-local-global-desc">
+ <title id="cost-local-global-title">A local minimum can be more expensive</title><desc id="cost-local-global-desc">A teaching polynomial G has derivative (x−1)(x−3)(x−6). On [0,7], x=1 is a local minimum with G=22.4167, while x=6 is the global minimum with G=12. All stationary points and endpoints are compared analytically.</desc><metadata>
+  <rdf:rdf xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
+   <cc:work>
+    <dc:type rdf:resource="http://purl.org/dc/dcmitype/StillImage"></dc:type>
+    <dc:date>2026-11-01T20:07:31.925092</dc:date>
+    <dc:format>image/svg+xml</dc:format>
+    <dc:creator>
+     <cc:agent>
+      <dc:title>Matplotlib v3.10.8, https://matplotlib.org/</dc:title>
+     </cc:agent>
+    </dc:creator>
+   </cc:work>
+  </rdf:rdf>
+ </metadata>
+ <defs>
+  <style type="text/css">*{stroke-linejoin: round; stroke-linecap: butt}</style>
+ </defs>
+ <g id="cost-local-global-figure_1">
+  <g id="cost-local-global-patch_1">
+   <path d="M 0 324  L 576 324  L 576 0  L 0 0  z " style="fill: #ffffff"></path>
+  </g>
+  <g id="cost-local-global-axes_1">
+   <g id="cost-local-global-patch_2">
+    <path d="M 74.88 262.44  L 547.2 262.44  L 547.2 35.64  L 74.88 35.64  z " style="fill: #ffffff"></path>
+   </g>
+   <g id="cost-local-global-matplotlib.axis_1">
+    <g id="cost-local-global-xtick_1">
+     <g id="cost-local-global-line2d_1">
+      <path d="M 74.88 262.44  L 74.88 35.64  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_2">
+      <defs>
+       <path id="cost-local-global-me7c0b2ba1e" d="M 0 0  L 0 3.5  " style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="#cost-local-global-me7c0b2ba1e" x="74.88" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_1">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="74.88" y="276.278594" transform="rotate(-0 74.88 276.278594)">0</text>
+     </g>
+    </g>
+    <g id="cost-local-global-xtick_2">
+     <g id="cost-local-global-line2d_3">
+      <path d="M 142.354286 262.44  L 142.354286 35.64  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_4">
+      <g>
+       <use xlink:href="#cost-local-global-me7c0b2ba1e" x="142.354286" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_2">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="142.354286" y="276.278594" transform="rotate(-0 142.354286 276.278594)">1</text>
+     </g>
+    </g>
+    <g id="cost-local-global-xtick_3">
+     <g id="cost-local-global-line2d_5">
+      <path d="M 209.828571 262.44  L 209.828571 35.64  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_6">
+      <g>
+       <use xlink:href="#cost-local-global-me7c0b2ba1e" x="209.828571" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_3">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="209.828571" y="276.278594" transform="rotate(-0 209.828571 276.278594)">2</text>
+     </g>
+    </g>
+    <g id="cost-local-global-xtick_4">
+     <g id="cost-local-global-line2d_7">
+      <path d="M 277.302857 262.44  L 277.302857 35.64  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_8">
+      <g>
+       <use xlink:href="#cost-local-global-me7c0b2ba1e" x="277.302857" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_4">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="277.302857" y="276.278594" transform="rotate(-0 277.302857 276.278594)">3</text>
+     </g>
+    </g>
+    <g id="cost-local-global-xtick_5">
+     <g id="cost-local-global-line2d_9">
+      <path d="M 344.777143 262.44  L 344.777143 35.64  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_10">
+      <g>
+       <use xlink:href="#cost-local-global-me7c0b2ba1e" x="344.777143" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_5">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="344.777143" y="276.278594" transform="rotate(-0 344.777143 276.278594)">4</text>
+     </g>
+    </g>
+    <g id="cost-local-global-xtick_6">
+     <g id="cost-local-global-line2d_11">
+      <path d="M 412.251429 262.44  L 412.251429 35.64  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_12">
+      <g>
+       <use xlink:href="#cost-local-global-me7c0b2ba1e" x="412.251429" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_6">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="412.251429" y="276.278594" transform="rotate(-0 412.251429 276.278594)">5</text>
+     </g>
+    </g>
+    <g id="cost-local-global-xtick_7">
+     <g id="cost-local-global-line2d_13">
+      <path d="M 479.725714 262.44  L 479.725714 35.64  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_14">
+      <g>
+       <use xlink:href="#cost-local-global-me7c0b2ba1e" x="479.725714" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_7">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="479.725714" y="276.278594" transform="rotate(-0 479.725714 276.278594)">6</text>
+     </g>
+    </g>
+    <g id="cost-local-global-xtick_8">
+     <g id="cost-local-global-line2d_15">
+      <path d="M 547.2 262.44  L 547.2 35.64  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_16">
+      <g>
+       <use xlink:href="#cost-local-global-me7c0b2ba1e" x="547.2" y="262.44" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_8">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: middle" x="547.2" y="276.278594" transform="rotate(-0 547.2 276.278594)">7</text>
+     </g>
+    </g>
+    <g id="cost-local-global-text_9">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="311.04" y="289.74875" transform="rotate(-0 311.04 289.74875)">Normalized operating decision x</text>
+    </g>
+   </g>
+   <g id="cost-local-global-matplotlib.axis_2">
+    <g id="cost-local-global-ytick_1">
+     <g id="cost-local-global-line2d_17">
+      <path d="M 74.88 252.99  L 547.2 252.99  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_18">
+      <defs>
+       <path id="cost-local-global-md2b8cc518c" d="M 0 0  L -3.5 0  " style="stroke: #000000; stroke-width: 0.8"></path>
+      </defs>
+      <g>
+       <use xlink:href="#cost-local-global-md2b8cc518c" x="74.88" y="252.99" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_10">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="256.409297" transform="rotate(-0 67.88 256.409297)">10</text>
+     </g>
+    </g>
+    <g id="cost-local-global-ytick_2">
+     <g id="cost-local-global-line2d_19">
+      <path d="M 74.88 205.74  L 547.2 205.74  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_20">
+      <g>
+       <use xlink:href="#cost-local-global-md2b8cc518c" x="74.88" y="205.74" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_11">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="209.159297" transform="rotate(-0 67.88 209.159297)">15</text>
+     </g>
+    </g>
+    <g id="cost-local-global-ytick_3">
+     <g id="cost-local-global-line2d_21">
+      <path d="M 74.88 158.49  L 547.2 158.49  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_22">
+      <g>
+       <use xlink:href="#cost-local-global-md2b8cc518c" x="74.88" y="158.49" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_12">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="161.909297" transform="rotate(-0 67.88 161.909297)">20</text>
+     </g>
+    </g>
+    <g id="cost-local-global-ytick_4">
+     <g id="cost-local-global-line2d_23">
+      <path d="M 74.88 111.24  L 547.2 111.24  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_24">
+      <g>
+       <use xlink:href="#cost-local-global-md2b8cc518c" x="74.88" y="111.24" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_13">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="114.659297" transform="rotate(-0 67.88 114.659297)">25</text>
+     </g>
+    </g>
+    <g id="cost-local-global-ytick_5">
+     <g id="cost-local-global-line2d_25">
+      <path d="M 74.88 63.99  L 547.2 63.99  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #b0b0b0; stroke-opacity: 0.25; stroke-width: 0.8; stroke-linecap: square"></path>
+     </g>
+     <g id="cost-local-global-line2d_26">
+      <g>
+       <use xlink:href="#cost-local-global-md2b8cc518c" x="74.88" y="63.99" style="stroke: #000000; stroke-width: 0.8"></use>
+      </g>
+     </g>
+     <g id="cost-local-global-text_14">
+      <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: end" x="67.88" y="67.409297" transform="rotate(-0 67.88 67.409297)">30</text>
+     </g>
+    </g>
+    <g id="cost-local-global-text_15" class="curve-y-label">
+     <text style="font-size: 10px; font-family: 'DejaVu Sans'; text-anchor: middle" x="50.347812" y="149.04" transform="rotate(-90 50.347812 149.04)">Illustrative penalty G(x)</text>
+    </g>
+   </g>
+   <g id="cost-local-global-line2d_27">
+    <path d="M 74.88 63.99  L 78.65856 73.121033  L 81.49248 79.463999  L 84.3264 85.389058  L 87.16032 90.909713  L 89.99424 96.039291  L 92.82816 100.79094  L 95.66208 105.177635  L 98.496 109.212173  L 101.32992 112.907173  L 104.16384 116.275081  L 106.99776 119.328164  L 109.83168 122.078514  L 112.6656 124.538044  L 115.49952 126.718494  L 118.33344 128.631425  L 121.16736 130.288224  L 124.00128 131.700098  L 126.8352 132.878081  L 129.66912 133.83303  L 132.50304 134.575623  L 135.33696 135.116364  L 138.17088 135.465581  L 141.0048 135.633423  L 144.78336 135.592289  L 148.56192 135.269577  L 152.34048 134.687884  L 156.11904 133.869249  L 159.8976 132.835155  L 164.6208 131.271368  L 169.344 129.44322  L 174.0672 127.38899  L 179.73504 124.677371  L 186.34752 121.250951  L 194.84928 116.570871  L 219.40992 102.852792  L 226.96704 98.990282  L 233.57952 95.883116  L 239.24736 93.466343  L 244.9152 91.310564  L 249.6384 89.734275  L 254.3616 88.374381  L 259.0848 87.244658  L 263.808 86.35752  L 268.5312 85.72402  L 273.2544 85.353849  L 277.9776 85.255338  L 281.75616 85.376853  L 285.53472 85.679658  L 289.31328 86.166135  L 293.09184 86.83811  L 296.8704 87.696851  L 300.64896 88.743068  L 304.42752 89.976914  L 309.15072 91.782404  L 313.87392 93.878375  L 318.59712 96.261449  L 323.32032 98.926887  L 328.04352 101.868589  L 332.76672 105.079093  L 337.48992 108.549577  L 342.21312 112.269855  L 347.88096 117.047567  L 353.5488 122.145747  L 359.21664 127.539034  L 365.82912 134.166426  L 372.4416 141.107402  L 379.99872 149.353334  L 389.44512 159.997438  L 417.78432 192.179367  L 424.3968 199.259986  L 430.06464 205.051001  L 435.73248 210.518447  L 440.45568 214.779739  L 445.17888 218.730481  L 448.95744 221.639822  L 452.736 224.30232  L 456.51456 226.695684  L 460.29312 228.797065  L 464.07168 230.583056  L 466.9056 231.70118  L 469.73952 232.618114  L 472.57344 233.323364  L 475.40736 233.806262  L 478.24128 234.055964  L 481.0752 234.061448  L 483.90912 233.811516  L 486.74304 233.294793  L 489.57696 232.499729  L 492.41088 231.414597  L 495.2448 230.027493  L 498.07872 228.326337  L 500.91264 226.298872  L 503.74656 223.932665  L 506.58048 221.215108  L 509.4144 218.133414  L 512.24832 214.674622  L 515.08224 210.825591  L 517.91616 206.573008  L 520.75008 201.903381  L 523.584 196.803041  L 526.41792 191.258145  L 529.25184 185.254672  L 532.08576 178.778424  L 534.91968 171.815027  L 537.7536 164.349932  L 540.58752 156.368412  L 543.42144 147.855563  L 546.25536 138.796308  L 547.2 135.6525  L 547.2 135.6525  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke: #0369a1; stroke-width: 2.7; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-local-global-line2d_28">
+    <path d="M 74.88 234.09  L 547.2 234.09  " clip-path="url(#cost-local-global-pf86462fec2)" style="fill: none; stroke-dasharray: 1.4,2.31; stroke-dashoffset: 0; stroke: #15803d; stroke-width: 1.4"></path>
+   </g>
+   <g id="cost-local-global-patch_3">
+    <path d="M 74.88 262.44  L 74.88 35.64  " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-local-global-patch_4">
+    <path d="M 74.88 262.44  L 547.2 262.44  " style="fill: none; stroke: #000000; stroke-width: 0.8; stroke-linejoin: miter; stroke-linecap: square"></path>
+   </g>
+   <g id="cost-local-global-patch_5" class="curve-arrow">
+    <path d="M 133.238453 170.713381  Q 137.544326 154.152336 141.568864 138.67335  " style="fill: none; stroke: #b45309; stroke-linecap: round"></path>
+    <path d="M 138.920902 141.70457  L 141.568864 138.67335  L 142.405063 142.610452  " style="fill: none; stroke: #b45309; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-local-global-text_16" class="curve-annotation">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #b45309" transform="translate(91.748571 181.486969)">Local minimum</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #b45309" transform="translate(91.748571 191.565)">x=1, G=22.4167</text>
+   </g>
+   <g id="cost-local-global-patch_6" class="curve-arrow">
+    <path d="M 399.413789 219.739109  Q 438.58693 226.738935 476.659471 233.542095  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+    <path d="M 473.43223 231.13691  L 476.659471 233.542095  L 472.798978 234.680777  " style="fill: none; stroke: #166534; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-local-global-text_17" class="curve-annotation">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(321.161143 209.836969)">Global minimum</text>
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; fill: #166534" transform="translate(321.161143 219.915)">x=6, G=12</text>
+   </g>
+   <g id="cost-local-global-patch_7" class="curve-arrow">
+    <path d="M 316.481903 68.642062  Q 297.814226 76.556453 280.175894 84.034441  " style="fill: none; stroke: #64748b; stroke-linecap: round"></path>
+    <path d="M 284.192919 84.286462  L 280.175894 84.034441  L 282.787726 80.972034  " style="fill: none; stroke: #64748b; stroke-linecap: round"></path>
+   </g>
+   <g id="cost-local-global-text_18" class="curve-annotation">
+    <text style="font-size: 9px; font-family: 'DejaVu Sans'; text-anchor: start; fill: #475569" x="297.545143" y="63.99" transform="rotate(-0 297.545143 63.99)">Local maximum</text>
+   </g>
+   <g id="cost-local-global-text_19">
+    <text style="font-size: 12px; font-family: 'DejaVu Sans'; text-anchor: middle" x="311.04" y="29.64" transform="rotate(-0 311.04 29.64)">A local minimum can be more expensive</text>
+   </g>
+   <g id="cost-local-global-PathCollection_1">
+    <defs>
+     <path id="cost-local-global-mc0d9791bc3" d="M 0 2.5  C 0.663008 2.5 1.29895 2.236584 1.767767 1.767767  C 2.236584 1.29895 2.5 0.663008 2.5 0  C 2.5 -0.663008 2.236584 -1.29895 1.767767 -1.767767  C 1.29895 -2.236584 0.663008 -2.5 0 -2.5  C -0.663008 -2.5 -1.29895 -2.236584 -1.767767 -1.767767  C -2.236584 -1.29895 -2.5 -0.663008 -2.5 0  C -2.5 0.663008 -2.236584 1.29895 -1.767767 1.767767  C -1.29895 2.236584 -0.663008 2.5 0 2.5  z " style="stroke: #64748b"></path>
+    </defs>
+    <g clip-path="url(#cost-local-global-pf86462fec2)">
+     <use xlink:href="#cost-local-global-mc0d9791bc3" x="74.88" y="63.99" style="fill: #64748b; stroke: #64748b"></use>
+     <use xlink:href="#cost-local-global-mc0d9791bc3" x="277.302857" y="85.2525" style="fill: #64748b; stroke: #64748b"></use>
+     <use xlink:href="#cost-local-global-mc0d9791bc3" x="547.2" y="135.6525" style="fill: #64748b; stroke: #64748b"></use>
+    </g>
+   </g>
+   <g id="cost-local-global-PathCollection_2">
+    <defs>
+     <path id="cost-local-global-C0_0_46cde36648" d="M 0 4.031129  C 1.069068 4.031129 2.094493 3.606384 2.850439 2.850439  C 3.606384 2.094493 4.031129 1.069068 4.031129 -0  C 4.031129 -1.069068 3.606384 -2.094493 2.850439 -2.850439  C 2.094493 -3.606384 1.069068 -4.031129 0 -4.031129  C -1.069068 -4.031129 -2.094493 -3.606384 -2.850439 -2.850439  C -3.606384 -2.094493 -4.031129 -1.069068 -4.031129 0  C -4.031129 1.069068 -3.606384 2.094493 -2.850439 2.850439  C -2.094493 3.606384 -1.069068 4.031129 0 4.031129  z "></path>
+    </defs>
+    <g clip-path="url(#cost-local-global-pf86462fec2)">
+     <use xlink:href="#cost-local-global-C0_0_46cde36648" x="142.354286" y="135.6525" style="fill: #b45309; stroke: #b45309"></use>
+    </g>
+    <g clip-path="url(#cost-local-global-pf86462fec2)">
+     <use xlink:href="#cost-local-global-C0_0_46cde36648" x="479.725714" y="234.09" style="fill: #15803d; stroke: #15803d"></use>
+    </g>
+   </g>
+  </g>
+ </g>
+ <defs>
+  <clippath id="cost-local-global-pf86462fec2">
+   <rect x="74.88" y="35.64" width="472.32" height="226.8"></rect>
+  </clippath>
+ </defs>
+</svg></div><div class="curve-value-summary" dir="ltr">Local: x=1, G≈22.416667. Global: x=6, Gmin=12.</div><div class="pair cost-axes-note"><p lang="en">Axes: horizontal normalized decision x; vertical penalty G(x).</p><p lang="ar" dir="rtl">المحور الأفقي: قرار التشغيل المطبع دون وحدات. المحور الرأسي: قيمة دالة الجزاء.</p></div><div class="pair"><p lang="en"><strong>Local minimum:</strong> no nearby feasible point is cheaper. <strong>Global minimum:</strong> no point anywhere in the feasible set is cheaper. This additional polynomial is only a teaching illustration for a dimensionless normalized operating decision, not a measured equipment cost curve.</p><p lang="ar" dir="rtl"><strong>الأدنى المحلي:</strong> لا توجد نقطة ممكنة مجاورة أقل كلفة. <strong>الأدنى العالمي:</strong> لا توجد أي نقطة في المجموعة الممكنة كلها أقل كلفة. هذا كثير حدود إضافي للتوضيح التعليمي، بقرار تشغيل مطبع دون وحدات، وليس منحنى كلفة مقاسا لجهاز حقيقي.</p></div><div class="equation" dir="ltr">G(x)=x⁴/4−(10/3)x³+(27/2)x²−18x+30, 0≤x≤7.</div><ol class="curve-proof-steps"><li><div class="pair"><p lang="en">Differentiate and factor: G′(x)=x³−10x²+27x−18=(x−1)(x−3)(x−6). Thus stationary candidates are 1, 3 and 6.</p><p lang="ar" dir="rtl">نشتق ونحلل: <bdi dir="ltr">G′(x)=x³−10x²+27x−18=(x−1)(x−3)(x−6)</bdi>. إذن القيم الساكنة المرشحة هي <bdi dir="ltr">1, 3, 6</bdi>.</p></div></li><li><div class="pair"><p lang="en">Also include the feasible interval endpoints 0 and 7. A continuous differentiable function on this closed interval attains a minimum at an endpoint or an interior stationary point.</p><p lang="ar" dir="rtl">نضيف طرفي المجال الممكن <bdi dir="ltr">0</bdi> و<bdi dir="ltr">7</bdi>. تبلغ الدالة المتصلة القابلة للاشتقاق أدناها على هذا المجال المغلق عند أحد الطرفين أو عند نقطة ساكنة داخلية.</p></div></li><li><div class="pair"><p lang="en">Evaluate all five candidates with a calculator, as shown in the table. For x=6: 1296/4−(10/3)×216+(27/2)×36−108+30=324−720+486−108+30=12.</p><p lang="ar" dir="rtl">نحسب قيم المرشحين الخمسة بالحاسبة كما في الجدول. عند <bdi dir="ltr">x=6</bdi> نحصل على <bdi dir="ltr">1296/4−(10/3)×216+(27/2)×36−108+30=324−720+486−108+30=12</bdi>.</p></div></li><li><div class="pair"><p lang="en">The derivative changes from negative to positive at x=1 and x=6: both are local minima. Comparing every candidate proves that only x=6 attains the global minimum 12 on [0,7].</p><p lang="ar" dir="rtl">تتغير إشارة المشتقة من سالبة إلى موجبة عند <bdi dir="ltr">x=1</bdi> و<bdi dir="ltr">x=6</bdi>، فتكون النقطتان أدنيين محليين. وتثبت مقارنة جميع المرشحين أن <bdi dir="ltr">x=6</bdi> وحدها تحقق الأدنى العالمي <bdi dir="ltr">12</bdi> على المجال <bdi dir="ltr">[0,7]</bdi>.</p></div></li></ol><div class="table-scroll"><table class="cost-sample-table"><thead><tr><th>x</th><th>G(x)</th><th class="bilingual-label"><span lang="en" dir="ltr" class="label-en">Interpretation</span><span lang="ar" dir="rtl" class="label-ar">التفسير</span></th></tr></thead><tbody><tr><td>0</td><td>30.000000</td><td><span class="label-en" lang="en" dir="ltr">Left endpoint</span><span class="label-ar" lang="ar" dir="rtl">الطرف الأيسر</span></td></tr><tr><td>1</td><td>22.416667</td><td><span class="label-en" lang="en" dir="ltr">Local minimum, not global</span><span class="label-ar" lang="ar" dir="rtl">أدنى محلي وليس عالميا</span></td></tr><tr><td>3</td><td>27.750000</td><td><span class="label-en" lang="en" dir="ltr">Local maximum</span><span class="label-ar" lang="ar" dir="rtl">أعلى محلي</span></td></tr><tr><td>6</td><td>12.000000</td><td><span class="label-en" lang="en" dir="ltr">Global minimum (also local)</span><span class="label-ar" lang="ar" dir="rtl">أدنى عالمي، وهو محلي أيضا</span></td></tr><tr><td>7</td><td>22.416667</td><td><span class="label-en" lang="en" dir="ltr">Right endpoint</span><span class="label-ar" lang="ar" dir="rtl">الطرف الأيمن</span></td></tr></tbody></table></div><div class="pair"><p lang="en">A local algorithm starting near x=1 may stop at the higher local minimum. A plot or several starting guesses alone cannot certify a general global optimum; this example is certified by checking the complete candidate set.</p><p lang="ar" dir="rtl">قد تتوقف خوارزمية محلية تبدأ قرب <bdi dir="ltr">x=1</bdi> عند الأدنى المحلي الأعلى كلفة. لا يكفي الرسم أو تعدد التخمينات الابتدائية وحدهما لإثبات العالمية في المسألة العامة؛ أما هنا فيوفر فحص جميع المرشحين برهانا كاملا.</p></div></figure><div class="codebox"><div class="codebar"><span>Python · Kaggle · 04</span><button class="copy bilingual-label" type="button" data-code="3" dir="ltr"><span lang="en" dir="ltr" class="label-en">Copy code</span><span lang="ar" dir="rtl" class="label-ar">نسخ الكود</span></button></div><pre id="code-3" dir="ltr"><code>from scipy.optimize import minimize
 def f(x):
     return (x[0]-2)**2*(x[0]-6)**2
 for start in [1., 7.]:
@@ -501,4 +1743,21 @@ document.getElementById('reset').addEventListener('click',()=>{
 function updateDate(){const date=new Intl.DateTimeFormat('en-GB',{timeZone:'Asia/Damascus',day:'2-digit',month:'2-digit',year:'numeric'}).format(new Date());document.getElementById('print-date').textContent=date;document.getElementById('print-date-ar').textContent=date;}
 updateDate();window.addEventListener('beforeprint',updateDate);document.getElementById('print').addEventListener('click',()=>window.print());
 })();</script>
-</body></html>
+<script>
+(function(){
+ const slider=document.getElementById('qp-cost-slider');
+ const plot=document.querySelector('#qp-cost-curve svg');
+ const marker=document.getElementById('qp-trial-marker');
+ function show(){
+  const p1=Number(slider.value),p2=100-p1;
+  const c1=.2*p1*p1+20*p1,c2=.2*p2*p2+35*p2;
+  const total=c1+c2,gap=.4*(p1-68.75)**2;
+  for(const [id,value,digits] of [['qp-p1',p1,2],['qp-p2',p2,2],['qp-c1',c1,3],['qp-c2',c2,3],['qp-total',total,3],['qp-gap',gap,3]])document.getElementById(id).textContent=value.toFixed(digits);
+  marker.setAttribute('cx',String(Number(plot.dataset.xScale)*p1+Number(plot.dataset.xOffset)));
+  marker.setAttribute('cy',String(Number(plot.dataset.yScale)*total+Number(plot.dataset.yOffset)));
+ }
+ slider.addEventListener('input',show);
+ document.getElementById('qp-cost-optimum').addEventListener('click',()=>{slider.value='68.75';show();});
+ show();
+})();
+</script></body></html>
