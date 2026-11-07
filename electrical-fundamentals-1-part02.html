@@ -293,6 +293,43 @@ h1{margin:8px 0}h2{margin:0;color:#8ddcff;font-size:1.45rem}h3{color:#ffe0a0}.fo
 <div class="pair"><div lang="en"><p><b>Where does the energy come from?</b> In a real electronic circuit, an active device needs an external power supply. The ideal dependent source models its behaviour without showing that supply. Thus negative resistance does not violate conservation of energy. Actual circuits also have operating limits and may become unstable with some loads.</p></div><div lang="ar" dir="rtl"><p><b>من أين تأتي الطاقة؟</b> تحتاج العناصر الفعالة في الدارات الحقيقية إلى مصدر تغذية خارجي. يمثل المنبع التابع المثالي سلوك هذه العناصر دون إظهار مصدر تغذيتها. لذلك لا تخالف المقاومة السالبة مبدأ انحفاظ الطاقة. كما أن للدارات الحقيقية حدود تشغيل، وقد تصبح غير مستقرة عند توصيل أحمال معينة.</p></div></div>
 </section></article><article class="station" id="method-9"><span class="date">1899</span><div class="pair"><div lang="en"><h2>Star–delta transformation</h2></div><div lang="ar" dir="rtl"><h2>تحويل النجمة والمثلث</h2></div></div><div class="pair"><div lang="en">Kennelly published triangle/star equivalence in conducting networks in 1899. This transforms three-terminal resistor groups that block direct series/parallel reduction.</div><div lang="ar" dir="rtl">نشر كينيلي تكافؤ المثلث والنجمة في الشبكات الناقلة عام 1899. يسمح التحويل بتبديل مجموعة مقاومات ثلاثية الأطراف تعيق الاختزال المباشر.</div></div><div class="pair"><div lang="en"><b>Why use it / advantage:</b> Handles many bridge networks while preserving terminal behavior.</div><div lang="ar" dir="rtl"><b>الفائدة / الميزة:</b> يعالج كثيرًا من الشبكات الجسرية مع حفظ سلوك الأطراف.</div></div><div class="pair"><div lang="en"><b>Limitation:</b> Repeated conversions can be lengthy; internal currents of the replaced group must be recovered separately.</div><div lang="ar" dir="rtl"><b>القيد / العيب:</b> قد تطول التحويلات المتكررة؛ تُستعاد تيارات المجموعة الداخلية المحذوفة بحساب مستقل.</div></div><div class="pair"><div lang="en"><h3>Derivation and engineering interpretation</h3></div><div lang="ar" dir="rtl"><h3>اشتقاق العلاقات والتفسير الهندسي</h3></div></div>
 <div class="pair"><div lang="en">A delta (Δ) and a star (Y, or its equivalent T layout) are interchangeable three-terminal networks when their resistances measured between every pair of terminals are equal, with the third terminal open. This is a terminal equivalence, not equality of currents in individual internal branches.</div><div lang="ar" dir="rtl">تكون شبكتا المثلث Δ والنجمة Y (أو رسمها المكافئ T) متكافئتين إذا تساوت المقاومة المقاسة بين كل زوج من الأطراف الثلاثة مع ترك الطرف الثالث مفتوحا. التكافؤ عند الأطراف الخارجية ولا يعني تساوي تيارات الفروع الداخلية.</div></div>
+<div id="star-delta-derivation-visual">
+<div class="pair"><div lang="en"><h4>Visual derivation: equivalent resistance between A and B</h4><p>Leave terminal C externally open. In the delta (Δ), the direct branch \(R_{AB}\) is in parallel with the series path \(R_{CA}+R_{BC}\). In the star (Y), no current flows through \(R_C\), so only \(R_A+R_B\) remains between A and B.</p></div><div lang="ar" dir="rtl"><h4>الاشتقاق بالرسم: المقاومة المكافئة بين A وB</h4><p>نترك الطرف C مفتوحا خارجيا. في المثلث Δ يوجد مساران متوازيان بين A وB: المقاومة المباشرة \(R_{AB}\)، والمسار المتسلسل \(R_{CA}+R_{BC}\). أما في النجمة Y فلا يمر تيار في \(R_C\)، فتكون المقاومة بين A وB هي \(R_A+R_B\).</p></div></div>
+<figure class="edu-method-schematic" style="margin:18px auto;max-width:900px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 400" role="img" aria-label="Delta and star resistance networks showing equivalent paths between A and B while C is externally open" style="display:block;width:100%;height:auto;background:white;border-radius:12px">
+<g font-family="Arial, sans-serif" fill="#203650">
+<text x="225" y="34" font-size="23" font-weight="bold" text-anchor="middle">Δ — Delta</text>
+<text x="672" y="34" font-size="23" font-weight="bold" text-anchor="middle">Y — Star</text>
+<text x="225" y="56" font-size="17" text-anchor="middle" fill="#ad3d3d">C open</text>
+<text x="672" y="56" font-size="17" text-anchor="middle" fill="#ad3d3d">C open</text>
+</g>
+<g stroke="#203650" fill="none" stroke-width="3.5" stroke-linejoin="round" stroke-linecap="round">
+<path d="M85 315L225 100L365 315H85 M225 100V77 M85 315H55 M365 315H395"/>
+<path d="M670 215L545 315 M670 215L795 315 M670 215V100 M670 100V77 M545 315H515 M795 315H825"/>
+</g>
+<g stroke="#203650" fill="white" stroke-width="3">
+<rect x="117" y="192" width="70" height="26" rx="2" transform="rotate(-57 152 205)"/>
+<rect x="263" y="192" width="70" height="26" rx="2" transform="rotate(57 298 205)"/>
+<rect x="190" y="302" width="70" height="26" rx="2"/>
+<rect x="657" y="128" width="26" height="65" rx="2"/>
+<rect x="581" y="252" width="69" height="26" rx="2" transform="rotate(-39 615.5 265)"/>
+<rect x="690" y="252" width="69" height="26" rx="2" transform="rotate(39 724.5 265)"/>
+</g>
+<g fill="#087f94"><circle cx="85" cy="315" r="5"/><circle cx="365" cy="315" r="5"/><circle cx="225" cy="100" r="5"/><circle cx="545" cy="315" r="5"/><circle cx="795" cy="315" r="5"/><circle cx="670" cy="100" r="5"/><circle cx="670" cy="215" r="5"/></g>
+<g font-family="Cambria Math, STIX Two Math, Times New Roman,serif" font-size="21" fill="#203650">
+<text x="44" y="324">A</text><text x="400" y="324">B</text><text x="242" y="103">C</text>
+<text x="504" y="324">A</text><text x="831" y="324">B</text><text x="689" y="103">C</text><text x="693" y="221">O</text>
+<text x="94" y="182">R<tspan baseline-shift="sub" font-size="14">CA</tspan></text>
+<text x="326" y="182">R<tspan baseline-shift="sub" font-size="14">BC</tspan></text>
+<text x="225" y="294" text-anchor="middle">R<tspan baseline-shift="sub" font-size="14">AB</tspan></text>
+<text x="695" y="164">R<tspan baseline-shift="sub" font-size="14">C</tspan></text>
+<text x="565" y="246">R<tspan baseline-shift="sub" font-size="14">A</tspan></text>
+<text x="764" y="246">R<tspan baseline-shift="sub" font-size="14">B</tspan></text>
+<text x="225" y="371" text-anchor="middle" font-size="20">R<tspan baseline-shift="sub" font-size="13">AB</tspan> ∥ (R<tspan baseline-shift="sub" font-size="13">CA</tspan> + R<tspan baseline-shift="sub" font-size="13">BC</tspan>)</text>
+<text x="670" y="371" text-anchor="middle" font-size="20">R<tspan baseline-shift="sub" font-size="13">A</tspan> + R<tspan baseline-shift="sub" font-size="13">B</tspan></text>
+<text x="448" y="216" text-anchor="middle" font-size="34" fill="#087f94">⇔</text>
+</g></svg><figcaption style="text-align:center;color:#bdd0e2;padding:8px">Same equivalent resistance across A–B, with C externally open / المقاومة المكافئة نفسها بين A وB مع فتح C خارجيا</figcaption></figure>
+<div class="pair"><div lang="en"><p><b>Consequently,</b> the two arrangements must satisfy the following equality. For the remaining pairs, rotate the terminal labels: B–C with A open, and C–A with B open.</p></div><div lang="ar" dir="rtl"><p><b>وبالتالي،</b> يجب أن تحقق الشبكتان علاقة التكافؤ الآتية. ولاشتقاق العلاقتين الأخريين نبدل الأطراف دوريا: B وC مع فتح A، ثم C وA مع فتح B.</p></div></div>
+</div>
 <div class="formula">\[R_{AB}^{(Y)}=R_A+R_B=R_{AB}\parallel(R_{CA}+R_{BC})\]</div>
 <div class="formula">\[R_{BC}^{(Y)}=R_B+R_C=R_{BC}\parallel(R_{AB}+R_{CA})\]</div>
 <div class="formula">\[R_{CA}^{(Y)}=R_C+R_A=R_{CA}\parallel(R_{AB}+R_{BC})\]</div>
