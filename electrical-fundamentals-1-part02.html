@@ -333,13 +333,42 @@ h1{margin:8px 0}h2{margin:0;color:#8ddcff;font-size:1.45rem}h3{color:#ffe0a0}.fo
 <div class="formula">\[R_{AB}^{(Y)}=R_A+R_B=R_{AB}\parallel(R_{CA}+R_{BC})\]</div>
 <div class="formula">\[R_{BC}^{(Y)}=R_B+R_C=R_{BC}\parallel(R_{AB}+R_{CA})\]</div>
 <div class="formula">\[R_{CA}^{(Y)}=R_C+R_A=R_{CA}\parallel(R_{AB}+R_{BC})\]</div>
-<div class="pair"><div lang="en">Solving these three equalities gives the delta-to-star rule: multiply the two delta resistances touching the same terminal, then divide by the sum of all three delta resistances.</div><div lang="ar" dir="rtl">بحل معادلات التكافؤ الثلاث نحصل على قاعدة المثلث إلى النجمة: نضرب مقاومتي المثلث المتصلتين بالطرف نفسه، ثم نقسم على مجموع مقاومات المثلث الثلاث.</div></div>
+<div class="pair"><div lang="en"><h3>Step-by-step derivation: Δ → Y</h3><p>Start with the three terminal-equivalence equations above. Define the sum of delta resistances:</p></div><div lang="ar" dir="rtl"><h3>الاشتقاق خطوة بخطوة: من المثلث إلى النجمة</h3><p>ننطلق من معادلات التكافؤ الثلاث بين الأطراف، ونعرف مجموع مقاومات المثلث:</p></div></div>
 <div class="formula">\[S=R_{AB}+R_{BC}+R_{CA}\]</div>
-<div class="formula">\[R_A=\frac{R_{AB}R_{CA}}{S},\quad R_B=\frac{R_{AB}R_{BC}}{S},\quad R_C=\frac{R_{BC}R_{CA}}{S}\]</div>
-<div class="pair"><div lang="en">For the reverse star-to-delta conversion, define the sum of pairwise products Q. Each delta side is Q divided by the opposite star arm.</div><div lang="ar" dir="rtl">للتحويل العكسي من النجمة إلى المثلث نعرّف مجموع جداءات كل زوج من أذرع النجمة Q. تساوي كل مقاومة في المثلث هذا المجموع مقسوما على ذراع النجمة المقابل لها.</div></div>
+<div class="pair"><div lang="en"><h4>Step 1 — Expand each parallel combination</h4><p>Use the parallel formula. Each denominator becomes S.</p></div><div lang="ar" dir="rtl"><h4>الخطوة 1 — فك كل علاقة تواز</h4><p>نستخدم قانون المقاومتين على التوازي. نلاحظ أن مقام كل كسر يساوي S.</p></div></div>
+<div class="formula">\[R_A+R_B=\frac{R_{AB}(R_{CA}+R_{BC})}{S}\]</div>
+<div class="formula">\[R_B+R_C=\frac{R_{BC}(R_{AB}+R_{CA})}{S}\]</div>
+<div class="formula">\[R_C+R_A=\frac{R_{CA}(R_{AB}+R_{BC})}{S}\]</div>
+<div class="pair"><div lang="en"><h4>Step 2 — Isolate R_A</h4><p>Add the first and third equations, then subtract the second. The R_B and R_C terms cancel.</p></div><div lang="ar" dir="rtl"><h4>الخطوة 2 — عزل مقاومة R_A</h4><p>نجمع المعادلتين الأولى والثالثة، ثم نطرح الثانية. تختفي حدود R_B وR_C، ويبقى ضعف R_A.</p></div></div>
+<div class="formula">\[2R_A=(R_A+R_B)+(R_C+R_A)-(R_B+R_C)\]</div>
+<div class="pair"><div lang="en"><p>Substitute the corresponding fractions, using the common denominator S:</p></div><div lang="ar" dir="rtl"><p>نعوض الكسور المقابلة مع توحيد المقام S:</p></div></div>
+<div class="formula">\[\begin{aligned}2R_A={}&\frac{R_{AB}(R_{CA}+R_{BC})}{S}\\[5pt]&+\frac{R_{CA}(R_{AB}+R_{BC})}{S}\\[5pt]&-\frac{R_{BC}(R_{AB}+R_{CA})}{S}\end{aligned}\]</div>
+<div class="pair"><div lang="en"><p>Expand the products. Equal positive and negative cross-products cancel, leaving two copies of R_AB R_CA.</p></div><div lang="ar" dir="rtl"><p>نوزع الجداءات في البسط، ونختزل الحدود المتساوية ذات الإشارات المتعاكسة، فيبقى ضعف الجداء بين R_AB وR_CA.</p></div></div>
+<div class="formula">\[2R_A=\frac{2R_{AB}R_{CA}}{S}\]</div>
+<div class="formula">\[\boxed{R_A=\frac{R_{AB}R_{CA}}{S}}\]</div>
+<div class="pair"><div lang="en"><h4>Step 3 — Find R_B and R_C</h4><p>Use the same add–subtract operation, changing which equation is subtracted:</p></div><div lang="ar" dir="rtl"><h4>الخطوة 3 — حساب R_B وR_C</h4><p>نكرر عملية الجمع والطرح، لكن نغير المعادلة التي نطرحها في كل مرة:</p></div></div>
+<div class="formula">\[2R_B=(R_A+R_B)+(R_B+R_C)-(R_C+R_A)\]</div>
+<div class="formula">\[\boxed{R_B=\frac{R_{AB}R_{BC}}{S}}\]</div>
+<div class="formula">\[2R_C=(R_B+R_C)+(R_C+R_A)-(R_A+R_B)\]</div>
+<div class="formula">\[\boxed{R_C=\frac{R_{BC}R_{CA}}{S}}\]</div>
+<div class="pair"><div lang="en"><p><b>Rule:</b> A star arm is the product of the two delta sides meeting at its terminal, divided by the sum of all three delta sides.</p></div><div lang="ar" dir="rtl"><p><b>القاعدة:</b> مقاومة كل ذراع في النجمة تساوي جداء مقاومتي المثلث المتصلتين بالطرف نفسه، مقسوما على مجموع مقاومات المثلث الثلاث.</p></div></div>
+<div class="pair"><div lang="en"><h3>Step-by-step reverse derivation: Y → Δ</h3><p>To derive the reverse conversion, begin with the already established delta-to-star expressions.</p></div><div lang="ar" dir="rtl"><h3>الاشتقاق العكسي خطوة بخطوة: من النجمة إلى المثلث</h3><p>لاشتقاق التحويل العكسي، ننطلق من علاقات التحويل السابقة من المثلث إلى النجمة.</p></div></div>
+<div class="pair"><div lang="en"><h4>Step 4 — Derive the side R_AB</h4><p>Multiply R_A by R_B, then divide by R_C. Substitute the delta-to-star expressions and cancel common factors.</p></div><div lang="ar" dir="rtl"><h4>الخطوة 4 — اشتقاق الضلع R_AB</h4><p>نضرب R_A في R_B، ثم نقسم على R_C. نعوض علاقات التحويل السابقة ونختزل العوامل المشتركة.</p></div></div>
+<div class="formula">\[\frac{R_AR_B}{R_C}=\frac{R_{AB}^{2}}{S}\]</div>
+<div class="pair"><div lang="en"><p>In addition, the sum of the first two star arms is:</p></div><div lang="ar" dir="rtl"><p>ومن جهة أخرى، فإن مجموع مقاومتي الذراعين الأولين يساوي:</p></div></div>
+<div class="formula">\[R_A+R_B=\frac{R_{AB}(R_{CA}+R_{BC})}{S}\]</div>
+<div class="pair"><div lang="en"><p>Add the two expressions and use S = R_AB + R_BC + R_CA.</p></div><div lang="ar" dir="rtl"><p>نجمع العلاقتين ونستخدم تعريف S بوصفه مجموع مقاومات المثلث.</p></div></div>
+<div class="formula">\[R_A+R_B+\frac{R_AR_B}{R_C}=\frac{R_{AB}S}{S}\]</div>
+<div class="formula">\[\boxed{R_{AB}=R_A+R_B+\frac{R_AR_B}{R_C}}\]</div>
+<div class="pair"><div lang="en"><h4>Step 5 — Derive the other two delta sides</h4><p>Repeat the same reasoning for the other two terminal pairs.</p></div><div lang="ar" dir="rtl"><h4>الخطوة 5 — اشتقاق الضلعين الآخرين</h4><p>نكرر العملية نفسها لزوجي الأطراف الآخرين.</p></div></div>
+<div class="formula">\[\boxed{R_{BC}=R_B+R_C+\frac{R_BR_C}{R_A}}\]</div>
+<div class="formula">\[\boxed{R_{CA}=R_C+R_A+\frac{R_CR_A}{R_B}}\]</div>
+<div class="pair"><div lang="en"><h4>Step 6 — Express the result compactly</h4><p>Define Q as the sum of all pairwise products of star arms. Each delta side equals Q divided by the opposite star arm.</p></div><div lang="ar" dir="rtl"><h4>الخطوة 6 — الصيغة النهائية المختصرة</h4><p>نعرف Q بأنه مجموع جداءات أزواج مقاومات النجمة. يساوي كل ضلع من المثلث Q مقسوما على ذراع النجمة المقابل له.</p></div></div>
 <div class="formula">\[Q=R_AR_B+R_BR_C+R_CR_A\]</div>
-<div class="formula">\[R_{AB}=\frac{Q}{R_C},\quad R_{BC}=\frac{Q}{R_A},\quad R_{CA}=\frac{Q}{R_B}\]</div>
-<div class="pair"><div lang="en"><h3>Worked example</h3></div><div lang="ar" dir="rtl"><h3>مثال محلول بالتفصيل</h3></div></div><figure class="edu-method-schematic" style="margin:18px auto;max-width:900px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-label="Complete delta and star three-terminal resistor networks" style="display:block;width:100%;height:auto;background:#fff;border-radius:12px"><g font-family="Arial, sans-serif" fill="#203650" font-size="19" stroke-linejoin="round" stroke-linecap="round">
+<div class="formula">\[R_{AB}=\frac{Q}{R_C}\]</div>
+<div class="formula">\[R_{BC}=\frac{Q}{R_A}\]</div>
+<div class="formula">\[R_{CA}=\frac{Q}{R_B}\]</div>
+<div class="pair"><div lang="en"><p><b>Note:</b> The reverse formulas assume nonzero star-arm resistances. A zero arm requires considering the limiting case.</p></div><div lang="ar" dir="rtl"><p><b>ملاحظة:</b> تفترض علاقات التحويل العكسي أن مقاومات أذرع النجمة غير صفرية. إذا كان أحد الأذرع صفريا فتدرس الحالة الحدية بصورة منفصلة.</p></div></div><div class="pair"><div lang="en"><h3>Worked example</h3></div><div lang="ar" dir="rtl"><h3>مثال محلول بالتفصيل</h3></div></div><figure class="edu-method-schematic" style="margin:18px auto;max-width:900px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 900 450" role="img" aria-label="Complete delta and star three-terminal resistor networks" style="display:block;width:100%;height:auto;background:#fff;border-radius:12px"><g font-family="Arial, sans-serif" fill="#203650" font-size="19" stroke-linejoin="round" stroke-linecap="round">
 <text x="235" y="38" font-size="23" text-anchor="middle">Δ — Delta</text><text x="680" y="38" font-size="23" text-anchor="middle">Y — Star</text>
 <g fill="none" stroke="#203650" stroke-width="3.5">
 <path d="M80 345L235 85L390 345H80"/><path d="M235 85V60M80 345H50M390 345H420"/>
