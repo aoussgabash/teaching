@@ -259,6 +259,34 @@ h1{margin:8px 0}h2{margin:0;color:#8ddcff;font-size:1.45rem}h3{color:#ffe0a0}.fo
 <div class="formula">\[\boxed{R_{\mathrm{Th}}=\frac{V_{\mathrm{test}}}{I_{\mathrm{test}}}=\frac{1}{-2/15}=-7.5\,\Omega}\]</div>
 <div class="pair"><div lang="en"><h4>Step 5 — Interpret and verify the result</h4><p>The equivalent is a zero-voltage Thévenin source in series with \(-7.5\,\Omega\). The negative resistance represents active terminal behaviour made possible by the dependent source; it is <b>not</b> an ordinary passive resistor. As a check, a \(1\,\mathrm A\) test current entering the network would produce \(V_a=-7.5\,\mathrm V\). Never remove the dependent source while finding the resistance.</p></div><div lang="ar" dir="rtl"><h4>الخطوة 5 — تفسير النتيجة والتحقق منها</h4><p>المكافئ هو منبع ثيفينن جهده صفر على التسلسل مع مقاومة مكافئة \(-7.5\,\Omega\). تدل المقاومة السالبة على سلوك فعال عند طرفي الشبكة يمكن أن يسببه المنبع التابع، ولا تمثل مقاومة سلبية عادية. وللتحقق، فإن حقن تيار اختبار \(1\,\mathrm A\) داخل الشبكة يعطي \(V_a=-7.5\,\mathrm V\). لا يجوز حذف المنبع التابع عند حساب المقاومة.</p></div></div>
 <div class="formula">\[\boxed{V_{\mathrm{Th}}=0\,\mathrm V,\qquad R_{\mathrm{Th}}=-7.5\,\Omega}\]</div>
+
+<div class="pair"><div lang="en"><h4>Final Thévenin equivalent — complete and simplified diagrams</h4><p>The zero-volt ideal voltage source is equivalent to a short circuit. Both diagrams below represent the same two-terminal active network.</p></div><div lang="ar" dir="rtl"><h4>دارة ثيفينن المكافئة النهائية — الشكل الكامل والمبسط</h4><p>يعادل منبع الجهد المثالي الصفري قصرا كهربائيا، ولذلك يمثل الشكلان التاليان الشبكة الفعالة نفسها كما ترى من الطرفين.</p></div></div>
+<figure class="edu-method-schematic" style="margin:18px auto;max-width:780px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 295" role="img" aria-label="Complete Thévenin equivalent: zero volt voltage source in series with negative seven point five ohms" style="display:block;width:100%;height:auto;background:white;border-radius:12px">
+<g fill="none" stroke="#203650" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M145 80H265M365 80H615M145 80V115M145 185V238H615"/>
+<circle cx="145" cy="150" r="35"/>
+<rect x="265" y="66" width="100" height="28" rx="3" fill="white"/>
+<circle cx="615" cy="80" r="7" fill="white" stroke="#087f94"/><circle cx="615" cy="238" r="7" fill="white" stroke="#087f94"/>
+</g>
+<g font-family="Cambria Math, STIX Two Math, Times New Roman, serif" fill="#203650" font-size="23">
+<text x="145" y="147" text-anchor="middle">+</text><text x="145" y="173" text-anchor="middle">−</text>
+<text x="93" y="159" text-anchor="end">0 V</text>
+<text x="315" y="45" text-anchor="middle">R<tspan baseline-shift="sub" font-size="15">Th</tspan> = −7.5 Ω</text>
+<text x="637" y="88">a</text><text x="637" y="246">b</text>
+<text x="365" y="283" font-size="19" text-anchor="middle" fill="#087f94">Complete Thévenin equivalent</text>
+</g></svg><figcaption style="text-align:center;color:#bdd0e2;padding:8px">Complete circuit / مكافئ ثيفينن الكامل</figcaption></figure>
+<figure class="edu-method-schematic" style="margin:18px auto;max-width:780px"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 760 255" role="img" aria-label="Simplified Thévenin equivalent with a single negative seven point five ohm equivalent resistance between open terminals a and b" style="display:block;width:100%;height:auto;background:white;border-radius:12px">
+<g fill="none" stroke="#203650" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round">
+<path d="M145 60H290M390 60H615M145 60V195H615"/>
+<rect x="290" y="46" width="100" height="28" rx="3" fill="white"/>
+<circle cx="615" cy="60" r="7" fill="white" stroke="#087f94"/><circle cx="615" cy="195" r="7" fill="white" stroke="#087f94"/>
+</g>
+<g font-family="Cambria Math, STIX Two Math, Times New Roman, serif" fill="#203650" font-size="23">
+<text x="340" y="36" text-anchor="middle">R<tspan baseline-shift="sub" font-size="15">eq</tspan> = −7.5 Ω</text>
+<text x="637" y="68">a</text><text x="637" y="203">b</text>
+<text x="365" y="237" font-size="19" text-anchor="middle" fill="#087f94">Simplified equivalent</text>
+</g></svg><figcaption style="text-align:center;color:#bdd0e2;padding:8px">Simplified circuit / الدارة المكافئة المبسطة</figcaption></figure>
+<div class="pair"><div lang="en"><p><b>Important:</b> The negative value is the input resistance of an active network containing a dependent source. It is not a conventional passive resistor; the drawn resistor symbol represents its two-terminal equivalent behavior.</p></div><div lang="ar" dir="rtl"><p><b>تنبيه:</b> القيمة السالبة تمثل مقاومة الدخل المكافئة لشبكة فعالة تحتوي على منبع تابع، وليست مقاومة سلبية تقليدية. يعبّر رمز المقاومة المرسوم عن سلوك الشبكة المكافئ بين طرفيها.</p></div></div>
 </section></article><article class="station" id="method-9"><span class="date">1899</span><div class="pair"><div lang="en"><h2>Star–delta transformation</h2></div><div lang="ar" dir="rtl"><h2>تحويل النجمة والمثلث</h2></div></div><div class="pair"><div lang="en">Kennelly published triangle/star equivalence in conducting networks in 1899. This transforms three-terminal resistor groups that block direct series/parallel reduction.</div><div lang="ar" dir="rtl">نشر كينيلي تكافؤ المثلث والنجمة في الشبكات الناقلة عام 1899. يسمح التحويل بتبديل مجموعة مقاومات ثلاثية الأطراف تعيق الاختزال المباشر.</div></div><div class="pair"><div lang="en"><b>Why use it / advantage:</b> Handles many bridge networks while preserving terminal behavior.</div><div lang="ar" dir="rtl"><b>الفائدة / الميزة:</b> يعالج كثيرًا من الشبكات الجسرية مع حفظ سلوك الأطراف.</div></div><div class="pair"><div lang="en"><b>Limitation:</b> Repeated conversions can be lengthy; internal currents of the replaced group must be recovered separately.</div><div lang="ar" dir="rtl"><b>القيد / العيب:</b> قد تطول التحويلات المتكررة؛ تُستعاد تيارات المجموعة الداخلية المحذوفة بحساب مستقل.</div></div><div class="pair"><div lang="en"><h3>Derivation and engineering interpretation</h3></div><div lang="ar" dir="rtl"><h3>اشتقاق العلاقات والتفسير الهندسي</h3></div></div>
 <div class="pair"><div lang="en">A delta (Δ) and a star (Y, or its equivalent T layout) are interchangeable three-terminal networks when their resistances measured between every pair of terminals are equal, with the third terminal open. This is a terminal equivalence, not equality of currents in individual internal branches.</div><div lang="ar" dir="rtl">تكون شبكتا المثلث Δ والنجمة Y (أو رسمها المكافئ T) متكافئتين إذا تساوت المقاومة المقاسة بين كل زوج من الأطراف الثلاثة مع ترك الطرف الثالث مفتوحا. التكافؤ عند الأطراف الخارجية ولا يعني تساوي تيارات الفروع الداخلية.</div></div>
 <div class="formula">\[R_{AB}^{(Y)}=R_A+R_B=R_{AB}\parallel(R_{CA}+R_{BC})\]</div>
