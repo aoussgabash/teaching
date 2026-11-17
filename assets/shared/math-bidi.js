@@ -37,7 +37,9 @@
       const fragment = document.createDocumentFragment();
       let end = 0;
       for (const match of matches) {
-        const text = match[0].trimEnd();
+        // Sentence punctuation belongs to the surrounding RTL prose.
+        // Keep decimal points inside values such as 0.25.
+        const text = match[0].trimEnd().replace(/[.,:;!?]+$/, '').trimEnd();
         if (!text) continue;
         fragment.appendChild(document.createTextNode(value.slice(end, match.index)));
         const span = document.createElement('bdi');
@@ -65,6 +67,25 @@
         n.data = parts[2];
         if (parts[3]) parent.insertBefore(document.createTextNode(parts[3]), n.nextSibling);
       }
+      // Separate sentence punctuation before grouping adjacent math islands.
+      // For example, (S). must become one LTR (S), then an RTL full stop.
+      for (const n of Array.from(parent.childNodes)) {
+        if (n.nodeType !== 3 || !/^[\s0-9_.,:;!?(){}\[\]\/|+−\-*=≈≠≤≥<>^%°·×÷√!]*$/.test(n.data)) continue;
+        const value = n.data;
+        const fragment = document.createDocumentFragment();
+        let end = 0;
+        for (const match of value.matchAll(/[.,:;!?]/g)) {
+          const i = match.index;
+          if (match[0] === '.' && /[0-9]/.test(value[i - 1] || '') && /[0-9]/.test(value[i + 1] || '')) continue;
+          if (i > end) fragment.appendChild(document.createTextNode(value.slice(end, i)));
+          fragment.appendChild(document.createTextNode(match[0]));
+          end = i + 1;
+        }
+        if (!end) continue;
+        if (end < value.length) fragment.appendChild(document.createTextNode(value.slice(end)));
+        // Leave an already isolated punctuation node unchanged on repeat passes.
+        if (fragment.childNodes.length > 1) n.replaceWith(fragment);
+      }
       const children = Array.from(parent.childNodes);
       let run = [];
       const flush = () => {
@@ -84,7 +105,7 @@
         run = [];
       };
       for (const node of children) {
-        const simpleText = node.nodeType === 3 && /^[\s0-9_.,:;(){}\[\]\/|+−\-*=≈≠≤≥<>^%°·×÷√!]*$/.test(node.data);
+        const simpleText = node.nodeType === 3 && /^[\s0-9_(){}\[\]\/|+−\-*=≈≠≤≥<>^%°·×÷√]*$/.test(node.data);
         if (simpleText || (node.nodeType === 1 && node.matches(island))) run.push(node);
         else flush();
       }
