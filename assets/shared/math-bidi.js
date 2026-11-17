@@ -118,6 +118,14 @@
     observer.observe(document.body, {subtree:true, childList:true, characterData:true});
     window.addEventListener('beforeprint', () => normalize(document.body));
   }
-  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', start, {once:true});
-  else start();
+  // MathJax retains references to the original TeX text nodes while typesetting.
+  // Replacing them before its initial pass completes aborts that pass with a
+  // null replaceChild error, leaving the remaining equations as raw TeX.
+  function afterMathTypeset() {
+    const ready = window.MathJax && window.MathJax.startup && window.MathJax.startup.promise;
+    if (ready && typeof ready.then === 'function') ready.then(start, start);
+    else start();
+  }
+  if (document.readyState === 'loading') document.addEventListener('DOMContentLoaded', afterMathTypeset, {once:true});
+  else afterMathTypeset();
 })();
