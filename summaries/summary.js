@@ -145,7 +145,8 @@
       if (!allSections.length) throw new Error('No bilingual course sections were found');
 
       const sourceSections = allSections.filter(section => !section.matches('.references') && !section.classList.contains('references'));
-      document.title = `${kindEn} ${number} Full Offline PDF - ${titleEn}`;
+      // Match the source lesson's standardized Arabic PDF name.
+      document.title = doc.title;
 
       let page = 1;
       const pages = [];
