@@ -15,6 +15,8 @@ window.MathJax = {
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 <style>
 .formula mjx-container[display="true"] { margin-block: .65em; }
+.calculation-theory { margin-block: .8rem; }
+.calculation-theory > .pair:first-child { color: var(--muted); }
 @media screen and (max-width: 480px) {
   .formula { padding-inline: 6px; font-size: .93rem; }
 }
@@ -47,6 +49,13 @@ window.MathJax = {
 </div>
 <div class="step">
 <h3 lang="en">2. Draw the power triangle in panel B</h3><h3 lang="ar" dir="rtl">2. ارسم مثلث الاستطاعات في اللوحة B</h3>
+<div class="calculation-theory" id="theory-1-2">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[S=\frac{P}{\cos\varphi}
+\qquad Q=\sqrt{S^2-P^2}\quad(Q\ge 0)\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> S is apparent power (kVA), P is active power (kW), and Q is reactive power (kVAr). The power factor cos φ is dimensionless. In this problem Q is positive because the current lags the voltage.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">S</bdi> الاستطاعة الظاهرية بالكيلوفولط أمبير، و<bdi dir="ltr">P</bdi> الاستطاعة الفعالة بالكيلوواط، و<bdi dir="ltr">Q</bdi> الاستطاعة الردية بالكيلوفولط أمبير الردي. معامل الاستطاعة <bdi dir="ltr">cos φ</bdi> بلا وحدة. إشارة <bdi dir="ltr">Q</bdi> موجبة هنا لأن التيار متأخر عن التوتر.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Draw P horizontally. Divide P by the power factor to obtain the hypotenuse S. For this inductive load draw Q upward. The unit kVAr denotes kilovolt-amperes reactive.</p></div><div lang="ar" dir="rtl"><p>ارسم الاستطاعة الفعالة <bdi dir="ltr">P</bdi> أفقيا. اقسمها على معامل الاستطاعة لتحصل على الاستطاعة الظاهرية <bdi dir="ltr">S</bdi>، وهي وتر المثلث. ارسم الاستطاعة الردية <bdi dir="ltr">Q</bdi> نحو الأعلى لأن الحمل تحريضي. تدل وحدة <bdi dir="ltr">kVAr</bdi> على الكيلوفولط أمبير الردي.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 S&=\frac{P}{\cos\varphi}=\frac{432}{0.90}=480\,\mathrm{kVA}\\[4pt]
@@ -56,6 +65,15 @@ Q&=\sqrt{S^2-P^2}\\
 </div>
 <div class="step">
 <h3 lang="en">3. Calculate both currents and label the diagram</h3><h3 lang="ar" dir="rtl">3. احسب التيارين واكتبهما على المخطط</h3>
+<div class="calculation-theory" id="theory-1-3">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+I&=\frac{S}{\sqrt 3\,U_{\mathrm{LL}}}\\
+I_n&=\frac{S_n}{\sqrt 3\,U_n}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> I is the operating line current and Iₙ is the rated line current (A). S and Sₙ are the operating and rated apparent powers (kVA). Uₗₗ is the line-to-line voltage and Uₙ is its rated value (kV) on the side being calculated.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> يمثل <bdi dir="ltr">I</bdi> تيار الخط الفعلي و<bdi dir="ltr">Iₙ</bdi> تيار الخط الاسمي بالأمبير. وتمثل <bdi dir="ltr">S</bdi> و<bdi dir="ltr">Sₙ</bdi> الاستطاعتين الظاهريتين الفعلية والاسمية بالكيلوفولط أمبير. يمثل <bdi dir="ltr">Uₗₗ</bdi> التوتر بين خطين و<bdi dir="ltr">Uₙ</bdi> قيمته الاسمية بالكيلوفولط في الجانب المراد حساب تياره.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Use S = √3 U I. With S in kVA and line-to-line U in kV, the result is in amperes. For actual current use 480 kVA. For rated current use 630 kVA. Because the apparent power is taken as the same on the two sides, the lower-voltage side carries 50 times the current.</p></div><div lang="ar" dir="rtl"><p>من علاقة الاستطاعة الظاهرية الثلاثية، يعطينا التعويض بالكيلوفولط أمبير والكيلوفولط تيار الخط بالأمبير. استخدم <bdi dir="ltr">480 kVA</bdi> للتيار الفعلي و<bdi dir="ltr">630 kVA</bdi> للتيار الاسمي. لأننا نفترض تساوي الاستطاعة الظاهرية على الجانبين، يكون تيار الجانب المنخفض أكبر بخمسين مرة.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 I_{20}&=\frac{480}{\sqrt3(20)}\approx13.86\,\mathrm A\\[4pt]
@@ -66,6 +84,15 @@ I_{\mathrm{n},0.4}&=\frac{630}{\sqrt3(0.4)}\approx909.33\,\mathrm A
 </div>
 <div class="step">
 <h3 lang="en">4. Compare the load with the rating</h3><h3 lang="ar" dir="rtl">4. قارن الحمل بالسعة الاسمية</h3>
+<div class="calculation-theory" id="theory-1-4">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+x&=\frac{S}{S_n}\\
+S_{\mathrm{spare}}&=S_n-S
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> x is the dimensionless load fraction. Sₙ is the transformer rating, S is the apparent load, and Sₛₚₐᵣₑ is the unused apparent-power capacity (all in kVA).</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">x</bdi> نسبة التحميل بلا وحدة. وتمثل <bdi dir="ltr">Sₙ</bdi> استطاعة المحول الاسمية، و<bdi dir="ltr">S</bdi> استطاعة الحمل الظاهرية، و<bdi dir="ltr">S_spare</bdi> الاستطاعة الظاهرية الاحتياطية. تقاس الاستطاعات الثلاث بالكيلوفولط أمبير.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Divide apparent load by rated apparent power to obtain x, the loading ratio. The spare capacity is the difference between 630 and 480 kVA under the stated model.</p></div><div lang="ar" dir="rtl"><p>اقسم الاستطاعة الظاهرية للحمل على الاستطاعة الظاهرية الاسمية لإيجاد نسبة التحميل <bdi dir="ltr">x</bdi>. الفرق بين القيمتين يعطي السعة المتبقية في نموذج المسألة.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 x&=\frac{480}{630}\approx76.19\%\\[4pt]
@@ -81,6 +108,16 @@ S_{\mathrm{spare}}&=630-480=150\,\mathrm{kVA}
 <figure><img src="assets/electrical-power-plants-1/part03/losses-and-efficiency.svg" width="533" height="421" alt="A. No-load, load and total losses. The intersection of the component losses marks the optimum. B. Efficiency as a function of load." aria-describedby="caption-2"><figcaption id="caption-2"><div class="pair"><div lang="en" dir="ltr"><p>A. No-load, load and total losses. The intersection of the component losses marks the optimum. B. Efficiency as a function of load.</p></div><div lang="ar" dir="rtl"><p>A. ضياعات اللاحمل والحمل والضياعات الكلية. يحدد تقاطع منحنيي الضياعات الجزئية التحميل الأمثل. B. المردود بدلالة نسبة التحميل.</p></div></div></figcaption></figure>
 <div class="step">
 <h3 lang="en">1. Separate constant and variable losses</h3><h3 lang="ar" dir="rtl">1. ميّز ضياعات اللاحمل عن ضياعات الحمل</h3>
+<div class="calculation-theory" id="theory-2-1">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+x&=\frac{S}{S_n}\approx\frac{I}{I_n}\\
+P_{\mathrm{load\ loss}}&\approx P_kx^2\\
+P_{\mathrm{loss}}&=P_0+P_{\mathrm{load\ loss}}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> x is the load fraction (dimensionless). S and Sₙ are apparent load and rated apparent power (kVA). I and Iₙ are operating and rated current (A) on the same side. P₀ is no-load loss, Pₖ is load loss at rated current, and Pₗₒₛₛ is total loss (kW). The current approximation assumes nearly constant voltage.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">x</bdi> نسبة التحميل بلا وحدة. وتمثل <bdi dir="ltr">S</bdi> و<bdi dir="ltr">Sₙ</bdi> الاستطاعة الظاهرية للحمل والاستطاعة الاسمية بالكيلوفولط أمبير، و<bdi dir="ltr">I</bdi> و<bdi dir="ltr">Iₙ</bdi> التيار الفعلي والتيار الاسمي بالأمبير في الجانب نفسه. تمثل <bdi dir="ltr">P₀</bdi> ضياعات اللاحمل، و<bdi dir="ltr">Pₖ</bdi> ضياعات الحمل عند التيار الاسمي، و<bdi dir="ltr">P_loss</bdi> الضياعات الكلية. تقاس الضياعات بالكيلوواط. يعتمد تقريب نسبة التيارين على ثبات التوتر تقريبا.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Read the two values from this problem’s data: the given no-load loss <bdi dir="ltr">P₀ = 2 kW</bdi> and the given load-dependent loss at rated current <bdi dir="ltr">Pₖ = 8 kW</bdi>. The 8 kW is the load-loss component at full load. The total loss at full load also includes the 2 kW no-load component.</p></div><div lang="ar" dir="rtl"><p>استخرج القيمتين من <strong>معطيات هذه المسألة</strong>. ضياعات اللاحمل <bdi dir="ltr">P₀ = 2 kW</bdi>، وضياعات الحمل عند التيار الاسمي <bdi dir="ltr">Pₖ = 8 kW</bdi>. إذن <bdi dir="ltr">8 kW</bdi> هي مركبة ضياعات الحمل عند التحميل الكامل. ولحساب الضياعات الكلية عند تلك النقطة نضيف إليها ضياعات اللاحمل <bdi dir="ltr">2 kW</bdi>.</p></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Let <bdi dir="ltr">x = S/Sₙ</bdi>, the apparent load divided by the transformer rating. At approximately constant voltage, this ratio equals the current ratio <bdi dir="ltr">I/Iₙ</bdi> in the model. The load-loss component scales with current squared. Dividing the loss at current I by the loss at rated current Iₙ cancels the equivalent resistance and gives x².</p></div><div lang="ar" dir="rtl"><p>الرمز <bdi dir="ltr">x = S/Sₙ</bdi> هو نسبة الاستطاعة الظاهرية للحمل إلى الاستطاعة الاسمية. عند ثبات التوتر تقريبا، تساوي هذه النسبة نسبة التيار الفعلي إلى التيار الاسمي <bdi dir="ltr">I/Iₙ</bdi> في النموذج. تتناسب ضياعات الحمل مع مربع التيار. بقسمة ضياعات الحمل عند التيار الفعلي على قيمتها عند التيار الاسمي تختصر المقاومة المكافئة، وتبقى نسبة التيارين مربعة.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
@@ -93,6 +130,17 @@ P_{\mathrm{loss}}&=P_0+P_kx^2=(2+8x^2)\,\mathrm{kW}
 </div>
 <div class="step">
 <h3 lang="en">2. Complete one operating point before building the table</h3><h3 lang="ar" dir="rtl">2. احسب نقطة تشغيل كاملة قبل إكمال الجدول</h3>
+<div class="calculation-theory" id="theory-2-2">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+P_{\mathrm{out}}&=xS_n\cos\varphi\\
+P_{\mathrm{loss}}&=P_0+P_kx^2\\
+P_{\mathrm{in}}&=P_{\mathrm{out}}+P_{\mathrm{loss}}\\
+\eta_{\%}&=100\frac{P_{\mathrm{out}}}{P_{\mathrm{in}}}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> Pₒᵤₜ and Pᵢₙ are active output and input power (kW). x is the load fraction, Sₙ the rating (kVA), and cos φ the power factor. P₀, Pₖ and Pₗₒₛₛ denote no-load, rated load and total losses (kW). η% is the efficiency expressed as a percentage.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">P_out</bdi> و<bdi dir="ltr">P_in</bdi> استطاعتي الخرج والدخل الفعالتين بالكيلوواط. وتمثل <bdi dir="ltr">x</bdi> نسبة التحميل، و<bdi dir="ltr">Sₙ</bdi> الاستطاعة الاسمية بالكيلوفولط أمبير، و<bdi dir="ltr">cos φ</bdi> معامل الاستطاعة. وتمثل <bdi dir="ltr">P₀</bdi> و<bdi dir="ltr">Pₖ</bdi> و<bdi dir="ltr">P_loss</bdi> ضياعات اللاحمل وضياعات الحمل الاسمية والضياعات الكلية بالكيلوواط. يعبّر <bdi dir="ltr">η%</bdi> عن المردود بالنسبة المئوية.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>At x = 0.75, first convert the apparent load to active output by multiplying by the power factor. Add the losses to obtain input power. Divide output by input to obtain the efficiency.</p></div><div lang="ar" dir="rtl"><p>عند <bdi dir="ltr">x = 0.75</bdi>، احسب أولا استطاعة الخرج الفعالة بضرب الاستطاعة الظاهرية بمعامل الاستطاعة. أضف الضياعات للحصول على الاستطاعة الداخلة، ثم اقسم الخرج على الدخل.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 P_{\mathrm{out}}&=0.75(1000)(0.80)=600\,\mathrm{kW}\\
@@ -104,6 +152,17 @@ P_{\mathrm{in}}&=600+6.50=606.50\,\mathrm{kW}\\
 </div>
 <div class="step" id="efficiency-derivation">
 <h3 lang="en">3. Derive the efficiency maximum and verify it in panel B</h3><h3 lang="ar" dir="rtl">3. اشتق شرط المردود الأعظمي وتحقق منه في اللوحة B</h3>
+<div class="calculation-theory" id="theory-2-3">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+\eta&=\frac{P_{\mathrm{out}}}
+{P_{\mathrm{out}}+P_{\mathrm{loss}}}\\
+g(x)&=\frac{P_0}{x}+P_kx\\
+g'(x_{\mathrm{opt}})&=0
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> η is the dimensionless efficiency. Pₒᵤₜ and Pₗₒₛₛ are active output and total losses (kW). g is the objective derived below from their ratio, with P₀ and Pₖ the no-load and rated load losses (kW). xₒₚₜ is the dimensionless load fraction at maximum efficiency. The derivative is taken with respect to x at constant power factor.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">η</bdi> المردود بلا وحدة. وتمثل <bdi dir="ltr">P_out</bdi> و<bdi dir="ltr">P_loss</bdi> استطاعة الخرج الفعالة والضياعات الكلية بالكيلوواط. الدالة <bdi dir="ltr">g</bdi> هي عبارة التصغير المشتقة من نسبة الضياعات إلى الخرج أدناه، و<bdi dir="ltr">P₀</bdi> و<bdi dir="ltr">Pₖ</bdi> ضياعات اللاحمل والحمل الاسمية بالكيلوواط. تمثل <bdi dir="ltr">x_opt</bdi> نسبة التحميل المثلى بلا وحدة. تؤخذ المشتقة بالنسبة إلى <bdi dir="ltr">x</bdi> عند ثبات معامل الاستطاعة.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p><strong>Divide total losses by active output power.</strong> At load fraction <bdi dir="ltr">x</bdi>, the total losses are the sum of no-load and load losses. The active output is the rated apparent power multiplied by the load fraction and the power factor.</p></div><div lang="ar" dir="rtl"><p><strong>اقسم الضياعات الكلية على استطاعة الخرج الفعالة.</strong> عند نسبة التحميل <bdi dir="ltr">x</bdi>، تجمع الضياعات الكلية ضياعات اللاحمل وضياعات الحمل. وتحسب استطاعة الخرج الفعالة بضرب الاستطاعة الظاهرية الاسمية في نسبة التحميل ومعامل الاستطاعة.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 P_{\mathrm{loss}}&=P_0+P_kx^2\\
@@ -142,6 +201,15 @@ x_{\mathrm{opt}}&=\sqrt{\frac{P_0}{P_k}}
 <figure><img src="assets/electrical-power-plants-1/part03/voltage-regulation.svg" width="533" height="407" alt="A. Secondary voltage versus load ratio. B. Signed contributions to the voltage drop at x = 0.75." aria-describedby="caption-3"><figcaption id="caption-3"><div class="pair"><div lang="en" dir="ltr"><p>A. Secondary voltage versus load ratio. B. Signed contributions to the voltage drop at x = 0.75.</p></div><div lang="ar" dir="rtl"><p>A. التوتر الثانوي بدلالة التحميل. B. مساهمة المقاومة والمفاعلة في هبوط التوتر مع إشارة كل منهما عند تحميل <bdi dir="ltr">0.75</bdi>.</p></div></div></figcaption></figure>
 <div class="step">
 <h3 lang="en">1. Resolve the short-circuit impedance</h3><h3 lang="ar" dir="rtl">1. حلل معاوقة القصر إلى مركبتيها</h3>
+<div class="calculation-theory" id="theory-3-1">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+r_{\%}&=100\frac{P_k}{S_n}\\
+q_{\%}&=\sqrt{z_{\%}^{\,2}-r_{\%}^{\,2}}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> Pₖ is load loss at rated current (kW) and Sₙ is the transformer rating (kVA). r%, q% and z% are the equivalent resistance, reactance and short-circuit impedance magnitude expressed in percent on the same rated base.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">Pₖ</bdi> ضياعات الحمل عند التيار الاسمي بالكيلوواط و<bdi dir="ltr">Sₙ</bdi> الاستطاعة الاسمية بالكيلوفولط أمبير. وتمثل <bdi dir="ltr">r%</bdi> و<bdi dir="ltr">q%</bdi> و<bdi dir="ltr">z%</bdi> المقاومة المكافئة والمفاعلة المكافئة ومقدار معاوقة القصر معبرا عنها بالنسبة المئوية على الأساس الاسمي نفسه.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>In this problem, 8 kW is the specified load loss at rated current and 800 kVA is the transformer rating. Their ratio on the rated power base is 0.01, or 1.00%. The 5.00% is the given short-circuit impedance magnitude. Its reactive component follows from the Pythagorean relation.</p></div><div lang="ar" dir="rtl"><p>في هذه المسألة، <bdi dir="ltr">8 kW</bdi> هي ضياعات الحمل عند التيار الاسمي، و<bdi dir="ltr">800 kVA</bdi> هي استطاعة المحول الاسمية. تعطي قسمتهما على قاعدة الاستطاعة الاسمية <bdi dir="ltr">0.01</bdi>، أي <bdi dir="ltr">1.00%</bdi>. أما <bdi dir="ltr">5.00%</bdi> فهي قيمة معاوقة القصر المعطاة، ونستخرج منها المركبة المفاعلية باستخدام فيثاغورس.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 r_{\%}&=100\frac{P_k}{S_n}=100\frac{8}{800}=1.00\\
@@ -151,6 +219,18 @@ q_{\%}&=\sqrt{z_{\%}^2-r_{\%}^2}
 </div>
 <div class="step">
 <h3 lang="en">2. Calculate the two signed drops and draw panel B</h3><h3 lang="ar" dir="rtl">2. احسب الهبوط بإشارته وارسم اللوحة B</h3>
+<div class="calculation-theory" id="theory-3-2">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+|\sin\varphi|&=\sqrt{1-\cos^2\varphi}\\
+\delta_{\%,\mathrm{lag}}&\simeq
+x\bigl(r_{\%}\cos\varphi+q_{\%}|\sin\varphi|\bigr)\\
+\delta_{\%,\mathrm{lead}}&\simeq
+x\bigl(r_{\%}\cos\varphi-q_{\%}|\sin\varphi|\bigr)
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> δ% is the signed percentage voltage drop, x is the dimensionless load fraction, and r% and q% are the equivalent resistance and reactance in percent. φ is the power-factor angle between voltage and current. Add the reactive term for lagging current and subtract it for leading current. A negative drop means a rise in the secondary voltage.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">δ%</bdi> نسبة هبوط التوتر بإشارتها، و<bdi dir="ltr">x</bdi> نسبة التحميل بلا وحدة، و<bdi dir="ltr">r%</bdi> و<bdi dir="ltr">q%</bdi> المقاومة والمفاعلة المكافئتين بالنسبة المئوية. الزاوية <bdi dir="ltr">φ</bdi> هي زاوية فرق الطور بين التوتر والتيار. نضيف حد المفاعلة عند تأخر التيار ونطرحه عند تقدمه. الهبوط السالب يعني ارتفاع توتر الثانوي.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>The absolute sine of the power-factor angle is 0.60. The resistive contribution is +0.60 percentage points in both cases. The reactive contribution is positive for the lagging load and negative for the leading load. Add the two contributions algebraically to obtain the net bar.</p></div><div lang="ar" dir="rtl"><p>القيمة المطلقة لجيب زاوية معامل الاستطاعة تساوي <bdi dir="ltr">0.60</bdi>. مساهمة المقاومة موجبة وتساوي <bdi dir="ltr">0.60</bdi> نقطة مئوية في الحالتين. مساهمة المفاعلة موجبة للحمل المتأخر وسالبة للحمل المتقدم. اجمع المساهمتين جبريا لرسم عمود الهبوط الكلي.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 \delta_{\%,\mathrm{lag}}
@@ -165,6 +245,15 @@ q_{\%}&=\sqrt{z_{\%}^2-r_{\%}^2}
 </div>
 <div class="step">
 <h3 lang="en">3. Convert the drops to voltages and read panel A</h3><h3 lang="ar" dir="rtl">3. حوّل الهبوط إلى توتر واقرأ اللوحة A</h3>
+<div class="calculation-theory" id="theory-3-3">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+\delta_{\%}&=100\frac{U_{20}-U_2}{U_{20}}\\
+U_2&=U_{20}\left(1-\frac{\delta_{\%}}{100}\right)
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> U₂₀ is no-load secondary voltage, U₂ is secondary voltage under load (both in V), and δ% is the signed drop relative to U₂₀. Dividing δ% by 100 converts its percent value to a fraction.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> يمثل <bdi dir="ltr">U₂₀</bdi> توتر الثانوي عند اللاحمل و<bdi dir="ltr">U₂</bdi> توتر الثانوي تحت الحمل، وكلاهما بالفولط. تمثل <bdi dir="ltr">δ%</bdi> نسبة هبوط التوتر بإشارتها قياسا إلى <bdi dir="ltr">U₂₀</bdi>. نحول النسبة المئوية إلى كسر عشري بالقسمة على 100.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Start both curves at 400 V at zero load. At x = 0.75 the lagging curve lies below the 390 V limit. For leading power factor the signed drop is negative, so the secondary voltage rises above the no-load value and satisfies the stated minimum.</p></div><div lang="ar" dir="rtl"><p>ابدأ المنحنيين عند <bdi dir="ltr">400 V</bdi> في حالة اللاحمل. عند تحميل <bdi dir="ltr">0.75</bdi> يقع منحنى الحمل المتأخر تحت الحد الأدنى <bdi dir="ltr">390 V</bdi>. في الحالة المتقدمة يكون الهبوط سالبا، فيرتفع التوتر فوق قيمة اللاحمل ويحقق الحد الأدنى المعطى.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 U_2&\approx U_{20}(1-\delta_{\%}/100)\\
@@ -181,10 +270,29 @@ U_{2,\mathrm{lead}}&\approx400(1+0.016045)=406.42\,\mathrm V
 <figure><img src="assets/electrical-power-plants-1/part03/daily-load-and-energy.svg" width="533" height="396" alt="A. Chronological daily load. B. The same blocks sorted in descending load order." aria-describedby="caption-4"><figcaption id="caption-4"><div class="pair"><div lang="en" dir="ltr"><p>A. Chronological daily load. B. The same blocks sorted in descending load order.</p></div><div lang="ar" dir="rtl"><p>A. الحمل اليومي بترتيبه الزمني. B. مستطيلات الحمل نفسها مرتبة تنازليا بحسب الاستطاعة.</p></div></div></figcaption></figure>
 <div class="step">
 <h3 lang="en">1. Build the two step curves</h3><h3 lang="ar" dir="rtl">1. ارسم المنحنيين المتدرجين</h3>
+<div class="calculation-theory" id="theory-4-1">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+\Delta t_i&=t_i-t_{i-1}\\
+T_j&=\sum_{i=1}^{j}\Delta t_{(i)}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> Δtᵢ is the duration of interval i in hours. tᵢ and tᵢ₋₁ are its end and start times. The notation (i) indicates the new order after sorting blocks by descending power. Tⱼ is the elapsed duration after the first j sorted blocks (h).</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">Δtᵢ</bdi> مدة الفترة <bdi dir="ltr">i</bdi> بالساعات، وتحسب من الفرق بين لحظتي نهايتها وبدايتها. تشير الأقواس حول دليل الفترة إلى ترتيبها الجديد بعد ترتيب الاستطاعات تنازليا. وتمثل <bdi dir="ltr">Tⱼ</bdi> المدة المتراكمة بعد المقاطع المرتبة الأولى وعددها <bdi dir="ltr">j</bdi>، وتقاس بالساعات.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>In A, use block widths of 6, 4, 6 and 8 h in chronological order. In B, sort the heights as 560, 400, 240 and 160 kW and carry the respective widths 6, 4, 8 and 6 h with them. The accumulated endpoints are therefore 0, 6, 10, 18 and 24 h.</p></div><div lang="ar" dir="rtl"><p>في A، ارسم مستطيلات بعروض 6 و4 و6 و8 ساعات وفق ترتيب الفترات الزمنية. في B، رتب الاستطاعات تنازليا إلى 560 ثم 400 ثم 240 ثم 160 كيلوواط، وانقل مدة كل مستوى معه. تصبح الحدود التراكمية 0 و6 و10 و18 و24 ساعة.</p></div></div>
 </div>
 <div class="step">
 <h3 lang="en">2. Sum the areas and compute the load factor</h3><h3 lang="ar" dir="rtl">2. اجمع المساحات واحسب عامل الحمل</h3>
+<div class="calculation-theory" id="theory-4-2">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+E_{\mathrm{out}}&=\sum_i P_i\Delta t_i\\
+P_{\mathrm{avg}}&=\frac{E_{\mathrm{out}}}{T}\\
+\mathrm{LF}&=\frac{P_{\mathrm{avg}}}{P_{\max}}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> Pᵢ is active power in interval i (kW) and Δtᵢ is its duration (h). Eₒᵤₜ is delivered energy (kWh) and T is the total duration (h). Pₐᵥg and Pₘₐₓ are average and peak powers (kW). LF is the dimensionless load factor.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">Pᵢ</bdi> الاستطاعة الفعالة في الفترة <bdi dir="ltr">i</bdi> بالكيلوواط و<bdi dir="ltr">Δtᵢ</bdi> مدتها بالساعات. تمثل <bdi dir="ltr">E_out</bdi> الطاقة المسلّمة بالكيلوواط ساعة و<bdi dir="ltr">T</bdi> المدة الكلية بالساعات. وتمثل <bdi dir="ltr">P_avg</bdi> و<bdi dir="ltr">P_max</bdi> الاستطاعتين المتوسطة والقصوى بالكيلوواط. عامل الحمل <bdi dir="ltr">LF</bdi> نسبة بلا وحدة.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Multiply the height of each block by its duration. Sorting the blocks preserves their areas. Divide total delivered energy by 24 h to obtain the average and divide the average by the 560 kW peak to obtain the load factor.</p></div><div lang="ar" dir="rtl"><p>اضرب ارتفاع كل مستطيل في عرضه. يبقى مجموع المساحات ثابتا بعد ترتيب المستطيلات. اقسم الطاقة المسلمة على 24 ساعة لحساب الحمل المتوسط، ثم اقسمه على الحمل الأعظمي <bdi dir="ltr">560 kW</bdi> لحساب عامل الحمل.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 E_{\mathrm{out}}&=160(6)+400(4)\\
@@ -196,6 +304,17 @@ P_{\mathrm{avg}}&=7{,}840/24\approx326.67\,\mathrm{kW}\\
 </div>
 <div class="step">
 <h3 lang="en">3. Compute the losses interval by interval</h3><h3 lang="ar" dir="rtl">3. احسب الضياعات في كل فترة على حدة</h3>
+<div class="calculation-theory" id="theory-4-3">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+x_i&=\frac{P_i}{S_n\cos\varphi}\\
+P_{\mathrm{loss},i}&=P_0+P_kx_i^2\\
+E_{\mathrm{loss},i}&=P_{\mathrm{loss},i}\Delta t_i\\
+E_{\mathrm{loss}}&=\sum_i E_{\mathrm{loss},i}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> Pᵢ is active load (kW), Sₙ is rated apparent power (kVA), cos φ is the power factor, and xᵢ is the dimensionless load fraction. P₀ and Pₖ are no-load and rated load losses (kW). Δtᵢ is the duration (h). Multiplying the loss power in each interval by its duration gives its loss energy (kWh).</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">Pᵢ</bdi> الاستطاعة الفعالة للحمل بالكيلوواط، و<bdi dir="ltr">Sₙ</bdi> الاستطاعة الظاهرية الاسمية بالكيلوفولط أمبير، و<bdi dir="ltr">cos φ</bdi> معامل الاستطاعة، و<bdi dir="ltr">xᵢ</bdi> نسبة التحميل بلا وحدة. تمثل <bdi dir="ltr">P₀</bdi> و<bdi dir="ltr">Pₖ</bdi> ضياعات اللاحمل وضياعات الحمل الاسمية بالكيلوواط. وتمثل <bdi dir="ltr">Δtᵢ</bdi> المدة بالساعات. حاصل ضرب استطاعة الضياعات في مدة الفترة يعطي طاقة الضياعات بالكيلوواط ساعة.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>The number 640 comes from the 800 kVA rating multiplied by the power factor 0.80. For this transformer, use its own given losses: 1.60 kW at no load and 8.00 kW of load loss at rated current. The multiplier 6 in the first interval is a duration in hours, from 00:00 to 06:00. Multiplying power loss in kW by duration in h gives energy loss in kWh.</p></div><div lang="ar" dir="rtl"><p>تأتي قيمة <bdi dir="ltr">640 kW</bdi> من ضرب الاستطاعة الاسمية <bdi dir="ltr">800 kVA</bdi> بمعامل الاستطاعة <bdi dir="ltr">0.80</bdi>. استخدم ضياعات المحول المعطاة في هذه المسألة، وهي <bdi dir="ltr">1.60 kW</bdi> عند اللاحمل و<bdi dir="ltr">8.00 kW</bdi> لضياعات الحمل عند التيار الاسمي. الرقم <bdi dir="ltr">6</bdi> المضروب خارج القوس في حساب الفترة الأولى هو مدتها بالساعات، من <bdi dir="ltr">00:00</bdi> إلى <bdi dir="ltr">06:00</bdi>. ضرب الضياعات بالكيلوواط في المدة بالساعات يعطي طاقة الضياعات بالكيلوواط ساعة.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 x_1&=\frac{160}{800(0.80)}=0.25\\
@@ -216,6 +335,15 @@ E_{\mathrm{loss}}&=12.60+18.90+46.35+21.80\\
 </div>
 <div class="step">
 <h3 lang="en">4. Close the daily energy balance</h3><h3 lang="ar" dir="rtl">4. تحقق من توازن الطاقة اليومية</h3>
+<div class="calculation-theory" id="theory-4-4">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+E_{\mathrm{in}}&=E_{\mathrm{out}}+E_{\mathrm{loss}}\\
+\eta_{E,\%}&=100\frac{E_{\mathrm{out}}}{E_{\mathrm{in}}}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> Eᵢₙ, Eₒᵤₜ and Eₗₒₛₛ are input, delivered and lost energies over the same day (kWh). ηE,% is daily energy efficiency expressed as a percentage.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">E_in</bdi> و<bdi dir="ltr">E_out</bdi> و<bdi dir="ltr">E_loss</bdi> الطاقة الداخلة والمسلّمة والمفقودة خلال اليوم نفسه، وتقاس بالكيلوواط ساعة. يمثل <bdi dir="ltr">η_E,%</bdi> مردود الطاقة اليومي بالنسبة المئوية.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Add delivered energy and loss energy to obtain input energy. The energy efficiency is the ratio of delivered energy to input energy over the full day.</p></div><div lang="ar" dir="rtl"><p>اجمع الطاقة المسلمة وطاقة الضياعات لحساب الطاقة الداخلة. المردود الطاقي هو نسبة مجموع الطاقة المسلمة إلى مجموع الطاقة الداخلة خلال اليوم.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 E_{\mathrm{in}}&=7{,}939.65\,\mathrm{kWh}\\[4pt]
@@ -232,6 +360,16 @@ E_{\mathrm{in}}&=7{,}939.65\,\mathrm{kWh}\\[4pt]
 <figure><img src="assets/electrical-power-plants-1/part03/parallel-transformers.svg" width="533" height="385" alt="A. Loss comparison. The dotted one-unit curve represents a mathematical extension above its rating. B. Available capacity and shortfall when one unit is unavailable." aria-describedby="caption-5"><figcaption id="caption-5"><div class="pair"><div lang="en" dir="ltr"><p>A. Loss comparison. The dotted one-unit curve represents a mathematical extension above its rating. B. Available capacity and shortfall when one unit is unavailable.</p></div><div lang="ar" dir="rtl"><p>A. مقارنة الضياعات. يمثل الجزء المنقط من منحنى المحول الواحد امتدادا حسابيا فوق السعة الاسمية. B. السعة المتاحة والعجز عند خروج محول واحد.</p></div></div></figcaption></figure>
 <div class="step">
 <h3 lang="en">1. Write the two operating models</h3><h3 lang="ar" dir="rtl">1. اكتب نموذجي التشغيل</h3>
+<div class="calculation-theory" id="theory-5-1">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+x&=\frac{S}{S_n}\\
+P_{\mathrm{loss},1}&=P_0+P_kx^2\\
+P_{\mathrm{loss},2}&=2\left[P_0+P_k(x/2)^2\right]
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> S is the combined load and Sₙ is the rating of one unit (kVA). The dimensionless ratio x is based on one unit. The load fraction is x with one unit in service and x/2 per unit with two identical units sharing equally. P₀ and Pₖ are no-load and rated load losses per unit (kW). Pₗₒₛₛ,₁ and Pₗₒₛₛ,₂ are total losses in each arrangement (kW).</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">S</bdi> الاستطاعة الظاهرية الكلية للحمل و<bdi dir="ltr">Sₙ</bdi> استطاعة محول واحد الاسمية بالكيلوفولط أمبير. تحسب النسبة <bdi dir="ltr">x</bdi> على أساس محول واحد، فتكون نسبة تحميله <bdi dir="ltr">x</bdi> عند تشغيله منفردا، و<bdi dir="ltr">x/2</bdi> لكل محول عند تقاسم الحمل بالتساوي. تمثل <bdi dir="ltr">P₀</bdi> و<bdi dir="ltr">Pₖ</bdi> ضياعات اللاحمل وضياعات الحمل الاسمية لكل محول بالكيلوواط. وتمثل <bdi dir="ltr">P_loss,1</bdi> و<bdi dir="ltr">P_loss,2</bdi> الضياعات الكلية في كل ترتيب بالكيلوواط.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>In Problem 5 the data are for a different transformer. For each unit the rating is 630 kVA, the no-load loss is 1.50 kW, and the load loss at rated current is 6.00 kW. Thus the general coefficient Pₖ is 6.00 kW here, whereas it was 8.00 kW for the transformer in Problem 2. These are specified characteristics of the individual transformers.</p></div><div lang="ar" dir="rtl"><p>المسألة 5 تتناول محولا مختلفا. سعة <strong>كل محول</strong> فيها <bdi dir="ltr">630 kVA</bdi>، وضياعات اللاحمل <bdi dir="ltr">1.50 kW</bdi>، وضياعات الحمل عند التيار الاسمي <bdi dir="ltr">6.00 kW</bdi>. لذلك تصبح قيمة المعامل <bdi dir="ltr">Pₖ</bdi> هنا <bdi dir="ltr">6.00 kW</bdi>، بينما كانت <bdi dir="ltr">8.00 kW</bdi> لمحول المسألة 2. القيمتان معطاتان في نص المسألتين وتمثلان خصائص المحولين المدروسين.</p></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Define x = S/630 using the total apparent load S in kVA. With one unit, its individual load ratio is x. With both energized, each receives S/2, so each individual ratio is x/2. Add twice the no-load loss and twice the load loss at x/2.</p></div><div lang="ar" dir="rtl"><p>عرّف <bdi dir="ltr">x = S/630</bdi> حيث <bdi dir="ltr">S</bdi> الاستطاعة الظاهرية الكلية بالكيلوفولط أمبير. عند تشغيل محول واحد تكون نسبة تحميله <bdi dir="ltr">x</bdi>. وعند تشغيل المحولين يستقبل كل منهما <bdi dir="ltr">S/2</bdi>، فتكون نسبة تحميل كل منهما <bdi dir="ltr">x/2</bdi>. لذلك نجمع ضياعات اللاحمل للمحولين وضياعات الحمل لكل منهما عند التحميل <bdi dir="ltr">x/2</bdi>.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
@@ -244,6 +382,16 @@ P_{\mathrm{loss},2}&=2[1.50+6.00(x/2)^2]\,\mathrm{kW}\\
 </div>
 <div class="step">
 <h3 lang="en">2. Solve for the intersection in panel A</h3><h3 lang="ar" dir="rtl">2. احسب نقطة التقاطع في اللوحة A</h3>
+<div class="calculation-theory" id="theory-5-2">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+P_{\mathrm{loss},1}&=P_{\mathrm{loss},2}\\
+P_0+P_kx^2&=2P_0+\tfrac12P_kx^2\\
+S_{\mathrm{cross}}&=S_n\sqrt{\frac{2P_0}{P_k}}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> S꜀ᵣₒₛₛ is the load at equal losses and Sₙ is the rating of one unit (kVA). P₀ and Pₖ are the no-load and rated load losses of one unit (kW). The intersection is relevant when both arrangements can carry that load.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">S_cross</bdi> استطاعة الحمل عند تساوي الضياعات و<bdi dir="ltr">Sₙ</bdi> الاستطاعة الاسمية لمحول واحد بالكيلوفولط أمبير. وتمثل <bdi dir="ltr">P₀</bdi> و<bdi dir="ltr">Pₖ</bdi> ضياعات اللاحمل والحمل الاسمية لمحول واحد بالكيلوواط. يفيد تقاطع المنحنيين في المقارنة عندما يستطيع كلا الترتيبين تغذية ذلك الحمل.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>Equate the two loss expressions. The intersection is within the rating of one unit, so both modes are feasible there. Below the intersection, one unit has lower loss. Above it, two units have lower loss.</p></div><div lang="ar" dir="rtl"><p>ساوِ معادلتي الضياعات. تقع نقطة التقاطع ضمن السعة الاسمية لمحول واحد، لذا يمكن تشغيل أي من النمطين عندها. عند حمل أقل من قيمة التقاطع تكون ضياعات المحول الواحد أقل، وفوقها تكون ضياعات المحولين أقل.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 1.50+6x^2&=3.00+3x^2\\
@@ -254,6 +402,16 @@ S_{\mathrm{cross}}&=630\sqrt{0.50}\\
 </div>
 <div class="step">
 <h3 lang="en">3. Check capacity before comparing losses</h3><h3 lang="ar" dir="rtl">3. تحقق من السعة قبل مقارنة الضياعات</h3>
+<div class="calculation-theory" id="theory-5-3">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+x_m&=\frac{S}{mS_n}\\
+P_{\mathrm{loss},m}&=m(P_0+P_kx_m^2)\\
+S&\le mS_n
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> m is the number of identical units in service, S is total load (kVA), Sₙ is the rating of one (kVA), and xₘ is the dimensionless fraction carried by each unit with equal sharing. P₀ and Pₖ are losses per unit (kW). Apply the rating limit before comparing total losses.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> يمثل <bdi dir="ltr">m</bdi> عدد المحولات المتماثلة في الخدمة، و<bdi dir="ltr">S</bdi> الحمل الكلي، و<bdi dir="ltr">Sₙ</bdi> سعة محول واحد بالكيلوفولط أمبير. تمثل <bdi dir="ltr">xₘ</bdi> نسبة تحميل كل محول عند تقاسم الحمل بالتساوي. وتمثل <bdi dir="ltr">P₀</bdi> و<bdi dir="ltr">Pₖ</bdi> ضياعات المحول الواحد بالكيلوواط. نتحقق من حد السعة قبل مقارنة الضياعات الكلية.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>At 350 kVA, one unit is feasible and has lower losses. At 600 kVA, both modes are feasible, and two units save about 1.22 kW. At 800 kVA, each of the two units carries 400 kVA. A single unit would exceed its 630 kVA rating, so its dotted curve is excluded from the operating decision.</p></div><div lang="ar" dir="rtl"><p>عند <bdi dir="ltr">350 kVA</bdi> يمكن استخدام محول واحد وتكون ضياعاته أقل. عند <bdi dir="ltr">600 kVA</bdi> يمكن استخدام أي من النمطين، ويوفر تشغيل المحولين نحو <bdi dir="ltr">1.22 kW</bdi> من الضياعات. عند <bdi dir="ltr">800 kVA</bdi> يحمل كل محول <bdi dir="ltr">400 kVA</bdi>. يتجاوز حمل المحول الواحد سعته الاسمية في هذه الحالة، ولذلك يستبعد امتداد منحناه من قرار التشغيل.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
 x\big|_{S=600}&=600/630\approx0.9524\\
@@ -265,6 +423,12 @@ P_{\mathrm{loss},2}&=2[1.50+6.00(300/630)^2]\\
 </div>
 <div class="step">
 <h3 lang="en">4. Check the contingency in panel B</h3><h3 lang="ar" dir="rtl">4. احسب العجز عند خروج أحد المحولين في اللوحة B</h3>
+<div class="calculation-theory" id="theory-5-4">
+<div class="pair"><div lang="en" dir="ltr"><strong>Theoretical equations</strong></div><div lang="ar" dir="rtl"><strong>المعادلات النظرية</strong></div></div>
+<div class="formula" dir="ltr">\[S_{\mathrm{shortfall}}=\max(0,S-S_{\mathrm{available}})\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p><strong>Symbols and units.</strong> S is the apparent-power demand and Sₐᵥₐᵢₗₐᵦₗₑ is the total rating of the units that remain in service. Sₛₕₒᵣₜꜰₐₗₗ is the unmet demand. All three are in kVA.</p></div><div lang="ar" dir="rtl"><p><strong>الرموز والوحدات.</strong> تمثل <bdi dir="ltr">S</bdi> الاستطاعة الظاهرية المطلوبة، و<bdi dir="ltr">S_available</bdi> مجموع السعات الاسمية للمحولات المتبقية في الخدمة، و<bdi dir="ltr">S_shortfall</bdi> عجز التغذية. تقاس القيم الثلاث بالكيلوفولط أمبير.</p></div></div>
+</div>
+<div class="pair"><div lang="en" dir="ltr"><strong>Application to the problem</strong></div><div lang="ar" dir="rtl"><strong>التطبيق على المسألة</strong></div></div>
 <div class="pair"><div lang="en" dir="ltr"><p>When one unit is unavailable, the remaining unit can supply up to 630 kVA under the problem assumptions. Subtract this capacity from the 800 kVA demand. In panel B the first part of the bar is the available capacity and the second is the shortfall.</p></div><div lang="ar" dir="rtl"><p>عند خروج أحد المحولين من الخدمة، يستطيع المحول المتبقي تغذية حمل حتى <bdi dir="ltr">630 kVA</bdi> وفق فرضيات المسألة. اطرح هذه السعة من الطلب. في اللوحة B يمثل الجزء الأول من الشريط السعة المتاحة، ويمثل الجزء الثاني العجز.</p></div></div>
 <div class="formula" dir="ltr">\[S_{\mathrm{shortfall}}=800-630=170\,\mathrm{kVA}\]</div>
 </div>
