@@ -74,9 +74,15 @@ I_{\mathrm{n,0.4}}&=\frac{630}{\sqrt3(0.4)}\approx909.33\,\mathrm A
 <figure><img src="assets/electrical-power-plants-1/part03/losses-and-efficiency.svg" width="533" height="421" alt="A. No-load, load and total losses. The intersection of the component losses marks the optimum. B. Efficiency as a function of load." aria-describedby="caption-2"><figcaption id="caption-2"><div class="pair"><div lang="en" dir="ltr"><p>A. No-load, load and total losses. The intersection of the component losses marks the optimum. B. Efficiency as a function of load.</p></div><div lang="ar" dir="rtl"><p>A. ضياعات اللاحمل والحمل والضياعات الكلية. يحدد تقاطع منحنيي الضياعات الجزئية التحميل الأمثل. B. المردود بدلالة نسبة التحميل.</p></div></div></figcaption></figure>
 <div class="step">
 <h3 lang="en">1. Separate constant and variable losses</h3><h3 lang="ar" dir="rtl">1. ميّز ضياعات اللاحمل عن ضياعات الحمل</h3>
-<div class="pair"><div lang="en" dir="ltr"><p>Let x be S/Sn. The no-load component P₀ is constant in this model. The load component scales as the square of the current and becomes x²Pk, where Pk is the rated load loss. In panel A draw the fixed 2 kW line before plotting the two curves.</p></div><div lang="ar" dir="rtl"><p>تمثل <bdi dir="ltr">x</bdi> نسبة الاستطاعة الظاهرية للحمل إلى الاسمية. ضياعات اللاحمل <bdi dir="ltr">P₀</bdi> ثابتة في هذا النموذج، بينما تتناسب ضياعات الحمل مع مربع التيار. في اللوحة A ارسم الخط الثابت عند <bdi dir="ltr">2 kW</bdi> أولا ثم منحنيي ضياعات الحمل والضياعات الكلية.</p></div></div>
-<div class="formula" dir="ltr">\[P_{\mathrm{load\ loss}}=8x^2\,\mathrm{kW},
-\qquad P_{\mathrm{loss}}=(2+8x^2)\,\mathrm{kW}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p>Read the two values from this problem’s data: the given no-load loss <bdi dir="ltr">P₀ = 2 kW</bdi> and the given load-dependent loss at rated current <bdi dir="ltr">Pₖ = 8 kW</bdi>. The 8 kW is the load-loss component at full load. The total loss at full load also includes the 2 kW no-load component.</p></div><div lang="ar" dir="rtl"><p>استخرج القيمتين من <strong>معطيات هذه المسألة</strong>. ضياعات اللاحمل <bdi dir="ltr">P₀ = 2 kW</bdi>، وضياعات الحمل عند التيار الاسمي <bdi dir="ltr">Pₖ = 8 kW</bdi>. إذن <bdi dir="ltr">8 kW</bdi> هي مركبة ضياعات الحمل عند التحميل الكامل. ولحساب الضياعات الكلية عند تلك النقطة نضيف إليها ضياعات اللاحمل <bdi dir="ltr">2 kW</bdi>.</p></div></div>
+<div class="pair"><div lang="en" dir="ltr"><p>Let <bdi dir="ltr">x = S/Sₙ</bdi>, the apparent load divided by the transformer rating. At approximately constant voltage, this ratio equals the current ratio <bdi dir="ltr">I/Iₙ</bdi> in the model. The load-loss component scales with current squared. Dividing the loss at current I by the loss at rated current Iₙ cancels the equivalent resistance and gives x².</p></div><div lang="ar" dir="rtl"><p>الرمز <bdi dir="ltr">x = S/Sₙ</bdi> هو نسبة الاستطاعة الظاهرية للحمل إلى الاستطاعة الاسمية. عند ثبات التوتر تقريبا، تساوي هذه النسبة نسبة التيار الفعلي إلى التيار الاسمي <bdi dir="ltr">I/Iₙ</bdi> في النموذج. تتناسب ضياعات الحمل مع مربع التيار. بقسمة ضياعات الحمل عند التيار الفعلي على قيمتها عند التيار الاسمي تختصر المقاومة المكافئة، وتبقى نسبة التيارين مربعة.</p></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+\frac{P_{\mathrm{load\ loss}}}{P_k}
+&=\frac{I^2R_{\mathrm{eq}}}{I_n^2R_{\mathrm{eq}}}\approx x^2\\
+P_{\mathrm{load\ loss}}&=P_kx^2=(8\,\mathrm{kW})x^2\\
+P_{\mathrm{loss}}&=P_0+P_kx^2=(2+8x^2)\,\mathrm{kW}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p>Check three points on panel A. At no load, x = 0 and total loss is 2 kW. At half load, x = 0.50 and the load component is 8 × 0.50² = 2 kW, so the total is 4 kW. At full load, x = 1 and the total is 2 + 8 = 10 kW.</p></div><div lang="ar" dir="rtl"><p>تحقق من ثلاث نقاط على اللوحة A. عند اللاحمل <bdi dir="ltr">x = 0</bdi>، فتكون الضياعات الكلية <bdi dir="ltr">2 kW</bdi>. وعند نصف الحمل <bdi dir="ltr">x = 0.50</bdi>، تعطي <bdi dir="ltr">8 × 0.50²</bdi> ضياعات حمل مقدارها <bdi dir="ltr">2 kW</bdi>، فتصبح الضياعات الكلية <bdi dir="ltr">4 kW</bdi>. وعند الحمل الكامل <bdi dir="ltr">x = 1</bdi>، نجمع <bdi dir="ltr">2 + 8</bdi> لنحصل على <bdi dir="ltr">10 kW</bdi>.</p></div></div>
 </div>
 <div class="step">
 <h3 lang="en">2. Complete one operating point before building the table</h3><h3 lang="ar" dir="rtl">2. احسب نقطة تشغيل كاملة قبل إكمال الجدول</h3>
@@ -108,9 +114,12 @@ x_{\mathrm{opt}}&=\sqrt{\frac{2}{8}}=0.50,
 <figure><img src="assets/electrical-power-plants-1/part03/voltage-regulation.svg" width="533" height="407" alt="A. Secondary voltage versus load ratio. B. Signed contributions to the voltage drop at x = 0.75." aria-describedby="caption-3"><figcaption id="caption-3"><div class="pair"><div lang="en" dir="ltr"><p>A. Secondary voltage versus load ratio. B. Signed contributions to the voltage drop at x = 0.75.</p></div><div lang="ar" dir="rtl"><p>A. التوتر الثانوي بدلالة التحميل. B. مساهمة المقاومة والمفاعلة في هبوط التوتر مع إشارة كل منهما عند تحميل <bdi dir="ltr">0.75</bdi>.</p></div></div></figcaption></figure>
 <div class="step">
 <h3 lang="en">1. Resolve the short-circuit impedance</h3><h3 lang="ar" dir="rtl">1. حلل معاوقة القصر إلى مركبتيها</h3>
-<div class="pair"><div lang="en" dir="ltr"><p>At rated current, the resistive percentage r is 100 times rated load loss divided by rated apparent power, with matching prefixes. The magnitude z combines resistance and reactance by the Pythagorean relation. The label q denotes the reactance in percent.</p></div><div lang="ar" dir="rtl"><p>عند التيار الاسمي، نحسب المقاومة المئوية <bdi dir="ltr">r%</bdi> من قسمة ضياعات الحمل الاسمية على الاستطاعة الظاهرية الاسمية وضرب الناتج في 100. ثم نستخرج المفاعلة المئوية <bdi dir="ltr">q%</bdi> من مقدار المعاوقة <bdi dir="ltr">z%</bdi> باستخدام فيثاغورس.</p></div></div>
-<div class="formula" dir="ltr">\[r_{\%}=100\frac{8}{800}=1.00,
-\qquad q_{\%}=\sqrt{5.00^2-1.00^2}\approx4.899\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p>In this problem, 8 kW is the specified load loss at rated current and 800 kVA is the transformer rating. Their ratio on the rated power base is 0.01, or 1.00%. The 5.00% is the given short-circuit impedance magnitude. Its reactive component follows from the Pythagorean relation.</p></div><div lang="ar" dir="rtl"><p>في هذه المسألة، <bdi dir="ltr">8 kW</bdi> هي ضياعات الحمل عند التيار الاسمي، و<bdi dir="ltr">800 kVA</bdi> هي استطاعة المحول الاسمية. تعطي قسمتهما على قاعدة الاستطاعة الاسمية <bdi dir="ltr">0.01</bdi>، أي <bdi dir="ltr">1.00%</bdi>. أما <bdi dir="ltr">5.00%</bdi> فهي قيمة معاوقة القصر المعطاة، ونستخرج منها المركبة المفاعلية باستخدام فيثاغورس.</p></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+r_{\%}&=100\frac{P_k}{S_n}=100\frac{8}{800}=1.00\\
+q_{\%}&=\sqrt{z_{\%}^2-r_{\%}^2}
+=\sqrt{5.00^2-1.00^2}\approx4.899
+\end{aligned}\]</div>
 </div>
 <div class="step">
 <h3 lang="en">2. Calculate the two signed drops and draw panel B</h3><h3 lang="ar" dir="rtl">2. احسب الهبوط بإشارته وارسم اللوحة B</h3>
@@ -151,11 +160,18 @@ P_{\mathrm{avg}}&=7{,}840/24\approx326.67\,\mathrm{kW}\\
 </div>
 <div class="step">
 <h3 lang="en">3. Compute the losses interval by interval</h3><h3 lang="ar" dir="rtl">3. احسب الضياعات في كل فترة على حدة</h3>
-<div class="pair"><div lang="en" dir="ltr"><p>At the given power factor, 800 kVA corresponds to 640 kW at rated load. Therefore x = P/640 in each interval. For the first interval, x = 0.25, so the loss energy is (1.60 + 8 × 0.25²) × 6 = 12.60 kWh. Repeat before summing. Squaring the average loading would not preserve the contribution of the load peaks.</p></div><div lang="ar" dir="rtl"><p>عند معامل الاستطاعة المعطى تقابل الاستطاعة الاسمية <bdi dir="ltr">800 kVA</bdi> استطاعة فعالة <bdi dir="ltr">640 kW</bdi>. لذلك تحسب نسبة التحميل في كل فترة بقسمة الحمل الفعال على <bdi dir="ltr">640 kW</bdi>. في الفترة الأولى يكون التحميل <bdi dir="ltr">0.25</bdi>، فتبلغ طاقة الضياعات <bdi dir="ltr">12.60 kWh</bdi>. كرر الحساب لكل فترة قبل الجمع، لأن ضياعات الحمل تتناسب مع مربع نسبة التحميل.</p></div></div>
+<div class="pair"><div lang="en" dir="ltr"><p>The number 640 comes from the 800 kVA rating multiplied by the power factor 0.80. For this transformer, use its own given losses: 1.60 kW at no load and 8.00 kW of load loss at rated current. The multiplier 6 in the first interval is a duration in hours, from 00:00 to 06:00. Multiplying power loss in kW by duration in h gives energy loss in kWh.</p></div><div lang="ar" dir="rtl"><p>تأتي قيمة <bdi dir="ltr">640 kW</bdi> من ضرب الاستطاعة الاسمية <bdi dir="ltr">800 kVA</bdi> بمعامل الاستطاعة <bdi dir="ltr">0.80</bdi>. استخدم ضياعات المحول المعطاة في هذه المسألة، وهي <bdi dir="ltr">1.60 kW</bdi> عند اللاحمل و<bdi dir="ltr">8.00 kW</bdi> لضياعات الحمل عند التيار الاسمي. الرقم <bdi dir="ltr">6</bdi> المضروب خارج القوس في حساب الفترة الأولى هو مدتها بالساعات، من <bdi dir="ltr">00:00</bdi> إلى <bdi dir="ltr">06:00</bdi>. ضرب الضياعات بالكيلوواط في المدة بالساعات يعطي طاقة الضياعات بالكيلوواط ساعة.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
-x_i&=(0.25,\ 0.625,\ 0.875,\ 0.375)\\
-E_{\mathrm{loss},i}&=(12.60,\ 18.90,\ 46.35,\ 21.80)\,\mathrm{kWh}\\
-E_{\mathrm{loss}}&=99.65\,\mathrm{kWh}
+x_1&=\frac{160}{800(0.80)}=0.25\\
+P_{\mathrm{loss},1}&=1.60+8.00(0.25)^2=2.10\,\mathrm{kW}\\
+E_{\mathrm{loss},1}&=(2.10\,\mathrm{kW})(6\,\mathrm h)=12.60\,\mathrm{kWh}
+\end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p>Apply the same calculation using the load ratio and duration of each of the other intervals, then add the four energies. The square is calculated separately for each interval.</p></div><div lang="ar" dir="rtl"><p>طبق الحساب نفسه باستعمال نسبة التحميل والمدة الخاصتين بكل فترة من الفترات الأخرى ثم اجمع الطاقات الأربع. نحسب مربع نسبة التحميل لكل فترة على حدة.</p></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+E_{\mathrm{loss},2}&=[1.60+8.00(0.625)^2]\,4=18.90\,\mathrm{kWh}\\
+E_{\mathrm{loss},3}&=[1.60+8.00(0.875)^2]\,6=46.35\,\mathrm{kWh}\\
+E_{\mathrm{loss},4}&=[1.60+8.00(0.375)^2]\,8=21.80\,\mathrm{kWh}\\
+E_{\mathrm{loss}}&=12.60+18.90+46.35+21.80=99.65\,\mathrm{kWh}
 \end{aligned}\]</div>
 </div>
 <div class="step">
@@ -173,11 +189,15 @@ E_{\mathrm{loss}}&=99.65\,\mathrm{kWh}
 <figure><img src="assets/electrical-power-plants-1/part03/parallel-transformers.svg" width="533" height="385" alt="A. Loss comparison. The dotted one-unit curve represents a mathematical extension above its rating. B. Available capacity and shortfall when one unit is unavailable." aria-describedby="caption-5"><figcaption id="caption-5"><div class="pair"><div lang="en" dir="ltr"><p>A. Loss comparison. The dotted one-unit curve represents a mathematical extension above its rating. B. Available capacity and shortfall when one unit is unavailable.</p></div><div lang="ar" dir="rtl"><p>A. مقارنة الضياعات. يمثل الجزء المنقط من منحنى المحول الواحد امتدادا حسابيا فوق السعة الاسمية. B. السعة المتاحة والعجز عند خروج محول واحد.</p></div></div></figcaption></figure>
 <div class="step">
 <h3 lang="en">1. Write the two operating models</h3><h3 lang="ar" dir="rtl">1. اكتب نموذجي التشغيل</h3>
-<div class="pair"><div lang="en" dir="ltr"><p>Let S be total apparent load in kVA and x = S/630. One online unit carries x. When both are online, each carries x/2. Count the no-load loss for every energized unit, then sum its squared-current loss.</p></div><div lang="ar" dir="rtl"><p>لتكن <bdi dir="ltr">S</bdi> الاستطاعة الظاهرية الكلية و<bdi dir="ltr">x = S/630</bdi>. يتحمل المحول الوحيد نسبة التحميل كلها، ويأخذ كل محول نصفها عند تشغيل المحولين. احسب ضياعات اللاحمل لكل محول موصول، ثم أضف ضياعات الحمل التي تعتمد على مربع تياره.</p></div></div>
+<div class="pair"><div lang="en" dir="ltr"><p>In Problem 5 the data are for a different transformer. For each unit the rating is 630 kVA, the no-load loss is 1.50 kW, and the load loss at rated current is 6.00 kW. Thus the general coefficient Pₖ is 6.00 kW here, whereas it was 8.00 kW for the transformer in Problem 2. These are specified characteristics of the individual transformers.</p></div><div lang="ar" dir="rtl"><p>المسألة 5 تتناول محولا مختلفا. سعة <strong>كل محول</strong> فيها <bdi dir="ltr">630 kVA</bdi>، وضياعات اللاحمل <bdi dir="ltr">1.50 kW</bdi>، وضياعات الحمل عند التيار الاسمي <bdi dir="ltr">6.00 kW</bdi>. لذلك تصبح قيمة المعامل <bdi dir="ltr">Pₖ</bdi> هنا <bdi dir="ltr">6.00 kW</bdi>، بينما كانت <bdi dir="ltr">8.00 kW</bdi> لمحول المسألة 2. القيمتان معطاتان في نص المسألتين وتمثلان خصائص المحولين المدروسين.</p></div></div>
+<div class="pair"><div lang="en" dir="ltr"><p>Define x = S/630 using the total apparent load S in kVA. With one unit, its individual load ratio is x. With both energized, each receives S/2, so each individual ratio is x/2. Add twice the no-load loss and twice the load loss at x/2.</p></div><div lang="ar" dir="rtl"><p>عرّف <bdi dir="ltr">x = S/630</bdi> حيث <bdi dir="ltr">S</bdi> الاستطاعة الظاهرية الكلية بالكيلوفولط أمبير. عند تشغيل محول واحد تكون نسبة تحميله <bdi dir="ltr">x</bdi>. وعند تشغيل المحولين يستقبل كل منهما <bdi dir="ltr">S/2</bdi>، فتكون نسبة تحميل كل منهما <bdi dir="ltr">x/2</bdi>. لذلك نجمع ضياعات اللاحمل للمحولين وضياعات الحمل لكل منهما عند التحميل <bdi dir="ltr">x/2</bdi>.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
-P_{\mathrm{loss},1}&=1.50+6x^2\quad(0\le S\le630)\\
-P_{\mathrm{loss},2}&=2[1.50+6(x/2)^2]=3.00+3x^2\quad(0\le S\le1260)
+P_{\mathrm{loss},1}&=(1.50+6.00x^2)\,\mathrm{kW}\\
+P_{\mathrm{loss},2}&=2[1.50+6.00(x/2)^2]\,\mathrm{kW}\\
+&=\left[2(1.50)+\frac{2(6.00)}{4}x^2\right]\mathrm{kW}\\
+&=(3.00+3.00x^2)\,\mathrm{kW}
 \end{aligned}\]</div>
+<div class="pair"><div lang="en" dir="ltr"><p>The two appearances of 3.00 have different origins. The constant 3.00 kW comes from 2 × 1.50, the no-load losses of two units. The coefficient of x² comes from 2 × 6.00 ÷ 4, where 4 comes from squaring the factor 1/2. One-unit operation requires S ≤ 630 kVA and two-unit operation requires S ≤ 1260 kVA.</p></div><div lang="ar" dir="rtl"><p>في السطر الأخير للعدد <bdi dir="ltr">3.00</bdi> مصدران مختلفان. الحد الثابت <bdi dir="ltr">3.00 kW</bdi> ينتج من <bdi dir="ltr">2 × 1.50</bdi>، أي ضياعات اللاحمل للمحولين. ومعامل <bdi dir="ltr">x²</bdi> ينتج من <bdi dir="ltr">2 × 6.00 ÷ 4</bdi>، حيث ظهر المقام <bdi dir="ltr">4</bdi> من تربيع النصف. تشغيل محول واحد ممكن حتى <bdi dir="ltr">630 kVA</bdi>، وتشغيل محولين ممكن حتى <bdi dir="ltr">1260 kVA</bdi>.</p></div></div>
 </div>
 <div class="step">
 <h3 lang="en">2. Solve for the intersection in panel A</h3><h3 lang="ar" dir="rtl">2. احسب نقطة التقاطع في اللوحة A</h3>
@@ -188,6 +208,12 @@ S_{\mathrm{cross}}=630\sqrt{0.50}\approx445.48\,\mathrm{kVA}\]</div>
 <div class="step">
 <h3 lang="en">3. Check capacity before comparing losses</h3><h3 lang="ar" dir="rtl">3. تحقق من السعة قبل مقارنة الضياعات</h3>
 <div class="pair"><div lang="en" dir="ltr"><p>At 350 kVA, one unit is feasible and has lower losses. At 600 kVA, both modes are feasible, and two units save about 1.22 kW. At 800 kVA, each of the two units carries 400 kVA. A single unit would exceed its 630 kVA rating, so its dotted curve is excluded from the operating decision.</p></div><div lang="ar" dir="rtl"><p>عند <bdi dir="ltr">350 kVA</bdi> يمكن استخدام محول واحد وتكون ضياعاته أقل. عند <bdi dir="ltr">600 kVA</bdi> يمكن استخدام أي من النمطين، ويوفر تشغيل المحولين نحو <bdi dir="ltr">1.22 kW</bdi> من الضياعات. عند <bdi dir="ltr">800 kVA</bdi> يحمل كل محول <bdi dir="ltr">400 kVA</bdi>. يتجاوز حمل المحول الواحد سعته الاسمية في هذه الحالة، ولذلك يستبعد امتداد منحناه من قرار التشغيل.</p></div></div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+x\big|_{S=600}&=600/630\approx0.9524\\
+P_{\mathrm{loss},1}&=1.50+6.00(600/630)^2\approx6.94\,\mathrm{kW}\\
+P_{\mathrm{loss},2}&=2[1.50+6.00(300/630)^2]\\
+&\approx5.72\,\mathrm{kW}
+\end{aligned}\]</div>
 <div class="comparison" role="region" aria-label="Calculation results | نتائج الحساب" tabindex="0"><table><thead><tr><th scope="col">Load (kVA)<span lang="ar" dir="rtl">الحمل</span></th><th scope="col">One unit (kW)<span lang="ar" dir="rtl">محول واحد</span></th><th scope="col">Two units (kW)<span lang="ar" dir="rtl">محولان</span></th><th scope="col">Selected mode<span lang="ar" dir="rtl">الاختيار</span></th></tr></thead><tbody><tr><td>350</td><td>3.35</td><td>3.93</td><td>One<span lang="ar" dir="rtl">واحد</span></td></tr><tr><td>600</td><td>6.94</td><td>5.72</td><td>Two<span lang="ar" dir="rtl">اثنان</span></td></tr><tr><td>800</td><td>Above rating<span lang="ar" dir="rtl">فوق السعة</span></td><td>7.84</td><td>Two<span lang="ar" dir="rtl">اثنان</span></td></tr></tbody></table></div>
 </div>
 <div class="step">
