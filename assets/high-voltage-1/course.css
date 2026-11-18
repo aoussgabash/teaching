@@ -31,7 +31,8 @@ h3, .subtitle, .part-card h2[lang=ar] { color: var(--gold); }
 .eyebrow { font-weight: 800; margin: 0; }
 [dir=rtl] { text-align: right; }
 .muted, figcaption, footer { color: var(--muted); }
-.btn {
+.actions { display: flex; flex-wrap: wrap; gap: 10px; margin: 20px 0; }
+.btn, .actions button {
   display: inline-block; padding: 9px 14px; border: 1px solid var(--line);
   border-radius: 10px; background: #142b41; color: var(--text); cursor: pointer; font: inherit;
 }
@@ -74,7 +75,7 @@ footer { margin-top: 30px; padding: 22px 0; border-top: 1px solid var(--line); t
   header, .no-print { display: none !important; }
   .container { width: 100%; }
   .hero { padding: 0; }
-  .print-meta { display: block; border-block: 1px solid #777; padding-block: .5em; }
+  .print-meta { display: block !important; }
   .problem, .formula, .step, .pair > [dir=rtl] { border-color: #ccc; }
   .problem { margin: 12pt 0; padding: 10pt; }
   .step { break-inside: avoid; }
