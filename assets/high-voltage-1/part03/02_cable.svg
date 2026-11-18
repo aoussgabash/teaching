@@ -1,0 +1,49 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="900" height="760" viewBox="0 0 900 760" role="img" aria-labelledby="title description">
+  <title id="title">Open-ended cable: per-phase equivalent circuit and phasors</title>
+  <desc id="description">An AC phase-to-earth source feeds a shunt capacitor of 5.00 microfarads. Its receiving end is open and carries zero load current. The capacitive current of 59.86 amperes leads the phase voltage by 90 degrees.</desc>
+  <defs>
+    <marker id="arrow-blue" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 12 6 0 12z" fill="#17538c"/>
+    </marker>
+    <marker id="arrow-teal" markerWidth="12" markerHeight="12" refX="10" refY="6" orient="auto" markerUnits="userSpaceOnUse">
+      <path d="M0 0 12 6 0 12z" fill="#11766e"/>
+    </marker>
+  </defs>
+  <rect width="900" height="760" fill="#fff"/>
+  <g font-family="Arial, sans-serif" fill="#142f47">
+    <text x="30" y="49" font-size="27" font-weight="bold">A · Open-ended cable: equivalent circuit per phase</text>
+    <g fill="none" stroke="#142f47" stroke-width="3.4" stroke-linecap="round" stroke-linejoin="round">
+      <path d="M120 227v-75h620M120 281v54h326"/>
+      <circle cx="120" cy="254" r="27"/>
+      <path d="M103 254q8.5-17 17 0t17 0" stroke-width="2.5"/>
+      <path d="M446 152v79m-36 0h72m-72 26h72m-36 0v97m-22 0h44m-37 8h30m-22 8h14"/>
+    </g>
+    <circle cx="446" cy="152" r="4.5" fill="#142f47"/>
+    <circle cx="446" cy="335" r="4.5" fill="#142f47"/>
+    <circle cx="748" cy="152" r="8" fill="#fff" stroke="#9d421d" stroke-width="3"/>
+    <path d="M211 117h157" fill="none" stroke="#17538c" stroke-width="3" marker-end="url(#arrow-blue)"/>
+    <g font-size="23">
+      <text x="284" y="104" fill="#17538c" text-anchor="middle">I<tspan baseline-shift="sub" font-size="16">C</tspan></text>
+      <text x="169" y="255">U<tspan baseline-shift="sub" font-size="16">ph</tspan></text>
+      <text x="507" y="249">C = 5.00 µF</text>
+      <text x="488" y="362">Earth reference</text>
+      <text x="748" y="120" fill="#9d421d" text-anchor="middle">Open end</text>
+      <text x="748" y="195" fill="#9d421d" text-anchor="middle">I<tspan baseline-shift="sub" font-size="16">load</tspan> = 0</text>
+    </g>
+    <path d="M30 398h840" stroke="#ccdae5" stroke-width="2"/>
+    <text x="30" y="446" font-size="27" font-weight="bold">B · Charging current leads the phase voltage</text>
+    <path d="M140 690h590" fill="none" stroke="#17538c" stroke-width="3.5" marker-end="url(#arrow-blue)"/>
+    <path d="M140 690V499" fill="none" stroke="#11766e" stroke-width="3.5" marker-end="url(#arrow-teal)"/>
+    <path d="M140 618a72 72 0 0 1 72 72" fill="none" stroke="#526579" stroke-width="2.5"/>
+    <g font-size="24">
+      <text x="156" y="505" fill="#11766e">I<tspan baseline-shift="sub" font-size="16">C</tspan></text>
+      <text x="744" y="694" fill="#17538c">U<tspan baseline-shift="sub" font-size="16">ph</tspan></text>
+      <text x="206" y="629" fill="#526579">90°</text>
+    </g>
+    <rect x="431" y="525" width="336" height="95" rx="12" fill="#edf7f4" stroke="#c5dcd8" stroke-width="2"/>
+    <g font-size="24" text-anchor="middle">
+      <text x="599" y="560">I<tspan baseline-shift="sub" font-size="16">C</tspan> = 59.86 A</text>
+      <text x="599" y="596">|Q<tspan baseline-shift="sub" font-size="16">C,3φ</tspan>| = 6.84 MVAr</text>
+    </g>
+  </g>
+</svg>
