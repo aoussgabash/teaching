@@ -9,11 +9,15 @@
 <script>
 window.MathJax = {
   tex: { inlineMath: [['\\(', '\\)']], displayMath: [['\\[', '\\]']] },
-  chtml: { displayOverflow: 'linebreak' }
+  chtml: { displayOverflow: 'overflow' }
 };
 </script>
 <script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 <style>
+.formula mjx-container[display="true"] { margin-block: .65em; }
+@media screen and (max-width: 480px) {
+  .formula { padding-inline: 6px; font-size: .93rem; }
+}
 .comparison { margin-block: 14px; overflow-x: auto; }
 .comparison table { border-collapse: collapse; width: 100%; background: transparent; }
 .comparison th, .comparison td { border: 1px solid var(--line); padding: 6px 10px; text-align: center; }
@@ -45,25 +49,28 @@ window.MathJax = {
 <h3 lang="en">2. Draw the power triangle in panel B</h3><h3 lang="ar" dir="rtl">2. ارسم مثلث الاستطاعات في اللوحة B</h3>
 <div class="pair"><div lang="en" dir="ltr"><p>Draw P horizontally. Divide P by the power factor to obtain the hypotenuse S. For this inductive load draw Q upward. The unit kVAr denotes kilovolt-amperes reactive.</p></div><div lang="ar" dir="rtl"><p>ارسم الاستطاعة الفعالة <bdi dir="ltr">P</bdi> أفقيا. اقسمها على معامل الاستطاعة لتحصل على الاستطاعة الظاهرية <bdi dir="ltr">S</bdi>، وهي وتر المثلث. ارسم الاستطاعة الردية <bdi dir="ltr">Q</bdi> نحو الأعلى لأن الحمل تحريضي. تدل وحدة <bdi dir="ltr">kVAr</bdi> على الكيلوفولط أمبير الردي.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
-S&=\frac{P}{\cos\varphi}=\frac{432}{0.90}=480\,\mathrm{kVA}\\
-Q&=\sqrt{S^2-P^2}=\sqrt{480^2-432^2}\approx209.23\,\mathrm{kVAr}
+S&=\frac{P}{\cos\varphi}=\frac{432}{0.90}=480\,\mathrm{kVA}\\[4pt]
+Q&=\sqrt{S^2-P^2}\\
+&=\sqrt{480^2-432^2}\approx209.23\,\mathrm{kVAr}
 \end{aligned}\]</div>
 </div>
 <div class="step">
 <h3 lang="en">3. Calculate both currents and label the diagram</h3><h3 lang="ar" dir="rtl">3. احسب التيارين واكتبهما على المخطط</h3>
 <div class="pair"><div lang="en" dir="ltr"><p>Use S = √3 U I. With S in kVA and line-to-line U in kV, the result is in amperes. For actual current use 480 kVA. For rated current use 630 kVA. Because the apparent power is taken as the same on the two sides, the lower-voltage side carries 50 times the current.</p></div><div lang="ar" dir="rtl"><p>من علاقة الاستطاعة الظاهرية الثلاثية، يعطينا التعويض بالكيلوفولط أمبير والكيلوفولط تيار الخط بالأمبير. استخدم <bdi dir="ltr">480 kVA</bdi> للتيار الفعلي و<bdi dir="ltr">630 kVA</bdi> للتيار الاسمي. لأننا نفترض تساوي الاستطاعة الظاهرية على الجانبين، يكون تيار الجانب المنخفض أكبر بخمسين مرة.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
-I_{20}&=\frac{480}{\sqrt3(20)}\approx13.86\,\mathrm A,&
-I_{0.4}&=\frac{480}{\sqrt3(0.4)}\approx692.82\,\mathrm A\\
-I_{\mathrm{n,20}}&=\frac{630}{\sqrt3(20)}\approx18.19\,\mathrm A,&
-I_{\mathrm{n,0.4}}&=\frac{630}{\sqrt3(0.4)}\approx909.33\,\mathrm A
+I_{20}&=\frac{480}{\sqrt3(20)}\approx13.86\,\mathrm A\\[4pt]
+I_{0.4}&=\frac{480}{\sqrt3(0.4)}\approx692.82\,\mathrm A\\[4pt]
+I_{\mathrm{n},20}&=\frac{630}{\sqrt3(20)}\approx18.19\,\mathrm A\\[4pt]
+I_{\mathrm{n},0.4}&=\frac{630}{\sqrt3(0.4)}\approx909.33\,\mathrm A
 \end{aligned}\]</div>
 </div>
 <div class="step">
 <h3 lang="en">4. Compare the load with the rating</h3><h3 lang="ar" dir="rtl">4. قارن الحمل بالسعة الاسمية</h3>
 <div class="pair"><div lang="en" dir="ltr"><p>Divide apparent load by rated apparent power to obtain x, the loading ratio. The spare capacity is the difference between 630 and 480 kVA under the stated model.</p></div><div lang="ar" dir="rtl"><p>اقسم الاستطاعة الظاهرية للحمل على الاستطاعة الظاهرية الاسمية لإيجاد نسبة التحميل <bdi dir="ltr">x</bdi>. الفرق بين القيمتين يعطي السعة المتبقية في نموذج المسألة.</p></div></div>
-<div class="formula" dir="ltr">\[x=\frac{480}{630}\approx76.19\%,
-\qquad S_{\mathrm{spare}}=630-480=150\,\mathrm{kVA}\]</div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+x&=\frac{480}{630}\approx76.19\%\\[4pt]
+S_{\mathrm{spare}}&=630-480=150\,\mathrm{kVA}
+\end{aligned}\]</div>
 </div>
 </section>
 <section class="problem" id="problem-2">
@@ -99,10 +106,12 @@ P_{\mathrm{in}}&=600+6.50=606.50\,\mathrm{kW}\\
 <h3 lang="en">3. Locate the optimum and verify it in panel B</h3><h3 lang="ar" dir="rtl">3. حدد نقطة المردود الأعظمي وتحقق منها في اللوحة B</h3>
 <div class="pair"><div lang="en" dir="ltr"><p>At fixed power factor, the loss-to-output ratio is proportional to P₀/x + Pk x. Its derivative is zero at P₀ = x²Pk, and its second derivative is positive for x > 0. Read x = 0.50 at the intersection in A and mark the efficiency maximum in B.</p></div><div lang="ar" dir="rtl"><p>عند ثبات معامل الاستطاعة، تتناسب نسبة الضياعات إلى الخرج مع مجموع ضياعات اللاحمل مقسومة على التحميل وضياعات الحمل الاسمية مضروبة فيه. تساوي مشتقته الأولى صفرا عند تساوي مركبتي الضياعات، ومشتقته الثانية موجبة عند تحميل موجب. اقرأ نقطة التقاطع في اللوحة A، ثم حدد قمة المردود عند التحميل نفسه في اللوحة B.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
-\frac{\mathrm d}{\mathrm dx}\left(\frac{P_0}{x}+P_kx\right)
-&=-\frac{P_0}{x^2}+P_k=0\\
-x_{\mathrm{opt}}&=\sqrt{\frac{2}{8}}=0.50,
-&\eta_{\max}&=\frac{400}{404}\times100\%\approx99.01\%
+g(x)&=\frac{P_0}{x}+P_kx\\[4pt]
+g'(x)&=-\frac{P_0}{x^2}+P_k=0\\[4pt]
+x_{\mathrm{opt}}&=\sqrt{\frac{P_0}{P_k}}
+=\sqrt{\frac{2}{8}}=0.50\\[4pt]
+\eta_{\max}&=\frac{400}{404}\times100\%\\
+&\approx99.01\%
 \end{aligned}\]</div>
 </div>
 </section>
@@ -125,8 +134,14 @@ q_{\%}&=\sqrt{z_{\%}^2-r_{\%}^2}
 <h3 lang="en">2. Calculate the two signed drops and draw panel B</h3><h3 lang="ar" dir="rtl">2. احسب الهبوط بإشارته وارسم اللوحة B</h3>
 <div class="pair"><div lang="en" dir="ltr"><p>The absolute sine of the power-factor angle is 0.60. The resistive contribution is +0.60 percentage points in both cases. The reactive contribution is positive for the lagging load and negative for the leading load. Add the two contributions algebraically to obtain the net bar.</p></div><div lang="ar" dir="rtl"><p>القيمة المطلقة لجيب زاوية معامل الاستطاعة تساوي <bdi dir="ltr">0.60</bdi>. مساهمة المقاومة موجبة وتساوي <bdi dir="ltr">0.60</bdi> نقطة مئوية في الحالتين. مساهمة المفاعلة موجبة للحمل المتأخر وسالبة للحمل المتقدم. اجمع المساهمتين جبريا لرسم عمود الهبوط الكلي.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
-\delta_{\%,\mathrm{lag}}&\approx0.75(1.00\times0.80+4.899\times0.60)\approx 2.805\\
-\delta_{\%,\mathrm{lead}}&\approx0.75(1.00\times0.80-4.899\times0.60)\approx-1.605
+\delta_{\%,\mathrm{lag}}
+&\approx0.75(1.00\times0.80\\
+&\qquad{}+4.899\times0.60)\\
+&\approx2.805\\[4pt]
+\delta_{\%,\mathrm{lead}}
+&\approx0.75(1.00\times0.80\\
+&\qquad{}-4.899\times0.60)\\
+&\approx-1.605
 \end{aligned}\]</div>
 </div>
 <div class="step">
@@ -153,7 +168,9 @@ U_{2,\mathrm{lead}}&\approx400(1+0.016045)=406.42\,\mathrm V
 <h3 lang="en">2. Sum the areas and compute the load factor</h3><h3 lang="ar" dir="rtl">2. اجمع المساحات واحسب عامل الحمل</h3>
 <div class="pair"><div lang="en" dir="ltr"><p>Multiply the height of each block by its duration. Sorting the blocks preserves their areas. Divide total delivered energy by 24 h to obtain the average and divide the average by the 560 kW peak to obtain the load factor.</p></div><div lang="ar" dir="rtl"><p>اضرب ارتفاع كل مستطيل في عرضه. يبقى مجموع المساحات ثابتا بعد ترتيب المستطيلات. اقسم الطاقة المسلمة على 24 ساعة لحساب الحمل المتوسط، ثم اقسمه على الحمل الأعظمي <bdi dir="ltr">560 kW</bdi> لحساب عامل الحمل.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
-E_{\mathrm{out}}&=160(6)+400(4)+560(6)+240(8)=7{,}840\,\mathrm{kWh}\\
+E_{\mathrm{out}}&=160(6)+400(4)\\
+&\quad{}+560(6)+240(8)\\
+&=7{,}840\,\mathrm{kWh}\\
 P_{\mathrm{avg}}&=7{,}840/24\approx326.67\,\mathrm{kW}\\
 \mathrm{LF}&=326.67/560\approx58.33\%
 \end{aligned}\]</div>
@@ -168,17 +185,24 @@ E_{\mathrm{loss},1}&=(2.10\,\mathrm{kW})(6\,\mathrm h)=12.60\,\mathrm{kWh}
 \end{aligned}\]</div>
 <div class="pair"><div lang="en" dir="ltr"><p>Apply the same calculation using the load ratio and duration of each of the other intervals, then add the four energies. The square is calculated separately for each interval.</p></div><div lang="ar" dir="rtl"><p>طبق الحساب نفسه باستعمال نسبة التحميل والمدة الخاصتين بكل فترة من الفترات الأخرى ثم اجمع الطاقات الأربع. نحسب مربع نسبة التحميل لكل فترة على حدة.</p></div></div>
 <div class="formula" dir="ltr">\[\begin{aligned}
-E_{\mathrm{loss},2}&=[1.60+8.00(0.625)^2]\,4=18.90\,\mathrm{kWh}\\
-E_{\mathrm{loss},3}&=[1.60+8.00(0.875)^2]\,6=46.35\,\mathrm{kWh}\\
-E_{\mathrm{loss},4}&=[1.60+8.00(0.375)^2]\,8=21.80\,\mathrm{kWh}\\
-E_{\mathrm{loss}}&=12.60+18.90+46.35+21.80=99.65\,\mathrm{kWh}
+E_{\mathrm{loss},2}&=[1.60+8.00(0.625)^2]\,4\\
+&=18.90\,\mathrm{kWh}\\[3pt]
+E_{\mathrm{loss},3}&=[1.60+8.00(0.875)^2]\,6\\
+&=46.35\,\mathrm{kWh}\\[3pt]
+E_{\mathrm{loss},4}&=[1.60+8.00(0.375)^2]\,8\\
+&=21.80\,\mathrm{kWh}\\[3pt]
+E_{\mathrm{loss}}&=12.60+18.90+46.35+21.80\\
+&=99.65\,\mathrm{kWh}
 \end{aligned}\]</div>
 </div>
 <div class="step">
 <h3 lang="en">4. Close the daily energy balance</h3><h3 lang="ar" dir="rtl">4. تحقق من توازن الطاقة اليومية</h3>
 <div class="pair"><div lang="en" dir="ltr"><p>Add delivered energy and loss energy to obtain input energy. The energy efficiency is the ratio of delivered energy to input energy over the full day.</p></div><div lang="ar" dir="rtl"><p>اجمع الطاقة المسلمة وطاقة الضياعات لحساب الطاقة الداخلة. المردود الطاقي هو نسبة مجموع الطاقة المسلمة إلى مجموع الطاقة الداخلة خلال اليوم.</p></div></div>
-<div class="formula" dir="ltr">\[E_{\mathrm{in}}=7{,}939.65\,\mathrm{kWh},
-\qquad \eta_E=\frac{7{,}840}{7{,}939.65}\times100\%\approx98.745\%\]</div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+E_{\mathrm{in}}&=7{,}939.65\,\mathrm{kWh}\\[4pt]
+\eta_E&=\frac{7{,}840}{7{,}939.65}\times100\%\\
+&\approx98.745\%
+\end{aligned}\]</div>
 </div>
 </section>
 <section class="problem" id="problem-5">
@@ -202,8 +226,12 @@ P_{\mathrm{loss},2}&=2[1.50+6.00(x/2)^2]\,\mathrm{kW}\\
 <div class="step">
 <h3 lang="en">2. Solve for the intersection in panel A</h3><h3 lang="ar" dir="rtl">2. احسب نقطة التقاطع في اللوحة A</h3>
 <div class="pair"><div lang="en" dir="ltr"><p>Equate the two loss expressions. The intersection is within the rating of one unit, so both modes are feasible there. Below the intersection, one unit has lower loss. Above it, two units have lower loss.</p></div><div lang="ar" dir="rtl"><p>ساوِ معادلتي الضياعات. تقع نقطة التقاطع ضمن السعة الاسمية لمحول واحد، لذا يمكن تشغيل أي من النمطين عندها. عند حمل أقل من قيمة التقاطع تكون ضياعات المحول الواحد أقل، وفوقها تكون ضياعات المحولين أقل.</p></div></div>
-<div class="formula" dir="ltr">\[1.50+6x^2=3.00+3x^2\quad\Longrightarrow\quad
-S_{\mathrm{cross}}=630\sqrt{0.50}\approx445.48\,\mathrm{kVA}\]</div>
+<div class="formula" dir="ltr">\[\begin{aligned}
+1.50+6x^2&=3.00+3x^2\\
+x^2&=0.50\\[4pt]
+S_{\mathrm{cross}}&=630\sqrt{0.50}\\
+&\approx445.48\,\mathrm{kVA}
+\end{aligned}\]</div>
 </div>
 <div class="step">
 <h3 lang="en">3. Check capacity before comparing losses</h3><h3 lang="ar" dir="rtl">3. تحقق من السعة قبل مقارنة الضياعات</h3>
