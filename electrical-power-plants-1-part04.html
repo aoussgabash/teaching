@@ -56,12 +56,31 @@
 <div class="formula">\[\boxed{\underline I_0=\underline I_1=\underline I_2=\frac{\underline I_f}{3}}\]</div>
 <h4>3. Separate sequence circuits | دارات المركبات الثلاث قبل الربط</h4>
 <div class="pair"><div lang="en"><p>\(Z_1\), \(Z_2\) and \(Z_0\) (Ω) are respectively the positive-, negative- and zero-sequence Thevenin impedances. Only the positive-sequence network has the pre-fault source \(\underline U_{ph}\) (V), the phase-to-neutral RMS voltage. The separately modeled neutral grounding impedance \(Z_n\) (Ω) belongs in the zero-sequence return path. Because neutral current is \(\underline I_n=\underline I_a+\underline I_b+\underline I_c=3\underline I_0\), its voltage drop is \(Z_n\underline I_n=3Z_n\underline I_0\).</p></div><div lang="ar" dir="rtl"><p>تمثل \(Z_1\) و\(Z_2\) و\(Z_0\) (Ω) معاوقات ثيفينين للمركبات الموجبة والسالبة والصفرية على الترتيب. تحتوي دارة المركبة الموجبة فقط على مصدر توتر الطور إلى التعادل قبل العطل \(\underline U_{ph}\) (V). أما معاوقة تأريض التعادل \(Z_n\) (Ω) فتدخل في مسار عودة المركبة الصفرية. لأن تيار التعادل يساوي مجموع تيارات الأطوار أي \(\underline I_n=3\underline I_0\)، فإن هبوط التوتر عليها يساوي \(3Z_n\underline I_0\).</p></div></div>
-<figure><svg viewBox="0 0 650 275" role="img" aria-label="ثلاث دارات للمركبات المتناظرة منفصلة معاوقاتها Z1 وZ2 وZ0 مع 3Zn" style="width:100%;height:auto;background:#091827;border:1px solid #31506b;border-radius:12px">
-<g font-family="Tahoma,Arial" fill="#f3f8ff" font-size="17"><text x="20" y="39">Positive | موجبة</text><text x="20" y="125">Negative | سالبة</text><text x="20" y="211">Zero | صفرية</text></g>
-<g stroke="#8ddcff" stroke-width="3" fill="none"><path d="M225 30 H300 M346 30 H555 M225 112 H300 M346 112 H555 M225 198 H300 M346 198 H410 M456 198 H555"/><rect x="300" y="16" width="46" height="28"/><rect x="300" y="98" width="46" height="28"/><rect x="300" y="184" width="46" height="28"/><rect x="410" y="184" width="46" height="28"/></g>
-<g fill="#f3f8ff" font-family="Tahoma,Arial" font-size="17" text-anchor="middle"><text x="323" y="11">Z<tspan baseline-shift="sub" font-size="12">1</tspan></text><text x="323" y="93">Z<tspan baseline-shift="sub" font-size="12">2</tspan></text><text x="323" y="179">Z<tspan baseline-shift="sub" font-size="12">0</tspan></text><text x="433" y="179">3Z<tspan baseline-shift="sub" font-size="12">n</tspan></text><text x="220" y="64">U<tspan baseline-shift="sub" font-size="12">ph</tspan></text><text x="544" y="65">I₁</text><text x="544" y="147">I₂</text><text x="544" y="233">I₀</text></g>
-<g stroke="#ffe0a0" stroke-width="2.5" fill="none"><circle cx="225" cy="30" r="15"/><path d="M219 30 l6 -7 l6 7 l-6 7 z"/></g></svg>
+<figure><svg viewBox="0 0 680 365" role="img" aria-label="مكافئات ثيفينين للمركبات الموجبة والسالبة والصفرية، كل منها ذو طرفين واضحين قبل الوصل" style="display:block;width:100%;height:auto;background:#091827;border:1px solid #31506b;border-radius:12px">
+<g font-family="Tahoma,Arial,sans-serif" fill="#f3f8ff" font-size="18"><text x="24" y="42">Positive | موجبة</text><text x="24" y="142">Negative | سالبة</text><text x="24" y="241">Zero | صفرية</text></g>
+<g stroke="#304e68" stroke-width="1"><path d="M20 122 H660 M20 221 H660"/></g>
+<g stroke="#8ddcff" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M220 74 H340 M390 74 H580 M220 110 H580"/>
+<path d="M220 170 H340 M390 170 H580 M220 170 V210 H580"/>
+<path d="M220 269 H305 M355 269 H425 M475 269 H580 M220 269 V309 H580"/>
+<rect x="340" y="59" width="50" height="30" rx="2"/><rect x="340" y="155" width="50" height="30" rx="2"/>
+<rect x="305" y="254" width="50" height="30" rx="2"/><rect x="425" y="254" width="50" height="30" rx="2"/>
+<circle cx="220" cy="92" r="18"/>
+</g>
+<g fill="#091827" stroke="#8ddcff" stroke-width="2.5"><circle cx="580" cy="74" r="5"/><circle cx="580" cy="110" r="5"/><circle cx="580" cy="170" r="5"/><circle cx="580" cy="210" r="5"/><circle cx="580" cy="269" r="5"/><circle cx="580" cy="309" r="5"/></g>
+<g fill="#f3f8ff" font-family="Tahoma,Arial,sans-serif" font-size="18" text-anchor="middle">
+<text x="365" y="52" font-style="italic">Z<tspan baseline-shift="sub" font-size="12">1</tspan></text>
+<text x="365" y="148" font-style="italic">Z<tspan baseline-shift="sub" font-size="12">2</tspan></text>
+<text x="330" y="247" font-style="italic">Z<tspan baseline-shift="sub" font-size="12">0</tspan></text>
+<text x="450" y="247" font-style="italic">3Z<tspan baseline-shift="sub" font-size="12">n</tspan></text>
+<text x="220" y="99" font-style="italic">U<tspan baseline-shift="sub" font-size="11">ph</tspan></text>
+<text x="610" y="77" font-size="17">+</text><text x="610" y="114" font-size="17">−</text>
+<text x="610" y="173" font-size="17">+</text><text x="610" y="214" font-size="17">−</text>
+<text x="610" y="272" font-size="17">+</text><text x="610" y="313" font-size="17">−</text>
+<text x="340" y="349" font-size="16">Open ports | أطراف غير موصولة بعد</text></g>
+</svg>
 <figcaption class="bilingual-caption"><span lang="en">Three sequence-network elements before their series interconnection; \(3Z_n\) is explicitly separated from \(Z_0\).</span><span lang="ar" dir="rtl">عناصر دارات المركبات الثلاث قبل وصلها على التسلسل. تظهر معاوقة التعادل \(3Z_n\) بصورة منفصلة عن \(Z_0\).</span></figcaption></figure>
+<div class="pair"><div lang="en"><p><b>How to read the drawing:</b> each row is a two-terminal Thevenin network; the small open circles marked \(+\) and \(-\) on the right are its two external terminals, not an open-circuit current path inside the network. In the positive sequence, the internal source \(\underline U_{ph}\) lies in series with \(Z_1\). The negative sequence contains \(Z_2\) only. The zero sequence contains \(Z_0\) in series with the equivalent \(3Z_n\). The three external ports are not interconnected yet; their series connection for the single-line-to-earth fault is shown in the next diagram. The current \(\underline I_0\) flows only after this interconnection is imposed by the fault boundary conditions.</p></div><div lang="ar" dir="rtl"><p><b>كيف نقرأ الدارة؟</b> يمثل كل صف مكافئ ثيفينين ذا طرفين خارجيين، هما الدائرتان الصغيرتان المميزتان بالإشارتين \(+\) و\(-\) على اليمين. في المركبة الموجبة يتصل منبع التوتر \(\underline U_{ph}\) على التسلسل مع \(Z_1\). وتضم المركبة السالبة \(Z_2\) فقط، بينما تضم المركبة الصفرية \(Z_0\) و\(3Z_n\) على التسلسل. لم توصل الأطراف الخارجية بين الصفوف بعد؛ وسيظهر وصلها على التسلسل في الشكل التالي نتيجة لشروط العطل الأرضي أحادي الطور. لا نفترض مرور \(\underline I_0\) قبل إتمام هذا الربط.</p></div></div>
 <div class="formula">\[\underline I_n=\underline I_a+\underline I_b+\underline I_c=3\underline I_0\]</div>
 <div class="formula">\[\underline U_n=Z_n\underline I_n=3Z_n\underline I_0\]</div>
 <h4>4. Combine the networks and apply KVL | ربط الدارات وتطبيق كيرشوف</h4>
