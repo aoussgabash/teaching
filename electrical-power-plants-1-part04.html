@@ -35,7 +35,15 @@
 <h4>Substation design decision tree | شجرة قرار تصميم محطة التحويل</h4>
 <figure><svg viewBox="0 0 600 755" role="img" aria-label="شجرة قرار تربط اختيار تأريض التعادل بأنواع القصر والنتائج التصميمية" style="display:block;width:100%;height:auto;background:#091827;border:1px solid #31506b;border-radius:13px">
 <defs><marker id="design-ar" markerWidth="7" markerHeight="7" refX="6" refY="3" orient="auto"><path d="M0 0 L6 3 L0 6 Z" fill="#8ddcff"/></marker></defs>
-<g stroke="#8ddcff" stroke-width="2.5" fill="none" marker-end="url(#design-ar)"><path d="M300 79 V106"/><path d="M300 170 V202"/><path d="M300 202 H150 V222"/><path d="M300 202 H450 V222"/><path d="M300 202 V320 H150 V340"/><path d="M300 320 H450 V340"/><path d="M300 410 V453"/><path d="M300 528 V552"/><path d="M300 552 H150 V578"/><path d="M300 552 H450 V578"/><path d="M150 653 V681 H300"/><path d="M450 653 V681 H300 V699"/></g>
+<g stroke="#8ddcff" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" fill="none">
+<path d="M300 170 V320 M150 190 H450 M150 190 V211 M450 190 V211 M150 320 H450 M150 320 V329 M450 320 V329"/>
+<path d="M150 299 V313 H8 V435 H300 M450 299 V313 H592 V435 H300 M150 410 V435 H300 M450 410 V435 H300"/>
+<path d="M300 528 V553 H150 M300 553 H450 M150 653 V681 H450 M450 653 V681 M300 681 V689"/>
+</g>
+<g stroke="#8ddcff" stroke-width="2.5" stroke-linecap="round" fill="none" marker-end="url(#design-ar)">
+<path d="M300 79 V106"/><path d="M150 211 V222"/><path d="M450 211 V222"/><path d="M150 329 V340"/><path d="M450 329 V340"/>
+<path d="M300 435 V453"/><path d="M150 553 V578"/><path d="M450 553 V578"/><path d="M300 689 V699"/>
+</g><g fill="#8ddcff"><circle cx="300" cy="190" r="4"/><circle cx="300" cy="320" r="4"/><circle cx="300" cy="435" r="4"/><circle cx="300" cy="553" r="4"/><circle cx="300" cy="681" r="4"/></g>
 <g fill="#123652" stroke="#8ddcff" stroke-width="2"><rect x="130" y="18" width="340" height="61" rx="10"/><rect x="130" y="106" width="340" height="64" rx="10"/></g>
 <g fill="#173d42" stroke="#74d7ab" stroke-width="2"><rect x="22" y="222" width="255" height="77" rx="10"/><rect x="323" y="222" width="255" height="77" rx="10"/></g>
 <g fill="#44341f" stroke="#f4c47f" stroke-width="2"><rect x="22" y="340" width="255" height="70" rx="10"/><rect x="323" y="340" width="255" height="70" rx="10"/></g>
@@ -43,7 +51,7 @@
 <g fill="#233b62" stroke="#a7bdf4" stroke-width="2"><rect x="18" y="578" width="264" height="75" rx="10"/><rect x="318" y="578" width="264" height="75" rx="10"/></g>
 <g fill="#263e36" stroke="#9ce3c1" stroke-width="2"><rect x="85" y="699" width="430" height="48" rx="10"/></g>
 <g font-family="Tahoma,Arial,sans-serif" fill="#f3f8ff" text-anchor="middle">
-<text x="300" y="45" font-size="18">Network model | نموذج الشبكة</text><text x="300" y="64" font-size="14">Sources · transformer · buses</text><text x="300" y="77" font-size="13">المنابع · المحول · القضبان</text>
+<text x="300" y="45" font-size="18">Network model | نموذج الشبكة</text><text x="300" y="64" font-size="14">Sources · transformer · buses</text><text x="300" y="74" font-size="13">المنابع · المحول · القضبان</text>
 <text x="300" y="132" font-size="18">Choose neutral grounding | اختيار تأريض التعادل</text><text x="300" y="154" font-size="15">Per connected network | لكل شبكة متصلة</text>
 <text x="150" y="249" font-size="17">Solid | مباشر</text><text x="150" y="270" font-size="14">Low impedance</text><text x="150" y="287" font-size="14">معاوقة صغيرة</text>
 <text x="450" y="249" font-size="17">Resistance | مقاومة</text><text x="450" y="270" font-size="14">Limits fault current</text><text x="450" y="287" font-size="14">يحد تيار العطل</text>
