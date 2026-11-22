@@ -30,7 +30,7 @@
 </g>
 <g stroke="#54d1fa" fill="none" stroke-width="3">
 <path id="neutral-schematic-branch" d="M157 318 V323 M157 352 V363"/>
-<rect id="neutral-schematic-element" x="137" y="323" width="40" height="29" rx="3"/>
+<g id="neutral-schematic-element"><rect id="neutral-box" x="137" y="323" width="40" height="29" rx="3"/><path id="neutral-coil" d="M157 323 q-18 5 0 10 q18 5 0 10 q-18 5 0 9" style="display:none"/><path id="neutral-resistor" d="M157 323 l-10 5 20 5 -20 5 20 5 -10 9" style="display:none"/></g>
 <g id="neutral-schematic-earth"><path d="M157 363 V370 M135 370 H179 M141 378 H173 M149 386 H165"/></g>
 </g>
 <g font-size="14" fill="#eef7ff">
@@ -70,7 +70,7 @@
 <svg viewBox="0 0 350 390" role="img" aria-label="Three distinct phase conductors with selected fault and three separately illustrated shunt capacitances to earth">
 <g stroke-width="3" fill="none" stroke-linecap="round"><path d="M12 76 H337" stroke="#fbbf24"/><path d="M12 154 H337" stroke="#54d1fa"/><path d="M12 232 H337" stroke="#f28d9e"/></g>
 <g font-size="14" fill="#eef7ff"><text x="15" y="55">a</text><text x="15" y="133">b</text><text x="15" y="211">c</text><text x="14" y="301">C_a · C_b · C_c</text><text x="14" y="328">Shunt capacitances to earth</text></g>
-<g id="fault-lg" stroke="#fbbf24" stroke-width="3.5" fill="none"><circle cx="300" cy="76" r="5" fill="#fbbf24"/><path d="M300 76 V265 L290 278 L310 288 L295 306"/><path d="M300 309 V317 M279 317 H321 M285 325 H315 M293 333 H307"/></g>
+<g id="fault-lg" stroke="#fbbf24" stroke-width="3.5" fill="none"><circle cx="300" cy="76" r="5" fill="#fbbf24"/><path d="M300 76 V143 M300 166 V221 M300 244 V265 L290 278 L310 288 L295 306"/><path d="M300 309 V317 M279 317 H321 M285 325 H315 M293 333 H307"/></g>
 <g id="fault-ll" stroke="#fbbf24" stroke-width="3.5" fill="none" style="display:none"><circle cx="300" cy="154" r="5" fill="#fbbf24"/><circle cx="300" cy="232" r="5" fill="#fbbf24"/><path d="M300 154 V169 L289 184 L311 200 L300 216 V232"/></g>
 <g id="fault-3ph" stroke="#fbbf24" stroke-width="3.5" fill="none" style="display:none"><path d="M285 76 V265 M300 154 V265 M315 232 V265 M285 265 H315 V281 M295 281 H335 M301 289 H329 M309 297 H321"/></g>
 <g stroke="#a6c4d8" stroke-width="2.1" fill="none">
@@ -147,8 +147,12 @@ const exp=deg=>z(Math.cos(deg*Math.PI/180),Math.sin(deg*Math.PI/180));
  const names={solid:'Solid grounding | تأريض مباشر',resistor:'Neutral resistor | مقاومة تأريض',reactor:'Neutral reactor | مفاعلة تأريض',petersen:'Petersen coil | ملف بيترسن',isolated:'Isolated neutral | تعادل معزول'};
  $('neutral-mode-label').textContent=names[mode];
  $('neutral-symbol').textContent=mode==='resistor'?'R_n':(mode==='reactor'||mode==='petersen'?'L_n':mode==='isolated'?'Open':'0 Ω');
+ $('neutral-box').style.display=(mode==='solid'||mode==='isolated')?'':'none';
+ $('neutral-coil').style.display=(mode==='reactor'||mode==='petersen')?'':'none';
+ $('neutral-resistor').style.display=mode==='resistor'?'':'none';
  $('neutral-schematic-element').setAttribute('stroke-dasharray',mode==='isolated'?'6 7':'none');
  $('neutral-schematic-earth').style.opacity=mode==='isolated'?'0.25':'1';
+ $('neutral-schematic-branch').style.opacity=mode==='isolated'?'0.25':'1';
  const n=Number($('len').value),r=Number($('r1l').value),x=Number($('x1l').value),c=Number($('cap').value);
  $('schematic-neutral-value').textContent=mode==='resistor'?Number($('rn').value).toFixed(2)+' Ω':(mode==='reactor'||mode==='petersen'?Number($('ln').value).toFixed(3)+' H':mode==='solid'?'0 Ω':'open');
  $('schematic-line-value').textContent=(n*r).toFixed(2)+' + j'+(n*x).toFixed(2)+' Ω';
