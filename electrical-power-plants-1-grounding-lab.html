@@ -1,12 +1,12 @@
 <!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<title>Interactive Ground-Fault and Petersen-Coil Laboratory | مخبر التأريض التفاعلي</title>
+<title>Interactive Ground-Fault and Petersen-Coil Laboratory | مخبر التأريض التفاعلي</title><script>window.MathJax={tex:{inlineMath:[[ "\\(","\\)" ]],displayMath:[[ "\\[","\\]" ]]},options:{skipHtmlTags:["script","noscript","style","textarea","pre","code"]}};</script><script defer src="https://cdn.jsdelivr.net/npm/mathjax@4/tex-chtml.js"></script>
 <style>
 :root{color-scheme:dark;--bg:#071421;--pane:#10283e;--line:#31516a;--ink:#eef7ff;--mute:#bed0e0;--gold:#fbbf24;--cyan:#54d1fa}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,Tahoma,sans-serif}main{max-width:1170px;margin:auto;padding:22px}h1{font-size:clamp(1.45rem,3vw,2.15rem);margin:12px 0 4px}h2{font-size:1.15rem}.small,.hint{color:var(--mute);font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}.panel{border:1px solid var(--line);background:var(--pane);border-radius:14px;padding:18px;margin:16px 0}.row{display:flex;justify-content:space-between;gap:10px;align-items:center}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:13px}label{display:flex;flex-direction:column;gap:4px;color:var(--mute);font-size:.9rem}input,select{width:100%;border-radius:8px;background:#071827;color:var(--ink);border:1px solid #54718a;padding:10px;font:inherit}button,.btn{border:1px solid #7698b0;border-radius:8px;color:var(--ink);background:#1e4968;padding:10px 15px;cursor:pointer;text-decoration:none}button:hover,.btn:hover{background:#265b7e}.tile{background:#0b1c2e;border:1px solid var(--line);border-radius:9px;padding:12px}.tile b{font:700 1.4rem/1.4 Arial;color:var(--cyan)}.tile span{display:block;font-size:.84rem;color:var(--mute)}.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px}svg{max-width:100%;height:auto}svg text{fill:#edf5ff;font:12px Arial}.formula{direction:ltr;text-align:center;font-family:Georgia,serif;padding:12px;border:1px solid var(--line);border-radius:8px;overflow-x:auto}.warning{border-left:4px solid var(--gold);padding:12px;background:#3a3020;border-radius:7px}.rtl{direction:rtl;text-align:right}.legend{color:var(--mute);font-size:.9rem}.tag{color:var(--gold);font-weight:700}a{color:#8fdcff}@media print{button,input,select,.noprint{display:none!important}body{color:#111;background:white}.panel{background:white;color:#111}}
 
 .schematic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.schematic-card{min-width:0;border:1px solid var(--line);border-radius:12px;background:#0b1e30;padding:12px}.schematic-card h3{margin:0 0 6px;font-size:1rem;min-height:2.2rem}.schematic-card svg{width:100%;display:block;max-width:100%;height:auto}.schematic-card svg text{font:14px Arial,Tahoma,sans-serif;fill:#eef7ff}.schematic-caption{font-size:.85rem;color:var(--mute);line-height:1.7;margin:5px 0}.panel{overflow-wrap:anywhere}@media(max-width:850px){main{padding:12px}.panel{padding:12px}.schematic-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto;gap:14px}.schematic-card h3{min-height:0}.schematic-card svg{max-height:none}.controls{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}}
-</style></head><body><main>
+.math-inline{direction:ltr;unicode-bidi:isolate;display:inline-block;white-space:nowrap}.formula mjx-container{max-width:100%}.schematic-card svg text.math-label{font:italic 17px Georgia,"Times New Roman",serif;direction:ltr} .tile .math-inline{font-size:1.05em}</style></head><body><main>
 <a class="noprint" href="electrical-power-plants-1-part04.html">← Part 4 | العودة إلى الجزء الرابع</a>
 <h1>Interactive Three-Phase Grounding &amp; Fault Laboratory</h1>
 <h1 class="rtl" style="font-size:1.5rem">المخبر التفاعلي للتأريض والأعطال في الشبكات ثلاثية الطور</h1>
@@ -36,12 +36,12 @@
 <g font-size="14" fill="#eef7ff">
 <text x="12" y="26">20 kV (L–L) · 50 Hz</text><text x="10" y="315">N</text>
 <text x="146" y="69">a</text><text x="146" y="147">b</text><text x="146" y="225">c</text>
-<text x="200" y="332" id="neutral-symbol">L_n</text>
+<text x="200" y="332" id="neutral-symbol" class="math-label">L<tspan font-size="11" baseline-shift="sub">n</tspan></text>
 </g>
 <g stroke-width="3" fill="none"><path d="M176 76 H320" stroke="#fbbf24"/><path d="M176 154 H320" stroke="#54d1fa"/><path d="M176 232 H320" stroke="#f28d9e"/></g>
 </svg>
 <p id="neutral-mode-label" class="schematic-caption">Petersen coil | ملف بيترسن</p>
-<p class="schematic-caption">N → Z_n → Earth | التعادل ← ممانعة التأريض ← الأرض</p>
+<p class="schematic-caption">N → Zₙ → Earth | التعادل ← ممانعة التأريض ← الأرض</p>
 </div>
 <div class="schematic-card">
 <h3>2. Feeder | خط التغذية</h3>
@@ -58,10 +58,10 @@
 <path d="M150 232 h7 q6 -19 12 0 t12 0 t12 0 h12" stroke="#f28d9e"/>
 </g>
 <g fill="#eef7ff" font-size="14"><text x="16" y="54">a</text><text x="16" y="132">b</text><text x="16" y="210">c</text>
-<text x="84" y="48">R_a</text><text x="84" y="126">R_b</text><text x="84" y="204">R_c</text>
-<text x="162" y="48">L_a</text><text x="162" y="126">L_b</text><text x="162" y="204">L_c</text>
-<text x="250" y="54">I_a</text><text x="250" y="132">I_b</text><text x="250" y="210">I_c</text>
-<text x="20" y="293">Z_line = R + jωL</text><text x="20" y="320">Z_1, Z_2, Z_0: sequence</text><text x="20" y="345">models of the same line</text></g>
+<text class="math-label" x="84" y="48">R<tspan font-size="11" baseline-shift="sub">a</tspan></text><text class="math-label" x="84" y="126">R<tspan font-size="11" baseline-shift="sub">b</tspan></text><text class="math-label" x="84" y="204">R<tspan font-size="11" baseline-shift="sub">c</tspan></text>
+<text class="math-label" x="162" y="48">L<tspan font-size="11" baseline-shift="sub">a</tspan></text><text class="math-label" x="162" y="126">L<tspan font-size="11" baseline-shift="sub">b</tspan></text><text class="math-label" x="162" y="204">L<tspan font-size="11" baseline-shift="sub">c</tspan></text>
+<text class="math-label" x="250" y="54">I<tspan font-size="11" baseline-shift="sub">a</tspan></text><text class="math-label" x="250" y="132">I<tspan font-size="11" baseline-shift="sub">b</tspan></text><text class="math-label" x="250" y="210">I<tspan font-size="11" baseline-shift="sub">c</tspan></text>
+<text x="20" y="293">Z<tspan font-size="11" baseline-shift="sub">line</tspan> = R + jωL</text><text x="20" y="320">Z₁, Z₂, Z₀: sequence</text><text x="20" y="345">models of the same line</text></g>
 </svg>
 <p class="schematic-caption rtl">المقاومات والمفاعلات تخص الأطوار الثلاثة، وليست ممانعات التتابع الثلاث موصولة كل منها في طور منفصل.</p>
 </div>
@@ -69,7 +69,7 @@
 <h3>3. Fault &amp; earth | العطل والأرض</h3>
 <svg viewBox="0 0 350 390" role="img" aria-label="Three distinct phase conductors with selected fault and three separately illustrated shunt capacitances to earth">
 <g stroke-width="3" fill="none" stroke-linecap="round"><path d="M12 76 H337" stroke="#fbbf24"/><path d="M12 154 H337" stroke="#54d1fa"/><path d="M12 232 H337" stroke="#f28d9e"/></g>
-<g font-size="14" fill="#eef7ff"><text x="15" y="55">a</text><text x="15" y="133">b</text><text x="15" y="211">c</text><text x="14" y="301">C_a · C_b · C_c</text><text x="14" y="328">Shunt capacitances to earth</text></g>
+<g font-size="14" fill="#eef7ff"><text x="15" y="55">a</text><text x="15" y="133">b</text><text x="15" y="211">c</text><text x="14" y="301">Cₐ · Cᵦ · C𝒸</text><text x="14" y="328">Shunt capacitances to earth</text></g>
 <g id="fault-lg" stroke="#fbbf24" stroke-width="3.5" fill="none"><circle cx="300" cy="76" r="5" fill="#fbbf24"/><path d="M300 76 V143 M300 166 V221 M300 244 V265 L290 278 L310 288 L295 306"/><path d="M300 309 V317 M279 317 H321 M285 325 H315 M293 333 H307"/></g>
 <g id="fault-ll" stroke="#fbbf24" stroke-width="3.5" fill="none" style="display:none"><circle cx="300" cy="154" r="5" fill="#fbbf24"/><circle cx="300" cy="232" r="5" fill="#fbbf24"/><path d="M300 154 V169 L289 184 L311 200 L300 216 V232"/></g>
 <g id="fault-3ph" stroke="#fbbf24" stroke-width="3.5" fill="none" style="display:none"><path d="M285 76 V265 M300 154 V265 M315 232 V265 M285 265 H315 V281 M295 281 H335 M301 289 H329 M309 297 H321"/></g>
@@ -78,13 +78,13 @@
 <path d="M125 154 V172 M115 172 H135 M115 181 H135 M125 181 V195 M125 195 H158"/>
 <path d="M170 232 V250 M160 250 H180 M160 259 H180 M170 259 V272 M170 272 H202"/>
 </g>
-<g fill="#eef7ff" font-size="12"><text x="94" y="100">C_a</text><text x="138" y="178">C_b</text><text x="183" y="257">C_c</text></g>
+<g fill="#eef7ff" font-size="12"><text class="math-label" x="94" y="100">C<tspan font-size="11" baseline-shift="sub">a</tspan></text><text class="math-label" x="138" y="178">C<tspan font-size="11" baseline-shift="sub">b</tspan></text><text class="math-label" x="183" y="257">C<tspan font-size="11" baseline-shift="sub">c</tspan></text></g>
 </svg>
 <p class="schematic-caption rtl">سعات الأطوار ممثلة رمزيًّا؛ لا يُقصد بالخطوط القصيرة تمثيل جميع مسارات التأريض الموزعة فعليا.</p>
 </div>
 </div>
 <div class="tile" style="margin-top:12px"><span id="fault-schematic-label">a–earth fault | عطل طور مع الأرض</span></div>
-<div class="tiles" style="margin-top:12px"><div class="tile"><span>Neutral grounding | تأريض التعادل</span><b id="schematic-neutral-value" style="font-size:1rem">—</b></div><div class="tile"><span>Feeder impedance | ممانعة الخط</span><b id="schematic-line-value" style="font-size:1rem">—</b></div><div class="tile"><span>Capacitance per phase | سعة كل طور</span><b id="schematic-cap-value" style="font-size:1rem">—</b></div></div>
+<div class="tiles" style="margin-top:12px"><div class="tile"><span>Neutral grounding | تأريض التعادل</span><b id="schematic-neutral-value" dir="ltr" style="font-size:1rem">—</b></div><div class="tile"><span>Feeder impedance | ممانعة الخط</span><b id="schematic-line-value" dir="ltr" style="font-size:1rem">—</b></div><div class="tile"><span>Capacitance per phase | سعة كل طور</span><b id="schematic-cap-value" dir="ltr" style="font-size:1rem">—</b></div></div>
 <p class="legend rtl">المخططات الثلاثة توضيحية على التوالي من اليسار إلى اليمين (على الهاتف من الأعلى إلى الأسفل)، وتبقى المعادلات والحسابات في أقسام المخبر أدناه.</p>
 </section>
 <section class="panel"><h2>Change parameters | تغيير القيم</h2>
@@ -120,16 +120,16 @@
 <h2>Complex-plane sequence current phasors | مخطط الفازات</h2>
 <svg viewBox="0 0 580 240" role="img" aria-label="Live phasor arrows I0 I1 I2"><path d="M80 120 H525 M285 18 V221" stroke="#7890a0" stroke-width="1.3"/><circle cx="285" cy="120" r="93" stroke="#7890a0" stroke-opacity=".4" fill="none"/><g id="vectors"></g><text x="525" y="111">Re</text><text x="293" y="25">+j</text><text x="293" y="222">−j</text></svg>
 <p class="legend"><span style="color:#fbbf24">● I₁</span> · <span style="color:#54d1fa">● I₂</span> · <span style="color:#ff7b8a">● I₀</span>. Lengths are scaled automatically; the legend shows sequence phasors at phase a.</p>
-<p id="detail" class="formula"></p><p id="note" class="warning rtl"></p></section>
+<p id="detail" class="formula" dir="ltr"></p><p id="note" class="warning rtl"></p></section>
 <section class="panel"><h2>Mathematical model | النموذج الرياضي</h2>
-<div class="formula">E₁ = U<sub>LL</sub> / √3 &nbsp; ; &nbsp; Z₁ = Z₁G + L<sub>line</sub> z₁L &nbsp; ; &nbsp; Z₂ = Z₂G + L<sub>line</sub> z₂L</div>
-<div class="formula">Z₀,source = Z₀G + 3Zₙ &nbsp; ; &nbsp; Z₀,eq = L<sub>line</sub> z₀L + (Z₀,source ∥ 1/(jωC<sub>phase,total</sub>))</div>
-<div class="formula">LG: I₁ = E₁ / (Z₁+Z₂+Z₀,eq+3R<sub>f</sub>), &nbsp; I₀=I₁=I₂, &nbsp; Iₐ=3I₁</div>
-<div class="formula">LL: I₁ = E₁/(Z₁+Z₂+R<sub>f</sub>), &nbsp; I₂=−I₁, &nbsp; I₀=0</div>
-<div class="formula">3φ: I₁ = E₁/(Z₁+R<sub>f</sub>), &nbsp; I₂=I₀=0</div>
-<div class="formula">Petersen resonance (lumped approximation): L<sub>res</sub> = 1/(3ω² C<sub>phase,total</sub>)</div>
-<p class="small rtl">في نموذج السعة المركزة، تمثل C سعة كل طور تجاه الأرض للشبكة المتصلة، ويظهر الحد 3 عند تحويل ممانعة تعادل الملف إلى شبكة التتابع الصفري. عندما تكون C=0 ومع التعادل المعزول تصبح دارة العطل الأرضي مفتوحة في النموذج المثالي.</p>
-<p class="warning rtl">تنبيه علمي: هذا محاكي تعليمي للحالة المستقرة عند التردد الأساسي، مع منبع مثالي وممانعات خط مركزة، وشبكة سعة مجمعة، ومن دون أحمال أو تبادلات عابرة أو تشبع أو تيارات عطل أعلى التردد. قرب رنين بيترسن تصبح نتائج الشبكة الفعلية حساسة لفواقد الملف والمقاومات والتوزيع المكاني للسعات؛ لذلك لا تستخدم النتائج لاختيار معدات أو إعداد مرحلات حماية حقيقية. في عطل الطورين أو العطل الثلاثي يكون أثر التأريض الصفري غير مباشر/غير موجود في النموذج الأساسي.</p>
+<div class="formula">\[E_1=\frac{U_{LL}}{\sqrt{3}},\qquad Z_1=Z_{1G}+\ell z_{1L},\qquad Z_2=Z_{2G}+\ell z_{2L}\]</div>
+<div class="formula">\[Z_{0,\mathrm{src}}=Z_{0G}+3Z_n,\qquad Z_{0,\mathrm{eq}}=\ell z_{0L}+\left(Z_{0,\mathrm{src}}\parallel\frac{1}{j\omega C_{\mathrm{ph}}}\right)\]</div>
+<div class="formula">\[\mathrm{LG}:\quad I_1=\frac{E_1}{Z_1+Z_2+Z_{0,\mathrm{eq}}+3R_f},\quad I_0=I_1=I_2,\quad I_a=3I_1\]</div>
+<div class="formula">\[\mathrm{LL}:\quad I_1=\frac{E_1}{Z_1+Z_2+R_f},\qquad I_2=-I_1,\quad I_0=0\]</div>
+<div class="formula">\[\mathrm{3\phi}:\quad I_1=\frac{E_1}{Z_1+R_f},\qquad I_0=I_2=0\]</div>
+<div class="formula">\[\mathrm{Petersen}:\quad L_{\mathrm{res}}=\frac{1}{3\omega^2 C_{\mathrm{ph}}},\qquad\omega=2\pi f\]</div>
+<p class="small rtl">في النموذج المكافئ تمثل <span class="math-inline">\(C_{\mathrm{ph}}\)</span> السعة الإجمالية المكافئة لكل طور تجاه الأرض، وتمثل <span class="math-inline">\(\ell\)</span> طول الخط. نستخدم <span class="math-inline">\(R_f\)</span> لمقاومة العطل و<span class="math-inline">\(Z_n\)</span> لممانعة تأريض التعادل.</p>
+<p class="warning rtl">تنبيه: هذه معادلات النموذج التعليمي المحدد في المحاكي، وليست نموذجا تفصيليا لخط موزع أو دراسة معيارية مكتملة وفق IEC 60909. وخصوصا في حالة ملف بيترسن، يتأثر السلوك الدقيق بالفواقد وسعات المقاطع المختلفة والتوافقيات وظروف العطل.</p>
 </section>
 </main><script>
 const $=id=>document.getElementById(id);
@@ -146,7 +146,7 @@ const exp=deg=>z(Math.cos(deg*Math.PI/180),Math.sin(deg*Math.PI/180));
  $('fault-schematic-label').textContent=faultNames[fault];
  const names={solid:'Solid grounding | تأريض مباشر',resistor:'Neutral resistor | مقاومة تأريض',reactor:'Neutral reactor | مفاعلة تأريض',petersen:'Petersen coil | ملف بيترسن',isolated:'Isolated neutral | تعادل معزول'};
  $('neutral-mode-label').textContent=names[mode];
- $('neutral-symbol').textContent=mode==='resistor'?'R_n':(mode==='reactor'||mode==='petersen'?'L_n':mode==='isolated'?'Open':'0 Ω');
+ const neut=$('neutral-symbol');const base=mode==='resistor'?'R':(mode==='reactor'||mode==='petersen'?'L':mode==='isolated'?'Open':'0 Ω');neut.textContent=base;if(base==='R'||base==='L'){const t=document.createElementNS('http://www.w3.org/2000/svg','tspan');t.setAttribute('font-size','11');t.setAttribute('baseline-shift','sub');t.textContent='n';neut.appendChild(t)}
  $('neutral-box').style.display=(mode==='solid'||mode==='isolated')?'':'none';
  $('neutral-coil').style.display=(mode==='reactor'||mode==='petersen')?'':'none';
  $('neutral-resistor').style.display=mode==='resistor'?'':'none';
