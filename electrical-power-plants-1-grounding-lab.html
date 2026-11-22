@@ -69,7 +69,7 @@
 <h3>3. Fault &amp; earth | العطل والأرض</h3>
 <svg viewBox="0 0 350 390" role="img" aria-label="Three distinct phase conductors with selected fault and three separately illustrated shunt capacitances to earth">
 <g stroke-width="3" fill="none" stroke-linecap="round"><path d="M12 76 H337" stroke="#fbbf24"/><path d="M12 154 H337" stroke="#54d1fa"/><path d="M12 232 H337" stroke="#f28d9e"/></g>
-<g font-size="14" fill="#eef7ff"><text x="15" y="55">a</text><text x="15" y="133">b</text><text x="15" y="211">c</text><text x="14" y="301">Cₐ · Cᵦ · C𝒸</text><text x="14" y="328">Shunt capacitances to earth</text></g>
+<g font-size="14" fill="#eef7ff"><text x="15" y="55">a</text><text x="15" y="133">b</text><text x="15" y="211">c</text><text x="14" y="301" class="math-label">C<tspan font-size="11" baseline-shift="sub">a</tspan> · C<tspan font-size="11" baseline-shift="sub">b</tspan> · C<tspan font-size="11" baseline-shift="sub">c</tspan></text><text x="14" y="328">Shunt capacitances to earth</text></g>
 <g id="fault-lg" stroke="#fbbf24" stroke-width="3.5" fill="none"><circle cx="300" cy="76" r="5" fill="#fbbf24"/><path d="M300 76 V143 M300 166 V221 M300 244 V265 L290 278 L310 288 L295 306"/><path d="M300 309 V317 M279 317 H321 M285 325 H315 M293 333 H307"/></g>
 <g id="fault-ll" stroke="#fbbf24" stroke-width="3.5" fill="none" style="display:none"><circle cx="300" cy="154" r="5" fill="#fbbf24"/><circle cx="300" cy="232" r="5" fill="#fbbf24"/><path d="M300 154 V169 L289 184 L311 200 L300 216 V232"/></g>
 <g id="fault-3ph" stroke="#fbbf24" stroke-width="3.5" fill="none" style="display:none"><path d="M285 76 V265 M300 154 V265 M315 232 V265 M285 265 H315 V281 M295 281 H335 M301 289 H329 M309 297 H321"/></g>
@@ -116,7 +116,7 @@
 <div class="tile"><span>Zero sequence | I₀</span><b id="i0">—</b></div>
 <div class="tile"><span>Neutral residual | 3I₀</span><b id="in">—</b></div>
 <div class="tile"><span>Petersen tuning | ضبط الملف</span><b id="tune">—</b></div>
-</div><h2>Phase currents | تيارات الأطوار</h2><div class="tiles"><div class="tile"><span>Iₐ</span><b id="ia">—</b></div><div class="tile"><span>Iᵦ</span><b id="ib">—</b></div><div class="tile"><span>I𝒸</span><b id="ic">—</b></div></div>
+</div><h2>Phase currents | تيارات الأطوار</h2><div class="tiles"><div class="tile"><span class="math-inline">\(I_a\)</span><b id="ia">—</b></div><div class="tile"><span class="math-inline">\(I_b\)</span><b id="ib">—</b></div><div class="tile"><span class="math-inline">\(I_c\)</span><b id="ic">—</b></div></div>
 <h2>Complex-plane sequence current phasors | مخطط الفازات</h2>
 <svg viewBox="0 0 580 240" role="img" aria-label="Live phasor arrows I0 I1 I2"><path d="M80 120 H525 M285 18 V221" stroke="#7890a0" stroke-width="1.3"/><circle cx="285" cy="120" r="93" stroke="#7890a0" stroke-opacity=".4" fill="none"/><g id="vectors"></g><text x="525" y="111">Re</text><text x="293" y="25">+j</text><text x="293" y="222">−j</text></svg>
 <p class="legend"><span style="color:#fbbf24">● I₁</span> · <span style="color:#54d1fa">● I₂</span> · <span style="color:#ff7b8a">● I₀</span>. Lengths are scaled automatically; the legend shows sequence phasors at phase a.</p>
