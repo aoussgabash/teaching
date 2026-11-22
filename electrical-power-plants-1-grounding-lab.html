@@ -4,49 +4,89 @@
 <style>
 :root{color-scheme:dark;--bg:#071421;--pane:#10283e;--line:#31516a;--ink:#eef7ff;--mute:#bed0e0;--gold:#fbbf24;--cyan:#54d1fa}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.6 Arial,Tahoma,sans-serif}main{max-width:1170px;margin:auto;padding:22px}h1{font-size:clamp(1.45rem,3vw,2.15rem);margin:12px 0 4px}h2{font-size:1.15rem}.small,.hint{color:var(--mute);font-size:.9rem}.grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(290px,1fr));gap:16px}.panel{border:1px solid var(--line);background:var(--pane);border-radius:14px;padding:18px;margin:16px 0}.row{display:flex;justify-content:space-between;gap:10px;align-items:center}.controls{display:grid;grid-template-columns:repeat(auto-fit,minmax(175px,1fr));gap:13px}label{display:flex;flex-direction:column;gap:4px;color:var(--mute);font-size:.9rem}input,select{width:100%;border-radius:8px;background:#071827;color:var(--ink);border:1px solid #54718a;padding:10px;font:inherit}button,.btn{border:1px solid #7698b0;border-radius:8px;color:var(--ink);background:#1e4968;padding:10px 15px;cursor:pointer;text-decoration:none}button:hover,.btn:hover{background:#265b7e}.tile{background:#0b1c2e;border:1px solid var(--line);border-radius:9px;padding:12px}.tile b{font:700 1.4rem/1.4 Arial;color:var(--cyan)}.tile span{display:block;font-size:.84rem;color:var(--mute)}.tiles{display:grid;grid-template-columns:repeat(auto-fit,minmax(135px,1fr));gap:10px}svg{max-width:100%;height:auto}svg text{fill:#edf5ff;font:12px Arial}.formula{direction:ltr;text-align:center;font-family:Georgia,serif;padding:12px;border:1px solid var(--line);border-radius:8px;overflow-x:auto}.warning{border-left:4px solid var(--gold);padding:12px;background:#3a3020;border-radius:7px}.rtl{direction:rtl;text-align:right}.legend{color:var(--mute);font-size:.9rem}.tag{color:var(--gold);font-weight:700}a{color:#8fdcff}@media print{button,input,select,.noprint{display:none!important}body{color:#111;background:white}.panel{background:white;color:#111}}
+
+.schematic-grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px;margin-top:18px}.schematic-card{min-width:0;border:1px solid var(--line);border-radius:12px;background:#0b1e30;padding:12px}.schematic-card h3{margin:0 0 6px;font-size:1rem;min-height:2.2rem}.schematic-card svg{width:100%;display:block;max-width:100%;height:auto}.schematic-card svg text{font:14px Arial,Tahoma,sans-serif;fill:#eef7ff}.schematic-caption{font-size:.85rem;color:var(--mute);line-height:1.7;margin:5px 0}.panel{overflow-wrap:anywhere}@media(max-width:850px){main{padding:12px}.panel{padding:12px}.schematic-grid{grid-template-columns:1fr;max-width:480px;margin-inline:auto;gap:14px}.schematic-card h3{min-height:0}.schematic-card svg{max-height:none}.controls{grid-template-columns:repeat(auto-fit,minmax(145px,1fr))}}
 </style></head><body><main>
 <a class="noprint" href="electrical-power-plants-1-part04.html">← Part 4 | العودة إلى الجزء الرابع</a>
 <h1>Interactive Three-Phase Grounding &amp; Fault Laboratory</h1>
 <h1 class="rtl" style="font-size:1.5rem">المخبر التفاعلي للتأريض والأعطال في الشبكات ثلاثية الطور</h1>
 <p class="small">20 kV, 50 Hz generator + three-phase feeder + selectable neutral grounding. Live sequence-current phasors and Petersen-coil tuning.</p>
 <p class="small rtl">مولد 20 kV وخط ثلاثي الطور مع اختيار نوع تأريض نقطة التعادل وحساب فوري لتيارات الأطوار ومركباتها المتماثلة. جميع النتائج تعليمية.</p>
-<section class="panel"><h2>Detailed three-phase circuit | الدارة ثلاثية الطور بالتفصيل</h2>
-<p class="small rtl">مخطط تفصيلي بأطوار منفصلة a وb وc، ولفات مولد موصولة نجمة، ومقاومة ومفاعلة لكل طور، وسعات مكافئة للأرض، وممانعة تأريض نقطة التعادل. تتغير حالة العطل ورمز التأريض مباشرة مع اختياراتك.</p>
-<div style="overflow-x:auto"><svg id="phase-schematic" viewBox="0 0 1140 535" style="min-width:780px;width:100%" role="img" aria-label="Detailed three phase generator star windings individual phase R L line impedances shunt capacitors neutral grounding and selectable fault">
-<defs><marker id="flowarr" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="6" markerHeight="6" orient="auto"><path d="M0 0 L10 5 L0 10z" fill="#fbbf24"/></marker></defs>
-<g fill="none" stroke="#6f8ca5" stroke-width="1.3"><rect x="15" y="76" width="225" height="365" rx="16" stroke-dasharray="7 5"/><rect x="250" y="76" width="490" height="365" rx="16" stroke-dasharray="7 5"/><rect x="748" y="76" width="375" height="365" rx="16" stroke-dasharray="7 5"/></g>
-<g fill="#eef7ff" font-size="17" font-weight="bold"><text x="32" y="103">Generator 20 kV (L–L)</text><text x="276" y="103">Three-phase feeder / خط ثلاثي الطور</text><text x="771" y="103">Fault F / نقطة العطل</text></g>
-<g stroke="#d9eafb" fill="none" stroke-width="2.6" stroke-linecap="round">
-<circle cx="90" cy="125" r="15"/><circle cx="90" cy="215" r="15"/><circle cx="90" cy="305" r="15"/>
-<path d="M80 125 q5 -9 10 0 t10 0 M80 215 q5 -9 10 0 t10 0 M80 305 q5 -9 10 0 t10 0"/>
-<path d="M75 125 H55 V345 H90 M75 215 H65 V345 H90 M75 305 H90 V345"/>
-<circle cx="90" cy="345" r="5" fill="#d9eafb"/>
+<section class="panel" id="detailed-circuit">
+<h2>Detailed three-phase circuit | الدارة ثلاثية الطور بالتفصيل</h2>
+<p class="small rtl">الدارة موزعة إلى ثلاثة مخططات متتابعة لتسهيل قراءتها على الهاتف: المولد النجمي، ثم عناصر الخط لكل طور، ثم نقطة العطل. ترتبط أطراف a وb وc من اليسار إلى اليمين. تتغير حالة العطل والتأريض مع اختيارات المخبر.</p>
+<div class="schematic-grid">
+<div class="schematic-card">
+<h3>1. Generator | المولد</h3>
+<svg viewBox="0 0 350 390" role="img" aria-label="Star connected three phase generator with all source negatives joined to the neutral and neutral grounding impedance">
+<g stroke="#bfd6e8" fill="none" stroke-width="2.8" stroke-linecap="round">
+<path d="M43 76 V302 H100"/><path d="M43 154 H81"/><path d="M43 232 H81"/><path d="M81 76 H81"/>
+<circle cx="100" cy="76" r="19"/><circle cx="100" cy="154" r="19"/><circle cx="100" cy="232" r="19"/>
+<path d="M90 76 q5 -9 10 0 t10 0 M90 154 q5 -9 10 0 t10 0 M90 232 q5 -9 10 0 t10 0"/>
+<path d="M81 76 H43 M81 154 H43 M81 232 H43"/>
+<path d="M119 76 H320 M119 154 H320 M119 232 H320"/>
+<path d="M43 302 H157 V318"/>
+<circle cx="43" cy="302" r="4" fill="#bfd6e8"/>
 </g>
-<g stroke="#54d1fa" stroke-width="3" fill="none"><path d="M90 345 H140 V372"/><path id="neutral-impedance" d="M140 372 v12 m-9 0 h18 v27 h-18 z m9 27 v15"/><path id="neutral-ground" d="M140 426 v10 m-23 0 h46 m-37 8 h28 m-19 8 h10"/></g>
-<text id="neutral-symbol" x="155" y="401" fill="#54d1fa" font-size="17">Lₙ</text><text x="92" y="339" fill="#eef7ff" font-size="15">N</text>
-<text id="neutral-mode-label" x="28" y="477" fill="#54d1fa" font-size="16">Petersen coil</text>
-<text x="28" y="499" fill="#c6d9e9" font-size="13">Neutral-to-earth impedance Zₙ</text>
-<g stroke="#f8c957" fill="none" stroke-width="3.5" stroke-linecap="round"><path d="M105 125 H275"/><path d="M275 125 H315"/><path d="M366 125 H432"/><path d="M502 125 H780"/><path d="M780 125 H1080"/></g>
- <g stroke="#f8c957" fill="none" stroke-width="2.8"><rect x="315" y="110" width="51" height="30" rx="3"/><path d="M432 125 h8 q7 -23 15 0 q8 23 15 0 q8 -23 16 0 h16"/></g>
- <g fill="#eef7ff" font-size="16"><text x="166" y="112">Phase a / a</text><text x="320" y="104">Ra</text><text x="439" y="104">La</text><text x="517" y="111">Ia</text></g><g stroke="#60d4f6" fill="none" stroke-width="3.5" stroke-linecap="round"><path d="M105 215 H275"/><path d="M275 215 H315"/><path d="M366 215 H432"/><path d="M502 215 H780"/><path d="M780 215 H1080"/></g>
- <g stroke="#60d4f6" fill="none" stroke-width="2.8"><rect x="315" y="200" width="51" height="30" rx="3"/><path d="M432 215 h8 q7 -23 15 0 q8 23 15 0 q8 -23 16 0 h16"/></g>
- <g fill="#eef7ff" font-size="16"><text x="166" y="202">Phase b / b</text><text x="320" y="194">Rb</text><text x="439" y="194">Lb</text><text x="517" y="201">Ib</text></g><g stroke="#f28d9e" fill="none" stroke-width="3.5" stroke-linecap="round"><path d="M105 305 H275"/><path d="M275 305 H315"/><path d="M366 305 H432"/><path d="M502 305 H780"/><path d="M780 305 H1080"/></g>
- <g stroke="#f28d9e" fill="none" stroke-width="2.8"><rect x="315" y="290" width="51" height="30" rx="3"/><path d="M432 305 h8 q7 -23 15 0 q8 23 15 0 q8 -23 16 0 h16"/></g>
- <g fill="#eef7ff" font-size="16"><text x="166" y="292">Phase c / c</text><text x="320" y="284">Rc</text><text x="439" y="284">Lc</text><text x="517" y="291">Ic</text></g><g fill="none" stroke="#aac3d7" stroke-width="2.2">
-<path d="M797 125 V147 M785 147 H809 M785 158 H809 M797 158 V395"/>
-<path d="M850 215 V237 M838 237 H862 M838 248 H862 M850 248 V395"/>
-<path d="M905 305 V327 M893 327 H917 M893 338 H917 M905 338 V395"/>
-<path d="M797 395 H905 M850 395 V413 M828 413 H872 M834 421 H866 M842 429 H858"/>
+<g stroke="#54d1fa" fill="none" stroke-width="3">
+<path id="neutral-schematic-branch" d="M157 318 V323 M157 352 V363"/>
+<rect id="neutral-schematic-element" x="137" y="323" width="40" height="29" rx="3"/>
+<g id="neutral-schematic-earth"><path d="M157 363 V370 M135 370 H179 M141 378 H173 M149 386 H165"/></g>
 </g>
-<g fill="#c6d9e9" font-size="14"><text x="812" y="153">Cₐ</text><text x="866" y="243">Cᵦ</text><text x="921" y="333">C𝒸</text><text x="759" y="463">Equivalent shunt capacitances to earth</text><text x="759" y="484">السعات المكافئة للأطوار تجاه الأرض</text></g>
-<g id="fault-lg" stroke="#fbbf24" stroke-width="3.8" fill="none"><circle cx="1053" cy="125" r="5" fill="#fbbf24"/><path d="M1053 125 V350 M1038 350 L1068 350 L1049 369 L1061 369 L1040 399" stroke="#fbbf24"/><path d="M1053 402 V416 M1030 416 H1076 M1036 424 H1070 M1044 432 H1062"/></g>
-<g id="fault-ll" stroke="#fbbf24" stroke-width="3.8" fill="none" style="display:none"><circle cx="1053" cy="215" r="5" fill="#fbbf24"/><circle cx="1053" cy="305" r="5" fill="#fbbf24"/><path d="M1053 215 V247 L1042 262 L1064 277 L1053 292 V305"/></g>
-<g id="fault-3ph" stroke="#fbbf24" stroke-width="3.8" fill="none" style="display:none"><path d="M1053 125 V355 M1067 215 V355 M1081 305 V355 M1053 355 H1081 V378 M1059 378 H1103 M1065 386 H1097 M1071 394 H1091"/><circle cx="1053" cy="125" r="5" fill="#fbbf24"/><circle cx="1067" cy="215" r="5" fill="#fbbf24"/><circle cx="1081" cy="305" r="5" fill="#fbbf24"/></g>
-<text id="fault-schematic-label" x="930" y="46" font-size="17" fill="#fbbf24">a–earth fault</text>
-<g fill="#c6d9e9" font-size="14"><text x="286" y="395">R + jX shown separately in each phase</text><text x="286" y="416">R وL لكل طور — نموذج ثلاثي الطور</text></g>
-</svg></div>
-<div class="grid" style="margin-top:10px"><div class="tile"><span>Neutral model | تأريض التعادل</span><b id="schematic-neutral-value" style="font-size:1.05rem">—</b></div><div class="tile"><span>Line phase impedance | ممانعة الطور للخط</span><b id="schematic-line-value" style="font-size:1.05rem">—</b></div><div class="tile"><span>Earth capacitance | سعة الطور إلى الأرض</span><b id="schematic-cap-value" style="font-size:1.05rem">—</b></div></div>
-<p class="legend rtl">ملاحظة: هذا رسم تعليمي لدارات الأطوار الأساسية. قيم <span dir="ltr">Z₁, Z₂, Z₀</span> ليست ثلاث مقاومات توصل كل منها إلى طور مختلف؛ بل هي نماذج تتابع للشبكة نفسها. تظهر سعات الطور على أنها مكثفات مجمعة مكافئة، ولا تمثل توزع السعات الحقيقي على طول الخط.</p></section>
+<g font-size="14" fill="#eef7ff">
+<text x="12" y="26">20 kV (L–L) · 50 Hz</text><text x="10" y="315">N</text>
+<text x="146" y="69">a</text><text x="146" y="147">b</text><text x="146" y="225">c</text>
+<text x="200" y="332" id="neutral-symbol">L_n</text>
+</g>
+<g stroke-width="3" fill="none"><path d="M176 76 H320" stroke="#fbbf24"/><path d="M176 154 H320" stroke="#54d1fa"/><path d="M176 232 H320" stroke="#f28d9e"/></g>
+</svg>
+<p id="neutral-mode-label" class="schematic-caption">Petersen coil | ملف بيترسن</p>
+<p class="schematic-caption">N → Z_n → Earth | التعادل ← ممانعة التأريض ← الأرض</p>
+</div>
+<div class="schematic-card">
+<h3>2. Feeder | خط التغذية</h3>
+<svg viewBox="0 0 350 390" role="img" aria-label="Three distinct phase feeders each with a series resistor and inductor">
+<g fill="none" stroke-width="3" stroke-linecap="round">
+<path d="M14 76 H70 M116 76 H150 M205 76 H332" stroke="#fbbf24"/>
+<path d="M14 154 H70 M116 154 H150 M205 154 H332" stroke="#54d1fa"/>
+<path d="M14 232 H70 M116 232 H150 M205 232 H332" stroke="#f28d9e"/>
+<rect x="70" y="60" width="46" height="32" rx="4" stroke="#fbbf24"/>
+<rect x="70" y="138" width="46" height="32" rx="4" stroke="#54d1fa"/>
+<rect x="70" y="216" width="46" height="32" rx="4" stroke="#f28d9e"/>
+<path d="M150 76 h7 q6 -19 12 0 t12 0 t12 0 h12" stroke="#fbbf24"/>
+<path d="M150 154 h7 q6 -19 12 0 t12 0 t12 0 h12" stroke="#54d1fa"/>
+<path d="M150 232 h7 q6 -19 12 0 t12 0 t12 0 h12" stroke="#f28d9e"/>
+</g>
+<g fill="#eef7ff" font-size="14"><text x="16" y="54">a</text><text x="16" y="132">b</text><text x="16" y="210">c</text>
+<text x="84" y="48">R_a</text><text x="84" y="126">R_b</text><text x="84" y="204">R_c</text>
+<text x="162" y="48">L_a</text><text x="162" y="126">L_b</text><text x="162" y="204">L_c</text>
+<text x="250" y="54">I_a</text><text x="250" y="132">I_b</text><text x="250" y="210">I_c</text>
+<text x="20" y="293">Z_line = R + jωL</text><text x="20" y="320">Z_1, Z_2, Z_0: sequence</text><text x="20" y="345">models of the same line</text></g>
+</svg>
+<p class="schematic-caption rtl">المقاومات والمفاعلات تخص الأطوار الثلاثة، وليست ممانعات التتابع الثلاث موصولة كل منها في طور منفصل.</p>
+</div>
+<div class="schematic-card">
+<h3>3. Fault &amp; earth | العطل والأرض</h3>
+<svg viewBox="0 0 350 390" role="img" aria-label="Three distinct phase conductors with selected fault and three separately illustrated shunt capacitances to earth">
+<g stroke-width="3" fill="none" stroke-linecap="round"><path d="M12 76 H337" stroke="#fbbf24"/><path d="M12 154 H337" stroke="#54d1fa"/><path d="M12 232 H337" stroke="#f28d9e"/></g>
+<g font-size="14" fill="#eef7ff"><text x="15" y="55">a</text><text x="15" y="133">b</text><text x="15" y="211">c</text><text x="14" y="301">C_a · C_b · C_c</text><text x="14" y="328">Shunt capacitances to earth</text></g>
+<g id="fault-lg" stroke="#fbbf24" stroke-width="3.5" fill="none"><circle cx="300" cy="76" r="5" fill="#fbbf24"/><path d="M300 76 V265 L290 278 L310 288 L295 306"/><path d="M300 309 V317 M279 317 H321 M285 325 H315 M293 333 H307"/></g>
+<g id="fault-ll" stroke="#fbbf24" stroke-width="3.5" fill="none" style="display:none"><circle cx="300" cy="154" r="5" fill="#fbbf24"/><circle cx="300" cy="232" r="5" fill="#fbbf24"/><path d="M300 154 V169 L289 184 L311 200 L300 216 V232"/></g>
+<g id="fault-3ph" stroke="#fbbf24" stroke-width="3.5" fill="none" style="display:none"><path d="M285 76 V265 M300 154 V265 M315 232 V265 M285 265 H315 V281 M295 281 H335 M301 289 H329 M309 297 H321"/></g>
+<g stroke="#a6c4d8" stroke-width="2.1" fill="none">
+<path d="M80 76 V94 M70 94 H90 M70 103 H90 M80 103 V117 M80 117 H113"/>
+<path d="M125 154 V172 M115 172 H135 M115 181 H135 M125 181 V195 M125 195 H158"/>
+<path d="M170 232 V250 M160 250 H180 M160 259 H180 M170 259 V272 M170 272 H202"/>
+</g>
+<g fill="#eef7ff" font-size="12"><text x="94" y="100">C_a</text><text x="138" y="178">C_b</text><text x="183" y="257">C_c</text></g>
+</svg>
+<p class="schematic-caption rtl">سعات الأطوار ممثلة رمزيًّا؛ لا يُقصد بالخطوط القصيرة تمثيل جميع مسارات التأريض الموزعة فعليا.</p>
+</div>
+</div>
+<div class="tile" style="margin-top:12px"><span id="fault-schematic-label">a–earth fault | عطل طور مع الأرض</span></div>
+<div class="tiles" style="margin-top:12px"><div class="tile"><span>Neutral grounding | تأريض التعادل</span><b id="schematic-neutral-value" style="font-size:1rem">—</b></div><div class="tile"><span>Feeder impedance | ممانعة الخط</span><b id="schematic-line-value" style="font-size:1rem">—</b></div><div class="tile"><span>Capacitance per phase | سعة كل طور</span><b id="schematic-cap-value" style="font-size:1rem">—</b></div></div>
+<p class="legend rtl">المخططات الثلاثة توضيحية على التوالي من اليسار إلى اليمين (على الهاتف من الأعلى إلى الأسفل)، وتبقى المعادلات والحسابات في أقسام المخبر أدناه.</p>
+</section>
 <section class="panel"><h2>Change parameters | تغيير القيم</h2>
 <div class="controls">
 <label>Fault type | نوع العطل<select id="fault"><option value="lg">a–ground | طور مع الأرض</option><option value="ll">b–c | طوران</option><option value="3ph">3φ | ثلاثي الطور</option></select></label>
@@ -102,18 +142,18 @@ const exp=deg=>z(Math.cos(deg*Math.PI/180),Math.sin(deg*Math.PI/180));
  function drawSchematic(){
  const fault=$('fault').value,mode=$('ground').value;
  for(const id of ['lg','ll','3ph'])$('fault-'+id).style.display=fault===id?'':'none';
- const faultNames={lg:'a–earth fault | عطل طور مع الأرض',ll:'b–c fault | عطل بين طورين','3ph':'3φ fault | عطل ثلاثي الطور'};
+ const faultNames={lg:'a–earth fault | عطل طور مع الأرض',ll:'b–c fault | عطل بين طورين','3ph':'Three-phase short circuit | عطل ثلاثي الطور'};
  $('fault-schematic-label').textContent=faultNames[fault];
- const names={solid:'Solid grounding | مباشر',resistor:'Neutral resistor | مقاومة',reactor:'Neutral reactor | مفاعلة',petersen:'Petersen coil | ملف بيترسن',isolated:'Isolated neutral | تعادل معزول'};
+ const names={solid:'Solid grounding | تأريض مباشر',resistor:'Neutral resistor | مقاومة تأريض',reactor:'Neutral reactor | مفاعلة تأريض',petersen:'Petersen coil | ملف بيترسن',isolated:'Isolated neutral | تعادل معزول'};
  $('neutral-mode-label').textContent=names[mode];
- $('neutral-symbol').textContent=mode==='resistor'?'Rₙ':(mode==='reactor'||mode==='petersen'?'Lₙ':mode==='isolated'?'OPEN':'0 Ω');
- $('neutral-impedance').setAttribute('stroke-dasharray',mode==='isolated'?'6 8':'none');
- $('neutral-ground').style.opacity=mode==='isolated'?'0.32':'1';
+ $('neutral-symbol').textContent=mode==='resistor'?'R_n':(mode==='reactor'||mode==='petersen'?'L_n':mode==='isolated'?'Open':'0 Ω');
+ $('neutral-schematic-element').setAttribute('stroke-dasharray',mode==='isolated'?'6 7':'none');
+ $('neutral-schematic-earth').style.opacity=mode==='isolated'?'0.25':'1';
  const n=Number($('len').value),r=Number($('r1l').value),x=Number($('x1l').value),c=Number($('cap').value);
  $('schematic-neutral-value').textContent=mode==='resistor'?Number($('rn').value).toFixed(2)+' Ω':(mode==='reactor'||mode==='petersen'?Number($('ln').value).toFixed(3)+' H':mode==='solid'?'0 Ω':'open');
  $('schematic-line-value').textContent=(n*r).toFixed(2)+' + j'+(n*x).toFixed(2)+' Ω';
  $('schematic-cap-value').textContent=c.toFixed(2)+' µF/phase';
- }
+}
 function update(){
  drawSchematic();
  const p=Object.fromEntries(ids.map(id=>[id,Number($(id).value)]));
